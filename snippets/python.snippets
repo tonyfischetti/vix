@@ -1,0 +1,81 @@
+snippet #!
+	#!/usr/bin/env python -tt
+
+snippet sep
+	#--------------------------------------------------#
+snippet template
+	#!/usr/bin/env python -tt
+	
+	###########################################################
+	##                                                       ##
+	##   ${1:`Filename('$1.py', 'foo.py')`}                          ##
+	##                                                       ##
+	##                Author: ${2:author}       ##
+	##                        ${3:email}        ##
+	##                                                       ##
+	###########################################################
+	
+	"""
+	
+	"""
+	
+	__author__ = '${4:author}'
+	__version__ = '${5:version}'
+	
+	import sys
+
+
+
+
+
+
+
+	
+	def main():
+	    pass
+	
+	
+	
+	
+	
+	if __name__ == '__main__':
+	    STATUS = main()
+	    sys.exit(STATUS)
+
+snippet fundoc
+	    """
+	    ${1:what it does}
+	
+	    Args:
+	        
+	    Returns:
+	        
+	    Raises:
+	        
+	
+	    """	
+	
+snippet argparse
+	parser = argparse.ArgumentParser()
+	
+	#--------------------------------------------------#
+	# mandatory arguments
+	parser.add_argument("${1:argname}", 
+	                    type=${2:datatype},
+	                    help="${3:helptext}")
+	
+	# optional arguments with values attached
+	parser.add_argument("${4:shortversion}", 
+	                    "${5:longversion}", 
+	                    type=${6:datatype}, 
+	                    choices=[${7:listofrestrictedchoices}],
+	                    help="${8:helptext}")
+	                    
+	# optional flags
+	parser.add_argument("${9:shortversion}", 
+	                    "${10:longversion}", 
+	                    action="store_true",
+	                    help="${11:helptext}")
+	args = parser.parse_args()
+	#--------------------------------------------------#
+	
