@@ -84,6 +84,23 @@ Then, update the plugins
     git submodule update
 
 
-TODO:
+
+Notes
+-----
+
+This was tested on ....
+
+On Xubuntu (perhaps all gnu/linux distros) gvim cannot handle .gvimrc
+(it was made to work chiefly with MacVim). It seems to work fine without it.
+On these systems, either never make the .gvimrc symlink, remove the symlink,
+or delete the .gvimrc file
+
+On Xubuntu (perhaps all gnu/linux distros) the colors look bad unless
+you add the following to your ~/.bashrc
+
+    export TERM="xterm-256color"
+
+TODO
+----
  - streamline vimrcs
  - more to come

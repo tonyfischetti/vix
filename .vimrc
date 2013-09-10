@@ -106,10 +106,6 @@ nnoremap Q <nop>
 " rotate windows
 nmap <Leader>rw <C-W>r
 
-autocmd FileType python compiler pylint
-let g:pylint_onwrite = 0
-nmap <F9> :Pylint<CR>
-
 " EasyMotion stuff
 nmap <Leader>er <Leader><Leader>w
 
