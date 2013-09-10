@@ -103,8 +103,6 @@ This was tested on
  - Xubuntu (GVim and gnome-terminal)
  - Windows under Cygwin terminal (works like a charm)
 
-Windows via Cygwin will be tested soon
-
 On OS X, to use the scroll with the terminal vim, install
  - [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php)
  - [MouseTerm](https://bitheap.org/mouseterm/)
