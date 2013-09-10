@@ -63,7 +63,7 @@ Installation
 
 Clone the repository:
 
-    git clone git@github.com:tonyfischetti/tony-vim.git ~/.vim
+    git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
 
 Another option is to clone the repository (under 'tony-vim') to your home
 folder and create a symlink linking that directory to ~/.vim
