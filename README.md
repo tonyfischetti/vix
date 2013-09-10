@@ -101,6 +101,7 @@ of my custom mappings ( I print it out and put it behind my monitor :) )
 This was tested on 
  - Mac OS X 10.8.4 (MacVim and Terminal.app)
  - Xubuntu (GVim and gnome-terminal)
+ - Windows under Cygwin terminal (works like a charm)
 
 Windows via Cygwin will be tested soon
 
@@ -122,4 +123,5 @@ you add the following to your ~/.bashrc
 TODO
 ----
  - streamline vimrcs
+ - fix clipboard on Xubuntu
  - more to come
