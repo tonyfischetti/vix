@@ -88,4 +88,5 @@ Then, update the plugins
 
 
 TODO:
+ - streamline vimrcs
  - more to come
