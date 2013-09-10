@@ -113,8 +113,11 @@ On these systems, either never make the .gvimrc symlink, remove the symlink,
 or delete the .gvimrc file
 
 
-TODO
+Coming soon
 ----
  - streamline vimrcs
+ - expand support to other systems
+ - test all plugins on all supported systems
  - fix clipboard on Xubuntu
- - more to come
+
+
