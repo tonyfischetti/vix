@@ -54,6 +54,10 @@ List of vim plugins I use
    Support for customizable code snippets
    (git-updatable)
 
+Donate to Vim by sponsoring or registering to vote on features and, more
+importantly, help needy children in Uganda, please!
+www.vim.org
+
 
 Installation
 ------------
@@ -114,9 +118,6 @@ you add the following to your ~/.bashrc
 
     export TERM="xterm-256color"
 
-Donate to Vim by sponsoring or registering to vote on features and, more
-importantly, help needy children in Uganda, please!
-www.vim.org
 
 TODO
 ----
