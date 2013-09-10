@@ -10,23 +10,52 @@ Even for plugins that aren't pathogen-ready, I create folders for them
 in the "bundle" directory with the appropriate format just so I can keep
 all my plugins in one place.
 
-List of vim plugins
- - pathogen
- - [matrix](https://github.com/uguu-org/vim-matrix-screensaver)
-   A fun matrix style screensaver
- - nerdtree
- - pydoc
- - pylint
- - setcolors
- - subertab
- - tagbar
- - tlib
- - mw-utils
- - airline
- - easymotion
- - fugitive
- - json
- - snipmate
+List of vim plugins I use
+ - [pathogen:](https://github.com/tpope/vim-pathogen)
+   The best way to manage vim plugins
+   (git-updatable)
+ - [matrix:](https://github.com/uguu-org/vim-matrix-screensaver)
+   A fun matrix style screensaver 
+   (git-updatable)
+ - [nerdtree:](https://github.com/scrooloose/nerdtree)
+   A tree file browser for the side bar
+   (git-updatable)
+ - [pydoc:](https://github.com/fs111/pydoc.vim)
+   Quick Python documentation binding/integration
+   (git-updatable)
+ - [pylint:](https://github.com/orenhe/pylint.vim)
+   Integration for Python linting
+   (technically git-updatable but no longer mainained)
+ - [setcolors:](http://vim.wikia.com/wiki/VimTip341)
+   Provides support for easily switching color schemes
+   (non-git updatable and customized)
+ - [subertab:](https://github.com/ervandew/supertab)
+   Great tab completion
+   (git-updatable)
+ - [tagbar:](github.com/majutsushi/tagbar)
+   Requires ctags
+   (git-updatable)
+ - [tlib:](https://github.com/tomtom/tlib_vim.git)
+   Required for SnipMate
+   (git updatable)
+ - [mw-utils:](https://github.com/MarcWeber/vim-addon-mw-utils.git)
+   Required for SnipMate
+   (git updatable)
+ - [airline:](https://github.com/bling/vim-airline)
+   A great all-vimscript status line
+   (git updatable)
+ - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
+   A great and easy way to quickly change cursor position
+   (git-updatable)
+ - [fugitive:](https://github.com/tpope/vim-fugitive)
+   The best git wrapper ever
+   (git-updatable)
+ - [json:](https://github.com/vim-scripts/vim-json-bundle)
+   Great JSON syntax highlighting support
+   (git-updatable)
+ - [snipmate:](https://github.com/garbas/vim-snipmate)
+   Support for customizable code snippets
+   (git-updatable)
 
 
 Installation
