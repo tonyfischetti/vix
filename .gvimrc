@@ -79,11 +79,12 @@ function! ColorColumn()
   endif
 endfunction
 
+" REDUNDANT from vimrc (commenting out)
 " I make mistake sometimes
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+":command WQ wq
+":command Wq wq
+":command W w
+":command Q q
 
 " gotta do it the vim way
 map <Left> <Nop>

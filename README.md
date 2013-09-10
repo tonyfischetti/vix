@@ -34,13 +34,13 @@ List of vim plugins I use
    (git-updatable)
  - [tlib:](https://github.com/tomtom/tlib_vim.git)
    Required for SnipMate
-   (git updatable)
+   (git-updatable)
  - [mw-utils:](https://github.com/MarcWeber/vim-addon-mw-utils.git)
    Required for SnipMate
-   (git updatable)
+   (git-updatable)
  - [airline:](https://github.com/bling/vim-airline)
    A great all-vimscript status line
-   (git updatable)
+   (git-updatable)
  - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
    A great and easy way to quickly change cursor position
    (git-updatable)

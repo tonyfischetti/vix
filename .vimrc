@@ -79,6 +79,7 @@ function! ColorColumn()
   endif
 endfunction
 
+
 " I make mistake sometimes
 :command WQ wq
 :command Wq wq
