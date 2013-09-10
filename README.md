@@ -88,11 +88,21 @@ Then, update the plugins
 Notes
 -----
 
+In the "doc" directory, I have
+ - instructions on how to build vim from source on OS X (OS X ships with 
+an old version)
+ - a .pages and PDF of a personal Vim cheatsheet containing an overview
+of my custom mappings ( I print it out and put it behind my monitor :) )
+
 This was tested on 
  - Mac OS X 10.8.4 (MacVim and Terminal.app)
  - Xubuntu (GVim and gnome-terminal)
 
 Windows via Cygwin will be tested soon
+
+On OS X, to use the scroll with the terminal vim, install
+ - [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php)
+ - [MouseTerm](https://bitheap.org/mouseterm/)
 
 On Xubuntu (perhaps all gnu/linux distros) gvim cannot handle .gvimrc
 (it was made to work chiefly with MacVim). It seems to work fine without it.
@@ -103,6 +113,10 @@ On Xubuntu (perhaps all gnu/linux distros) the colors look bad unless
 you add the following to your ~/.bashrc
 
     export TERM="xterm-256color"
+
+Donate to Vim by sponsoring or registering to vote on features and, more
+importantly, help needy children in Uganda, please!
+www.vim.org
 
 TODO
 ----

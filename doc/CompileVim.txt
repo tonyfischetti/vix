@@ -1,0 +1,73 @@
+
+
+
+0) Check what version the current vim is
+   vi --version
+   And write it down
+7.3
+
+1) Install Mercurial to grab the latest version of Vim from the repo
+   you can use the binary installer found at mercurial.selenic.com/mac
+
+2) Run the following commands:
+   cd ~/Desktop
+   hg clone https://vim.googlecode.com/hg/ vim
+   cd vim
+   hg pull
+   hg update
+
+3) View the configuration options by running
+   ./configure --help
+
+4) Make sure that ruby and tcl are installed. Otherwise, remove those
+   flags
+
+5) Run the configure making sure you use the following arguments
+   --prefix=/usr/local
+   --enable-rubyinterp
+   --enable-pythoninterp
+   --enable-perlinterp
+   --with-features=huge
+   --enable-gui=no
+   --without-x
+   --disable-nls
+   --enable-multibyte
+   --with-tlib=ncurses
+   --enable-tclinterp
+
+6) make
+
+7) sudo make install
+
+8) The new binary lives in /usr/local/bin. Make sure that both "vim" and
+   "vi" are aliased to this vim binary
+   alias vim="/usr/local/bin/vim"
+   alias vi="/usr/local/bin/vim"
+
+9) Run "vi..." or "vim --version" to ensure that it is the new vim that
+   is being run
+
+10) Check to make sure python support works with
+   :python import sys; print(sys.version)
+   OR
+   :python << EOF
+   import sys;
+   print(sys.version);
+   EOF
+
+
+If things dont' work out, try these other configuration options
+   --enable-pythoninterp=dynamic
+   --with-python-config-dir=/usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7/lib/python2.7/config
+   --enable-rubyinterp
+   --with-ruby-command=/usr/local/bin/ruby
+   --disable-darwin
+
+
+Tested the following ./configure command in Cygwin
+ ./configure "CFLAGS=-O3" --enable-pythoninterp --with-features=huge --enable-gui=no
+
+
+
+./configure "CFLAGS=-O3" --prefix=/usr/local --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-tclinterp --with-features=huge --enable-gui=no --without-x --disable-nls --enable-multibyte --with-tlib=ncurses
+
