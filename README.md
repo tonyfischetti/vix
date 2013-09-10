@@ -15,8 +15,16 @@ Clone the repository:
 
     git clone git@github.com:tonyfischetti/tony-vim.git ~/.vim
 
+Another option is to clone the repository (under 'tony-vim') to your home
+folder and create a symlink linking that directory to ~/.vim
 
-Create symlinks for .vimrc and .gvimrc
+    ln -s ~/tony-vim ~/.vim
+
+If you take that route, make sure you delete the existing .vim folder
+completely.
+ 
+
+Next, create symlinks for .vimrc and .gvimrc
 
     ln -s ~/.vim/.vimrc ~/.vimrc
     ln -s ~/.vim/.gvimrc ~/.gvimrc
