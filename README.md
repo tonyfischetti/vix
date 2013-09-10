@@ -23,9 +23,6 @@ List of vim plugins I use
  - [pydoc:](https://github.com/fs111/pydoc.vim)
    Quick Python documentation binding/integration
    (git-updatable)
- - [pylint:](https://github.com/orenhe/pylint.vim)
-   Integration for Python linting
-   (technically git-updatable but no longer mainained)
  - [setcolors:](http://vim.wikia.com/wiki/VimTip341)
    Provides support for easily switching color schemes
    (non-git updatable and customized)
