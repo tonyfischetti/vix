@@ -88,7 +88,11 @@ Then, update the plugins
 Notes
 -----
 
-This was tested on ....
+This was tested on 
+ - Mac OS X 10.8.4 (MacVim and Terminal.app)
+ - Xubuntu (GVim and gnome-terminal)
+
+Windows via Cygwin will be tested soon
 
 On Xubuntu (perhaps all gnu/linux distros) gvim cannot handle .gvimrc
 (it was made to work chiefly with MacVim). It seems to work fine without it.
