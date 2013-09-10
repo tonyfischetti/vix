@@ -80,6 +80,12 @@ Next, create symlinks for .vimrc and .gvimrc
     ln -s ~/.vim/.gvimrc ~/.gvimrc
 
 
+Then, update the plugins
+
+    cd ~/.vim
+    git submodule init
+    git submodule update
+
+
 TODO:
- - add submodules so that submodules can be updated
  - more to come
