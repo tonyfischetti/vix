@@ -112,11 +112,6 @@ On Xubuntu (perhaps all gnu/linux distros) gvim cannot handle .gvimrc
 On these systems, either never make the .gvimrc symlink, remove the symlink,
 or delete the .gvimrc file
 
-On Xubuntu (perhaps all gnu/linux distros) the colors look bad unless
-you add the following to your ~/.bashrc
-
-    export TERM="xterm-256color"
-
 
 TODO
 ----
