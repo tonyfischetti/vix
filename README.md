@@ -62,7 +62,12 @@ www.vim.org
 Installation
 -------------
 
-##### Mac OS X
+
+#### Mac OS X
+
+Install Vim. My favorite way is to build console vim from source
+(instructions in 'doc' folder) and to use 
+[MacVim](https://code.google.com/p/macvim/) as a GUI solution
 
 Use [hombrew](http://brew.sh/) to install exuberant ctags (needed for tagbar)
 
@@ -92,16 +97,17 @@ Then, update the plugins
 
 
 
-##### Linux (debian-based)
+#### Linux
 
 These instructions are similar to those for a Mac.
 
-Make sure you have the dependencies by running
+On debian-based systems, you can make sure you have the dependencies 
+by running
 
     sudo apt-get install vim-gnome vim-full
-CTAGS?
-PYDOC
-GIT
+
+On other distros, run the equivalent installation commands, or build them
+from source
 
 Clone the repository:
 
@@ -123,7 +129,9 @@ Then, update the plugins
 
 
 
-##### Windows
+#### Windows
+
+Install Vim self-installing executable from www.vim.org/download.php
 
 Install msysgit from http://msysgit.github.io/ Make sure during the
 installation you choose the option to add it to your $PATH so that
@@ -155,7 +163,7 @@ Then, update the plugins
 
 
 
-##### Windows (Cygwin)
+#### Windows (Cygwin)
 
 Install and setup Cygwin. During setup, make sure you get git, ctags, pydoc,
 vim, etc...
