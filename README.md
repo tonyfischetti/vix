@@ -62,9 +62,9 @@ www.vim.org
 Installation
 -------------
 
-###### Mac OS X
+##### Mac OS X
 
-Use hombrew to install exuberant ctags (needed for tagbar)
+Use [hombrew](http://brew.sh/) to install exuberant ctags (needed for tagbar)
 
     brew install ctags-exuberant
 
@@ -92,9 +92,9 @@ Then, update the plugins
 
 
 
-###### Linux (debian-based)
+##### Linux (debian-based)
 
-These instruction are similar to those for a Mac.
+These instructions are similar to those for a Mac.
 
 Make sure you have the dependencies by running
 
@@ -123,9 +123,9 @@ Then, update the plugins
 
 
 
-###### Windows
+##### Windows
 
-Install msysgit from http://msysgit.github.io/ Make sure during the\
+Install msysgit from http://msysgit.github.io/ Make sure during the
 installation you choose the option to add it to your $PATH so that
 you can use it from the windows command line (cmd). Configure your git
 config variables as needed.
@@ -155,7 +155,7 @@ Then, update the plugins
 
 
 
-###### Windows (Cygwin)
+##### Windows (Cygwin)
 
 Install and setup Cygwin. During setup, make sure you get git, ctags, pydoc,
 vim, etc...
