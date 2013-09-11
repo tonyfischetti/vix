@@ -62,26 +62,116 @@ www.vim.org
 Installation
 -------------
 
-####### UNIX (Mac/Linux)
+###### Mac OS X
+
+Use hombrew to install exuberant ctags (needed for tagbar)
+
+    brew install ctags-exuberant
+
+Although not _stricly_ necessary, to use the scroll with the 
+terminal vim, install
+ - [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php)
+ - [MouseTerm](https://bitheap.org/mouseterm/)
 
 Clone the repository:
 
     git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
 
-Another option is to clone the repository (under 'tony-vim') to your home
-folder and create a symlink linking that directory to ~/.vim
-
-    ln -s ~/tony-vim ~/.vim
-
-If you take that route, make sure you delete the existing .vim folder
-completely.
  
-
 Next, create symlinks for .vimrc and .gvimrc
 
     ln -s ~/.vim/.vimrc ~/.vimrc
     ln -s ~/.vim/.gvimrc ~/.gvimrc
 
+
+Then, update the plugins
+
+    cd ~/.vim
+    git submodule init
+    git submodule update
+
+
+
+###### Linux (debian-based)
+
+These instruction are similar to those for a Mac.
+
+Make sure you have the dependencies by running
+
+    sudo apt-get install vim-gnome vim-full
+CTAGS?
+PYDOC
+GIT
+
+Clone the repository:
+
+    git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
+
+
+Next, create a symlink for .vimrc
+
+    ln -s ~/.vim/.vimrc ~/.vimrc
+
+Don't create a symlink for .gvimrc because it seems to be unecessary
+and it's mainly for MacVim, anyway.
+
+Then, update the plugins
+
+    cd ~/.vim
+    git submodule init
+    git submodule update
+
+
+
+###### Windows
+
+Install msysgit from http://msysgit.github.io/ Make sure during the\
+installation you choose the option to add it to your $PATH so that
+you can use it from the windows command line (cmd). Configure your git
+config variables as needed.
+
+Download the exuberant ctags windows binary from ctags.sourceforge.net.
+Now you need to add it to your path; I like to just copy the ctags
+executable to C:\Program Files (x86)\Git\bin since that is already in 
+the $PATH from the last instruction.
+
+Clone the repository:
+
+    git clone https://github.com/tonyfischetti/tony-vim.git ~/_vimfiles
+
+
+Next, create a symlink for .vimrc
+
+    mklink "\Users\YOURNAME\_vimrc" "\Users\YOURNAME\vimfiles\.vimrc"
+
+Don't create a symlink for .gvimrc because it seems to be unecessary
+and it's mainly for MacVim, anyway.
+
+Then, update the plugins
+
+    cd ~/_vimfiles
+    git submodule init
+    git submodule update
+
+
+
+###### Windows (Cygwin)
+
+Install and setup Cygwin. During setup, make sure you get git, ctags, pydoc,
+vim, etc...
+Throw in python, perl, grep, sed, awk, etc.. for good measure
+
+Clone the repository:
+
+    git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
+
+
+Next, create a symlink for .vimrc
+
+    ln -s ~/.vim/.vimrc ~/.vimrc
+
+Don't create a symlink for .gvimrc because gvim won't work with Cygwin,
+anyway
 
 Then, update the plugins
 
@@ -100,26 +190,12 @@ an old version)
  - a .pages and PDF of a personal Vim cheatsheet containing an overview
 of my custom mappings ( I print it out and put it behind my monitor :) )
 
-This was tested on 
- - Mac OS X 10.8.4 (MacVim and Terminal.app)
- - Xubuntu (GVim and gnome-terminal)
- - Windows under Cygwin terminal (works like a charm)
 
-On OS X, to use the scroll with the terminal vim, install
- - [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php)
- - [MouseTerm](https://bitheap.org/mouseterm/)
-
-On Xubuntu (perhaps all gnu/linux distros) gvim cannot handle .gvimrc
-(it was made to work chiefly with MacVim). It seems to work fine without it.
-On these systems, either never make the .gvimrc symlink, remove the symlink,
-or delete the .gvimrc file
 
 
 Coming soon
 ----
  - streamline vimrcs
  - expand support to other systems
- - test all plugins on all supported systems
- - fix clipboard on Xubuntu
 
 
