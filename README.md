@@ -60,10 +60,9 @@ www.vim.org
 
 
 Installation
-==============
+-------------
 
-UNIX (Mac/Linux)
-----------------
+####### UNIX (Mac/Linux)
 
 Clone the repository:
 
