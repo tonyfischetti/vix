@@ -104,7 +104,7 @@ These instructions are similar to those for a Mac.
 On debian-based systems, you can make sure you have the dependencies 
 by running
 
-    sudo apt-get install vim-gnome vim-full
+    sudo apt-get install vim-gnome vim-full git exuberant-ctags
 
 On other distros, run the equivalent installation commands, or build them
 from source
