@@ -67,7 +67,7 @@ Installation
 
 Install Vim. My favorite way is to build console vim from source
 (instructions in 'doc' folder) and to use 
-[MacVim](https://code.google.com/p/macvim/) as a GUI solution
+[MacVim](https://code.google.com/p/macvim/) as a GUI solution. 
 I also have instructions (in doc/) on how to compile MacVim from source
 that should work with Mavericks (which I haven't tested yet)
 
@@ -197,6 +197,7 @@ Notes
 In the "doc" directory, I have
  - instructions on how to build vim from source on OS X (OS X ships with 
 an old version)
+ - instructions on how to build MacVim from source (with Mavericks patch)
  - a .pages and PDF of a personal Vim cheatsheet containing an overview
 of my custom mappings ( I print it out and put it behind my monitor :) )
 
