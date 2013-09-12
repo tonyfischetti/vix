@@ -1,0 +1,47 @@
+
+
+Compiling MacVim
+----------------
+
+Download source code
+
+navigate to src directory
+
+Apply patch at: https://gist.github.com/felixbuenemann/6150257
+(patch is meant for Mavericks)
+
+Use the following configuration options
+revise some, if necessary
+    ./configure "CFLAGS=-O3"
+    --with-features=huge
+    --enable-ruby-interp
+    --enable-pythoninterp
+    --enable-perlinterp
+    --enable-cscope
+    --enable-multibyte
+    --with-tlib=ncurses
+    --with-compiledby=Tony.Fischetti
+    --with-ruby-command=/usr/bin/ruby
+    --with-macarchs=x86_64
+    --with-macsdk=10.8
+    --enable-fail-if-missing
+    --disable-netbeans
+    --with-developer-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
+
+make
+
+
+The resulting app bundle will reside under `MacVim/build/Release`.  To try it
+out quickly, type:
+
+    $ open MacVim/build/Release/MacVim.app
+
+To install MacVim, type
+
+    $ open MacVim/build/Release
+
+and drag the MacVim icon into your `Applications` folder.
+
+
+Actual configuration command:
+./configure "CFLAGS=-O3" --with-features=huge --enable-ruby-interp --enable-pythoninterp --enable-perlinterp --enable-cscope  --enable-multibyte --with-tlib=ncurses --with-compiledby=Tony.Fischetti --with-ruby-command=/usr/bin/ruby --with-macarchs=x86_64 --with-macsdk=10.8 --enable-fail-if-missing --disable-netbeans --with-developer-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/ 
