@@ -2,8 +2,8 @@ execute pathogen#infect()
 
 
 
-
-
+set guioptions-=m
+set guioptions-=T
 set nocompatible
 set history=700
 set autoread
