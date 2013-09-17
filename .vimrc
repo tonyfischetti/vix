@@ -149,5 +149,3 @@ nmap <F5> :NERDTreeToggle<CR>
 
 nmap <F6> :TagbarToggle<CR>
 
-
-nmap <Leader>sa mpggVG
