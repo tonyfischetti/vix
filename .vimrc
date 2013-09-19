@@ -38,6 +38,11 @@ set foldlevel=1
 set modeline
 set t_Co=256
 
+if has("gui_running")
+    if has("gui_win32")
+        set guifont=Consolas:h12:cANSI
+    endif
+endif
 
 colorscheme molo
 set background=dark
