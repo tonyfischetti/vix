@@ -1,9 +1,9 @@
 execute pathogen#infect()
 
 
-set guifont=Monaco:h12
-set guioptions-=L
-set guioptions-=r 
+
+set guioptions-=m
+set guioptions-=T
 set nocompatible
 set history=700
 set autoread
@@ -36,15 +36,15 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 set modeline
-set transparency=0
+set t_Co=256
 
+if has("gui_running")
+    if has("gui_win32")
+        set guifont=Consolas:h11
+    endif
+endif
 
-
-
-
-
-
-colorscheme molokai
+colorscheme molo
 set background=dark
 
 syntax on
@@ -84,12 +84,12 @@ function! ColorColumn()
   endif
 endfunction
 
-" REDUNDANT from vimrc (commenting out)
+
 " I make mistake sometimes
-":command WQ wq
-":command Wq wq
-":command W w
-":command Q q
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
 
 " gotta do it the vim way
 map <Left> <Nop>
