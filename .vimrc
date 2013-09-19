@@ -68,6 +68,9 @@ nmap <Leader>rt @:<CR>
 " toggle line wrap, also toggles the color column
 nmap <silent> <Leader>tw :set wrap!<CR>:call ColorColumn()<CR>
 
+" put into 'notepad mode'
+nmap <Leader>nm :set wrap<CR>:call ColorColumn()<CR>:colorscheme plain<CR>:call MakeFontBigger()<CR>:call MakeFontBigger()<CR>
+
 " function to toggle color column
 function! ColorColumn()
   if empty(&colorcolumn)
