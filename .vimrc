@@ -69,7 +69,7 @@ nmap <Leader>rt @:<CR>
 nmap <silent> <Leader>tw :set wrap!<CR>:call ColorColumn()<CR>
 
 " put into 'notepad mode'
-nmap <Leader>nm :set wrap<CR>:call ColorColumn()<CR>:colorscheme plain<CR>:call MakeFontBigger()<CR>:call MakeFontBigger()<CR>
+nmap <Leader>nm :set wrap<CR>:call ColorColumn()<CR>:colorscheme plain<CR>
 
 " function to toggle color column
 function! ColorColumn()
