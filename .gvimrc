@@ -158,17 +158,19 @@ nmap <F6> :TagbarToggle<CR>
 function! ChangeSize(direction)
     if has("gui_running")
         if exists("&guifont")
-            let thesplit = split(&guifont, ":")
-            let fontname = thesplit[0]
-            let rawsize = thesplit[1]
-            let numsize = split(rawsize, "h")[0]
-            if (a:direction > 0)
-                let numsize = numsize+1
-            elseif (a:direction < 0)
-                let numsize = numsize-1
+            if (len(&guifont) > 0)
+                let thesplit = split(&guifont, ":")
+                let fontname = thesplit[0]
+                let rawsize = thesplit[1]
+                let numsize = split(rawsize, "h")[0]
+                if (a:direction > 0)
+                    let numsize = numsize+1
+                elseif (a:direction < 0)
+                    let numsize = numsize-1
+                endif
+                let newfont = fontname . ":h" . numsize
+                let &guifont = newfont
             endif
-            let newfont = fontname . ":h" . numsize
-            let &guifont = newfont
         endif
     endif
 endfunction
@@ -181,8 +183,8 @@ function! MakeFontSmaller()
     call ChangeSize(-1)
 endfunction
 
-nmap <Leader>bb :call MakeFontBigger()<CR>
-nmap <Leader>ss :call MakeFontSmaller()<CR>
+nmap <silent> <Leader>bb :call MakeFontBigger()<CR>
+nmap <silent> <Leader>ss :call MakeFontSmaller()<CR>
 
 function! NotepadMode()
     set wrap
@@ -190,8 +192,10 @@ function! NotepadMode()
     colorscheme plain
     if has("gui_running")
         if exists("&guifont")
-            call MakeFontBigger()
-            call MakeFontBigger()
+            if (len(&guifont) > 0)
+                call MakeFontBigger()
+                call MakeFontBigger()
+            endif
         endif
     endif
 endfunction
