@@ -40,7 +40,7 @@ set t_Co=256
 
 if has("gui_running")
     if has("gui_win32")
-        set guifont=Consolas:h12:cANSI
+        set guifont=Consolas:h11:cANSI
     endif
 endif
 
