@@ -40,7 +40,7 @@ set t_Co=256
 
 if has("gui_running")
     if has("gui_win32")
-        set guifont=Consolas:h11:cANSI
+        set guifont=Consolas:h11
     endif
 endif
 
@@ -153,4 +153,31 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 nmap <F5> :NERDTreeToggle<CR>
 
 nmap <F6> :TagbarToggle<CR>
+
+function! ChangeSize(direction)
+    if has("gui_running")
+        let thesplit = split(&guifont, ":")
+        let fontname = thesplit[0]
+        let rawsize = thesplit[1]
+        let numsize = split(rawsize, "h")[0]
+        if (a:direction > 0)
+            let numsize = numsize+1
+        elseif (a:direction < 0)
+            let numsize = numsize-1
+        endif
+        let newfont = fontname . ":h" . numsize
+        let &guifont = newfont
+    endif
+endfunction
+
+function! MakeFontBigger()
+    call ChangeSize(1)
+endfunction
+
+function! MakeFontSmaller()
+    call ChangeSize(-1)
+endfunction
+
+nmap <Leader>bb :call MakeFontBigger()<CR>
+nmap <Leader>ss :call MakeFontSmaller()<CR>
 
