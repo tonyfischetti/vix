@@ -156,7 +156,7 @@ nmap <F6> :TagbarToggle<CR>
 
 function! ChangeSize(direction)
     if has("gui_running")
-        if exists(&guifont)
+        if exists("&guifont")
             let thesplit = split(&guifont, ":")
             let fontname = thesplit[0]
             let rawsize = thesplit[1]
