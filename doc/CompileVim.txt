@@ -71,3 +71,19 @@ Tested the following ./configure command in Cygwin
 
 ./configure "CFLAGS=-O3" --prefix=/usr/local --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-tclinterp --with-features=huge --enable-gui=no --without-x --disable-nls --enable-multibyte --with-tlib=ncurses  --with-compiledby=Tony.Fischetti
 
+MAVERICKS UPDATE
+apply this patch manually to vim/src/os_mac.h
+so from line 9 on, it should look like this
+/* Before Including the MacOS specific files,
+ * lets set the OPAQUE_TOOLBOX_STRUCTS to 0 so we
+ * can access the internal structures.
+ * (Until fully Carbon compliant)
+ * TODO: Can we remove this? (Dany)
+ */
+#if 0
+# define OPAQUE_TOOLBOX_STRUCTS 0
+#endif
+
+/* include MAC_OS_X_VERSION_* macros */
+#include <AvailabilityMacros.h>
+
