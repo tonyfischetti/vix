@@ -36,7 +36,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 set modeline
-set transparency=0
+set transparency=5
 
 
 
