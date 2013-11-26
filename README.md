@@ -53,6 +53,9 @@ List of vim plugins I use
  - [snipmate:](https://github.com/garbas/vim-snipmate)
    Support for customizable code snippets
    (git-updatable)
+ - [conqueterm:](https://code.google.com/p/conque/)
+   Run a shell in a vim buffer
+   (svn-updatable) (cd ~/.vim/bundle/conqueterm && svn update)
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!
