@@ -148,12 +148,12 @@ let g:vim_json_syntax_conceal = 0
 
 let g:pydoc_open_cmd = 'vsplit' 
 
-let g:pep8_map='<F8>'
+let g:pep8_map='<Leader>p8'
 
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-nmap <F5> :NERDTreeToggle<CR>
+nmap <silent> <Leader>nt :NERDTreeToggle<CR>
 
-nmap <F6> :TagbarToggle<CR>
+nmap <silent> <Leader>tb :TagbarToggle<CR>
 
 function! ChangeSize(direction)
     if has("gui_running")
@@ -202,3 +202,10 @@ endfunction
 
 " put into 'notepad mode'
 nmap <silent> <Leader>nm :call NotepadMode()<CR>
+
+" Conque Term things
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_CloseOnEnd = 1
+nmap <silent> <Leader>vz :ConqueTermVSplit zsh<CR>
+nmap <silent> <Leader>hz :ConqueTermSplit zsh<CR>
