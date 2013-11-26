@@ -8,8 +8,7 @@ git clone https://github.com/b4winckler/macvim.git
 
 navigate to src directory
 
-Apply patch at: https://gist.github.com/felixbuenemann/6150257
-(patch is meant for Mavericks)
+Update: patch no longer required for latest MacVim from git
 
 Use the following configuration options
 revise some, if necessary
@@ -48,4 +47,4 @@ Actual configuration command:
 ./configure "CFLAGS=-O3" --with-features=huge --enable-ruby-interp --enable-pythoninterp --enable-perlinterp --enable-cscope  --enable-multibyte --with-tlib=ncurses --with-compiledby=Tony.Fischetti --with-ruby-command=/usr/bin/ruby --with-macarchs=x86_64 --with-macsdk=10.8 --enable-fail-if-missing --disable-netbeans --with-developer-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 
 and finallly:
-sudo cp mvim /usr/local/bin
+sudo cp src/MacVim/mvim /usr/local/bin
