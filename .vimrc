@@ -122,9 +122,13 @@ map <Leader>pd :Pydoc
 " auto-reform ugly json
 nmap <Leader>rj :%!python -mjson.tool<CR>
 
-" easy resizing of wide windows
+" easy resizing of windows
+" resize height
 nmap + <C-W>+
-nmap - <C-W>-
+nmap _ <C-W>-
+" resize width
+nmap = <C-W>>
+nmap - <C-W><
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
