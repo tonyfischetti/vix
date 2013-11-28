@@ -1,9 +1,9 @@
 execute pathogen#infect()
 
 
-set guifont=Monaco:h12
+set guifont=Monaco\ for\ Powerline:h12
 set guioptions-=L
-set guioptions-=r 
+set guioptions-=r
 set nocompatible
 set history=700
 set autoread
@@ -117,7 +117,7 @@ nmap <Leader>rw <C-W>r
 nmap <Leader>er <Leader><Leader>w
 
 " pydoc
-map <Leader>pd :Pydoc 
+map <Leader>pd :Pydoc
 
 " auto-reform ugly json
 nmap <Leader>rj :%!python -mjson.tool<CR>
@@ -150,7 +150,7 @@ let g:SuperTabNoCompleteAfter=['^', '\s']
 " remove auto string apostrophe concealing in json
 let g:vim_json_syntax_conceal = 0
 
-let g:pydoc_open_cmd = 'vsplit' 
+let g:pydoc_open_cmd = 'vsplit'
 
 let g:pep8_map='<Leader>p8'
 

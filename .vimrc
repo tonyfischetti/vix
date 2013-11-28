@@ -150,6 +150,11 @@ let g:SuperTabNoCompleteAfter=['^', '\s']
 " remove auto string apostrophe concealing in json
 let g:vim_json_syntax_conceal = 0
 
+" airline overrides
+let g:airline_powerline_fonts = 1
+" let g:airline_left_sep = '▶'
+" let g:airline_right_sep = '◀'
+
 let g:pydoc_open_cmd = 'vsplit' 
 
 let g:pep8_map='<Leader>p8'
