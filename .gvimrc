@@ -17,7 +17,7 @@ set nowrap
 set backspace=2
 set backspace=indent,eol,start
 set autochdir
-set clipboard+=unnamed
+set clipboard=unnamedplus
 set title
 set noswapfile
 set ttyfast
