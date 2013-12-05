@@ -17,7 +17,12 @@ set nowrap
 set backspace=2
 set backspace=indent,eol,start
 set autochdir
-set clipboard=unnamedplus
+let os = substitute(system('uname'), "\n", "", "")
+if os == "Darwin"
+    set clipboard+=unnamed
+else
+    set clipboard=unnamedplus
+endif
 set title
 set noswapfile
 set ttyfast
