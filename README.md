@@ -85,7 +85,7 @@ terminal vim, install
 
 Clone the repository:
 
-    git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
+    git clone https://github.com/tonyfischetti/vix.git ~/.vim
 
  
 Next, create symlinks for .vimrc and .gvimrc
