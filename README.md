@@ -101,6 +101,11 @@ Then, update the plugins
     git submodule update
 
 
+To install the "Monaco for Powerline" font (which contains the
+special symbols that the airline plugin uses) open ~/.vim/goodies
+and double click to install. Then change the font of your favorite
+terminal emulator
+
 
 #### Linux
 
@@ -132,6 +137,17 @@ Then, update the plugins
     git submodule init
     git submodule update
 
+
+To install the "Monaco for Powerline" font (which contains the
+special symbols that the airline plugin uses)...
+
+    mkdir ~/.fonts
+    cp ~/.vim/goodies/Monaco+for+Powerline.otf ~/.fonts
+    fc-cache -vf
+
+You may have to restart after this
+
+Then change the font of your favorite terminal emulator
 
 
 #### Windows
