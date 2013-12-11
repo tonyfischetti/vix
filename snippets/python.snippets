@@ -104,33 +104,33 @@ snippet fundoc
 	    ${1:what it does}
 	
 	    Args:
-	        
+
 	    Returns:
-	        
+
 	    Raises:
-	        
-	
-	    """	
+
+
+	    """
 	
 snippet argparse
 	parser = argparse.ArgumentParser()
 	
 	#--------------------------------------------------#
 	# mandatory arguments
-	parser.add_argument("${1:argname}", 
+	parser.add_argument("${1:argname}",
 	                    type=${2:datatype},
 	                    help="${3:helptext}")
 	
 	# optional arguments with values attached
-	parser.add_argument("${4:shortversion}", 
-	                    "${5:longversion}", 
-	                    type=${6:datatype}, 
+	parser.add_argument("${4:shortversion}",
+	                    "${5:longversion}",
+	                    type=${6:datatype},
 	                    choices=[${7:listofrestrictedchoices}],
 	                    help="${8:helptext}")
-	                    
+
 	# optional flags
-	parser.add_argument("${9:shortversion}", 
-	                    "${10:longversion}", 
+	parser.add_argument("${9:shortversion}",
+	                    "${10:longversion}",
 	                    action="store_true",
 	                    help="${11:helptext}")
 	args = parser.parse_args()
