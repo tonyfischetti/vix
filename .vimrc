@@ -20,8 +20,10 @@ set autochdir
 let os = substitute(system('uname'), "\n", "", "")
 if os == "Darwin"
     set clipboard+=unnamed
-else
+elseif os == "Linux"
     set clipboard=unnamedplus
+else
+    set clipboard+=unnamed
 endif
 set title
 set noswapfile
