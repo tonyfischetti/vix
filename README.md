@@ -166,7 +166,7 @@ the $PATH from the last instruction.
 
 Clone the repository:
 
-    git clone https://github.com/tonyfischetti/tony-vim.git ~/_vimfiles
+    git clone https://github.com/tonyfischetti/tony-vim.git /Users/YOURNAME/vimfiles
 
 
 Next, create a symlink for .vimrc
