@@ -219,13 +219,7 @@ an old version)
  - instructions on how to build MacVim from source (with Mavericks patch)
  - a .pages and PDF of a personal Vim cheatsheet containing an overview
 of my custom mappings ( I print it out and put it behind my monitor :) )
-
-
-
-
-Coming soon
-----
- - streamline vimrcs
- - expand support to other systems
-
+ - There are fonts optimized for the airline plugin in the "goodies"
+folder. The vim rcs demand these fonts in a lot of cases, but will fall
+back on defaults until the fonts are installed
 
