@@ -137,11 +137,6 @@ nmap _ <C-W>-
 nmap = <C-W>>
 nmap - <C-W><
 
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-map N Nzz
-map n nzz
-
 " Set visual mode indent
 :vnoremap < <gv
 :vnoremap > >gv
@@ -234,3 +229,17 @@ vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()
 let g:DVB_TrimWS = 1
+
+" This makes the current match more visible
+" and also centers the match vertically in the buffer
+nnoremap <silent> n   n:call HLNext()<cr>zz
+nnoremap <silent> N   N:call HLNext()<cr>zz
+
+function! HLNext()
+    highlight BlackOnWhite ctermfg=black ctermbg=white
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#'.@/
+    let ring = matchadd('BlackOnWhite', target_pat, 101)
+    redraw
+endfunction
