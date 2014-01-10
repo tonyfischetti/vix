@@ -223,3 +223,6 @@ let g:ConqueTerm_InsertOnEnter = 1
 let g:ConqueTerm_CloseOnEnd = 1
 nmap <silent> <Leader>vz :ConqueTermVSplit zsh<CR>
 nmap <silent> <Leader>hz :ConqueTermSplit zsh<CR>
+
+" Use better syntax highlighting for YAML
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
