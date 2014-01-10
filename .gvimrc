@@ -23,6 +23,8 @@ if os == "Darwin"
 else
     set clipboard=unnamedplus
 endif
+
+
 set title
 set noswapfile
 set ttyfast
@@ -42,8 +44,6 @@ set nofoldenable
 set foldlevel=1
 set modeline
 set transparency=2
-
-
 
 
 

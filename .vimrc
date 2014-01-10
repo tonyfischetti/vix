@@ -124,7 +124,7 @@ nmap <Leader>rw <C-W>r
 nmap <Leader>er <Leader><Leader>w
 
 " pydoc
-map <Leader>pd :Pydoc 
+map <Leader>pd :Pydoc
 
 " auto-reform ugly json
 nmap <Leader>rj :%!python -mjson.tool<CR>
@@ -160,7 +160,7 @@ let g:vim_json_syntax_conceal = 0
 " airline overrides
 let g:airline_powerline_fonts = 1
 
-let g:pydoc_open_cmd = 'vsplit' 
+let g:pydoc_open_cmd = 'vsplit'
 
 let g:pep8_map='<Leader>p8'
 
