@@ -30,7 +30,6 @@
    --with-features=huge
    --enable-gui=no
    --without-x
-   --disable-nls
    --enable-multibyte
    --with-tlib=ncurses
    --enable-tclinterp
@@ -69,7 +68,7 @@ Tested the following ./configure command in Cygwin
 
 
 
-./configure "CFLAGS=-O3" --prefix=/usr/local --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-tclinterp --with-features=huge --enable-gui=no --without-x --disable-nls --enable-multibyte --with-tlib=ncurses  --with-compiledby=Tony.Fischetti
+./configure "CFLAGS=-O3" --prefix=/usr/local --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-tclinterp --with-features=huge --enable-gui=no --without-x --enable-multibyte --with-tlib=ncurses  --with-compiledby=Tony.Fischetti
 
 
 update 11/8/13
