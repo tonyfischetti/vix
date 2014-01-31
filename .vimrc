@@ -1,7 +1,6 @@
 execute pathogen#infect()
 
 
-
 set guioptions-=m
 set guioptions-=T
 set nocompatible
@@ -243,3 +242,6 @@ function! HLNext()
     let ring = matchadd('BlackOnWhite', target_pat, 101)
     redraw
 endfunction
+
+" two indents for html
+au FileType html setl sw=2 sts=2 et
