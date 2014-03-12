@@ -245,3 +245,6 @@ endfunction
 
 " two indents for html
 au FileType html setl sw=2 sts=2 et
+
+" Small motion plugin
+nmap s <Plug>(smalls)

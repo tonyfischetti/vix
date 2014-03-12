@@ -56,6 +56,9 @@ List of vim plugins I use
  - [conqueterm:](https://code.google.com/p/conque/)
    Run a shell in a vim buffer
    (svn-updatable) (cd ~/.vim/bundle/conqueterm && svn update)
+ - [smalls:](https://github.com/t9md/vim-smalls)
+   Cursor movement with simple search
+   (git-updatable)
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!
