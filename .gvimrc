@@ -24,7 +24,6 @@ else
     set clipboard=unnamedplus
 endif
 
-
 set title
 set noswapfile
 set ttyfast
@@ -246,6 +245,8 @@ endfunction
 
 " two indents for html
 au FileType html setl sw=2 sts=2 et
+" and R
+au FileType r setl sw=2 sts=2 et
 
 " Small motion plugin
 nmap s <Plug>(smalls)
