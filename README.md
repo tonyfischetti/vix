@@ -59,6 +59,10 @@ List of vim plugins I use
  - [smalls:](https://github.com/t9md/vim-smalls)
    Cursor movement with simple search
    (git-updatable)
+ - [vim-slime:](https://github.com/jpalardy/vim-slime)
+   Send text in Vim buffer to REPL
+   (preconfigured to use tmux)
+   (git-updatable)
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!
