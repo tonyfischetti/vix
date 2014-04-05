@@ -55,6 +55,7 @@ set background=dark
 
 syntax on
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
 
 " Use with MouseTerm to scroll!
 if has("mouse")
