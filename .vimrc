@@ -253,7 +253,7 @@ nmap s <Plug>(smalls)
 
 " Vim slime is (cli).vimrc only
 let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "3"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 let g:slime_no_mappings = 1
 xmap <C-@> <Plug>SlimeRegionSend
 nmap <C-@> <Plug>SlimeLineSend
