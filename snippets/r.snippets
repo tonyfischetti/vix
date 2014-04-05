@@ -1,0 +1,41 @@
+snippet #!
+	#!/usr/bin/Rscript --vanilla
+
+snippet template
+	#!/usr/bin/Rscript --vanilla
+	
+	###########################################################
+	##                                                       ##
+	##   ${1:`Filename('$1.R', 'foo.R')`}                          ##
+	##                                                       ##
+	##                Author: ${2:author}       ##
+	##                        ${3:email}        ##
+	##                                                       ##
+	###########################################################
+	
+	# workspace cleanup
+	rm(list=ls())
+	
+	# options
+	options(echo=TRUE)
+	options(stringsAsFactors = FALSE)
+	
+	# cli args
+	args <- commandArgs(trailingOnly=TRUE)
+	
+	# libraries
+	library(dplyr)
+	library(reshape2)
+	
+snippet sep
+	#--------------------------------------------------#
+
+snippet didiom
+	final.frame <- original.frame %.%
+	                 filter(conditions) %.%
+	                 arrange(column) %.%
+	                 select(column) %.%
+	                 mutate(newcolumn=column) %.%
+	                 group_by(column) %.%
+	                 summarise(count = n(), sums = sum(column))
+	
