@@ -146,7 +146,7 @@ nmap - <C-W><
 :vnoremap ? <ESC>:'<,'>s/^/# /g<cr> :noh<cr>
 
 let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
+"let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
 set completeopt=menu,longest,preview
 let g:SuperTabNoCompleteAfter=['^', '\s']
 
