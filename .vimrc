@@ -255,5 +255,5 @@ nmap s <Plug>(smalls)
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 let g:slime_no_mappings = 1
-xmap <C-@> <Plug>SlimeRegionSend
-nmap <C-@> <Plug>SlimeLineSend
+xmap <C-@> <Plug>SlimeRegionSend :call cursor(getpos("'>")[1], 0)<CR>j0
+nmap <C-@> <Plug>SlimeLineSend j0
