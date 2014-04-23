@@ -2,7 +2,7 @@ execute pathogen#infect()
 
 
 set guioptions-=m
-set guioptions-=T
+set guioptions-=t
 set nocompatible
 set history=700
 set autoread
@@ -251,9 +251,32 @@ au FileType html setl sw=2 sts=2 et
 " Small motion plugin
 nmap s <Plug>(smalls)
 
+
+" SLIME STUFF
 " Vim slime is (cli).vimrc only
+
+" this function gets around the skipping-empty-lines problem
+function! SlimeOneLine()
+    let line = getline('.')
+    let length = len(line)
+    let linenumber = line(".") + 1
+    if length
+        execute "normal \<C-U>"
+    endif
+    :call cursor(linenumber, 0)
+endfunction
+
+" this gets around the problem where sending large
+" selections messes up the R REPL
+function! SlimeMultiLine()
+    :call SlimeOneLine()
+    :sleep 30m
+endfunction
+
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 let g:slime_no_mappings = 1
-xmap <C-@> <Plug>SlimeRegionSend :call cursor(getpos("'>")[1], 0)<CR>j0
-nmap <C-@> <Plug>SlimeLineSend j0
+vmap <silent> <C-@> :call SlimeMultiLine()<CR>
+nmap <silent> <C-U> <Plug>SlimeLineSend
+nmap <silent> <C-@> :call SlimeOneLine()<CR>
+
