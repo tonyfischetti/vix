@@ -261,7 +261,7 @@ function! SlimeOneLine()
     let length = len(line)
     let linenumber = line(".") + 1
     if length
-        execute "normal \<C-U>"
+        execute "normal \<C-W>"
     endif
     :call cursor(linenumber, 0)
 endfunction
@@ -277,6 +277,6 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 let g:slime_no_mappings = 1
 vmap <silent> <C-@> :call SlimeMultiLine()<CR>
-nmap <silent> <C-U> <Plug>SlimeLineSend
+nmap <silent> <C-W> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 
