@@ -129,6 +129,9 @@ map <Leader>pd :Pydoc
 " auto-reform ugly json
 nmap <Leader>rj :%!python -mjson.tool<CR>
 
+" highlight trailing whitespace
+nmap <silent> <Leader>tw :/\v\s+$/<CR>
+
 " easy resizing of windows
 " resize height
 nmap + <C-W>+
