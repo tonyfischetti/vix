@@ -201,6 +201,7 @@ nmap <silent> <Leader>ss :call MakeFontSmaller()<CR>
 
 function! NotepadMode()
     set wrap
+    set spell
     call ColorColumn()
     colorscheme plain
     if has("gui_running")
