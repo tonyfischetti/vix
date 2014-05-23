@@ -148,6 +148,13 @@ nmap - <C-W><
 " (at the beginning of the line) with a question mark
 :vnoremap ? <ESC>:'<,'>s/^/# /g<cr> :noh<cr>
 
+" functionality to save to read-only files
+function! Superw()
+    :w !sudo tee % > /dev/null
+endfunction
+
+command Superw :call Superw()
+
 let g:SuperTabDefaultCompletionType="context"
 "let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
 set completeopt=menu,longest,preview
