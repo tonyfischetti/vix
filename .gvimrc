@@ -211,7 +211,7 @@ function! NotepadMode()
     set wrap
     set spell
     call ColorColumn()
-    colorscheme plain
+    colorscheme soft
     if has("gui_running")
         if exists("&guifont")
             if (len(&guifont) > 0)
