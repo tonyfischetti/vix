@@ -24,6 +24,7 @@ else
     set clipboard=unnamedplus
 endif
 
+
 set title
 set noswapfile
 set ttyfast

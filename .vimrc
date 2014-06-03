@@ -1,6 +1,7 @@
 execute pathogen#infect()
 
 
+
 set guioptions-=m
 set guioptions-=t
 set nocompatible
