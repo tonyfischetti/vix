@@ -38,7 +38,7 @@ hi Todo guifg=#FF0000 guibg=#FFFF00 guisp=#FFFF00 gui=bold ctermfg=196 ctermbg=1
 hi Special guifg=#E12E2A guibg=NONE guisp=NONE gui=bold ctermfg=160 ctermbg=NONE cterm=bold
 hi LineNr guifg=#E12E2A guibg=NONE guisp=NONE gui=bold ctermfg=160 ctermbg=NONE cterm=bold
 hi StatusLine guifg=#FFFF00 guibg=#E12E2A guisp=#E12E2A gui=bold ctermfg=11 ctermbg=160 cterm=bold
-hi Normal guifg=#FFFFFF guibg=#203D29 guisp=#203D29 gui=NONE ctermfg=15 ctermbg=237 cterm=NONE
+hi Normal guifg=#FFFFFF guibg=#203D29 guisp=#203D29 gui=NONE ctermfg=15 ctermbg=22 cterm=NONE
 hi Label guifg=#FFFF60 guibg=NONE guisp=NONE gui=bold ctermfg=227 ctermbg=NONE cterm=bold
 "hi CTagsImport -- no settings --
 hi PMenuSel guifg=#FF0000 guibg=#FFFF00 guisp=#FFFF00 gui=bold ctermfg=196 ctermbg=11 cterm=bold
