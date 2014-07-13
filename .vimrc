@@ -167,7 +167,7 @@ let g:vim_json_syntax_conceal = 0
 " airline overrides
 let g:airline_powerline_fonts = 1
 
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 
 let g:pydoc_open_cmd = 'vsplit'
 
@@ -264,6 +264,11 @@ au FileType html setl sw=2 sts=2 et
 
 " Small motion plugin
 nmap s <Plug>(smalls)
+
+
+" easy map to alternate favorite color scheme
+nmap <silent> <Leader>mo :color molokai<CR>
+
 
 
 " SLIME STUFF
