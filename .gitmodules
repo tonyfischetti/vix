@@ -37,9 +37,6 @@
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = git://github.com/jpalardy/vim-slime.git
-[submodule "bundle/rainbow"]
-	path = bundle/rainbow
-	url = https://github.com/luochen1990/rainbow.git
 [submodule "bundle/flappyvird"]
 	path = bundle/flappyvird
 	url = https://github.com/mattn/flappyvird-vim
