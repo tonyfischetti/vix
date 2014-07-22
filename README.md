@@ -63,7 +63,7 @@ List of vim plugins I use
    Send text in Vim buffer to REPL
    (preconfigured to use tmux)
    (git-updatable)
- - [rainbow:](https://github.com/luochen1990/rainbow)
+ - [vim-niji:](https://github.com/luochen1990/rainbow)
    Easy to-tell LISP parethesis matching for great good
    (git-updatable)
  - [flappyvird:](https://github.com/mattn/flappyvird-vim)

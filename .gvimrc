@@ -167,8 +167,6 @@ let g:vim_json_syntax_conceal = 0
 " airline overrides
 let g:airline_powerline_fonts = 1
 
-let g:rainbow_active = 0
-
 let g:pydoc_open_cmd = 'vsplit'
 
 let g:pep8_map='<Leader>p8'
@@ -268,3 +266,6 @@ nmap s <Plug>(smalls)
 
 " easy map to alternate favorite color scheme
 nmap <silent> <Leader>mo :color molokai<CR>
+
+" easy map to turn back on rainbow parens after color scheme change
+nmap <silent> <Leader>rp :call niji#highlight()
