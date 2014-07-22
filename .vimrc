@@ -214,6 +214,7 @@ function! NotepadMode()
     set spell
     call ColorColumn()
     colorscheme soft
+    Goyo
     if has("gui_running")
         if exists("&guifont")
             if (len(&guifont) > 0)
@@ -265,7 +266,6 @@ au FileType html setl sw=2 sts=2 et
 " Small motion plugin
 nmap s <Plug>(smalls)
 
-
 " easy map to alternate favorite color scheme
 nmap <silent> <Leader>mo :color molokai<CR>
 
@@ -298,5 +298,3 @@ let g:slime_no_mappings = 1
 vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
-
-nnoremap <Leader><Space> :Goyo<CR>  

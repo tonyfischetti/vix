@@ -214,6 +214,7 @@ function! NotepadMode()
     set spell
     call ColorColumn()
     colorscheme soft
+    Goyo
     if has("gui_running")
         if exists("&guifont")
             if (len(&guifont) > 0)
@@ -267,5 +268,3 @@ nmap s <Plug>(smalls)
 
 " easy map to alternate favorite color scheme
 nmap <silent> <Leader>mo :color molokai<CR>
-
-nnoremap <Leader><Space> :Goyo<CR>  

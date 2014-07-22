@@ -72,6 +72,9 @@ List of vim plugins I use
  - [tcomment](https://github.com/tomtom/tcomment_vim)
    Great commenting plugin
    (git updatable)
+ - [goyo](https://github.com/junegunn/goyo.vim)
+   Awesome distraction free writing
+   (git updatable)
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!
