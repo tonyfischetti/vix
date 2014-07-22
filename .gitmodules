@@ -49,6 +49,3 @@
 [submodule "bundle/goyo"]
 	path = bundle/goyo
 	url = https://github.com/junegunn/goyo.vim.git
-[submodule "bundle/vim-niji"]
-	path = bundle/vim-niji
-	url = https://github.com/luochen1990/rainbow
