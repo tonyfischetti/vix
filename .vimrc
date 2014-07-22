@@ -268,7 +268,7 @@ nmap s <Plug>(smalls)
 nmap <silent> <Leader>mo :color molokai<CR>
 
 " easy map to turn back on rainbow parens after color scheme change
-nmap <silent> <Leader>rp :call niji#highlight()
+nmap <silent> <Leader>rp :call niji#highlight()<CR>
 
 
 " SLIME STUFF
