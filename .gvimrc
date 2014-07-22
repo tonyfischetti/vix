@@ -147,7 +147,7 @@ nmap - <C-W><
 
 " Allows for hashtag comments to be inserted on a visual block
 " (at the beginning of the line) with a question mark
-:vnoremap ? <ESC>:'<,'>s/^/# /g<cr> :noh<cr>
+:vnoremap ? :TComment<CR>
 
 " functionality to save to read-only files
 function! Superw()
@@ -268,3 +268,4 @@ nmap s <Plug>(smalls)
 " easy map to alternate favorite color scheme
 nmap <silent> <Leader>mo :color molokai<CR>
 
+nnoremap <Leader><Space> :Goyo<CR>  

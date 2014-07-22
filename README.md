@@ -1,4 +1,4 @@
-# Introduction
+#Ö[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ[MaÖ Introduction
 
 vix is just a place to keep my particular vim setup and configuration
 so I can easily experiment with it and clone it on different systems. It's 
@@ -69,6 +69,9 @@ List of vim plugins I use
  - [flappyvird:](https://github.com/mattn/flappyvird-vim)
    Flappy Bird for Vim
    (git-updatable)
+ - [tcomment](https://github.com/tomtom/tcomment_vim)
+   Great commenting plugin
+   (git updatable)
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!

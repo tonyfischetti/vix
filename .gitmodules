@@ -43,3 +43,6 @@
 [submodule "bundle/flappyvird"]
 	path = bundle/flappyvird
 	url = https://github.com/mattn/flappyvird-vim
+[submodule "bundle/tcomment-vim"]
+	path = bundle/tcomment-vim
+	url = https://github.com/tomtom/tcomment_vim.git

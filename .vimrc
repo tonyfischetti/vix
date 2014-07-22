@@ -147,7 +147,7 @@ nmap - <C-W><
 
 " Allows for hashtag comments to be inserted on a visual block
 " (at the beginning of the line) with a question mark
-:vnoremap ? <ESC>:'<,'>s/^/# /g<cr> :noh<cr>
+:vnoremap ? :TComment<CR>
 
 " functionality to save to read-only files
 function! Superw()
@@ -299,3 +299,4 @@ vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 
+nnoremap <Leader><Space> :Goyo<CR>  
