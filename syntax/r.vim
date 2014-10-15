@@ -1341,6 +1341,7 @@ syn keyword rFunction temp_srcs
 syn keyword rFunction top_n
 syn keyword rFunction translate_sql
 syn keyword rFunction translate_sql_q
+syn keyword rFunction transmute
 syn keyword rFunction trunc_mat
 syn keyword rFunction type_sum
 syn keyword rFunction ungroup
@@ -2069,6 +2070,7 @@ syn keyword rFunction recover
 syn keyword rFunction relist
 syn keyword rFunction remove.packages
 syn keyword rFunction removeSource
+syn keyword rFunction rename
 syn keyword rFunction Rprof
 syn keyword rFunction Rprofmem
 syn keyword rFunction RShowDoc
