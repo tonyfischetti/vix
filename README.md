@@ -140,7 +140,7 @@ from source
 
 Clone the repository:
 
-    git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
+    git clone https://github.com/tonyfischetti/vix.git ~/.vim
 
 
 Next, create a symlink for .vimrc
@@ -185,7 +185,7 @@ the $PATH from the last instruction.
 
 Clone the repository:
 
-    git clone https://github.com/tonyfischetti/tony-vim.git /Users/YOURNAME/vimfiles
+    git clone https://github.com/tonyfischetti/vix.git /Users/YOURNAME/vimfiles
 
 
 Next, create a symlink for .vimrc
@@ -211,7 +211,7 @@ Throw in python, perl, grep, sed, awk, etc.. for good measure
 
 Clone the repository:
 
-    git clone https://github.com/tonyfischetti/tony-vim.git ~/.vim
+    git clone https://github.com/tonyfischetti/vix.git ~/.vim
 
 
 Next, create a symlink for .vimrc
