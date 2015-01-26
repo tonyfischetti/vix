@@ -90,12 +90,12 @@ Installation
 Install Vim. My favorite way is to build console vim from source
 (instructions in 'doc' folder) and to use 
 [MacVim](https://code.google.com/p/macvim/) as a GUI solution. 
-I also have instructions (in doc/) on how to compile MacVim from source
-that should work with Mavericks (which I haven't tested yet)
+I also have instructions (in doc/) on how to compile MacVim from source.
 
-Use [hombrew](http://brew.sh/) to install exuberant ctags (needed for tagbar)
+Use [macports](http://www.macports.org) to install exuberant
+ctags (needed for tagbar)
 
-    brew install ctags-exuberant
+    sudo port install ctags-exuberant
 
 Although not _stricly_ necessary, to use the scroll with the 
 terminal vim, install
