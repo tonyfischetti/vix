@@ -1947,6 +1947,7 @@ syn keyword rFunction aspell_package_R_files
 syn keyword rFunction aspell_package_Rd_files
 syn keyword rFunction aspell_package_vignettes
 syn keyword rFunction aspell_write_personal_dictionary_file
+syn keyword rFunction assert
 syn keyword rFunction assignInMyNamespace
 syn keyword rFunction assignInNamespace
 syn keyword rFunction available.packages
@@ -2016,6 +2017,7 @@ syn keyword rFunction help.request
 syn keyword rFunction help.search
 syn keyword rFunction help.start
 syn keyword rFunction history
+syn keyword rFunction in_set
 syn keyword rFunction install.packages
 syn keyword rFunction installed.packages
 syn keyword rFunction is.relistable
@@ -2036,6 +2038,7 @@ syn keyword rFunction mirror2html
 syn keyword rFunction modifyList
 syn keyword rFunction new.packages
 syn keyword rFunction news
+syn keyword rFunction not_na
 syn keyword rFunction nsl
 syn keyword rFunction object.size
 syn keyword rFunction old.packages
@@ -2117,10 +2120,11 @@ syn keyword rFunction update.packageStatus
 syn keyword rFunction upgrade
 syn keyword rFunction url.show
 syn keyword rFunction URLdecode
-syn keyword rFunction URLencode
+syn keyword rFunction verify
 syn keyword rFunction vi
 syn keyword rFunction View
 syn keyword rFunction vignette
+syn keyword rFunction within_bounds
 syn keyword rFunction write.csv
 syn keyword rFunction write.csv2
 syn keyword rFunction write.socket
