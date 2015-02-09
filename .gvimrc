@@ -156,8 +156,11 @@ endfunction
 
 command Superw :call Superw()
 
-let g:SuperTabDefaultCompletionType="context"
-"let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
 set completeopt=menu,longest,preview
 let g:SuperTabNoCompleteAfter=['^', '\s']
 

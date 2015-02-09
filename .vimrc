@@ -156,8 +156,11 @@ endfunction
 
 command Superw :call Superw()
 
-let g:SuperTabDefaultCompletionType="context"
-"let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = 'context'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-p>") |
+  \ endif
 set completeopt=menu,longest,preview
 let g:SuperTabNoCompleteAfter=['^', '\s']
 
@@ -299,3 +302,6 @@ vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
