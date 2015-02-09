@@ -301,7 +301,3 @@ let g:slime_no_mappings = 1
 vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
-
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
