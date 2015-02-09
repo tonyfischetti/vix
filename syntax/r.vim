@@ -1022,6 +1022,7 @@ syn keyword rFunction sinh
 syn keyword rFunction sink
 syn keyword rFunction sink.number
 syn keyword rFunction slice.index
+syn keyword rFunction slice
 syn keyword rFunction socketConnection
 syn keyword rFunction socketSelect
 syn keyword rFunction solve
