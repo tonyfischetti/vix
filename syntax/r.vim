@@ -2049,6 +2049,7 @@ syn keyword rFunction packageName
 syn keyword rFunction packageStatus
 syn keyword rFunction packageVersion
 syn keyword rFunction page
+syn keyword rFunction partial
 syn keyword rFunction person
 syn keyword rFunction personList
 syn keyword rFunction pico
