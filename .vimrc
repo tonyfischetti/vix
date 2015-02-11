@@ -48,6 +48,7 @@ set t_Co=256
 if has("gui_running")
     if has("gui_win32")
         set guifont=Inconsolata\ for\ Powerline:h11
+        set guioptions=m
     endif
 endif
 
