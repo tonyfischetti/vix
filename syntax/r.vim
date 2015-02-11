@@ -1983,6 +1983,9 @@ syn keyword rFunction de.restore
 syn keyword rFunction de.setup
 syn keyword rFunction debugger
 syn keyword rFunction demo
+syn keyword rFunction detect
+syn keyword rFunction detect_index
+syn keyword rFunction discard
 syn keyword rFunction download.file
 syn keyword rFunction download.packages
 syn keyword rFunction dump.frames
@@ -2031,6 +2034,8 @@ syn keyword rFunction maintainer
 syn keyword rFunction make.packages.html
 syn keyword rFunction make.socket
 syn keyword rFunction makeRweaveLatexCodeRunner
+syn keyword rFunction map
+syn keyword rFunction map_v
 syn keyword rFunction memory.limit
 syn keyword rFunction memory.size
 syn keyword rFunction menu
@@ -2098,6 +2103,7 @@ syn keyword rFunction sessionInfo
 syn keyword rFunction setBreakpoint
 syn keyword rFunction setRepositories
 syn keyword rFunction setTxtProgressBar
+syn keyword rFunction split
 syn keyword rFunction stack
 syn keyword rFunction Stangle
 syn keyword rFunction str
@@ -2134,3 +2140,16 @@ syn keyword rFunction write.table
 syn keyword rFunction xedit
 syn keyword rFunction xemacs
 syn keyword rFunction zip
+
+" too lazy to alphabetize
+syn keyword rFunction keep
+syn keyword rFunction discard
+syn keyword rFunction every
+syn keyword rFunction some
+syn keyword rFunction head_while
+syn keyword rFunction tail_while
+syn keyword rFunction invoke
+syn keyword rFunction invoke_v
+syn keyword rFunction smash
+syn keyword rFunction compose
+syn keyword rFunction negate
