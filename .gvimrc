@@ -51,6 +51,7 @@ set transparency=2
 
 
 
+
 colorscheme molokai
 set background=dark
 
