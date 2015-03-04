@@ -268,8 +268,9 @@ au FileType html setl sw=2 sts=2 et
 " Small motion plugin
 nmap s <Plug>(smalls)
 
-" easy map to alternate favorite color scheme
+" easy map to alternate favorite color schemes
 nmap <silent> <Leader>mo :color molokai<CR>
+nmap <silent> <Leader>fl :color flattr<CR>
 
 " easy map to turn back on rainbow parens after color scheme change
 nmap <silent> <Leader>rp :call niji#highlight()<CR>

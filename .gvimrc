@@ -270,6 +270,7 @@ nmap s <Plug>(smalls)
 
 " easy map to alternate favorite color scheme
 nmap <silent> <Leader>mo :color molokai<CR>
+nmap <silent> <Leader>fl :color flattr<CR>
 
 " easy map to turn back on rainbow parens after color scheme change
 nmap <silent> <Leader>rp :call niji#highlight()<CR>
