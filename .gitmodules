@@ -52,3 +52,6 @@
 [submodule "bundle/hy"]
 	path = bundle/hy
 	url = https://github.com/hylang/vim-hy.git
+[submodule "bundle/vim2hs"]
+	path = bundle/vim2hs
+	url = https://github.com/dag/vim2hs.git
