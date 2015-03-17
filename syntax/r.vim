@@ -2153,3 +2153,6 @@ syn keyword rFunction invoke_v
 syn keyword rFunction smash
 syn keyword rFunction compose
 syn keyword rFunction negate
+syn keyword rFunction spread
+syn keyword rFunction gather
+

@@ -77,6 +77,8 @@ nmap <Leader>rt @:<CR>
 " toggle line wrap, also toggles the color column
 nmap <silent> <Leader>tw :set wrap!<CR>:call ColorColumn()<CR>
 
+" toggle just the color column
+nmap <silent> <Leader>cc :call ColorColumn()<CR>
 
 " function to toggle color column
 function! ColorColumn()
