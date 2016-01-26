@@ -52,3 +52,6 @@
 [submodule "bundle/vim-niji"]
 	path = bundle/vim-niji
 	url = https://github.com/losingkeys/vim-niji.git
+[submodule "bundle/slimux"]
+	path = bundle/slimux
+	url = https://github.com/epeli/slimux.git
