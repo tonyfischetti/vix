@@ -281,6 +281,8 @@ nmap <silent> <Leader>rp :call niji#highlight()<CR>
 " SLIME STUFF
 " Vim slime is (cli).vimrc only
 
+let g:slime_paste_file = "$HOME/.slime_paste"
+
 " this function gets around the skipping-empty-lines problem
 function! SlimeOneLine()
     let line = getline('.')
