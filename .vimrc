@@ -307,3 +307,6 @@ let g:slime_no_mappings = 1
 vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
+xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
+
+
