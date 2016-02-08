@@ -1,10 +1,64 @@
-execute pathogen#infect()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                                  "
+"                                                                  "
+"     Tony Fischetti's .vimrc                                      "
+"                                                                  "
+"                                tony.fischetti@gmail.com          "
+"                                                                  "
+"                                                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+set nocompatible
+
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+" Vundle
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" plugins from github
+Plugin 'uguu-org/vim-matrix-screensaver'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'vim-airline/vim-airline'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-scripts/vim-json-bundle'
+Plugin 'garbas/vim-snipmate'
+Plugin 't9md/vim-smalls'
+Plugin 'mattn/flappyvird-vim'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'losingkeys/vim-niji'
+Plugin 'jpalardy/vim-slime'
+Plugin 'oplatek/Conque-Shell'
+
+" plugins from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+
+call vundle#end()
+filetype plugin indent on
+
+" :PluginList      
+"        - lists configured plugins
+" :PluginInstall   
+"        - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo
+"        - searches for foo; append `!` to refresh local cache
+" :PluginClean     
+"        - confirms removal of unused plugins;
+"          append `!` to auto-approve removal
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
 set guioptions-=m
 set guioptions-=t
-set nocompatible
 set history=700
 set autoread
 set ruler
