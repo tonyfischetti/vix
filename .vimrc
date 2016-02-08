@@ -57,8 +57,6 @@ filetype plugin indent on
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
-set guioptions-=m
-set guioptions-=t
 set history=700
 set autoread
 set ruler
@@ -99,15 +97,22 @@ set foldlevel=1
 set modeline
 set t_Co=256
 
+colorscheme molo
+set background=dark
+
 if has("gui_running")
+    if has("gui_macvim")
+        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h12
+        set transparency=2
+        colorscheme molokai
+        set guioptions-=L
+        set guioptions-=r
+    endif
     if has("gui_win32")
         set guifont=Inconsolata\ for\ Powerline:h11
         set guioptions=m
     endif
 endif
-
-colorscheme molo
-set background=dark
 
 syntax on
 filetype plugin indent on
