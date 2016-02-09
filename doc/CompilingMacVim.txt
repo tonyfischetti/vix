@@ -3,32 +3,41 @@
 Compiling MacVim
 ----------------
 
+I wanted lua support but I had trouble compiling vim with it
+I wound up compiling lua myself and installing it to /usr/local
+it didn't fix the problem, but I linked against it anyway.
+It probably was unecessary
+
+
 Download source code
 git clone https://github.com/b4winckler/macvim.git
 
-navigate to src directory
+I had to change "luaL_optlong" in src/if_lua.c (line 777)
+to "luaL_optinteger"
 
-Update: patch no longer required for latest MacVim from git
 
-Use the following configuration options
-revise some, if necessary
-    ./configure "CFLAGS=-O3"
+
+./configure "CC=clang"
+    "CFLAGS=-O3 -I/usr/local/include -I/opt/local/include"
+    "LDFLAGS=-L/usr/local/lib -L/opt/local/lib"
     --with-features=huge
-    --enable-ruby-interp
-    --enable-pythoninterp
+    --enable-fail-if-missing
+    --enable-luainterp
+    --with-lua-prefix=/usr/local/
+    --enable-mzschemeinterp
     --enable-perlinterp
+    --enable-python3interp
+    --enable-tclinterp
+    --enable-rubyinterp
     --enable-cscope
     --enable-multibyte
-    --with-tlib=ncurses
     --with-compiledby=Tony.Fischetti
-    --with-ruby-command=/usr/bin/ruby
     --with-macarchs=x86_64
-    --with-macsdk=10.8
-    --enable-fail-if-missing
-    --disable-netbeans
-    --with-developer-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
+    --with-tlib=ncurses
+    --enable-gui=macvim
+    --without-x
+    --disable-gpm
 
-make
 
 
 The resulting app bundle will reside under `MacVim/build/Release`.  To try it
@@ -41,10 +50,6 @@ To install MacVim, type
     $ open src/MacVim/build/Release
 
 and drag the MacVim icon into your `Applications` folder.
-
-
-Actual configuration command:
-./configure "CFLAGS=-O3" --with-features=huge --enable-ruby-interp --enable-pythoninterp --enable-perlinterp --enable-cscope  --enable-multibyte --with-tlib=ncurses --with-compiledby=Tony.Fischetti --with-ruby-command=/usr/bin/ruby --with-macarchs=x86_64 --with-macsdk=10.8 --enable-fail-if-missing --disable-netbeans --with-developer-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/
 
 and finallly:
 sudo cp src/MacVim/mvim /usr/local/bin
