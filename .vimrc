@@ -38,6 +38,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'losingkeys/vim-niji'
 Plugin 'jpalardy/vim-slime'
 Plugin 'oplatek/Conque-Shell'
+Plugin 'ervandew/supertab'
 
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -219,12 +220,14 @@ endfunction
 command Superw :call Superw()
 
 let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 autocmd FileType *
   \ if &omnifunc != '' |
   \   call SuperTabChain(&omnifunc, "<c-p>") |
   \ endif
 set completeopt=menu,longest,preview
 let g:SuperTabNoCompleteAfter=['^', '\s']
+let g:SuperTabCrMapping=1
 
 " remove auto string apostrophe concealing in json
 let g:vim_json_syntax_conceal = 0
@@ -367,5 +370,4 @@ vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
-
 
