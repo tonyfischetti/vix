@@ -16,7 +16,8 @@ if v:version < 700 || exists('loaded_setcolors') || &cp
 endif
 
 let loaded_setcolors = 1
-let s:mycolors = ['ChocolateLiquor', 'MountainDew', 'Tomorrow-Night-Eighties', 'aiseered', 'asmdev2', 'breeze', 'carrot', 'darkslategray', 'desertEx', 'flattown', 'flattr', 'greenvision', 'gruvbox', 'guardian', 'lilac', 'mars', 'mellow', 'molo', 'molokai', 'mud', 'navajo_night', 'plain', 'rainbow_night', 'soft', 'spacegray', 'spring', 'tibet', 'zenburn']
+let s:mycolors = ['desertink', 'mustang', 'gotham256', 'termschool', 'molokai', 'ChocolateLiquor', 'MountainDew', 'Tomorrow-Night-Eighties', 'aiseered', 'asmdev2', 'breeze', 'carrot', 'darkslategray', 'desertEx', 'flattown', 'flattr', 'greenvision', 'gruvbox', 'guardian', 'lilac', 'mars', 'mellow', 'molo', 'mud', 'navajo_night', 'plain', 'rainbow_night', 'soft', 'spacegray', 'spring', 'tibet', 'zenburn']
+
 
 " Set list of color scheme names that we will use, except
 " argument 'now' actually changes the current color scheme.

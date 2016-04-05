@@ -1,3 +1,27 @@
 snippet #!
 	#!/opt/local/bin/sbcl --script
 
+snippet template
+	#!/opt/local/bin/sbcl --script
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;                                                       ;;
+	;;   ${1:`Filename('$1.lisp', 'foo.lisp')`}                          ;;
+	;;                                                       ;;
+	;;                Author: ${2:author}       ;;
+	;;                        ${3:email}        ;;
+	;;                                                       ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	
+	(load "~/clix/clix.lisp")
+
+	; libraries
+	(ql:quickload "cl-ppcre")
+	(ql:quickload "cxml")
+	(ql:quickload "drakma")
+	(ql:quickload "xpath")
+	(ql:quickload "alexandria")
+	
+snippet sep
+	;--------------------------------------------------;
+
