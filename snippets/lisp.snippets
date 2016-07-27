@@ -25,3 +25,12 @@ snippet template
 snippet sep
 	;--------------------------------------------------;
 
+snippet fileio
+	(with-open-file (stream "${1:filename}" :direction ${2: :output|:input}
+	                                        :if-exists ${3: :error|:append|:supersede}
+											:if-does-not-exist ${4: :error|:create})
+		${5:body})
+
+snippet infinite-loop
+	(do () (nil nil)
+		${1:body})

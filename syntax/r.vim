@@ -2001,6 +2001,7 @@ syn keyword rFunction fixInNamespace
 syn keyword rFunction flush.console
 syn keyword rFunction formatOL
 syn keyword rFunction formatUL
+syn keyword rFunction fread
 syn keyword rFunction getAnywhere
 syn keyword rFunction getCRANmirrors
 syn keyword rFunction getFromNamespace
