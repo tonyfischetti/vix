@@ -2156,4 +2156,4 @@ syn keyword rFunction compose
 syn keyword rFunction negate
 syn keyword rFunction spread
 syn keyword rFunction gather
-
+syn keyword rFunction write_csv
