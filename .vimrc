@@ -39,6 +39,8 @@ Plugin 'losingkeys/vim-niji'
 Plugin 'jpalardy/vim-slime'
 Plugin 'oplatek/Conque-Shell'
 Plugin 'ervandew/supertab'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'whatyouhide/vim-gotham'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html
@@ -327,8 +329,6 @@ function! HLNext()
     redraw
 endfunction
 
-" two indents for html
-au FileType html setl sw=2 sts=2 et
 
 " Small motion plugin
 nmap s <Plug>(smalls)
@@ -371,3 +371,8 @@ vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
+
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
