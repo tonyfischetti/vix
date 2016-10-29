@@ -2156,4 +2156,11 @@ syn keyword rFunction compose
 syn keyword rFunction negate
 syn keyword rFunction spread
 syn keyword rFunction gather
+syn keyword rFunction read_csv
 syn keyword rFunction write_csv
+syn keyword rFunction chain_start
+syn keyword rFunction chain_end
+syn keyword rFunction insist
+syn keyword rFunction insist_rows
+syn keyword rFunction assert_rows
+syn keyword rFunction assert
