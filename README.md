@@ -6,75 +6,46 @@ also, of course freely available for other use and measures will be taken
 to make its installation easy for other people to use and do whatever they
 want with.
 
-Even for plugins that aren't pathogen-ready, I create folders for them
-in the "bundle" directory with the appropriate format just so I can keep
-all my plugins in one place.
+I use [Vundle](https://github.com/VundleVim/Vundle.vim) as my plugin
+manager and I like it a lot.
 
 List of vim plugins I use
- - [pathogen:](https://github.com/tpope/vim-pathogen)
+ - [vundle:](https://github.com/VundleVim/Vundle.vim)
    The best way to manage vim plugins
-   (git-updatable)
- - [matrix:](https://github.com/uguu-org/vim-matrix-screensaver)
-   A fun matrix style screensaver 
-   (git-updatable)
  - [nerdtree:](https://github.com/scrooloose/nerdtree)
    A tree file browser for the side bar
-   (git-updatable)
- - [pydoc:](https://github.com/fs111/pydoc.vim)
-   Quick Python documentation binding/integration
-   (git-updatable)
- - [setcolors:](http://vim.wikia.com/wiki/VimTip341)
-   Provides support for easily switching color schemes
-   (non-git updatable and customized)
- - [subertab:](https://github.com/ervandew/supertab)
-   Great tab completion
-   (git-updatable)
  - [tagbar:](github.com/majutsushi/tagbar)
    Requires ctags
-   (git-updatable)
  - [tlib:](https://github.com/tomtom/tlib_vim.git)
    Required for SnipMate
-   (git-updatable)
  - [mw-utils:](https://github.com/MarcWeber/vim-addon-mw-utils.git)
    Required for SnipMate
-   (git-updatable)
- - [airline:](https://github.com/bling/vim-airline)
-   A great all-vimscript status line
-   (git-updatable)
- - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
-   A great and easy way to quickly change cursor position
-   (git-updatable)
- - [fugitive:](https://github.com/tpope/vim-fugitive)
-   The best git wrapper ever
-   (git-updatable)
- - [json:](https://github.com/vim-scripts/vim-json-bundle)
-   Great JSON syntax highlighting support
-   (git-updatable)
  - [snipmate:](https://github.com/garbas/vim-snipmate)
    Support for customizable code snippets
-   (git-updatable)
- - [conqueterm:](https://code.google.com/p/conque/)
-   Run a shell in a vim buffer
-   (svn-updatable) (cd ~/.vim/bundle/conqueterm && svn update)
+ - [airline:](https://github.com/bling/vim-airline)
+   A great all-vimscript status line
+ - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
+   A great and easy way to quickly change cursor position
+ - [json:](https://github.com/vim-scripts/vim-json-bundle)
+   Great JSON syntax highlighting support
  - [smalls:](https://github.com/t9md/vim-smalls)
    Cursor movement with simple search
-   (git-updatable)
+ - [tcomment](https://github.com/tomtom/tcomment_vim)
+   Great commenting plugin
+ - [goyo](https://github.com/junegunn/goyo.vim)
+   Awesome distraction free writing
+ - [vim-niji:](https://github.com/luochen1990/rainbow)
+   Easy to-tell LISP parethesis matching for great good
  - [vim-slime:](https://github.com/jpalardy/vim-slime)
    Send text in Vim buffer to REPL
    (preconfigured to use tmux)
-   (git-updatable)
- - [vim-niji:](https://github.com/luochen1990/rainbow)
-   Easy to-tell LISP parethesis matching for great good
-   (git-updatable)
- - [flappyvird:](https://github.com/mattn/flappyvird-vim)
-   Flappy Bird for Vim
-   (git-updatable)
- - [tcomment](https://github.com/tomtom/tcomment_vim)
-   Great commenting plugin
-   (git updatable)
- - [goyo](https://github.com/junegunn/goyo.vim)
-   Awesome distraction free writing
-   (git updatable)
+ - [subertab:](https://github.com/ervandew/supertab)
+   Great tab completion
+ - [vim-racket:](https://github.com/wlangstroth/vim-racket)
+   Vim support for [Racket](http://racket-lang.org)
+ - [vim-gotham:](https://github.com/whatyouhide/vim-gotham)
+   A pretty fly color scheme
+
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!
@@ -97,27 +68,26 @@ ctags (needed for tagbar)
 
     sudo port install ctags-exuberant
 
-Although not _stricly_ necessary, to use the scroll with the 
-terminal vim, install
- - [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php)
- - [MouseTerm](https://bitheap.org/mouseterm/)
+Instead of using [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php) and
+[MouseTerm](https://bitheap.org/mouseterm/) to get Vim with mouse support
+working on Terminal.app, why not use [iTerm2](https://www.iterm2.com). It
+works really really well.
 
 Clone the repository:
 
     git clone https://github.com/tonyfischetti/vix.git ~/.vim
 
- 
-Next, create symlinks for .vimrc and .gvimrc
+Clone the Vundle bootstrapping packages:
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+Next, create a symlink for .vimrc
 
     ln -s ~/.vim/.vimrc ~/.vimrc
-    ln -s ~/.vim/.gvimrc ~/.gvimrc
 
+Then, install/update the plugins. Open Vim and run
 
-Then, update the plugins
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
+    :PluginInstall!
 
 
 To install the "Monaco for Powerline" font (which contains the
@@ -142,26 +112,23 @@ Clone the repository:
 
     git clone https://github.com/tonyfischetti/vix.git ~/.vim
 
+Clone the Vundle bootstrapping packages:
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Next, create a symlink for .vimrc
 
     ln -s ~/.vim/.vimrc ~/.vimrc
 
-Don't create a symlink for .gvimrc because it seems to be unecessary
-and it's mainly for MacVim, anyway.
+Then, install/update the plugins. Open Vim and run
 
-Then, update the plugins
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
-
+    :PluginInstall!
 
 To install the "Monaco for Powerline" font (which contains the
 special symbols that the airline plugin uses)...
 
     mkdir ~/.fonts
-    cp ~/.vim/goodies/Monaco+for+Powerline.otf ~/.fonts
+    cp ~/.vim/goodies/Monaco+for+Powerline+Patched.otf ~/.fonts
     fc-cache -vf
 
 You may have to restart after this
@@ -187,19 +154,15 @@ Clone the repository:
 
     git clone https://github.com/tonyfischetti/vix.git /Users/YOURNAME/vimfiles
 
+[Get Vundle installed](https://github.com/VundleVim/Vundle.vim/wiki/Vundle-for-Windows)
 
 Next, create a symlink for .vimrc
 
     mklink "\Users\YOURNAME\_vimrc" "\Users\YOURNAME\vimfiles\.vimrc"
 
-Don't create a symlink for .gvimrc because it seems to be unecessary
-and it's mainly for MacVim, anyway.
+Then, install/update the plugins. Open Vim and run
 
-Then, update the plugins
-
-    cd ~/_vimfiles
-    git submodule init
-    git submodule update
+    :PluginInstall!
 
 
 
@@ -213,19 +176,17 @@ Clone the repository:
 
     git clone https://github.com/tonyfischetti/vix.git ~/.vim
 
+Clone the Vundle bootstrapping packages:
+
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Next, create a symlink for .vimrc
 
     ln -s ~/.vim/.vimrc ~/.vimrc
 
-Don't create a symlink for .gvimrc because gvim won't work with Cygwin,
-anyway
+Then, install/update the plugins. Open Vim and run
 
-Then, update the plugins
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
+    :PluginInstall!
 
 
 
@@ -235,10 +196,11 @@ Notes
 In the "doc" directory, I have
  - instructions on how to build vim from source on OS X (OS X ships with 
 an old version)
- - instructions on how to build MacVim from source (with Mavericks patch)
+ - instructions on how to build MacVim from source
  - a .pages and PDF of a personal Vim cheatsheet containing an overview
 of my custom mappings ( I print it out and put it behind my monitor :) )
+ (NOTE: THIS IS OUT OF DATE)
  - There are fonts optimized for the airline plugin in the "goodies"
-folder. The vim rcs demand these fonts in a lot of cases, but will fall
+folder. The vimrcs demand these fonts in a lot of cases, but will fall
 back on defaults until the fonts are installed
 
