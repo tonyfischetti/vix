@@ -45,6 +45,8 @@ List of vim plugins I use
    Vim support for [Racket](http://racket-lang.org)
  - [vim-gotham:](https://github.com/whatyouhide/vim-gotham)
    A pretty fly color scheme
+ - [stan.vim:](https://github.com/maverickg/stan.vim)
+   Syntax highlighing for the Stan modeling language
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more

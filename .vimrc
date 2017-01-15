@@ -41,6 +41,7 @@ Plugin 'oplatek/Conque-Shell'
 Plugin 'ervandew/supertab'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'maverickg/stan.vim'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html
