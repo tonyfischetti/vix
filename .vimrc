@@ -101,6 +101,7 @@ set nofoldenable
 set foldlevel=1
 set modeline
 set t_Co=256
+set cm=blowfish2
 
 colorscheme molo
 set background=dark
@@ -373,6 +374,12 @@ nmap <silent> <C-L> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
 
+nmap <silent> <A-@> :call SlimeOneLine()<CR>
+nmap <silent> <M-@> :call SlimeOneLine()<CR>
+nmap <silent> <T-@> :call SlimeOneLine()<CR>
+vmap <silent> <A-@> :call SlimeOneLine()<CR>
+vmap <silent> <M-@> :call SlimeOneLine()<CR>
+vmap <silent> <T-@> :call SlimeOneLine()<CR>
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
