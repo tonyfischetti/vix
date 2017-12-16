@@ -13,6 +13,7 @@
 hi clear
 
 set background=dark
+set t_Co=256
 let g:colors_name="molo"
 
 " Basic Layout {{{
@@ -226,7 +227,7 @@ if &t_Co > 255
    hi WildMenu        ctermfg=81  ctermbg=16
 
    hi Normal          ctermfg=254 ctermbg=232
-   hi Comment         ctermfg=028 ctermbg=100
+   " hi Comment         ctermfg=028 ctermbg=100
    hi String          ctermfg=227 ctermbg=232
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
