@@ -98,11 +98,11 @@ and double click to install. Then change the font of your favorite
 terminal emulator
 
 
-#### Linux
+#### GNU/Linux
 
 These instructions are similar to those for a Mac.
 
-On debian-based systems, you can make sure you have the dependencies 
+On Debian-based systems, you can make sure you have the dependencies 
 by running
 
     sudo apt-get install vim-gnome vim-full git exuberant-ctags
