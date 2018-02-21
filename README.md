@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 
 vix is just a place to keep my particular vim setup and configuration
 so I can easily experiment with it and clone it on different systems. It's 
