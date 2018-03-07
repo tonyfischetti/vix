@@ -43,7 +43,6 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
 
-
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -108,7 +107,7 @@ set background=dark
 
 if has("gui_running")
     if has("gui_macvim")
-        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h12
+        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
         set transparency=2
         colorscheme molokai
         set guioptions-=L
@@ -363,11 +362,11 @@ endfunction
 " selections messes up the R REPL
 function! SlimeMultiLine()
     :call SlimeOneLine()
-    :sleep 30m
+    ":sleep 10m
 endfunction
 
 let g:slime_target = "tmux"
-" let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+let g:slime_default_config = {"socket_name": "default", "target_pane": "%1"}
 let g:slime_no_mappings = 1
 vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-L> <Plug>SlimeLineSend
@@ -384,3 +383,8 @@ vmap <silent> <T-@> :call SlimeOneLine()<CR>
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" select block in R
+nmap <silent> <Leader>bb /^}v%0
+" run block in R
+nmap <silent> <Leader>rr /^}v%0<C-@>j<Leader>nh
