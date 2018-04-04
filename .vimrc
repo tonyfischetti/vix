@@ -144,6 +144,9 @@ nmap <silent> <Leader>tw :set wrap!<CR>:call ColorColumn()<CR>
 " toggle just the color column
 nmap <silent> <Leader>cc :call ColorColumn()<CR>
 
+" insert date right into document
+nmap <silent> <Leader>dd :r! date<CR>
+
 " function to toggle color column
 function! ColorColumn()
   if empty(&colorcolumn)
