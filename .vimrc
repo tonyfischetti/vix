@@ -343,6 +343,7 @@ nmap <silent> <Leader>fl :color flattr<CR>
 
 " easy map to turn back on rainbow parens after color scheme change
 nmap <silent> <Leader>rp :call niji#highlight()<CR>
+let g:niji_matching_filetypes = ['lisp', 'scheme', 'clojure', 'racket']
 
 
 " SLIME STUFF
