@@ -22,7 +22,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins from github
-Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tlib_vim'
@@ -32,16 +31,16 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'elzr/vim-json'
 Plugin 'garbas/vim-snipmate'
 Plugin 't9md/vim-smalls'
-Plugin 'mattn/flappyvird-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'losingkeys/vim-niji'
 Plugin 'jpalardy/vim-slime'
-Plugin 'oplatek/Conque-Shell'
 Plugin 'ervandew/supertab'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'shinokada/dragvisuals.vim'
 
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -301,13 +300,6 @@ endfunction
 " put into 'notepad mode'
 nmap <silent> <Leader>nm :call NotepadMode()<CR>
 
-" Conque Term things
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_CloseOnEnd = 1
-nmap <silent> <Leader>vz :ConqueTermVSplit zsh<CR>
-nmap <silent> <Leader>hz :ConqueTermSplit zsh<CR>
-
 " Use better syntax highlighting for YAML
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
 
@@ -392,3 +384,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 nmap <silent> <Leader>bb /^}v%0
 " run block in R
 nmap <silent> <Leader>rr /^}v%0<C-@>j<Leader>nh
+
+augroup pandoc_syntax
+    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END

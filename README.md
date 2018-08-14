@@ -47,6 +47,8 @@ List of vim plugins I use
    A pretty fly color scheme
  - [stan.vim:](https://github.com/maverickg/stan.vim)
    Syntax highlighing for the Stan modeling language
+ - [dragvisuals.vim:](https://github.com/shinokada/dragvisuals.vim)
+   Drag text objects in visual mode
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more
