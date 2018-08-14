@@ -87,7 +87,7 @@ set laststatus=2
 set encoding=utf8
 set scrolloff=5
 set lbr
-set colorcolumn=79
+set colorcolumn=79,5
 set expandtab
 set smarttab
 set shiftwidth=4
@@ -150,8 +150,8 @@ nmap <silent> <Leader>dd :r! date<CR>
 function! ColorColumn()
   if empty(&colorcolumn)
     if empty(&textwidth)
-      echo "colorcolumn=80"
-      setlocal colorcolumn=80
+      echo "colorcolumn=79"
+      setlocal colorcolumn=79
     else
       echo "colorcolumn=+1 (" . (&textwidth + 1) . ")"
       setlocal colorcolumn=+1
@@ -381,10 +381,33 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " select block in R
-nmap <silent> <Leader>bb /^}v%0
+" nmap <silent> <Leader>bb /^}\v%0
 " run block in R
 nmap <silent> <Leader>rr /^}v%0<C-@>j<Leader>nh
 
 augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
+
+
+function! s:goyo_enter()
+  :color pencil
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
