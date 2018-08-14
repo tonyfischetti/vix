@@ -87,7 +87,7 @@ set laststatus=2
 set encoding=utf8
 set scrolloff=5
 set lbr
-set colorcolumn=79,5
+set colorcolumn=79
 set expandtab
 set smarttab
 set shiftwidth=4
@@ -411,3 +411,11 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
+
+
+:command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
+
+
+
+
+
