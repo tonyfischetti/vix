@@ -376,6 +376,8 @@ vmap <silent> <A-@> :call SlimeOneLine()<CR>
 vmap <silent> <M-@> :call SlimeOneLine()<CR>
 vmap <silent> <T-@> :call SlimeOneLine()<CR>
 
+:command -nargs=1 SS :SlimeSend1 <args>
+
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -411,6 +413,7 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
+
 
 
 :command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
