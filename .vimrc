@@ -112,6 +112,13 @@ if has("gui_running")
         set guioptions-=L
         set guioptions-=r
     endif
+    if has("gui_gtk2")
+        set guifont=Monospace\ 13
+        set guioptions-=m
+        set guioptions-=L
+        set guioptions-=r
+        set guioptions-=T
+    endif
     if has("gui_win32")
         set guifont=Inconsolata\ for\ Powerline:h11
         set guioptions=m
