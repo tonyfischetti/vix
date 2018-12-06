@@ -1,12 +1,22 @@
 snippet #!
 	#!/usr/local/bin//Rscript --vanilla
+	
+	
+	# ------------------------------ #
+	rm(list=ls())
+	
+	options(echo=TRUE)
 
-snippet short
-	#!/usr/local/bin//Rscript --vanilla
-
+	args <- commandArgs(trailingOnly=TRUE)
+	
+	library(colorout)
 	library(data.table)
 	library(magrittr)
 	library(stringr)
+
+	source("~/.R/tony-utils.R")
+	# ------------------------------ #
+	
 
 
 
@@ -27,19 +37,15 @@ snippet template
 	
 	# options
 	options(echo=TRUE)
-	options(stringsAsFactors=FALSE)
-	options(datatable.fread.datatable=FALSE)
-	options(tibble.width=Inf)
-
 	
 	# cli args
 	args <- commandArgs(trailingOnly=TRUE)
 	
 	# libraries
-	library(dplyr)
+	library(colorout)
+	library(data.table)
 	library(magrittr)
-	library(assertr)
-	library(readr)
+	library(stringr)
 	
-snippet sep
-	#--------------------------------------------------#
+
+
