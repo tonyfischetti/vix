@@ -32,20 +32,21 @@ snippet template
 	##                                                       ##
 	###########################################################
 	
-	# workspace cleanup
+
+	# ------------------------------ #
 	rm(list=ls())
 	
-	# options
 	options(echo=TRUE)
-	
-	# cli args
+
 	args <- commandArgs(trailingOnly=TRUE)
 	
-	# libraries
 	library(colorout)
 	library(data.table)
 	library(magrittr)
 	library(stringr)
+
+	source("~/.R/tony-utils.R")
+	# ------------------------------ #
 	
 
 
