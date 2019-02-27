@@ -120,7 +120,7 @@ if has("gui_running")
         set guioptions-=T
     endif
     if has("gui_win32")
-        set guifont=Inconsolata\ for\ Powerline:h11
+        set guifont=Inconsolata\ for\ Powerline:h13
         set guioptions=m
     endif
 endif
@@ -420,7 +420,6 @@ endfunction
 
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
-
 
 
 :command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
