@@ -1,6 +1,17 @@
 snippet #!
 	#!/opt/local/bin/sbcl --script
 
+
+	; ------------------------------------ ;
+	(declaim (sb-ext:muffle-conditions cl:warning))
+
+	(load "~/quicklisp/setup.lisp")
+	(ql:quickload :cl-ppcre :silent t)
+	(use-package :cl-ppcre)
+	(load "~/.sbcl/clix.lisp")
+	; ------------------------------------ ;
+
+
 snippet template
 	#!/opt/local/bin/sbcl --script
 
@@ -12,18 +23,21 @@ snippet template
 	;;                        ${3:email}        ;;
 	;;                                                       ;;
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-	
-	(load "~/clix/clix.lisp")
 
-	; libraries
-	(ql:quickload "cl-ppcre")
-	(ql:quickload "cxml")
-	(ql:quickload "drakma")
-	(ql:quickload "xpath")
-	(ql:quickload "alexandria")
+	
+	; ------------------------------------ ;
+	(declaim (sb-ext:muffle-conditions cl:warning))
+
+	(load "~/quicklisp/setup.lisp")
+	(ql:quickload :cl-ppcre :silent t)
+	(use-package :cl-ppcre)
+	(load "~/.sbcl/clix.lisp")
+	; ------------------------------------ ;
+	
 	
 snippet sep
 	;--------------------------------------------------;
+
 
 snippet fileio
 	(with-open-file (stream "${1:filename}" :direction ${2: :output|:input}
@@ -31,6 +45,3 @@ snippet fileio
 											:if-does-not-exist ${4: :error|:create})
 		${5:body})
 
-snippet infinite-loop
-	(do () (nil nil)
-		${1:body})
