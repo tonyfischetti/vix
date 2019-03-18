@@ -4,6 +4,9 @@ snippet #!
 
 	; ------------------------------------ ;
 	(declaim (sb-ext:muffle-conditions cl:warning))
+	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
+	(setf sb-debug:*debug-beginner-help-p* nil)
+
 
 	(load "~/quicklisp/setup.lisp")
 	(ql:quickload :cl-ppcre :silent t)
@@ -27,6 +30,8 @@ snippet template
 	
 	; ------------------------------------ ;
 	(declaim (sb-ext:muffle-conditions cl:warning))
+	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
+	(setf sb-debug:*debug-beginner-help-p* nil)
 
 	(load "~/quicklisp/setup.lisp")
 	(ql:quickload :cl-ppcre :silent t)
