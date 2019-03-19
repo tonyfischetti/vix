@@ -199,6 +199,7 @@ nmap <Leader>rw <C-W>r
 
 " EasyMotion stuff
 nmap <Leader>er <Leader><Leader>w
+nmap s <Leader><Leader>w
 
 " pydoc
 map <Leader>pd :Pydoc
@@ -334,7 +335,7 @@ endfunction
 
 
 " Small motion plugin
-nmap s <Plug>(smalls)
+nmap S <Plug>(smalls)
 
 " easy map to alternate favorite color schemes
 nmap <silent> <Leader>mo :color molokai<CR>

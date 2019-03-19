@@ -1,5 +1,5 @@
 snippet #!
-	#!/opt/local/bin/sbcl --script
+	#!/usr/bin/env sbcl --script
 
 
 	; ------------------------------------ ;
@@ -7,16 +7,26 @@ snippet #!
 	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
 	(setf sb-debug:*debug-beginner-help-p* nil)
 
+	#-quicklisp (load "~/quicklisp/setup.lisp")
 
-	(load "~/quicklisp/setup.lisp")
-	(ql:quickload :cl-ppcre :silent t)
-	(use-package :cl-ppcre)
-	(load "~/.sbcl/clix.lisp")
+	(ql:quickload '(:clix)
+	                ; :cl-ppcre :alexandria :xpath :drakma)
+	              :silent t)
 	; ------------------------------------ ;
+
+	(defpackage :${1:`Filename('$1', 'foo.lisp')`}
+	  (:use :common-lisp
+	        :sb-ext
+	        ; :cl-ppcre :alexandria :xpath :drakma
+	        :clix))
+
+	(in-package :${1:`Filename('$1', 'foo.lisp')`})
+
+	; (rename-package :cl-ppcre :cl-ppcre '(re))
 
 
 snippet template
-	#!/opt/local/bin/sbcl --script
+	#!/usr/bin/env sbcl --script
 
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 	;;                                                       ;;
@@ -27,17 +37,28 @@ snippet template
 	;;                                                       ;;
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-	
+
 	; ------------------------------------ ;
 	(declaim (sb-ext:muffle-conditions cl:warning))
 	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
 	(setf sb-debug:*debug-beginner-help-p* nil)
 
-	(load "~/quicklisp/setup.lisp")
-	(ql:quickload :cl-ppcre :silent t)
-	(use-package :cl-ppcre)
-	(load "~/.sbcl/clix.lisp")
+	#-quicklisp (load "~/quicklisp/setup.lisp")
+
+	(ql:quickload '(:clix)
+	                ; :cl-ppcre :alexandria :xpath :drakma)
+	              :silent t)
 	; ------------------------------------ ;
+
+	(defpackage :${1:`Filename('$1', 'foo.lisp')`}
+	  (:use :common-lisp
+	        :sb-ext
+	        ; :cl-ppcre :alexandria :xpath :drakma
+	        :clix))
+
+	(in-package :${1:`Filename('$1', 'foo.lisp')`})
+
+	; (rename-package :cl-ppcre :cl-ppcre '(re))
 	
 	
 snippet sep
