@@ -100,6 +100,8 @@ set foldlevel=1
 set modeline
 set t_Co=256
 set cm=blowfish2
+set formatprg=par\ -w75r "rj
+
 
 colorscheme molo
 set background=dark
@@ -424,7 +426,6 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 
 
 :command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
-
 
 
 
