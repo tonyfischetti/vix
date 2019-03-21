@@ -42,6 +42,7 @@ Plugin 'maverickg/stan.vim'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'shinokada/dragvisuals.vim'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html
