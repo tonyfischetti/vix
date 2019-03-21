@@ -41,6 +41,8 @@ Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'shinokada/dragvisuals.vim'
+Plugin 'vim-airline/vim-airline-themes'
+
 
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -48,13 +50,13 @@ Plugin 'shinokada/dragvisuals.vim'
 call vundle#end()
 filetype plugin indent on
 
-" :PluginList      
+" :PluginList
 "        - lists configured plugins
-" :PluginInstall   
+" :PluginInstall
 "        - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo
 "        - searches for foo; append `!` to refresh local cache
-" :PluginClean     
+" :PluginClean
 "        - confirms removal of unused plugins;
 "          append `!` to auto-approve removal
 
@@ -110,7 +112,7 @@ if has("gui_running")
     if has("gui_macvim")
         set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
         set transparency=2
-        colorscheme molokai
+        " colorscheme molokai
         set guioptions-=L
         set guioptions-=r
     endif
@@ -250,6 +252,8 @@ let g:vim_json_syntax_conceal = 0
 
 " airline overrides
 let g:airline_powerline_fonts = 1
+
+let g:airline_theme='molokai'
 
 let g:pydoc_open_cmd = 'vsplit'
 
@@ -428,5 +432,6 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 :command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
 
 
-
-
+nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

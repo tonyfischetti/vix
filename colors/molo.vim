@@ -6,7 +6,7 @@
 " <tony.fischetti@gmail.com>
 "
 " Note: Based on the monokai theme for textmate
-" by Wimer Hazenberg and its darker variant 
+" by Wimer Hazenberg and its darker variant
 " by Hamish Stuart Macpherson
 "
 
@@ -20,8 +20,8 @@ let g:colors_name="molo"
 hi Normal          guifg=#F8F8F2 guibg=#1B1E1F
 hi Folded          guifg=#666666 guibg=bg
 hi CursorLine                    guibg=#232728
-hi CursorColumn                  guibg=#232728
-hi ColorColumn                   guibg=#232728
+" hi CursorColumn                  guibg=#232728
+" hi ColorColumn                   guibg=#1c1c1f
 hi LineNr          guifg=#AAAAAA guibg=bg
 hi FoldColumn      guifg=#AAAAAA guibg=bg
 hi VertSplit       guifg=#AAAAAA guibg=bg gui=none
@@ -30,7 +30,8 @@ hi IncSearch       guibg=#000000 guifg=#FF8D00
 " }}}
 " Syntax {{{
 hi Boolean         guifg=#AE81FF
-hi Comment         guifg=#5c7176
+" hi Comment         guifg=#5c7176
+hi Comment         guifg=#00ffff
 hi Character       guifg=#E6DB74
 hi Number          guifg=#AE81FF
 hi String          guifg=#E6DB74
@@ -111,7 +112,8 @@ hi Title           guifg=#ef5939
 hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
 hi Typedef         guifg=#66D9EF
-hi Type            guifg=#66D9EF               gui=none
+" hi Type            guifg=#66D9EF               gui=none
+hi Type            guifg=#5fd7ff               gui=none
 hi Underlined      guifg=#808080               gui=underline
 
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
@@ -216,7 +218,7 @@ if &t_Co > 255
 
    " NOTE: @pfdevilliers added this shit
    " Not sure if this color with underlined was defined already
-   " but I added it for the definition of a class that is a 
+   " but I added it for the definition of a class that is a
    " subclass.
    hi InheritUnderlined      ctermfg=118               cterm=underline
 
@@ -231,7 +233,7 @@ if &t_Co > 255
    hi String          ctermfg=227 ctermbg=232
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
-   hi ColorColumn                 ctermbg=234
+   hi ColorColumn                 ctermbg=234 guibg=#303030
    hi LineNr          ctermfg=250 ctermbg=233
    hi NonText         ctermfg=240 ctermbg=233
 end " }}}

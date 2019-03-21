@@ -111,3 +111,6 @@ hi cursor guifg=#ffffff guibg=#cc4455 guisp=#cc4455 gui=bold ctermfg=15 ctermbg=
 hi jsonKeyword guifg=#F92672
 " hi jsonString guifg=#66D9EF
 hi jsonNumber guifg=#66D9EF
+
+
+hi ColorColumn guifg=#ffffff guibg=Black guisp=#cc4455 gui=bold ctermfg=15 ctermbg=7 cterm=bold
