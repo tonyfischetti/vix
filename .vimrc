@@ -27,9 +27,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'garbas/vim-snipmate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'elzr/vim-json'
-Plugin 'garbas/vim-snipmate'
 Plugin 't9md/vim-smalls'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'junegunn/goyo.vim'
@@ -39,10 +40,9 @@ Plugin 'ervandew/supertab'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'shinokada/dragvisuals.vim'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html
@@ -214,6 +214,10 @@ nmap <Leader>rj :%!python -mjson.tool<CR>
 
 " highlight trailing whitespace
 nmap <silent> <Leader>tw :/\v\s+$/<CR>
+"
+" remove trailing whitespace
+nmap <silent> <Leader>rw :%s/\v\s+$//<CR>
+
 
 " easy resizing of windows
 " resize height
