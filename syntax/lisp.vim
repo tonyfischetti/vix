@@ -635,6 +635,7 @@ syn keyword lispFunc		interpose       	        get-hash                         
 syn keyword lispFunc		print-hash-table                
 " syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
+syn match   lispComment "^#!/.*sbcl.*$"
 
 
 " --------------------------------------------------------------- "
