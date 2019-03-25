@@ -67,6 +67,7 @@ set history=700
 set autoread
 set ruler
 set cmdheight=2
+set cmdwinheight=13
 set hid
 set hlsearch
 set incsearch
@@ -103,7 +104,7 @@ set foldlevel=1
 set modeline
 set t_Co=256
 set cm=blowfish2
-set formatprg=par\ -w75r "rj
+set formatprg=/opt/local/bin/par\ -w75r "rj
 
 
 colorscheme molo
@@ -303,8 +304,8 @@ nmap <silent> <Leader>ss :call MakeFontSmaller()<CR>
 function! NotepadMode()
     set wrap
     set spell
-    call ColorColumn()
-    colorscheme soft
+    " call ColorColumn()
+    " colorscheme soft
     Goyo
     if has("gui_running")
         if exists("&guifont")
@@ -318,6 +319,33 @@ endfunction
 
 " put into 'notepad mode'
 nmap <silent> <Leader>nm :call NotepadMode()<CR>
+
+:command -nargs=1 Width :set textwidth=<args>
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
+
+function! s:goyo_enter()
+  " :color pencil
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+let g:goyo_width=80
+
 
 " Use better syntax highlighting for YAML
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
@@ -413,27 +441,7 @@ augroup pandoc_syntax
 augroup END
 
 
-function! s:goyo_enter()
-  :color pencil
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
 
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
 
 
 :command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
@@ -442,3 +450,7 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+vmap <silent> <C-E> :!siph -e -p "123"<CR>
+vmap <silent> <C-D> :!siph -d -p "123"<CR>
+

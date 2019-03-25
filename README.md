@@ -24,8 +24,8 @@ List of vim plugins I use
    Support for customizable code snippets
  - [airline:](https://github.com/bling/vim-airline)
    A great all-vimscript status line
- - [airline-themes:](https://github.com/vim-airline/vim-airline-themes)
-   Some themes for airline
+ - [airline-themes:](https://github.com/tonyfischetti/vim-airline-themes)
+   Some themes for airline (my fork)
  - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
    A great and easy way to quickly change cursor position
  - [json:](https://github.com/vim-scripts/vim-json-bundle)
