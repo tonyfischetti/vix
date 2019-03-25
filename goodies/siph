@@ -1,0 +1,116 @@
+#!/usr/bin/env sbcl --script
+; vi: ft=lisp
+
+
+; ------------------------------------ ;
+(declaim (sb-ext:muffle-conditions cl:warning))
+(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
+(setf sb-debug:*debug-beginner-help-p* nil)
+
+#-quicklisp (load "~/quicklisp/setup.lisp")
+
+(ql:quickload '(:clix
+                :alexandria)
+                ; :cl-ppcre :alexandria :xpath :drakma)
+              :silent t)
+; ------------------------------------ ;
+
+(defpackage :siph
+  (:use :common-lisp
+        :sb-ext
+        ; :cl-ppcre :alexandria :xpath :drakma
+        :clix))
+
+(in-package :siph)
+
+
+; (defvar *enorde*       (cadr (cmdargs)))
+; (defvar *originaltext* (caddr  (cmdargs)))
+; (defvar *pw*           (cadddr (cmdargs)))
+; (die-if-null *enorde* *originaltext* *pw*)
+
+
+(defvar *enorde* nil)
+(defvar *originaltext* nil)
+(defvar *pw* nil)
+(defvar *file* nil)
+
+
+(defun process-args (args)
+  (unless (null args)
+    (let ((current (car args)))
+      (cond
+        ((string= current "-f") (progn (setq *file* (cadr args)) (process-args (cdr (cdr args)))))
+        ((string= current "-d") (progn (setq *enorde* "-d") (process-args (cdr args))))
+        ((string= current "-e") (progn (setq *enorde* "-e") (process-args (cdr args))))
+        ((string= current "-p") (progn (setq *pw* (cadr args)) (process-args (cdr (cdr args)))))
+        ((string= current "-t") (progn (setq *originaltext* (cadr args)) (process-args (cdr (cdr args)))))))))
+
+
+(process-args (cdr (cmdargs)))
+
+(when *file* 
+  (setq *originaltext* (slurp *file*)))
+
+; (when (null *originaltext*)
+;   (setq *originaltext* (read-line)))
+(when (null *originaltext*)
+  (setq *originaltext* "")
+  (loop for line = (read-line *standard-input* nil :eof)
+        until (eq line :eof)
+        do (setq *originaltext* (concatenate 'string *originaltext* line (string #\Newline)))))
+
+
+
+(defun enshift (ochar shift)
+  (let ((ccochar          (char-code ochar)))
+    (if (and
+          (>= ccochar 34)
+          (<= ccochar 125))
+      (let* ((ccechar     (+ ccochar shift))
+             (fccechar    (if (> ccechar 125) (- ccechar 92) ccechar))
+             (fcchar      (code-char fccechar)))
+        fcchar)
+      ochar)))
+
+
+(defun deshift (enchar shift)
+  (let* ((ccenchar      (char-code enchar))
+         (ccdechar      (- ccenchar shift))
+         (fccdechar     (if (and (< ccdechar 34) (> ccdechar (- 33 9)))
+                          (+ ccdechar 92) ccdechar)))
+    (if (and (>= ccenchar 34) (<= ccenchar 125)
+             (>= fccdechar 34) (<= fccdechar 125))
+      (code-char fccdechar)
+      enchar)))
+
+
+(defun docrypt (originaltext nums &key (direction :encrypt))
+  (let* ((olength    (length originaltext))
+         (plength    (length nums))
+         (pcount     -1)
+         (ctext      (make-string olength))
+         (pnum       nil)
+         (ochar      nil))
+    (dotimes (counter olength)
+      (incf pcount)
+      (setf pcount (if (>= pcount plength) 0 pcount))
+      (setf pnum (digit-char-p (char nums pcount)))
+      (setf ochar (char originaltext counter))
+      (setf (char ctext counter) 
+            (funcall (if (eq direction :encrypt) #'enshift #'deshift) ochar pnum)))
+    ctext))
+
+
+(defun main ()
+  (format t "~A~%"
+          (if
+            (string= *enorde* "-d") (docrypt *originaltext* *pw* :direction :decrypt)
+            (docrypt *originaltext* *pw* :direction :encrypt))))
+
+(main)
+
+; (for-each ((alexandria:iota 91 :start 34))
+;   (format t "~A -> ~A~%" value! (code-char value!)))
+
+; vi: ft=lisp
