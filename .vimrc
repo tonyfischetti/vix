@@ -27,7 +27,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tonyfischetti/vim-airline-themes'
 Plugin 'garbas/vim-snipmate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'elzr/vim-json'
@@ -204,7 +204,7 @@ nmap <Leader>rw <C-W>r
 
 " EasyMotion stuff
 nmap <Leader>er <Leader><Leader>w
-nmap s <Leader><Leader>w
+nmap S <Leader><Leader>w
 
 " pydoc
 map <Leader>pd :Pydoc
@@ -258,7 +258,7 @@ let g:vim_json_syntax_conceal = 0
 " airline overrides
 let g:airline_powerline_fonts = 1
 
-let g:airline_theme='molokai'
+let g:airline_theme='molo'
 
 let g:pydoc_open_cmd = 'vsplit'
 
@@ -346,7 +346,7 @@ endfunction
 
 
 " Small motion plugin
-nmap S <Plug>(smalls)
+nmap s <Plug>(smalls)
 
 " easy map to alternate favorite color schemes
 nmap <silent> <Leader>mo :color molokai<CR>
