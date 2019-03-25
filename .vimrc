@@ -368,7 +368,7 @@ function! SlimeOneLine()
     let length = len(line)
     let linenumber = line(".") + 1
     if length
-        execute "normal \<C-L>"
+        execute "normal \<C-O>"
     endif
     :call cursor(linenumber, 0)
 endfunction
@@ -384,7 +384,7 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "%1"}
 let g:slime_no_mappings = 1
 vmap <silent> <C-@> :call SlimeMultiLine()<CR>
-nmap <silent> <C-L> <Plug>SlimeLineSend
+nmap <silent> <C-O> <Plug>SlimeLineSend
 nmap <silent> <C-@> :call SlimeOneLine()<CR>
 xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
 
@@ -396,6 +396,8 @@ vmap <silent> <M-@> :call SlimeOneLine()<CR>
 vmap <silent> <T-@> :call SlimeOneLine()<CR>
 
 :command -nargs=1 SS :SlimeSend1 <args>
+nmap <silent> <C-D> :SlimeSend1 <CR>
+nmap <silent> <C-L> :SlimeSend1 <CR>
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
