@@ -451,6 +451,6 @@ nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"na
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-vmap <silent> <C-E> :!siph -e -p "123"<CR>
-vmap <silent> <C-D> :!siph -d -p "123"<CR>
+vmap <silent> <C-E> :!siph -e -l -k ~/keys/siph.key<CR>
+vmap <silent> <C-D> :!siph -d -l -k ~/keys/siph.key<CR>
 
