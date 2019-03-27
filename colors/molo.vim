@@ -236,4 +236,6 @@ if &t_Co > 255
    hi ColorColumn                 ctermbg=234 guibg=#303030
    hi LineNr          ctermfg=250 ctermbg=233
    hi NonText         ctermfg=240 ctermbg=233
+   hi htmlItalic          ctermfg=254 ctermbg=232
+
 end " }}}

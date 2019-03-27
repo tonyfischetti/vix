@@ -427,9 +427,6 @@ vmap <silent> <T-@> :call SlimeOneLine()<CR>
 nmap <silent> <C-D> :SlimeSend1 <CR>
 nmap <silent> <C-L> :SlimeSend1 <CR>
 
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " select block in R
 " nmap <silent> <Leader>bb /^}\v%0
@@ -452,5 +449,5 @@ nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"na
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 vmap <silent> <C-E> :!siph -e -l -k ~/keys/siph.key<CR>
-vmap <silent> <C-D> :!siph -d -l -k ~/keys/siph.key<CR>
+vmap <silent> <C-W> :!siph -d -l -k ~/keys/siph.key<CR>
 
