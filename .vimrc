@@ -424,7 +424,7 @@ vmap <silent> <M-@> :call SlimeOneLine()<CR>
 vmap <silent> <T-@> :call SlimeOneLine()<CR>
 
 :command -nargs=1 SS :SlimeSend1 <args>
-nmap <silent> <C-D> :SlimeSend1 <CR>
+nmap <silent> <M-D> :SlimeSend1 <CR>
 nmap <silent> <C-L> :SlimeSend1 <CR>
 
 
