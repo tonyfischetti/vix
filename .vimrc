@@ -43,6 +43,7 @@ Plugin 'maverickg/stan.vim'
 Plugin 'shinokada/dragvisuals.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'ledger/vim-ledger'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html

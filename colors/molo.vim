@@ -42,7 +42,7 @@ hi Define          guifg=#66D9EF
 hi Delimiter       guifg=#8F8F8F
 hi Float           guifg=#AE81FF
 hi Function        guifg=#A6E22E
-hi Identifier      guifg=#FD971F
+hi Identifier      guifg=#AFFF87
 hi Builtin         guifg=#AE81FF               gui=bold
 " }}}
 " Diffs {{{
@@ -168,7 +168,7 @@ if &t_Co > 255
    hi FoldColumn      ctermfg=67  ctermbg=233
    hi Folded          ctermfg=67  ctermbg=233
    hi Function        ctermfg=118
-   hi Identifier      ctermfg=208
+   hi Identifier      ctermfg=156
    hi Ignore          ctermfg=244 ctermbg=232
    hi IncSearch       ctermfg=193 ctermbg=16
    hi Search          ctermfg=194 ctermbg=124
