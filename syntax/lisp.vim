@@ -632,7 +632,7 @@ syn keyword lispFunc		die           			or-die                                   
 syn keyword lispFunc		for-each       			for-each-line                                   abbr
 syn keyword lispFunc		str-join       			substr                                          aif
 syn keyword lispFunc		interpose       	        get-hash                                        set-hash
-syn keyword lispFunc		print-hash-table                
+syn keyword lispFunc		print-hash-table                for-each-in-stream
 " syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
 syn match   lispComment "^#!/.*sbcl.*$"

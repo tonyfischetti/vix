@@ -47,7 +47,7 @@
 
 (process-args (cdr (cmdargs)))
 
-(when *file* 
+(when *file*
   (setq *originaltext* (slurp *file*)))
 
 (when (null *originaltext*)
@@ -102,7 +102,7 @@
         (setf pcount (if (or (char= ochar #\Newline)
                              (char= ochar #\Return)) -1 pcount)))
       (setf pnum (digit-char-p (char nums (if (< pcount 0) 0 pcount) )))
-      (setf (char ctext counter) 
+      (setf (char ctext counter)
             (funcall (if (eq direction :encrypt) #'enshift #'deshift) ochar pnum)))
     ctext))
 
