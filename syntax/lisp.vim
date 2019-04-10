@@ -387,7 +387,7 @@ syn keyword lispFunc		find				position-if-not					write-to-string
 syn keyword lispFunc		find-all-symbols		pprint						y-or-n-p
 syn keyword lispFunc		find-class			pprint-dispatch					yes-or-no-p
 syn keyword lispFunc		find-if				pprint-exit-if-list-exhausted			zerop
-syn keyword lispFunc		find-if-not			pprint-fill                                     
+syn keyword lispFunc		find-if-not			pprint-fill
 
 
 
@@ -628,11 +628,12 @@ endif
 " custom macros
 syn keyword lispFunc            slurp                           progress                                        get-size
 syn keyword lispFunc		barf           			or-die                                          die-if-null
-syn keyword lispFunc		die           			or-die                                          die-if-null
+syn keyword lispFunc		die                             get-unix-time
 syn keyword lispFunc		for-each       			for-each-line                                   abbr
 syn keyword lispFunc		str-join       			substr                                          aif
 syn keyword lispFunc		interpose       	        get-hash                                        set-hash
-syn keyword lispFunc		print-hash-table                for-each-in-stream
+syn keyword lispFunc		print-hash-table                for-each-in-stream                              zsh
+syn keyword lispFunc		universal->unix-time            unix->universal-time
 " syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
 syn match   lispComment "^#!/.*sbcl.*$"
