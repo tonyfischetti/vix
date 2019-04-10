@@ -6,6 +6,7 @@ snippet #!
 	(declaim (sb-ext:muffle-conditions cl:warning))
 	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
 	(setf sb-debug:*debug-beginner-help-p* nil)
+	(setf sb-debug:*backtrace-frame-count* 2)
 
 	#-quicklisp (load "~/quicklisp/setup.lisp")
 
@@ -42,6 +43,7 @@ snippet template
 	(declaim (sb-ext:muffle-conditions cl:warning))
 	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
 	(setf sb-debug:*debug-beginner-help-p* nil)
+	(setf sb-debug:*backtrace-frame-count* 2)
 
 	#-quicklisp (load "~/quicklisp/setup.lisp")
 
