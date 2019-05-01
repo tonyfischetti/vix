@@ -402,6 +402,19 @@ function! SlimeOneLine()
     :call cursor(linenumber, 0)
 endfunction
 
+function! SlimeOneLineSamePlace()
+    let line = getline('.')
+    let length = len(line)
+    let linenumber = line(".") + 1
+    let curpos = getpos('.')
+    if length
+        execute "normal \<C-O>"
+    endif
+    " :call cursor(line)
+    " :call cursor(curpos[1]-1, curpos[2]-1)
+    " :call setpos(".", curpos)
+endfunction
+
 " this gets around the problem where sending large
 " selections messes up the R REPL
 function! SlimeMultiLine()
@@ -427,6 +440,8 @@ vmap <silent> <T-@> :call SlimeOneLine()<CR>
 :command -nargs=1 SS :SlimeSend1 <args>
 nmap <silent> <M-D> :SlimeSend1 <CR>
 nmap <silent> <C-L> :SlimeSend1 <CR>
+
+imap <silent> <C-@> <Esc>:call SlimeOneLineSamePlace()<CR>a
 
 
 " select block in R
