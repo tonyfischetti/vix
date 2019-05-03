@@ -464,6 +464,11 @@ nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"na
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-vmap <silent> <C-E> :!siph -e -l -k ~/keys/siph.key<CR>
-vmap <silent> <C-W> :!siph -d -l -k ~/keys/siph.key<CR>
+" god said 'no siph'
+" vmap <silent> <C-E> :!siph -e -l -k ~/keys/siph.key<CR>
+" vmap <silent> <C-W> :!siph -d -l -k ~/keys/siph.key<CR>
+
+vmap <silent> <C-E> :!openssl enc -a -A -e -salt -aes256 -pass file:$HOME/keys/siph.key<CR>
+vmap <silent> <C-W> :!openssl enc -a -A -d -salt -aes256 -pass file:$HOME/keys/siph.key<CR>
+
 
