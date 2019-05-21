@@ -628,12 +628,14 @@ endif
 " custom macros
 syn keyword lispFunc            slurp                           progress                                        get-size
 syn keyword lispFunc		barf           			or-die                                          die-if-null
-syn keyword lispFunc		die                             get-unix-time
+syn keyword lispFunc		die                             get-unix-time                                   get-current-time
 syn keyword lispFunc		for-each       			for-each-line                                   abbr
 syn keyword lispFunc		str-join       			substr                                          aif
 syn keyword lispFunc		interpose       	        get-hash                                        set-hash
 syn keyword lispFunc		print-hash-table                for-each-in-stream                              zsh
-syn keyword lispFunc		universal->unix-time            unix->universal-time
+syn keyword lispFunc		universal->unix-time            unix->universal-time                            def-cli-args
+syn keyword lispFunc		assign-next-arg!                args!                                           bare-args!
+syn keyword lispFunc		make-pretty-time                process-args!
 " syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
 syn match   lispComment "^#!/.*sbcl.*$"
