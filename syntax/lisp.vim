@@ -641,7 +641,8 @@ syn keyword lispFunc		interpose       	        get-hash                         
 syn keyword lispFunc		print-hash-table                for-each-in-stream                              zsh
 syn keyword lispFunc		universal->unix-time            unix->universal-time                            def-cli-args
 syn keyword lispFunc		assign-next-arg!                args!                                           bare-args!
-syn keyword lispFunc		make-pretty-time                process-args!
+syn keyword lispFunc		make-pretty-time                process-args!                                   defparams
+syn keyword lispFunc		if->then                        if-this->then
 " syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
 syn match   lispComment "^#!/.*sbcl.*$"
