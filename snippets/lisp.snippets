@@ -2,30 +2,6 @@ snippet #!
 	#!/usr/bin/env sbcl --script
 
 
-	; ------------------------------------ ;
-	(declaim (sb-ext:muffle-conditions cl:warning))
-	(declaim (sb-ext:muffle-conditions sb-ext:compiler-note))
-	(setf sb-debug:*debug-beginner-help-p* nil)
-	(setf sb-debug:*backtrace-frame-count* 2)
-
-	#-quicklisp (load "~/quicklisp/setup.lisp")
-
-	(ql:quickload '(:clix)
-	                ; :cl-ppcre :alexandria :xpath :drakma)
-	              :silent t)
-	; ------------------------------------ ;
-
-	(defpackage :${1:`Filename('$1', 'foo.lisp')`}
-	  (:use :common-lisp
-	        :sb-ext
-	        ; :cl-ppcre :alexandria :xpath :drakma
-	        :clix))
-
-	(in-package :${1:`Filename('$1', 'foo.lisp')`})
-
-	; (rename-package :cl-ppcre :cl-ppcre '(re))
-
-
 snippet template
 	#!/usr/bin/env sbcl --script
 

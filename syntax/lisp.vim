@@ -514,6 +514,12 @@ if exists("g:lisp_instring")
  syn region			lispInStringString		start=+\\"+ skip=+\\\\+ end=+\\"+ contained
 endif
 
+syn region			lispString			start=+•+ skip=+\\\\\|\\"+ end=+•+	contains=@Spell
+if exists("g:lisp_instring")
+ syn region			lispInString			keepend matchgroup=Delimiter start=+"(+rs=s+1 skip=+|.\{-}|+ matchgroup=Delimiter end=+)"+ contains=@lispBaseListCluster,lispInStringString
+ syn region			lispInStringString		start=+\\"+ skip=+\\\\+ end=+\\"+ contained
+endif
+
 " ---------------------------------------------------------------------
 " Shared with Xlisp, Declarations, Macros, Functions: {{{1
 syn keyword lispDecl		defmacro			do-all-symbols		labels
