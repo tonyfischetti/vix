@@ -88,7 +88,7 @@ syn keyword lispFunc		/=				float-precision					princ-to-string
 syn keyword lispFunc		1+				float-radix					print
 syn keyword lispFunc		1-				float-sign					print-not-readable
 syn keyword lispFunc		<				floating-point-inexact				print-not-readable-object
-syn keyword lispFunc		<=				floating-point-invalid-operation print-object
+syn keyword lispFunc		<=				floating-point-invalid-operation                print-object
 syn keyword lispFunc		=				floating-point-overflow				print-unreadable-object
 syn keyword lispFunc		>				floating-point-underflow			probe-file
 syn keyword lispFunc		>=				floatp						proclaim
@@ -351,7 +351,7 @@ syn keyword lispFunc		end-of-file			oddp						upgraded-array-element-type
 syn keyword lispFunc		endp				open						upgraded-complex-part-type
 syn keyword lispFunc		enough-namestring		open-stream-p					upper-case-p
 syn keyword lispFunc		ensure-directories-exist	optimize					use-package
-syn keyword lispFunc		ensure-generic-function	or							use-value
+syn keyword lispFunc		ensure-generic-function	        or						use-value
 syn keyword lispFunc		eq				otherwise					user
 syn keyword lispFunc		eql				output-stream-p					user-homedir-pathname
 syn keyword lispFunc		equal				package						values
@@ -565,6 +565,7 @@ syn cluster lispCommentGroup	contains=lispTodo,@Spell
 syn match   lispComment		";.*$"				contains=@lispCommentGroup
 " ADDED BY TONY FISCHETTI
 syn match   lispComment "^#!/.*sbcl.*$"
+syn match   lispComment "^#!/usr/local/bin/lisp.*"
 syn region  lispCommentRegion	start="#|" end="|#"		contains=lispCommentRegion,@lispCommentGroup
 syn keyword lispTodo		contained			combak			combak:			todo			todo:
 
@@ -631,21 +632,103 @@ endif
 
 " --------------------------------------------------------------- "
 "
-" custom macros
-syn keyword lispFunc            slurp                           progress                                        get-size
-syn keyword lispFunc		barf           			or-die                                          die-if-null
-syn keyword lispFunc		die                             get-unix-time                                   get-current-time
-syn keyword lispFunc		for-each       			for-each-line                                   abbr
-syn keyword lispFunc		str-join       			substr                                          aif
-syn keyword lispFunc		interpose       	        get-hash                                        set-hash
-syn keyword lispFunc		print-hash-table                for-each-in-stream                              zsh
-syn keyword lispFunc		universal->unix-time            unix->universal-time                            def-cli-args
-syn keyword lispFunc		assign-next-arg!                args!                                           bare-args!
-syn keyword lispFunc		make-pretty-time                process-args!                                   defparams
-syn keyword lispFunc		if->then                        if-this->then
+" custom keywords/functions/macros
+syn keyword lispFunc slurp
+syn keyword lispFunc barf
+syn keyword lispFunc explain
+syn keyword lispFunc die
+syn keyword lispFunc advise
+syn keyword lispFunc or-die
+syn keyword lispFunc err!
+syn keyword lispFunc die-if-null
+syn keyword lispFunc progress
+syn keyword lispFunc get-size
+syn keyword lispFunc for-each
+syn keyword lispFunc for-each-node-set
+syn keyword lispFunc index!
+syn keyword lispFunc value!
+syn keyword lispFunc key!
+syn keyword lispFunc this-pass!
+syn keyword lispFunc this-loop!
+syn keyword lispFunc continue!
+syn keyword lispFunc break!
+syn keyword lispFunc for-each->list
+syn keyword lispFunc for-each->vector
+syn keyword lispFunc collect!
+syn keyword lispFunc cmdargs
+syn keyword lispFunc clear-screen
+syn keyword lispFunc -<>
+syn keyword lispFunc <>
+syn keyword lispFunc zsh
+syn keyword lispFunc universal->unix-time
+syn keyword lispFunc unix->universal-time
+syn keyword lispFunc get-unix-time
+syn keyword lispFunc get-current-time
+syn keyword lispFunc make-pretty-time
+syn keyword lispFunc request
+syn keyword lispFunc xml-parse
+syn keyword lispFunc xml-parse-file
+syn keyword lispFunc xpath
+syn keyword lispFunc xpath-1
+syn keyword lispFunc xml-name
+syn keyword lispFunc xml-text
+syn keyword lispFunc eval-always
+syn keyword lispFunc abbr
+syn keyword lispFunc str-join
+syn keyword lispFunc substr
+syn keyword lispFunc aif
+syn keyword lispFunc interpose
+syn keyword lispFunc set-hash
+syn keyword lispFunc get-hash
+syn keyword lispFunc rem-hash
+syn keyword lispFunc set-alist
+syn keyword lispFunc get-alist
+syn keyword lispFunc rem-alist
+syn keyword lispFunc print-hash-table
+syn keyword lispFunc with-gensyms
+syn keyword lispFunc it!
+syn keyword lispFunc clix-log
+syn keyword lispVar *clix-output-stream*
+syn keyword lispVar *clix-external-format*
+syn keyword lispVar *clix-log-level*
+syn keyword lispVar *clix-zsh*
+syn keyword lispFunc ignore-the-errors-wrapper
+syn keyword lispVar +red-bold+
+syn keyword lispVar +green-bold+
+syn keyword lispVar +yellow-bold+
+syn keyword lispVar +blue-bold+
+syn keyword lispVar +magenta-bold+
+syn keyword lispVar +cyan-bold+
+syn keyword lispVar +reset-terminal-color+
+syn keyword lispFunc re-compile
+syn keyword lispFunc str-split
+syn keyword lispFunc str-replace
+syn keyword lispFunc str-replace-all
+syn keyword lispFunc str-detect
+syn keyword lispFunc str-subset
+syn keyword lispFunc str-scan-to-strings
+syn keyword lispFunc ~m
+syn keyword lispFunc ~r
+syn keyword lispFunc ~ra
+syn keyword lispFunc ~s
+syn keyword lispFunc ~f
+syn keyword lispFunc with-r
+syn keyword lispFunc r-get
+syn keyword lispFunc alist->hash-table
+syn keyword lispFunc hash-table->alist
+syn keyword lispFunc with-a-file
+syn keyword lispFunc stream!
+syn keyword lispFunc rnorm
+syn keyword lispFunc delim
+syn keyword lispFunc defparams
+syn keyword lispFunc if->then
+syn keyword lispFunc if-this->then
+
+
 " syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
 syn match   lispComment "^#!/.*sbcl.*$"
+syn match   lispComment "^#!/usr/local/bin/lisp.*"
 
 
 " --------------------------------------------------------------- "
@@ -657,3 +740,4 @@ let b:current_syntax = "lisp"
 
 " ---------------------------------------------------------------------
 " vim: ts=8 nowrap fdm=marker
+"
