@@ -716,6 +716,7 @@ syn keyword lispFunc with-r
 syn keyword lispFunc r-get
 syn keyword lispFunc alist->hash-table
 syn keyword lispFunc hash-table->alist
+syn keyword lispFunc debug-these
 syn keyword lispFunc with-a-file
 syn keyword lispFunc stream!
 syn keyword lispFunc rnorm
