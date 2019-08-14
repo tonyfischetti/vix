@@ -475,14 +475,19 @@ imap <C-O><C-O> •
 imap <C-O><C-B> «
 imap <C-O><C-N> »
 
-function! GreekFn()
+function! EllinikaFn()
     :call NotepadMode()
     :set keymap=greek_utf-8
     :set spell spelllang=el
     :set guifont=Dejavu_Sans_mono:h16
 endfunction
 
-:command Greek :call GreekFn()<CR>
+function! GreekFn()
+    :set keymap=greek_utf-8
+endfunction
+
+:command Greek    :call GreekFn()<CR>
+:command Ellinika :call EllinikaFn()<CR>
 
 " set keymap=greek_utf-8
 
