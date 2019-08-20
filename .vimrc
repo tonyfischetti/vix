@@ -479,7 +479,7 @@ function! EllinikaFn()
     :call NotepadMode()
     :set keymap=greek_utf-8
     :set spell spelllang=el
-    :set guifont=Dejavu_Sans_mono:h16
+    :set guifont=Dejavu_Sans_mono:h18
 endfunction
 
 function! GreekFn()
@@ -488,6 +488,16 @@ endfunction
 
 :command Greek    :call GreekFn()<CR>
 :command Ellinika :call EllinikaFn()<CR>
+
+function! Accentize()
+    let accenttable = { "α": "ά", "ε": "έ", "ι": "ί", "η": "ή", "ο": "ό", "υ": "ύ", "ω": "ώ", "Α": "Ά", "Ε": "Έ", "Η": "Ή", "Ο": "Ό", "Υ": "Ύ", "Ω": "Ώ" }
+    let current = matchstr(getline('.')[col('.') - 1 :], '^.')
+    let currentline = getline(".")
+    let xlation = get(accenttable, current)
+    exec "normal r" . xlation
+endfunction
+
+nmap <C-Z> :call Accentize()<CR>
 
 " set keymap=greek_utf-8
 
