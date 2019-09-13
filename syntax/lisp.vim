@@ -43,7 +43,7 @@ syn case ignore
 
 " ---------------------------------------------------------------------
 " Lists: {{{1
-syn match			lispSymbol			contained			![^()'`,"; \t]\+!
+syn match			lispSymbol			contained			![^(){}'`,"; \t]\+!
 syn match			lispBarSymbol			contained			!|..\{-}|!
 if exists("g:lisp_rainbow") && g:lisp_rainbow != 0
  syn region lispParen0           matchgroup=hlLevel0 start="`\=(" end=")" skip="|.\{-}|" contains=@lispListCluster,lispParen1
