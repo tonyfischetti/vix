@@ -64,6 +64,8 @@ endif
 " ---------------------------------------------------------------------
 " Atoms: {{{1
 syn match lispAtomMark			"'"
+syn match lispAtomMark			"{"
+syn match lispAtomMark			"}"
 syn match lispAtom			"'("me=e-1			contains=lispAtomMark	nextgroup=lispAtomList
 syn match lispAtom			"'[^ \t()]\+"			contains=lispAtomMark
 syn match lispAtomBarSymbol		!'|..\{-}|!			contains=lispAtomMark
