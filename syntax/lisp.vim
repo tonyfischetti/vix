@@ -728,6 +728,13 @@ syn keyword lispFunc if->then
 syn keyword lispFunc if-this->then
 syn keyword lispFunc with-time
 syn keyword lispFunc time-for-humans
+syn keyword lispFunc red
+syn keyword lispFunc yellow
+syn keyword lispFunc green
+syn keyword lispFunc cyan
+syn keyword lispFunc ft
+syn keyword lispFunc fn
+
 
 
 " syn match lispEscapeSpecial		!#[':\!]!
