@@ -683,6 +683,7 @@ syn keyword lispFunc make-pretty-time
 syn keyword lispFunc get-current-time
 syn keyword lispFunc with-time         
 syn keyword lispFunc time-for-humans
+syn keyword lispFunc time!
 syn keyword lispFunc progress          
 syn keyword lispFunc break!             
 syn keyword lispFunc continue!
