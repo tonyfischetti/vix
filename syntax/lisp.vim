@@ -697,7 +697,11 @@ syn keyword lispFunc for-each-hash
 syn keyword lispFunc for-each-vector
 syn keyword lispFunc for-each-stream
 syn keyword lispFunc for-each-alist
+syn keyword lispFunc for-each-emission
 syn keyword lispFunc for-each
+syn keyword lispFunc substr
+syn keyword lispFunc interpose
+syn keyword lispFunc print-hash-table
 syn keyword lispFunc re-compile
 syn keyword lispFunc str-split
 syn keyword lispFunc str-replace
