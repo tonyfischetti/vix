@@ -40,7 +40,6 @@ Plugin 'ervandew/supertab'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'ledger/vim-ledger'
 
@@ -132,7 +131,10 @@ if has("gui_running")
 endif
 
 syntax on
+filetype plugin on
 filetype plugin indent on
+
+" set omnifunc=ccomplete#Complete
 set omnifunc=syntaxcomplete#Complete
 
 " Use with MouseTerm to scroll!
@@ -243,12 +245,13 @@ endfunction
 
 command Superw :call Superw()
 
-" let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-" autocmd FileType *
-"   \ if &omnifunc != '' |
-"   \   call SuperTabChain(&omnifunc, "<c-p>") |
-"   \ endif
+let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-p>"
+let g:SuperTabRetainCompletionDuration = 'completion'
+autocmd FileType *
+  \ if &omnifunc != '' |
+  \   call SuperTabChain(&omnifunc, "<c-x><c-p>") |
+  \ endif
 set completeopt=menu,longest,menuone,preview
 let g:SuperTabNoCompleteAfter=['^', '\s']
 let g:SuperTabCrMapping=1

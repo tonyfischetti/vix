@@ -51,8 +51,6 @@ List of vim plugins I use
    Syntax highlighing for the Stan modeling language
  - [dragvisuals.vim:](https://github.com/shinokada/dragvisuals.vim)
    Drag text objects in visual mode
- - [ctrlp.vim:](https://github.com/ctrlpvim/ctrlp.vim)
-   Fuzzy file finder
  - [vim-pandoc-syntax.vim:](https://github.com/vim-pandoc/vim-pandoc-syntax)
    Pandox syntax module
 
