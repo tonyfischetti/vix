@@ -655,6 +655,8 @@ syn keyword lispFunc yellow
 syn keyword lispFunc cyan
 syn keyword lispFunc *clix-zsh*
 syn keyword lispFunc with-gensyms
+syn keyword lispFunc mac
+syn keyword lispFunc nil!
 syn keyword lispFunc aif
 syn keyword lispFunc it!
 syn keyword lispFunc slurp
@@ -662,6 +664,7 @@ syn keyword lispFunc barf
 syn keyword lispFunc get-size
 syn keyword lispFunc die
 syn keyword lispFunc or-die
+syn keyword lispFunc or-do
 syn keyword lispFunc die-if-null
 syn keyword lispFunc advise
 syn keyword lispFunc error!
