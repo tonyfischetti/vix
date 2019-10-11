@@ -263,4 +263,10 @@ if &t_Co > 255
    hi lispFunc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
    hi lispDecl      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
 
+   hi rPreProc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
+   hi rPreProc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
+   hi Function      ctermfg=122 guifg=#87ffd7
+   hi Operator      ctermfg=204 guifg=#ff5f87
+   hi rArrow        ctermfg=204 guifg=#ff5f87
+
 end " }}}

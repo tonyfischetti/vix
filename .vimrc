@@ -261,7 +261,7 @@ let g:vim_json_syntax_conceal = 0
 " airline overrides
 let g:airline_powerline_fonts = 1
 
-let g:airline_theme='molo'
+let g:airline_theme='lcars'
 
 let g:pydoc_open_cmd = 'vsplit'
 
