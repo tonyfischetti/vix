@@ -114,3 +114,12 @@ hi jsonNumber guifg=#66D9EF
 
 
 hi ColorColumn guifg=#ffffff guibg=Black guisp=#cc4455 gui=bold ctermfg=15 ctermbg=7 cterm=bold
+
+
+   hi Type          ctermfg=122
+   hi Type          ctermfg=158
+   hi Comment       ctermfg=122
+   hi String        ctermfg=228
+   hi lispKey    ctermfg=168
+   hi lispFunc      ctermfg=204 cterm=bold
+   hi lispDecl      ctermfg=204  cterm=bold

@@ -22,8 +22,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins from github
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'vim-airline/vim-airline'
@@ -106,7 +104,7 @@ set cm=blowfish2
 set formatprg=/opt/local/bin/par\ -w75r "rj
 
 
-colorscheme molo
+colorscheme lcars
 set background=dark
 
 if has("gui_running")
@@ -114,6 +112,7 @@ if has("gui_running")
         set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
         set transparency=2
         " colorscheme molokai
+        colorscheme lcars
         set guioptions-=L
         set guioptions-=r
     endif

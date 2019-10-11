@@ -694,14 +694,14 @@ syn keyword lispFunc continue!
 syn keyword lispFunc index!
 syn keyword lispFunc value!
 syn keyword lispFunc key!
-syn keyword lispFunc for-each-line
-syn keyword lispFunc for-each-list
-syn keyword lispFunc for-each-hash
-syn keyword lispFunc for-each-vector
-syn keyword lispFunc for-each-stream
-syn keyword lispFunc for-each-alist
-syn keyword lispFunc for-each-yield
-syn keyword lispFunc for-each
+syn keyword lispDecl for-each-line
+syn keyword lispDecl for-each-list
+syn keyword lispDecl for-each-hash
+syn keyword lispDecl for-each-vector
+syn keyword lispDecl for-each-stream
+syn keyword lispDecl for-each-alist
+syn keyword lispDecl for-each-yield
+syn keyword lispDecl for-each
 syn keyword lispFunc substr
 syn keyword lispFunc interpose
 syn keyword lispFunc print-hash-table
@@ -735,6 +735,15 @@ syn keyword lispFunc alist->hash-table
 syn keyword lispFunc hash-table->alist
 syn keyword lispFunc r-get
 syn keyword lispFunc with-r
+syn keyword lispFunc process-args
+
+syn keyword lispDecl defparameter def-cli-args option ~m ~r ~s ~ra
+syn keyword lispKey	:LATIN-1 :external-format :UTF-8 :enc
+syn keyword lispKey	across     finally     collect     maximize    minimize     sum
+syn keyword lispKey	with        initially   into        count        end      repeat
+syn keyword lispKey	always     never       thereis     from     to          upto         downto   below
+syn keyword lispKey	above      by          on          being    each        the          hash-key hash-keys
+syn keyword lispKey	hash-value hash-values using       of-type  upfrom      downfrom
 
 
 
