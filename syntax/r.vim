@@ -2183,3 +2183,4 @@ syn keyword rFunction ylab
 syn keyword rFunction aes
 syn keyword rFunction fread
 syn keyword rFunction fwrite
+syn keyword rFunction rbindlist
