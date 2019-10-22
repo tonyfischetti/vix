@@ -659,6 +659,8 @@ syn keyword lispFunc mac
 syn keyword lispFunc nil!
 syn keyword lispFunc aif
 syn keyword lispFunc it!
+syn keyword lispFunc alambda
+syn keyword lispFunc self!
 syn keyword lispFunc slurp
 syn keyword lispFunc barf
 syn keyword lispFunc get-size
@@ -700,8 +702,9 @@ syn keyword lispDecl for-each-hash
 syn keyword lispDecl for-each-vector
 syn keyword lispDecl for-each-stream
 syn keyword lispDecl for-each-alist
-syn keyword lispDecl for-each-yield
+syn keyword lispDecl for-each-call
 syn keyword lispDecl for-each
+syn keyword lispDecl forever
 syn keyword lispFunc substr
 syn keyword lispFunc interpose
 syn keyword lispFunc print-hash-table
@@ -733,9 +736,14 @@ syn keyword lispFunc xpath
 syn keyword lispFunc xml-text
 syn keyword lispFunc alist->hash-table
 syn keyword lispFunc hash-table->alist
+syn keyword lispFunc string->octets
+syn keyword lispFunc octets->string
+syn keyword lispFunc concat-octet-vector
+syn keyword lispFunc make-octet-vector
 syn keyword lispFunc r-get
 syn keyword lispFunc with-r
 syn keyword lispFunc process-args
+
 
 syn keyword lispDecl defparameter def-cli-args option ~m ~r ~s ~ra
 syn keyword lispKey	:LATIN-1 :external-format :UTF-8 :enc
