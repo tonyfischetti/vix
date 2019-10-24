@@ -744,6 +744,7 @@ syn keyword lispFunc r-get
 syn keyword lispFunc with-r
 syn keyword lispFunc process-args
 
+syn keyword lispFunc defmarcxmlfield
 
 syn keyword lispDecl defparameter def-cli-args option ~m ~r ~s ~ra
 syn keyword lispKey	:LATIN-1 :external-format :UTF-8 :enc
