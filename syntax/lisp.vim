@@ -733,6 +733,7 @@ syn keyword lispFunc request
 syn keyword lispFunc xml-parse
 syn keyword lispFunc xml-parse-file
 syn keyword lispFunc xpath
+syn keyword lispFunc xpath-compile
 syn keyword lispFunc xml-text
 syn keyword lispFunc alist->hash-table
 syn keyword lispFunc hash-table->alist
