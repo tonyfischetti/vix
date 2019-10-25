@@ -637,6 +637,7 @@ endif
 " custom keywords/functions/macros
 syn keyword lispFunc fn
 syn keyword lispFunc ft
+syn keyword lispFunc info
 syn keyword lispFunc *clix-output-stream*
 syn keyword lispFunc *clix-log-level*
 syn keyword lispFunc *clix-log-file*
@@ -734,7 +735,7 @@ syn keyword lispFunc xml-parse
 syn keyword lispFunc xml-parse-file
 syn keyword lispFunc xpath
 syn keyword lispFunc xpath-compile
-syn keyword lispFunc xml-text
+syn keyword lispFunc use-xml-namespace
 syn keyword lispFunc alist->hash-table
 syn keyword lispFunc hash-table->alist
 syn keyword lispFunc string->octets
