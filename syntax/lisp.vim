@@ -757,10 +757,11 @@ syn keyword lispKey	hash-value hash-values using       of-type  upfrom      down
 
 
 
-" syn match lispEscapeSpecial		!#[':\!]!
 syn match Delimiter		!#[':\!]!
 syn match   lispComment "^#!/.*sbcl.*$"
 syn match   lispComment "^#!/usr/local/bin/lisp.*"
+syn match lispEscapeSpecial		"/\w[a-z_0-9-]*/"
+
 
 
 " --------------------------------------------------------------- "
