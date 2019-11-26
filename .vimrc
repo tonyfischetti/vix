@@ -484,7 +484,7 @@ function! EllinikaFn()
 endfunction
 
 function! GreekFn()
-    :set keymap=greek_utf-7
+    :set keymap=greek_utf-8
 endfunction
 
 :command Greek    :call GreekFn()<CR>
