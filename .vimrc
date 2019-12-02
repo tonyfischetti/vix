@@ -101,7 +101,7 @@ set foldlevel=1
 set modeline
 set t_Co=256
 set cm=blowfish2
-set formatprg=/opt/local/bin/par\ -w75r "rj
+set formatprg=par\ -w75r "rj
 
 
 colorscheme lcars

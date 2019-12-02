@@ -755,7 +755,7 @@ syn keyword lispKey	with        initially   into        count        end      re
 syn keyword lispKey	always     never       thereis     from     to          upto         downto   below
 syn keyword lispKey	above      by          on          being    each        the          hash-key hash-keys
 syn keyword lispKey	hash-value hash-values using       of-type  upfrom      downfrom
-syn keyword lispKey	quri:url-decode quri:url-encode
+syn keyword lispKey	quri:url-decode quri:url-encode    html-entities:decode-entities html-entities:encode-entities
 
 
 
