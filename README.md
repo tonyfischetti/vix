@@ -1,7 +1,7 @@
 # Introduction
 
 vix is just a place to keep my particular vim setup and configuration
-so I can easily experiment with it and clone it on different systems. It's 
+so I can easily experiment with it and clone it on different systems. It's
 also, of course freely available for other use and measures will be taken
 to make its installation easy for other people to use and do whatever they
 want with.
@@ -52,7 +52,9 @@ List of vim plugins I use
  - [dragvisuals.vim:](https://github.com/shinokada/dragvisuals.vim)
    Drag text objects in visual mode
  - [vim-pandoc-syntax.vim:](https://github.com/vim-pandoc/vim-pandoc-syntax)
-   Pandox syntax module
+   Pandoc syntax module
+ - [vim-linux-coding-style:](https://github.com/vivien/vim-linux-coding-style)
+   Vim plugin to respect the Linux kernel (and cmus) coding style
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more
@@ -67,8 +69,8 @@ Installation
 #### Mac OS X
 
 Install Vim. My favorite way is to build console vim from source
-(instructions in 'doc' folder) and to use 
-[MacVim](https://code.google.com/p/macvim/) as a GUI solution. 
+(instructions in 'doc' folder) and to use
+[MacVim](https://code.google.com/p/macvim/) as a GUI solution.
 I also have instructions (in doc/) on how to compile MacVim from source.
 
 Use [macports](http://www.macports.org) to install exuberant
@@ -108,7 +110,7 @@ terminal emulator
 
 These instructions are similar to those for a Mac.
 
-On Debian-based systems, you can make sure you have the dependencies 
+On Debian-based systems, you can make sure you have the dependencies
 by running
 
     sudo apt-get install vim-gnome vim-full git exuberant-ctags
@@ -155,7 +157,7 @@ config variables as needed.
 
 Download the exuberant ctags windows binary from ctags.sourceforge.net.
 Now you need to add it to your path; I like to just copy the ctags
-executable to C:\Program Files (x86)\Git\bin since that is already in 
+executable to C:\Program Files (x86)\Git\bin since that is already in
 the $PATH from the last instruction.
 
 Clone the repository:
@@ -202,7 +204,7 @@ Notes
 -----
 
 In the "doc" directory, I have
- - instructions on how to build vim from source on OS X (OS X ships with 
+ - instructions on how to build vim from source on OS X (OS X ships with
 an old version)
  - instructions on how to build MacVim from source
  - a .pages and PDF of a personal Vim cheatsheet containing an overview

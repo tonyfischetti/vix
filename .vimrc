@@ -40,6 +40,7 @@ Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'ledger/vim-ledger'
+Plugin 'vivien/vim-linux-coding-style'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html
