@@ -643,6 +643,7 @@ syn keyword lispFunc *clix-log-level*
 syn keyword lispFunc *clix-log-file*
 syn keyword lispFunc *clix-curly-test*
 syn keyword lispFunc *clix-external-format*
+syn keyword lispFunc *whitespaces*
 syn keyword lispFunc +red-bold+
 syn keyword lispFunc +green-bold+
 syn keyword lispFunc +yellow-bold+
@@ -731,8 +732,7 @@ syn keyword lispFunc defparams
 syn keyword lispFunc if->then
 syn keyword lispFunc if-this->then
 syn keyword lispFunc request
-syn keyword lispFunc xml-parse
-syn keyword lispFunc xml-parse-file
+syn keyword lispFunc parse-xml
 syn keyword lispFunc xpath
 syn keyword lispFunc xpath-compile
 syn keyword lispFunc use-xml-namespace
@@ -745,6 +745,12 @@ syn keyword lispFunc make-octet-vector
 syn keyword lispFunc r-get
 syn keyword lispFunc with-r
 syn keyword lispFunc process-args
+syn keyword lispFunc hash-keys
+syn keyword lispFunc str-trim
+syn keyword lispFunc xpath-string
+syn keyword lispFunc parse-json
+syn keyword lispFunc export-json
+
 
 syn keyword lispFunc defmarcxmlfield
 
@@ -753,9 +759,9 @@ syn keyword lispKey	:LATIN-1 :external-format :UTF-8 :enc
 syn keyword lispKey	across     finally     collect     maximize    minimize     sum
 syn keyword lispKey	with        initially   into        count        end      repeat
 syn keyword lispKey	always     never       thereis     from     to          upto         downto   below
-syn keyword lispKey	above      by          on          being    each        the          hash-key hash-keys
+syn keyword lispKey	above      by          on          being    each        the          hash-key
 syn keyword lispKey	hash-value hash-values using       of-type  upfrom      downfrom
-syn keyword lispKey	quri:url-decode quri:url-encode    html-entities:decode-entities html-entities:encode-entities
+syn keyword lispKey	quri:url-decode quri:url-encode
 
 
 
