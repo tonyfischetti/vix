@@ -742,6 +742,8 @@ syn keyword lispFunc string->octets
 syn keyword lispFunc octets->string
 syn keyword lispFunc concat-octet-vector
 syn keyword lispFunc make-octet-vector
+syn keyword lispFunc parse-html
+syn keyword lispFunc $$
 syn keyword lispFunc r-get
 syn keyword lispFunc with-r
 syn keyword lispFunc process-args
