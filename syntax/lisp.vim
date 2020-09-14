@@ -733,6 +733,7 @@ syn keyword lispFunc if->then
 syn keyword lispFunc if-this->then
 syn keyword lispFunc request
 syn keyword lispFunc parse-xml
+syn keyword lispFunc parse-xml-file
 syn keyword lispFunc xpath
 syn keyword lispFunc xpath-compile
 syn keyword lispFunc use-xml-namespace
@@ -751,6 +752,7 @@ syn keyword lispFunc hash-keys
 syn keyword lispFunc str-trim
 syn keyword lispFunc xpath-string
 syn keyword lispFunc parse-json
+syn keyword lispFunc parse-json-file
 syn keyword lispFunc export-json
 syn keyword lispFunc parse-float
 
