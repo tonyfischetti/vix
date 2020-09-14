@@ -752,6 +752,7 @@ syn keyword lispFunc str-trim
 syn keyword lispFunc xpath-string
 syn keyword lispFunc parse-json
 syn keyword lispFunc export-json
+syn keyword lispFunc parse-float
 
 
 syn keyword lispFunc defmarcxmlfield
