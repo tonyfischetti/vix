@@ -666,6 +666,11 @@ syn keyword lispFunc self!
 syn keyword lispFunc slurp
 syn keyword lispFunc barf
 syn keyword lispFunc get-size
+syn keyword lispFunc round-to
+syn keyword lispFunc with-hash-entry
+syn keyword lispFunc if-hash-entry
+syn keyword lispFunc if-not-hash-entry
+syn keyword lispFunc entry!
 syn keyword lispFunc die
 syn keyword lispFunc or-die
 syn keyword lispFunc or-do
