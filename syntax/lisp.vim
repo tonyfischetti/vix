@@ -677,13 +677,7 @@ syn keyword lispFunc or-do
 syn keyword lispFunc die-if-null
 syn keyword lispFunc advise
 syn keyword lispFunc error!
-syn keyword lispFunc set-hash
-syn keyword lispFunc get-hash
-syn keyword lispFunc rem-hash
 syn keyword lispFunc alistp
-syn keyword lispFunc set-alist
-syn keyword lispFunc get-alist
-syn keyword lispFunc rem-alist
 syn keyword lispFunc cmdargs
 syn keyword lispFunc clear-screen
 syn keyword lispFunc -<>
@@ -734,8 +728,6 @@ syn keyword lispFunc stream!
 syn keyword lispFunc rnorm
 syn keyword lispFunc delim
 syn keyword lispFunc defparams
-syn keyword lispFunc if->then
-syn keyword lispFunc if-this->then
 syn keyword lispFunc request
 syn keyword lispFunc parse-xml
 syn keyword lispFunc parse-xml-file
