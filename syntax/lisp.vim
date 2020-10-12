@@ -752,6 +752,14 @@ syn keyword lispFunc parse-json
 syn keyword lispFunc parse-json-file
 syn keyword lispFunc export-json
 syn keyword lispFunc parse-float
+syn keyword lispFunc get-terminal-columns
+syn keyword lispFunc ansi-up-line
+syn keyword lispFunc ansi-left-all
+syn keyword lispFunc ansi-clear-line
+syn keyword lispFunc progress-bar
+syn keyword lispFunc make-ansi-escape
+syn keyword lispFunc +ansi-escape-up+
+syn keyword lispFunc +ansi-escape-left-all+
 
 
 syn keyword lispFunc defmarcxmlfield
