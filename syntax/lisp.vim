@@ -582,7 +582,6 @@ syn sync lines=100
 if version >= 508
   command -nargs=+ HiLink hi def link <args>
 
-  HiLink lispCommentRegion	lispComment
   HiLink lispAtomNmbr		lispNumber
   HiLink lispAtomMark		lispMark
   HiLink lispInStringString	lispString
@@ -601,7 +600,9 @@ if version >= 508
   HiLink lispEscapeSpecial	Type
   HiLink lispString		String
   HiLink lispTodo		Todo
-  HiLink lispVar		Statement
+  " HiLink lispVar		Statement
+  " HiLink lispVar		Type
+  HiLink lispVar		Identifier
 
   if exists("g:lisp_rainbow") && g:lisp_rainbow != 0
    if &bg == "dark"
@@ -760,6 +761,9 @@ syn keyword lispFunc progress-bar
 syn keyword lispFunc make-ansi-escape
 syn keyword lispFunc +ansi-escape-up+
 syn keyword lispFunc +ansi-escape-left-all+
+syn keyword lispFunc +ansi-escape-left-one+
+syn keyword lispFunc ansi-left-one
+syn keyword lispFunc with-loading
 
 
 syn keyword lispFunc defmarcxmlfield
@@ -767,7 +771,7 @@ syn keyword lispFunc defmarcxmlfield
 syn keyword lispDecl defparameter def-cli-args option ~m ~r ~s ~ra
 syn keyword lispKey	:LATIN-1 :external-format :UTF-8 :enc
 syn keyword lispKey	across     finally     collect     maximize    minimize     sum
-syn keyword lispKey	with        initially   into        count        end      repeat
+syn keyword lispKey	with       initially   into        count        end      repeat
 syn keyword lispKey	always     never       thereis     from     to          upto         downto   below
 syn keyword lispKey	above      by          on          being    each        the          hash-key
 syn keyword lispKey	hash-value hash-values using       of-type  upfrom      downfrom
@@ -777,15 +781,13 @@ syn keyword lispKey	quri:url-decode quri:url-encode    λ
 
 
 syn match Delimiter		!#[':\!]!
-syn match   lispComment "^#!/.*sbcl.*$"
-syn match   lispComment "^#!/usr/local/bin/lisp.*"
-syn match lispEscapeSpecial		"/\w[a-z_0-9-]*/"
+syn match lispComment           "^#!/.*sbcl.*$"
+syn match lispComment           "^#!/usr/local/bin/lisp.*"
+syn match lispEscapeSpecial     "/\w[a-z_0-9-]*/"
 
 
 
 " --------------------------------------------------------------- "
-
-
 
 
 let b:current_syntax = "lisp"
