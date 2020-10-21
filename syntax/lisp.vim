@@ -764,6 +764,13 @@ syn keyword lispFunc +ansi-escape-left-all+
 syn keyword lispFunc +ansi-escape-left-one+
 syn keyword lispFunc ansi-left-one
 syn keyword lispFunc with-loading
+syn keyword lispFunc flatten
+syn keyword lispFunc take
+syn keyword lispFunc group
+syn keyword lispFunc mkstr
+syn keyword lispFunc create-symbol
+syn keyword lispFunc create-keyword
+syn keyword lispFunc walk-replace-sexp
 
 
 syn keyword lispFunc defmarcxmlfield
