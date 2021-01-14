@@ -394,6 +394,9 @@ nmap <silent> <Leader>fl :color flattr<CR>
 nmap <silent> <Leader>rp :call niji#highlight()<CR>
 let g:niji_matching_filetypes = ['lisp', 'scheme', 'clojure', 'racket']
 
+" non-legacy snipmate parser
+let g:snipMate = { 'snippet_version' : 1 }
+
 
 " SLIME STUFF
 " Vim slime is (cli).vimrc only
