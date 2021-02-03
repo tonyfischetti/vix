@@ -716,6 +716,7 @@ syn keyword lispFunc str-replace
 syn keyword lispFunc str-replace-all
 syn keyword lispFunc str-detect
 syn keyword lispFunc str-subset
+syn keyword lispFunc str-extract
 syn keyword lispFunc str-scan-to-strings
 syn keyword lispFunc ~m
 syn keyword lispFunc ~r
@@ -723,6 +724,7 @@ syn keyword lispFunc ~ra
 syn keyword lispFunc ~s
 syn keyword lispFunc ~f
 syn keyword lispFunc ~c
+syn keyword lispFunc ~e
 syn keyword lispFunc debug-these
 syn keyword lispFunc with-a-file
 syn keyword lispFunc stream!
@@ -759,6 +761,7 @@ syn keyword lispFunc ansi-left-all
 syn keyword lispFunc ansi-clear-line
 syn keyword lispFunc progress-bar
 syn keyword lispFunc give-choices
+syn keyword lispFunc copy-file-ensure-dirs-too
 syn keyword lispFunc make-ansi-escape
 syn keyword lispFunc +ansi-escape-up+
 syn keyword lispFunc +ansi-escape-left-all+
