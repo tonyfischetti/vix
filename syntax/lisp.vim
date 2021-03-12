@@ -665,6 +665,7 @@ syn keyword lispFunc it!
 syn keyword lispFunc alambda
 syn keyword lispFunc self!
 syn keyword lispFunc slurp
+syn keyword lispFunc slurp-lines
 syn keyword lispFunc barf
 syn keyword lispFunc get-size
 syn keyword lispFunc round-to
