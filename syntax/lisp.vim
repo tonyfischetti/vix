@@ -762,7 +762,6 @@ syn keyword lispFunc ansi-left-all
 syn keyword lispFunc ansi-clear-line
 syn keyword lispFunc progress-bar
 syn keyword lispFunc give-choices
-syn keyword lispFunc copy-file-ensure-dirs-too
 syn keyword lispFunc make-ansi-escape
 syn keyword lispFunc +ansi-escape-up+
 syn keyword lispFunc +ansi-escape-left-all+
