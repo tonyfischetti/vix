@@ -5,7 +5,7 @@
 " 		      Tom Payne <tom@tompayne.org>
 " Last Change:	      Mon Nov 11, 2013  10:12PM
 " Filenames:	      *.R *.r *.Rhistory *.Rt
-" 
+"
 " NOTE: The highlighting of R functions is defined in the
 " r-plugin/functions.vim, which is part of vim-r-plugin2:
 " http://www.vim.org/scripts/script.php?script_id=2628
@@ -78,12 +78,12 @@ syn keyword rRepeat      for in repeat while
 syn keyword rConstant T F LETTERS letters month.abb month.name pi
 syn keyword rConstant R.version.string
 
-syn keyword rNumber   NA_integer_ NA_real_ NA_complex_ NA_character_ 
+syn keyword rNumber   NA_integer_ NA_real_ NA_complex_ NA_character_
 
 " Constants
 syn keyword rConstant NULL
 syn keyword rBoolean  FALSE TRUE
-syn keyword rNumber   NA Inf NaN 
+syn keyword rNumber   NA Inf NaN
 
 " integer
 syn match rInteger "\<\d\+L"
@@ -92,7 +92,7 @@ syn match rInteger "\<\d\+[Ee]+\=\d\+L"
 
 " number with no fractional part or exponent
 syn match rNumber "\<\d\+\>"
-" hexadecimal number 
+" hexadecimal number
 syn match rNumber "\<0x\([0-9]\|[a-f]\|[A-F]\)\+"
 
 " floating point number with integer and fractional parts and optional exponent
@@ -166,7 +166,7 @@ if &filetype == "rhelp"
 endif
 
 " Type
-syn keyword rType array category character complex double function integer list logical matrix numeric vector data.frame 
+syn keyword rType array category character complex double function integer list logical matrix numeric vector data.frame
 
 " Name of object with spaces
 if &filetype != "rmd" && &filetype != "rrst"
@@ -174,13 +174,13 @@ if &filetype != "rmd" && &filetype != "rrst"
 endif
 
 if &filetype == "rhelp"
-    syn match rhPreProc "^#ifdef.*" 
-    syn match rhPreProc "^#endif.*" 
+    syn match rhPreProc "^#ifdef.*"
+    syn match rhPreProc "^#endif.*"
     syn match rhSection "\\dontrun\>"
 endif
 
 " Define the default highlighting.
-hi def link rArrow       Statement	
+hi def link rArrow       Statement
 hi def link rBoolean     Boolean
 hi def link rBraceError  Error
 hi def link rComment     Comment
@@ -2184,3 +2184,43 @@ syn keyword rFunction aes
 syn keyword rFunction fread
 syn keyword rFunction fwrite
 syn keyword rFunction rbindlist
+
+syn keyword rFunction get_isbn_10_check_digit
+syn keyword rFunction check_isbn_10_check_digit
+syn keyword rFunction is_valid_isbn_10
+syn keyword rFunction normalize_isbn_10
+syn keyword rFunction get_isbn_13_check_digit
+syn keyword rFunction check_isbn_13_check_digit
+syn keyword rFunction is_valid_isbn_13
+syn keyword rFunction convert_to_isbn_13
+syn keyword rFunction normalize_isbn_13
+syn keyword rFunction normalize_isbn
+syn keyword rFunction get_issn_check_digit
+syn keyword rFunction check_issn_check_digit
+syn keyword rFunction is_valid_issn
+syn keyword rFunction normalize_issn
+syn keyword rFunction normalize_lccn
+syn keyword rFunction get_lc_call_subject_classification
+syn keyword rFunction is_valid_lc_call
+syn keyword rFunction get_lc_call_first_letter
+syn keyword rFunction get_all_lc_call_subject_letters
+syn keyword rFunction get_dewey_decimal_subject_class
+syn keyword rFunction get_dewey_decimal_subject_division
+syn keyword rFunction get_dewey_decimal_subject_section
+syn keyword rFunction loc_permalink_from_lccn
+syn keyword rFunction worldcat_permalink_from_issn
+syn keyword rFunction worldcat_permalink_from_isbn
+syn keyword rFunction worldcat_permalink_from_oclc_number
+syn keyword rFunction oclc_classify_link_from_standard_num
+syn keyword rFunction get_language_from_code
+syn keyword rFunction get_country_from_code
+syn keyword rFunction car
+syn keyword rFunction remove_duplicates_and_nas
+syn keyword rFunction recombine_with_sep_closure
+syn keyword rFunction split_map_filter_reduce
+syn keyword rFunction dt_del_cols
+syn keyword rFunction dt_keep_cols
+syn keyword rFunction dt_counts_and_percents
+syn keyword rFunction get_clean_names
+syn keyword rFunction dt_set_clean_names
+syn keyword rFunction dt_percent_not_na
