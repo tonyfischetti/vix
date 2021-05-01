@@ -466,11 +466,9 @@ augroup pandoc_syntax
 augroup END
 
 
-
-
-
 :command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
 
+:command -nargs=0 RCopyLastValue :SlimeSend1 copy_last_value()
 
 nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
