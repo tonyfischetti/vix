@@ -2184,7 +2184,6 @@ syn keyword rFunction aes
 syn keyword rFunction fread
 syn keyword rFunction fwrite
 syn keyword rFunction rbindlist
-syn keyword rFunction data.table
 syn keyword rFunction as.data.table
 syn keyword rFunction setDT
 
