@@ -652,10 +652,12 @@ syn keyword lispFunc +blue-bold+
 syn keyword lispFunc +magenta-bold+
 syn keyword lispFunc +cyan-bold+
 syn keyword lispFunc +reset-terminal-color+
-syn keyword lispFunc green
+syn keyword lispFunc magenta
 syn keyword lispFunc red
 syn keyword lispFunc yellow
+syn keyword lispFunc green
 syn keyword lispFunc cyan
+syn keyword lispFunc blue
 syn keyword lispFunc *clix-zsh*
 syn keyword lispFunc with-gensyms
 syn keyword lispFunc mac
