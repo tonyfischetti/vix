@@ -2186,6 +2186,7 @@ syn keyword rFunction fwrite
 syn keyword rFunction rbindlist
 syn keyword rFunction as.data.table
 syn keyword rFunction setDT
+syn keyword rFunction uniqueN
 
 syn keyword rFunction get_isbn_10_check_digit
 syn keyword rFunction check_isbn_10_check_digit
