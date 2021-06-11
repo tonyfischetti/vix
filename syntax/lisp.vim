@@ -727,7 +727,9 @@ syn keyword lispFunc +USAGE-TEXT!+
 syn keyword lispFunc print-usage!
 syn keyword lispFunc process-args!
 syn keyword lispFunc zsh
-syn keyword lispFunc zsh-fast
+syn keyword lispFunc sh
+syn keyword lispFunc zsh-simple
+syn keyword lispFunc sh-simple
 syn keyword lispFunc get-envvar
 syn keyword lispFunc clean-screen
 syn keyword lispFunc get-terminal-columns
