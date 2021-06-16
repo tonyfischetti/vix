@@ -652,6 +652,7 @@ syn keyword lispFunc yellow
 syn keyword lispFunc green
 syn keyword lispFunc cyan
 syn keyword lispFunc blue
+syn keyword lispFunc grey
 syn keyword lispFunc with-gensyms
 syn keyword lispFunc mac
 syn keyword lispFunc nil!
