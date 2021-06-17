@@ -743,7 +743,7 @@ syn keyword lispFunc loading-forever
 syn keyword lispFunc with-loading
 syn keyword lispFunc give-choices
 syn keyword lispFunc λ
-syn keyword lispFunc get-size
+syn keyword lispFunc file-size
 
 " charon
 syn keyword lispFunc re-compile 
