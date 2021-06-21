@@ -640,7 +640,6 @@ endif
 " pluto
 syn keyword lispFunc fn
 syn keyword lispFunc ft
-syn keyword lispFunc info
 syn keyword lispFunc *pluto-output-stream*
 syn keyword lispFunc *pluto-log-level*
 syn keyword lispFunc *pluto-curly-test*
@@ -662,7 +661,6 @@ syn keyword lispFunc abbr
 syn keyword lispFunc flatten
 syn keyword lispFunc take
 syn keyword lispFunc group
-syn keyword lispFunc mkstr
 syn keyword lispFunc create-symbol
 syn keyword lispFunc create-keyword
 syn keyword lispFunc walk-replace-sexp
