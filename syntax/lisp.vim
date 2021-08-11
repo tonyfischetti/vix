@@ -709,6 +709,7 @@ syn keyword lispFunc continue!
 syn keyword lispFunc index!
 syn keyword lispFunc value!
 syn keyword lispFunc key!
+syn keyword lispFunc with-interactive-interrupt-handler
 syn keyword lispFunc for-each/line
 syn keyword lispFunc for-each/list
 syn keyword lispFunc for-each/hash
