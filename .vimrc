@@ -220,7 +220,7 @@ nmap S <Leader><Leader>w
 map <Leader>pd :Pydoc
 
 " auto-reform ugly json
-nmap <Leader>rj :%!python -mjson.tool<CR>
+nmap <Leader>rj :%!python3 -mjson.tool<CR>
 
 " highlight trailing whitespace
 nmap <silent> <Leader>tw :/\v\s+$/<CR>
