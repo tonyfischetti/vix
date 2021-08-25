@@ -743,6 +743,7 @@ syn keyword lispFunc progress-bar
 syn keyword lispFunc loading-forever
 syn keyword lispFunc with-loading
 syn keyword lispFunc give-choices
+syn keyword lispFunc remove-extension
 syn keyword lispFunc λ
 syn keyword lispFunc file-size
 
