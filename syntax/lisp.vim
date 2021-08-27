@@ -731,11 +731,14 @@ syn keyword lispFunc zsh
 syn keyword lispFunc sh
 syn keyword lispFunc zsh-simple
 syn keyword lispFunc sh-simple
+syn keyword lispFunc λ
+syn keyword lispFunc hostname
 syn keyword lispFunc sys/info
 syn keyword lispFunc get-envvar
 syn keyword lispFunc remove-extension
 syn keyword lispFunc basename
 syn keyword lispFunc ls
+syn keyword lispFunc pwd
 syn keyword lispFunc realpath
 syn keyword lispFunc file-size
 syn keyword lispFunc clear-screen
@@ -748,7 +751,6 @@ syn keyword lispFunc progress-bar
 syn keyword lispFunc loading-forever
 syn keyword lispFunc with-loading
 syn keyword lispFunc give-choices
-syn keyword lispFunc λ
 
 " charon
 syn keyword lispFunc re-compile
