@@ -772,6 +772,7 @@ syn keyword lispFunc ~f
 syn keyword lispFunc ~c
 syn keyword lispFunc ~e
 syn keyword lispFunc with-loading
+syn keyword lispFunc request
 syn keyword lispFunc parse-xml
 syn keyword lispFunc parse-xml-file
 syn keyword lispFunc xpath
