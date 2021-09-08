@@ -789,6 +789,11 @@ syn keyword lispFunc concat-octet-vector
 syn keyword lispFunc parse-html
 syn keyword lispFunc $$
 syn keyword lispFunc parse-float
+syn keyword lispFunc *sd-log-priority*
+syn keyword lispFunc sd-journal
+syn keyword lispFunc stat-filesize
+syn keyword lispFunc mv
+syn keyword lispFunc cp
 
 
 syn keyword lispFunc defmarcxmlfield
