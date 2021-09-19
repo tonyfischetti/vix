@@ -772,7 +772,8 @@ syn keyword lispFunc ~f
 syn keyword lispFunc ~c
 syn keyword lispFunc ~e
 syn keyword lispFunc with-loading
-syn keyword lispFunc request
+syn keyword lispFunc request/get
+syn keyword lispFunc request/post
 syn keyword lispFunc parse-xml
 syn keyword lispFunc parse-xml-file
 syn keyword lispFunc xpath
@@ -783,6 +784,7 @@ syn keyword lispFunc alist->hash-table
 syn keyword lispFunc hash-table->alist
 syn keyword lispFunc hash-keys
 syn keyword lispFunc parse-json
+syn keyword lispFunc hash-table->json
 syn keyword lispFunc parse-json-file
 syn keyword lispFunc make-octet-vector
 syn keyword lispFunc concat-octet-vector
