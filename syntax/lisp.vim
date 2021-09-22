@@ -729,12 +729,6 @@ syn keyword lispFunc λ
 syn keyword lispFunc hostname
 syn keyword lispFunc sys/info
 syn keyword lispFunc get-envvar
-syn keyword lispFunc remove-extension
-syn keyword lispFunc basename
-syn keyword lispFunc ls
-syn keyword lispFunc pwd
-syn keyword lispFunc realpath
-syn keyword lispFunc file-size
 syn keyword lispFunc program/script-name
 syn keyword lispFunc cmdargs
 syn keyword lispFunc def-cli-args
@@ -753,6 +747,19 @@ syn keyword lispFunc progress-bar
 syn keyword lispFunc loading-forever
 syn keyword lispFunc with-loading
 syn keyword lispFunc give-choices
+syn keyword lispFunc remove-extension
+syn keyword lispFunc basename
+syn keyword lispFunc pwd
+syn keyword lispFunc realpath
+syn keyword lispFunc file-size
+syn keyword lispFunc ls
+syn keyword lispFunc directory-exists-p
+syn keyword lispFunc file-exists-p
+syn keyword lispFunc file-or-directory-exists-p
+syn keyword lispFunc walk-directory
+syn keyword lispFunc file-find
+syn keyword lispFunc -path
+syn keyword lispFunc size-for-humans
 
 " charon
 syn keyword lispFunc re-compile
