@@ -747,7 +747,6 @@ syn keyword lispFunc progress-bar
 syn keyword lispFunc loading-forever
 syn keyword lispFunc with-loading
 syn keyword lispFunc give-choices
-syn keyword lispFunc remove-extension
 syn keyword lispFunc basename
 syn keyword lispFunc pwd
 syn keyword lispFunc realpath
@@ -802,7 +801,15 @@ syn keyword lispFunc *sd-log-priority*
 syn keyword lispFunc sd-journal
 syn keyword lispFunc stat-filesize
 syn keyword lispFunc is-symlink-p
-syn keyword lispFunc md5
+syn keyword lispFunc md5/string
+syn keyword lispFunc md5/file
+syn keyword lispFunc sha256/string
+syn keyword lispFunc sha256/hexstring
+syn keyword lispFunc sha256/file
+syn keyword lispFunc sha512/string
+syn keyword lispFunc sha512/file
+syn keyword lispFunc ripemd160/string
+syn keyword lispFunc ripemd160/hexstring
 
 
 syn keyword lispFunc defmarcxmlfield
