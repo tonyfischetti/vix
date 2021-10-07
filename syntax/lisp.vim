@@ -750,6 +750,7 @@ syn keyword lispFunc give-choices
 syn keyword lispFunc basename
 syn keyword lispFunc pwd
 syn keyword lispFunc realpath
+syn keyword lispFunc size-for-humans
 syn keyword lispFunc file-size
 syn keyword lispFunc ls
 syn keyword lispFunc directory-exists-p
@@ -758,7 +759,9 @@ syn keyword lispFunc file-or-directory-exists-p
 syn keyword lispFunc walk-directory
 syn keyword lispFunc file-find
 syn keyword lispFunc -path
-syn keyword lispFunc size-for-humans
+syn keyword lispFunc +path
+syn keyword lispFunc absolute->relative
+syn keyword lispFunc change-extension
 
 " charon
 syn keyword lispFunc re-compile
