@@ -757,11 +757,11 @@ syn keyword lispFunc directory-exists-p
 syn keyword lispFunc file-exists-p
 syn keyword lispFunc file-or-directory-exists-p
 syn keyword lispFunc walk-directory
-syn keyword lispFunc file-find
 syn keyword lispFunc -path
 syn keyword lispFunc +path
 syn keyword lispFunc absolute->relative
 syn keyword lispFunc change-extension
+syn keyword lispFunc file-find
 
 " charon
 syn keyword lispFunc re-compile
