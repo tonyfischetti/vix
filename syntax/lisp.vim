@@ -677,6 +677,9 @@ syn keyword lispFunc stream!
 syn keyword lispFunc str+
 syn keyword lispFunc str-join
 syn keyword lispFunc substr
+syn keyword lispFunc string->char-list
+syn keyword lispFunc split-string->lines
+syn keyword lispFunc repeat-string
 syn keyword lispFunc interpose
 syn keyword lispFunc delim
 syn keyword lispFunc defparams
@@ -687,10 +690,9 @@ syn keyword lispFunc with-hash-entry
 syn keyword lispFunc entry!
 syn keyword lispFunc if-hash-entry
 syn keyword lispFunc if-not-hash-entry
-syn keyword lispFunc string->char-list
-syn keyword lispFunc split-string->lines
 syn keyword lispFunc capture-all-outputs
 syn keyword lispFunc with-temp-file
+syn keyword lispFunc display-table
 syn keyword lispFunc y-or-n-def
 syn keyword lispFunc die
 syn keyword lispFunc or-die
