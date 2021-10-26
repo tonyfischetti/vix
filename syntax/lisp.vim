@@ -802,6 +802,10 @@ syn keyword lispFunc concat-octet-vector
 syn keyword lispFunc parse-html
 syn keyword lispFunc $$
 syn keyword lispFunc parse-float
+syn keyword lispFunc escape-namestring/shell
+syn keyword lispFunc escape-namestring/c
+syn keyword lispFunc pathname->shell
+syn keyword lispFunc pathname->c
 syn keyword lispFunc *sd-log-priority*
 syn keyword lispFunc sd-journal
 syn keyword lispFunc stat-filesize
