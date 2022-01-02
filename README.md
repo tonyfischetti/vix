@@ -12,20 +12,16 @@ manager and I like it a lot.
 List of vim plugins I use
  - [vundle:](https://github.com/VundleVim/Vundle.vim)
    The best way to manage vim plugins
- - [nerdtree:](https://github.com/scrooloose/nerdtree)
-   A tree file browser for the side bar
- - [tagbar:](github.com/majutsushi/tagbar)
-   Requires ctags
  - [tlib:](https://github.com/tomtom/tlib_vim.git)
    Required for SnipMate
  - [mw-utils:](https://github.com/MarcWeber/vim-addon-mw-utils.git)
    Required for SnipMate
- - [snipmate:](https://github.com/garbas/vim-snipmate)
-   Support for customizable code snippets
  - [airline:](https://github.com/bling/vim-airline)
    A great all-vimscript status line
  - [airline-themes:](https://github.com/tonyfischetti/vim-airline-themes)
    Some themes for airline (my fork)
+ - [snipmate:](https://github.com/garbas/vim-snipmate)
+   Support for customizable code snippets
  - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
    A great and easy way to quickly change cursor position
  - [json:](https://github.com/vim-scripts/vim-json-bundle)
@@ -49,8 +45,6 @@ List of vim plugins I use
    A pretty fly color scheme
  - [stan.vim:](https://github.com/maverickg/stan.vim)
    Syntax highlighing for the Stan modeling language
- - [dragvisuals.vim:](https://github.com/shinokada/dragvisuals.vim)
-   Drag text objects in visual mode
  - [vim-pandoc-syntax.vim:](https://github.com/vim-pandoc/vim-pandoc-syntax)
    Pandoc syntax module
  - [vim-linux-coding-style:](https://github.com/vivien/vim-linux-coding-style)

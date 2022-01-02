@@ -39,7 +39,6 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'ledger/vim-ledger'
 Plugin 'vivien/vim-linux-coding-style'
 Plugin 'TovarishFin/vim-solidity'
 
