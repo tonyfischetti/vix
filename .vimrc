@@ -11,7 +11,6 @@
 
 set nocompatible
 
-
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 " Vundle
 filetype off
@@ -105,8 +104,13 @@ set cm=blowfish2
 set formatprg=par\ -w75r "rj
 
 
-colorscheme lcars
+" colorscheme lcars
+colorscheme molokai
 set background=dark
+
+
+
+
 
 if has("gui_running")
     if has("gui_macvim")
