@@ -61,7 +61,7 @@ www.vim.org
 Installation
 -------------
 
-On GNU/LINUX, Unix, etc... installation is simply
+On GNU/Linux, Unix, etc... installation is simply
 
 ```
 git clone https://github.com/tonyfischetti/vix.git ~/.vim
