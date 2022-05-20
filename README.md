@@ -61,6 +61,19 @@ www.vim.org
 Installation
 -------------
 
+On GNU/LINUX, Unix, etc... installation is simply
+
+```
+git clone https://github.com/tonyfischetti/vix.git ~/.vim
+cd ~/.vim
+./install.sh
+```
+
+
+
+Detailed installation
+-------------
+
 
 #### Mac OS X
 
