@@ -104,8 +104,8 @@ set cm=blowfish2
 set formatprg=par\ -w75r "rj
 
 
-" colorscheme lcars
-colorscheme molokai
+colorscheme lcars
+" colorscheme molokai
 set background=dark
 
 

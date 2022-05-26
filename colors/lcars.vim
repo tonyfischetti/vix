@@ -197,10 +197,10 @@ if &t_Co > 255
    hi Repeat          ctermfg=161               cterm=bold
 
    " marks column
-   hi SignColumn      ctermfg=100 ctermbg=235   cterm=underline
+   hi SignColumn      ctermfg=100               cterm=underline
    hi SpecialChar     ctermfg=161               cterm=bold
    hi SpecialComment  ctermfg=245               cterm=bold
-   hi Special         ctermfg=200  ctermbg=232  cterm=bold
+   hi Special         ctermfg=200               cterm=bold
    hi SpecialKey      ctermfg=100               cterm=underline
 
    hi Statement       ctermfg=161               cterm=bold
@@ -228,7 +228,7 @@ if &t_Co > 255
    hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
-   hi Normal          ctermfg=254 ctermbg=232
+   hi Normal          ctermfg=254 ctermbg=233
    " hi Comment         ctermfg=028 ctermbg=100
    hi String          ctermfg=227 ctermbg=232
    hi CursorLine                  ctermbg=234   cterm=none
