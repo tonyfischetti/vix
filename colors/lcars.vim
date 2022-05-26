@@ -263,10 +263,16 @@ if &t_Co > 255
    hi lispFunc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
    hi lispDecl      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
 
+   hi PreProc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
+   hi PreProc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
    hi rPreProc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
    hi rPreProc      ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
    hi Function      ctermfg=122 guifg=#87ffd7
    hi Operator      ctermfg=204 guifg=#ff5f87
    hi rArrow        ctermfg=204 guifg=#ff5f87
+
+   hi StorageClass    ctermfg=81 cterm=bold gui=bold
+   hi jsGlobalObjects    ctermfg=200 cterm=bold gui=bold
+   hi jsConditional     ctermfg=161               cterm=bold
 
 end " }}}
