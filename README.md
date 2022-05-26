@@ -51,6 +51,11 @@ List of vim plugins I use
    Vim plugin to respect the Linux kernel (and cmus) coding style
  - [vim-solidity:](https://github.com/TovarishFin/vim-solidity)
    Syntax for solidity smart contracts
+ - [vim-javascript:](https://github.com/pangloss/vim-javascript)
+   Better syntax file for Javascript
+ - [typescript-vim:](https://github.com/leafgarland/typescript-vim)
+   Better syntax file for Typescript
+
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more
