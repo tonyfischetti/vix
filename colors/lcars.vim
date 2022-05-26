@@ -142,10 +142,12 @@ highlight SpecialKey guifg=#444444 guibg=bg
 if &t_Co > 255
    hi Boolean         ctermfg=135
    hi Character       ctermfg=144
-   hi Number          ctermfg=135
+   hi Number          ctermfg=104
+   hi Float           ctermfg=104
    hi String          ctermfg=144
    hi Conditional     ctermfg=161               cterm=bold
-   hi Constant        ctermfg=135               cterm=bold
+   " hi Constant        ctermfg=135               cterm=bold
+   hi Constant        ctermfg=147               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
    hi Debug           ctermfg=225               cterm=bold
    hi Define          ctermfg=81
@@ -200,7 +202,8 @@ if &t_Co > 255
    hi SignColumn      ctermfg=100 ctermbg=235   cterm=underline
    hi SpecialChar     ctermfg=161               cterm=bold
    hi SpecialComment  ctermfg=245               cterm=bold
-   hi Special         ctermfg=200 ctermbg=232   cterm=bold
+   " hi Special         ctermfg=200 ctermbg=232   cterm=bold
+   hi Special         ctermfg=168 ctermbg=232   cterm=bold
    hi SpecialKey      ctermfg=100               cterm=underline
 
    hi Statement       ctermfg=161               cterm=bold
@@ -256,7 +259,7 @@ if &t_Co > 255
    " hi lispDecl      ctermfg=168  cterm=bold
 
    hi Type          ctermfg=122 guifg=#87ffd7
-   hi Type          ctermfg=158 guifg=#afffd7
+   " hi Type          ctermfg=158 guifg=#afffd7
    hi Comment       ctermfg=122 guifg=#87ffd7
    hi String        ctermfg=228 guifg=#ffff87
    hi lispKey       ctermfg=168 guifg=#d75f87
@@ -271,8 +274,12 @@ if &t_Co > 255
    hi Operator      ctermfg=204 guifg=#ff5f87
    hi rArrow        ctermfg=204 guifg=#ff5f87
 
-   hi StorageClass    ctermfg=81 cterm=bold gui=bold
-   hi jsGlobalObjects    ctermfg=200 cterm=bold gui=bold
+   " hi StorageClass    ctermfg=81 cterm=bold gui=bold
+   hi StorageClass    ctermfg=104 cterm=bold gui=bold
+   " hi jsGlobalObjects    ctermfg=200 cterm=bold gui=bold
+   hi jsGlobalObjects    ctermfg=216 cterm=bold gui=bold
    hi jsConditional     ctermfg=161               cterm=bold
+   hi typescriptReserved ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
+   hi typescriptBranch ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
 
 end " }}}

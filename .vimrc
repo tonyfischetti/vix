@@ -41,6 +41,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vivien/vim-linux-coding-style'
 Plugin 'TovarishFin/vim-solidity'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
 
 
 " plugins from http://vim-scripts.org/vim/scripts.html
