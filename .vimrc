@@ -33,7 +33,6 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'losingkeys/vim-niji'
 Plugin 'jpalardy/vim-slime'
-Plugin 'ervandew/supertab'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'maverickg/stan.vim'
@@ -42,7 +41,7 @@ Plugin 'vivien/vim-linux-coding-style'
 Plugin 'TovarishFin/vim-solidity'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
-
+Plugin 'lifepillar/vim-mucomplete'
 
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -104,13 +103,11 @@ set modeline
 set t_Co=256
 set cm=blowfish2
 set formatprg=par\ -w75r "rj
-
+set updatetime=300
 
 colorscheme lcars
 " colorscheme molokai
 set background=dark
-
-
 
 
 
@@ -124,14 +121,14 @@ if has("gui_running")
         set guioptions-=r
     endif
     if has("gui_gtk2")
-        set guifont=Monospace\ 13
+        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
         set guioptions-=m
         set guioptions-=L
         set guioptions-=r
         set guioptions-=T
     endif
     if has("gui_gtk3")
-        set guifont=Monospace\ 12
+        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
         set guioptions-=m
         set guioptions-=L
         set guioptions-=r
@@ -258,16 +255,16 @@ endfunction
 
 command Superw :call Superw()
 
-let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-p>"
-let g:SuperTabRetainCompletionDuration = 'completion'
-autocmd FileType *
-  \ if &omnifunc != '' |
-  \   call SuperTabChain(&omnifunc, "<c-x><c-p>") |
-  \ endif
-set completeopt=menu,longest,menuone,preview
-let g:SuperTabNoCompleteAfter=['^', '\s']
-let g:SuperTabCrMapping=1
+set completeopt+=longest,menuone,noselect
+
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+
+let g:mucomplete#chains = {}
+let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']
+
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 
 " remove auto string apostrophe concealing in json
 let g:vim_json_syntax_conceal = 0
@@ -516,4 +513,3 @@ endfunction
 nmap <C-Z> :call Accentize()<CR>
 
 " set keymap=greek_utf-8
-

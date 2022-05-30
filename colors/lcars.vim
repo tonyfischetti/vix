@@ -212,7 +212,7 @@ if &t_Co > 255
    hi StorageClass    ctermfg=208
    hi Structure       ctermfg=81
    hi Tag             ctermfg=161
-   hi Title           ctermfg=166
+   hi Title           ctermfg=168               cterm=bold
    hi Todo            ctermfg=231 ctermbg=232   cterm=bold
 
    hi Typedef         ctermfg=81
@@ -233,7 +233,7 @@ if &t_Co > 255
 
    hi Normal          ctermfg=254 ctermbg=233
    " hi Comment         ctermfg=028 ctermbg=100
-   hi String          ctermfg=227 ctermbg=232
+   hi String          ctermfg=227
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
    hi ColorColumn                 ctermbg=234 guibg=#303030

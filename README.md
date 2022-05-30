@@ -55,6 +55,8 @@ List of vim plugins I use
    Better syntax file for Javascript
  - [typescript-vim:](https://github.com/leafgarland/typescript-vim)
    Better syntax file for Typescript
+ - [vim-mucomplete:](https://github.com/lifepillar/vim-mucomplete)
+   Autocomplete framework
 
 
 
