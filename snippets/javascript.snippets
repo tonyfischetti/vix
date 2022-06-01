@@ -1,6 +1,9 @@
 snippet #!
 	#!/home/tony/node/bin/node
 
+snippet deno
+	#!/usr/bin/env -S deno run --allow-net --allow-read --allow-env --allow-run
+
 snippet template
 	'use strict';
 
@@ -9,6 +12,16 @@ snippet template
 	};
 
 	window.addEventListener('DOMContentLoaded', start);
+
+snippet prom
+	const thisFunReturnsAPromise = () => {
+		return new Promise((resolve, reject) => {
+			if (good)
+				resolve(something)
+			else
+				reject(new Error(error))
+		});
+	};
 
 # # Prototype
 # snippet proto
