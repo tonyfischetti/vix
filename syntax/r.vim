@@ -2248,3 +2248,7 @@ syn keyword rFunction fwrite_plus_date
 syn keyword rFunction set_lb_attribute
 syn keyword rFunction set_lb_date
 syn keyword rFunction cp_lb_attributes
+syn keyword rFunction uniqueN
+syn keyword rFunction setDT
+syn keyword rFunction data.table
+syn keyword rFunction as.data.table
