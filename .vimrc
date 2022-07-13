@@ -42,6 +42,8 @@ Plugin 'TovarishFin/vim-solidity'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'lifepillar/vim-mucomplete'
+Plugin 'neoclide/coc.nvim'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -103,6 +105,7 @@ set modeline
 set t_Co=256
 set cm=blowfish2
 set formatprg=par\ -w75r "rj
+set signcolumn=number
 set updatetime=300
 
 colorscheme lcars
@@ -121,14 +124,14 @@ if has("gui_running")
         set guioptions-=r
     endif
     if has("gui_gtk2")
-        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
+        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h16
         set guioptions-=m
         set guioptions-=L
         set guioptions-=r
         set guioptions-=T
     endif
     if has("gui_gtk3")
-        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
+        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h16
         set guioptions-=m
         set guioptions-=L
         set guioptions-=r
@@ -513,3 +516,7 @@ endfunction
 nmap <C-Z> :call Accentize()<CR>
 
 " set keymap=greek_utf-8
+
+
+nmap <leader>rn <Plug>(coc-rename)
+command! -nargs=0 Format :call CocActionAsync('format')

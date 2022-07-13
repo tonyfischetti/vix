@@ -14,3 +14,5 @@ cd bundle;
 for repo in $REPOS; do
     `git clone https://github.com/$repo`;
 done
+
+echo "Make sure you run ':CocInstall coc-json coc-tsserver coc-docker coc-deno"
