@@ -57,6 +57,12 @@ List of vim plugins I use
    Better syntax file for Typescript
  - [vim-mucomplete:](https://github.com/lifepillar/vim-mucomplete)
    Autocomplete framework
+ - [coc.nvim](https://github.com/neoclide/coc.nvim)
+   Language servers and all of that
+ - [vim-jsx-pretty](https://github.com/maxmellon/vim-jsx-pretty)
+   I guess I write react now?
+ - [](https://github.com/mattn/emmet-vim)
+   Emmet! For HTML!
 
 
 

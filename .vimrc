@@ -44,6 +44,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'lifepillar/vim-mucomplete'
 Plugin 'neoclide/coc.nvim'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'mattn/emmet-vim'
 
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -520,3 +521,5 @@ nmap <C-Z> :call Accentize()<CR>
 
 nmap <leader>rn <Plug>(coc-rename)
 command! -nargs=0 Format :call CocActionAsync('format')
+
+let g:user_emmet_leader_key=','
