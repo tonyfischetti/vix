@@ -408,7 +408,7 @@ let g:snipMate = { 'snippet_version' : 1 }
 " SLIME STUFF
 " Vim slime is (cli).vimrc only
 
-let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_paste_file = "~/.slime_paste"
 
 " this function gets around the skipping-empty-lines problem
 function! SlimeOneLine()
