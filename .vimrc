@@ -261,7 +261,7 @@ command Superw :call Superw()
 
 set completeopt+=longest,menuone,noselect
 
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 let g:mucomplete#chains = {}
 let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']
