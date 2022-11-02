@@ -46,6 +46,8 @@ Plugin 'neoclide/coc.nvim'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'mattn/emmet-vim'
 
+Plugin 'pprovost/vim-ps1'
+
 " plugins from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 
@@ -523,3 +525,5 @@ nmap <leader>rn <Plug>(coc-rename)
 command! -nargs=0 Format :call CocActionAsync('format')
 
 let g:user_emmet_leader_key=','
+
+au BufNewFile,BufRead,BufReadPost *.ps1 set ft=ps1

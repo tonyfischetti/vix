@@ -1,3 +1,8 @@
 {
-    "r.lsp.path": "/usr/local/bin/R"
+    "r.lsp.path": "/usr/local/bin/R",
+    "r.lsp.diagnostics": false,
+
+    "powershell.startAutomatically": false,
+    "powershell.powerShellExePath": "/usr/bin/pwsh"
+
 }
