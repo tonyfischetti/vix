@@ -750,10 +750,11 @@ syn keyword lispFunc loading-forever
 syn keyword lispFunc with-loading
 syn keyword lispFunc give-choices
 syn keyword lispFunc basename
-syn keyword lispFunc pwd
-syn keyword lispFunc realpath
 syn keyword lispFunc size-for-humans
 syn keyword lispFunc file-size
+syn keyword lispFunc pwd
+syn keyword lispFunc realpath
+syn keyword lispFunc inspect-pathname
 syn keyword lispFunc ls
 syn keyword lispFunc directory-exists-p
 syn keyword lispFunc file-exists-p
