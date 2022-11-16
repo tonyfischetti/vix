@@ -80,6 +80,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'elzr/vim-json'
 Plug 'mattn/emmet-vim'
 Plug 'pprovost/vim-ps1'
+Plug 'junegunn/goyo.vim'
+Plug 'losingkeys/vim-niji'
 
 " initialize plugin system
 call plug#end()
