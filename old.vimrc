@@ -11,6 +11,61 @@
 
 set nocompatible
 
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+" Vundle
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+" plugins from github
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'vim-airline/vim-airline'
+Plugin 'tonyfischetti/vim-airline-themes'
+Plugin 'garbas/vim-snipmate'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'elzr/vim-json'
+Plugin 't9md/vim-smalls'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'losingkeys/vim-niji'
+Plugin 'jpalardy/vim-slime'
+Plugin 'wlangstroth/vim-racket'
+Plugin 'whatyouhide/vim-gotham'
+Plugin 'maverickg/stan.vim'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vivien/vim-linux-coding-style'
+Plugin 'TovarishFin/vim-solidity'
+Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'lifepillar/vim-mucomplete'
+Plugin 'neoclide/coc.nvim'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'mattn/emmet-vim'
+
+Plugin 'pprovost/vim-ps1'
+
+" plugins from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+
+call vundle#end()
+filetype plugin indent on
+
+" :PluginList
+"        - lists configured plugins
+" :PluginInstall
+"        - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo
+"        - searches for foo; append `!` to refresh local cache
+" :PluginClean
+"        - confirms removal of unused plugins;
+"          append `!` to auto-approve removal
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
+
 set history=700
 set autoread
 set ruler
@@ -51,44 +106,16 @@ set nofoldenable
 set foldlevel=1
 set modeline
 set t_Co=256
+set cm=blowfish2
 set formatprg=par\ -w75r "rj
+set signcolumn=number
 set updatetime=300
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
-
-" specify directory for plugins
-call plug#begin('~/.config/nvim/plugged')
-
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'vim-airline/vim-airline'
-Plug 'tonyfischetti/vim-airline-themes'
-Plug 'tomtom/tcomment_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'jpalardy/vim-slime'
-Plug 't9md/vim-smalls'
-Plug 'easymotion/vim-easymotion'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'lifepillar/vim-mucomplete'
-Plug 'neoclide/coc.nvim'
-Plug 'wlangstroth/vim-racket'
-Plug 'whatyouhide/vim-gotham'
-Plug 'maverickg/stan.vim'
-Plug 'TovarishFin/vim-solidity'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'elzr/vim-json'
-Plug 'mattn/emmet-vim'
-Plug 'pprovost/vim-ps1'
-
-" initialize plugin system
-call plug#end()
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
 colorscheme lcars
 " colorscheme molokai
 set background=dark
+
+
 
 if has("gui_running")
     if has("gui_macvim")
@@ -123,6 +150,10 @@ syntax on
 filetype plugin on
 filetype plugin indent on
 
+" set omnifunc=ccomplete#Complete
+set omnifunc=syntaxcomplete#Complete
+
+" Use with MouseTerm to scroll!
 if has("mouse")
     set mouse=a
 endif
@@ -194,6 +225,9 @@ nmap <Leader>rw <C-W>r
 nmap <Leader>er <Leader><Leader>w
 nmap S <Leader><Leader>w
 
+" pydoc
+map <Leader>pd :Pydoc
+
 " auto-reform ugly json
 nmap <Leader>rj :%!python3 -mjson.tool<CR>
 
@@ -202,6 +236,7 @@ nmap <silent> <Leader>tw :/\v\s+$/<CR>
 "
 " remove trailing whitespace
 nmap <silent> <Leader>rw :%s/\v\s+$//<CR>
+
 
 " easy resizing of windows
 " resize height
@@ -217,7 +252,25 @@ nmap - <C-W><
 
 " Allows for hashtag comments to be inserted on a visual block
 " (at the beginning of the line) with a question mark
-vnoremap ? :TComment<CR>
+:vnoremap ? :TComment<CR>
+
+" functionality to save to read-only files
+function! Superw()
+    :w !sudo tee % > /dev/null
+endfunction
+
+command Superw :call Superw()
+
+set completeopt+=longest,menuone,noselect
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+let g:mucomplete#chains = {}
+let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']
+
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 
 " remove auto string apostrophe concealing in json
 let g:vim_json_syntax_conceal = 0
@@ -226,6 +279,10 @@ let g:vim_json_syntax_conceal = 0
 let g:airline_powerline_fonts = 1
 
 let g:airline_theme='lcars'
+
+let g:pydoc_open_cmd = 'vsplit'
+
+let g:pep8_map='<Leader>p8'
 
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 nmap <silent> <Leader>nt :NERDTreeToggle<CR>
@@ -307,6 +364,24 @@ function! s:goyo_leave()
 endfunction
 
 let g:goyo_width=80
+
+
+" Use better syntax highlighting for YAML
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
+
+" Drag visual selection plugin
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+let g:DVB_TrimWS = 1
+
+" This makes the current match more visible
+" and also centers the match vertically in the buffer
+nnoremap <silent> n   n:call HLNext()<cr>zz
+nnoremap <silent> N   N:call HLNext()<cr>zz
+
 function! HLNext()
     highlight BlackOnWhite ctermfg=black ctermbg=white
     let [bufnum, lnum, col, off] = getpos('.')
@@ -316,43 +391,20 @@ function! HLNext()
     redraw
 endfunction
 
-" This makes the current match more visible
-" and also centers the match vertically in the buffer
-nnoremap <silent> n   n:call HLNext()<cr>zz
-nnoremap <silent> N   N:call HLNext()<cr>zz
 
+" Small motion plugin
+nmap s <Plug>(smalls)
+
+" easy map to alternate favorite color schemes
+nmap <silent> <Leader>mo :color molokai<CR>
+nmap <silent> <Leader>fl :color flattr<CR>
 
 " easy map to turn back on rainbow parens after color scheme change
 nmap <silent> <Leader>rp :call niji#highlight()<CR>
 let g:niji_matching_filetypes = ['lisp', 'scheme', 'clojure', 'racket']
 
-command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
-
-imap <C-O><C-O> •
-imap <C-O><C-B> «
-imap <C-O><C-N> »
-
-let g:user_emmet_leader_key=','
-
-
-" Small motion plugin
-nmap s <Plug>(smalls)
-
-" set omnifunc=ccomplete#Complete
-set omnifunc=syntaxcomplete#Complete
-
-set completeopt+=longest,menuone,noselect
-
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-
-let g:mucomplete#chains = {}
-let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']
-
 " non-legacy snipmate parser
 let g:snipMate = { 'snippet_version' : 1 }
-
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
 
 
 " SLIME STUFF
@@ -394,51 +446,84 @@ endfunction
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "%1"}
 let g:slime_no_mappings = 1
-vmap <silent> <C-Space> :call SlimeMultiLine()<CR>
+vmap <silent> <C-@> :call SlimeMultiLine()<CR>
 nmap <silent> <C-O> <Plug>SlimeLineSend
-nmap <silent> <C-Space> :call SlimeOneLine()<CR>
+nmap <silent> <C-@> :call SlimeOneLine()<CR>
 xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
 
-nmap <silent> <A-Space> :call SlimeOneLine()<CR>
-nmap <silent> <M-Space> :call SlimeOneLine()<CR>
-vmap <silent> <A-Space> :call SlimeOneLine()<CR>
-vmap <silent> <M-Space> :call SlimeOneLine()<CR>
+nmap <silent> <A-@> :call SlimeOneLine()<CR>
+nmap <silent> <M-@> :call SlimeOneLine()<CR>
+nmap <silent> <T-@> :call SlimeOneLine()<CR>
+vmap <silent> <A-@> :call SlimeOneLine()<CR>
+vmap <silent> <M-@> :call SlimeOneLine()<CR>
+vmap <silent> <T-@> :call SlimeOneLine()<CR>
 
 :command -nargs=1 SS :SlimeSend1 <args>
 nmap <silent> <M-D> :SlimeSend1 <CR>
 nmap <silent> <C-L> :SlimeSend1 <CR>
 
-imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
+imap <silent> <C-@> <Esc>:call SlimeOneLineSamePlace()<CR>a
+
 
 " select block in R
 " nmap <silent> <Leader>bb /^}\v%0
 " run block in R
-nmap <silent> <Leader>rr /^}v%0<C-Space>j<Leader>nh
-
-:command -nargs=0 RCopyLastValue :SlimeSend1 copy_last_value()
-
-
-
-nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-
-" easy map to alternate favorite color schemes
-nmap <silent> <Leader>mo :color molokai<CR>
-nmap <silent> <Leader>fl :color flattr<CR>
-
-au BufNewFile,BufRead,BufReadPost *.ps1 set ft=ps1
-au BufNewFile,BufRead *.lisp,*.lsp,*asd set ft=lisp
-au BufNewFile,BufRead *.hy    set ft=hy
-au BufNewFile,BufRead *.yaml,*.yml    set ft=yaml
-
-" Use better syntax highlighting for YAML
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
+nmap <silent> <Leader>rr /^}v%0<C-@>j<Leader>nh
 
 augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
 
-nmap <leader>rr <Plug>(coc-rename)
+
+:command -nargs=1 Sep :normal! i<args> --------------------------------------------------------------- <args><ESC>o
+
+:command -nargs=0 RCopyLastValue :SlimeSend1 copy_last_value()
+
+nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" god said 'no siph'
+" vmap <silent> <C-E> :!siph -e -l -k ~/keys/siph.key<CR>
+" vmap <silent> <C-W> :!siph -d -l -k ~/keys/siph.key<CR>
+
+vmap <silent> <C-E> :!~/bin/oldopenssl enc -a -A -e -salt -aes256 -pass file:$HOME/.keys/siph.key<CR>
+vmap <silent> <C-W> :!~/bin/oldopenssl enc -a -A -d -salt -aes256 -pass file:$HOME/.keys/siph.key<CR>
+
+imap <C-O><C-O> •
+imap <C-O><C-B> «
+imap <C-O><C-N> »
+
+function! EllinikaFn()
+    :call NotepadMode()
+    :set keymap=greek_utf-8
+    :set spell spelllang=el
+    :set guifont=Dejavu_Sans_mono:h18
+endfunction
+
+function! GreekFn()
+    :set keymap=greek_utf-8
+endfunction
+
+:command Greek    :call GreekFn()<CR>
+:command Ellinika :call EllinikaFn()<CR>
+
+function! Accentize()
+    let accenttable = { "α": "ά", "ε": "έ", "ι": "ί", "η": "ή", "ο": "ό", "υ": "ύ", "ω": "ώ", "Α": "Ά", "Ε": "Έ", "Η": "Ή", "Ο": "Ό", "Υ": "Ύ", "Ω": "Ώ" }
+    let current = matchstr(getline('.')[col('.') - 1 :], '^.')
+    let currentline = getline(".")
+    let xlation = get(accenttable, current)
+    exec "normal r" . xlation
+endfunction
+
+nmap <C-Z> :call Accentize()<CR>
+
+" set keymap=greek_utf-8
+
+
+nmap <leader>rn <Plug>(coc-rename)
 command! -nargs=0 Format :call CocActionAsync('format')
+
+let g:user_emmet_leader_key=','
+
+au BufNewFile,BufRead,BufReadPost *.ps1 set ft=ps1
