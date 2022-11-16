@@ -82,6 +82,10 @@ Plug 'mattn/emmet-vim'
 Plug 'pprovost/vim-ps1'
 Plug 'junegunn/goyo.vim'
 Plug 'losingkeys/vim-niji'
+Plug 'karb94/neoscroll.nvim'
+Plug 'dracula/vim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'marko-cerovac/material.nvim'
 
 " initialize plugin system
 call plug#end()
@@ -419,16 +423,9 @@ nmap <silent> <Leader>rr /^}v%0<C-Space>j<Leader>nh
 
 :command -nargs=0 RCopyLastValue :SlimeSend1 copy_last_value()
 
-
-
 nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-
-" easy map to alternate favorite color schemes
-nmap <silent> <Leader>mo :color molokai<CR>
-nmap <silent> <Leader>fl :color flattr<CR>
 
 au BufNewFile,BufRead,BufReadPost *.ps1 set ft=ps1
 au BufNewFile,BufRead *.lisp,*.lsp,*asd set ft=lisp
@@ -444,3 +441,17 @@ augroup END
 
 nmap <leader>rr <Plug>(coc-rename)
 command! -nargs=0 Format :call CocActionAsync('format')
+
+let g:material_style = "palenight"
+
+lua require('neoscroll').setup({ hide_cursor = true })
+
+
+" easy map to alternate favorite color schemes
+nmap <silent> <Leader>mo :color molokai<CR>
+nmap <silent> <Leader>fl :color flattr<CR>
+nmap <silent> <Leader>dr :color dracula<CR>
+nmap <silent> <Leader>tf :color terafox<CR>
+nmap <silent> <Leader>cf :color carbonfox<CR>
+nmap <silent> <Leader>ma :color material<CR>
+nmap <silent> <Leader>go :color gotham256<CR>

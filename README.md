@@ -57,7 +57,14 @@ List of vim plugins I use (besides vim-plug)
    Awesome distraction free writing
  - [vim-niji:](https://github.com/luochen1990/rainbow)
    Easy to-tell LISP parethesis matching for great good
-
+ - [neoscroll](https://github.com/karb94/neoscroll.nvim)
+   Smooth scrolling
+ - [dracula](https://github.com/dracula/vim)
+   Venerable dracula theme
+ - [nightfox](https://github.com/EdenEast/nightfox.nvim)
+   A nice theme
+ - [material](https://github.com/marko-cerovac/material.nvim)
+   Another nice theme
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more
