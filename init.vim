@@ -56,8 +56,13 @@ set updatetime=300
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
+let tmp_plugged_path = '~/.config/nvim/plugged'
+if has("win32")
+    let tmp_plugged_path = "~/AppData/Local/nvim/plugged"
+endif
+
 " specify directory for plugins
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin(tmp_plugged_path)
 
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
