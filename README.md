@@ -37,8 +37,6 @@ List of vim plugins I use (besides vim-plug)
    Language servers and all of that
  - [vim-racket:](https://github.com/wlangstroth/vim-racket)
    Vim support for [Racket](http://racket-lang.org)
- - [vim-gotham:](https://github.com/whatyouhide/vim-gotham)
-   A pretty fly color scheme
  - [stan.vim:](https://github.com/maverickg/stan.vim)
    Syntax highlighing for the Stan modeling language
  - [vim-solidity:](https://github.com/TovarishFin/vim-solidity)
@@ -59,12 +57,18 @@ List of vim plugins I use (besides vim-plug)
    Easy to-tell LISP parethesis matching for great good
  - [neoscroll](https://github.com/karb94/neoscroll.nvim)
    Smooth scrolling
+ - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
+   Scroll bar!
  - [dracula](https://github.com/dracula/vim)
    Venerable dracula theme
  - [nightfox](https://github.com/EdenEast/nightfox.nvim)
    A nice theme
  - [material](https://github.com/marko-cerovac/material.nvim)
    Another nice theme
+ - [tokyonight](https://github.com/folke/tokyonight.nvim)
+   Pretty theme
+ - [vim-gotham:](https://github.com/whatyouhide/vim-gotham)
+   A pretty fly color scheme
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more

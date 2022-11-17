@@ -77,7 +77,6 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'neoclide/coc.nvim'
 Plug 'wlangstroth/vim-racket'
-Plug 'whatyouhide/vim-gotham'
 Plug 'maverickg/stan.vim'
 Plug 'TovarishFin/vim-solidity'
 Plug 'pangloss/vim-javascript'
@@ -88,9 +87,12 @@ Plug 'pprovost/vim-ps1'
 Plug 'junegunn/goyo.vim'
 Plug 'losingkeys/vim-niji'
 Plug 'karb94/neoscroll.nvim'
+Plug 'petertriho/nvim-scrollbar'
 Plug 'dracula/vim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'marko-cerovac/material.nvim'
+Plug 'folke/tokyonight.nvim'
+Plug 'whatyouhide/vim-gotham'
 
 " initialize plugin system
 call plug#end()
@@ -353,6 +355,7 @@ nmap s <Plug>(smalls)
 set omnifunc=syntaxcomplete#Complete
 
 set completeopt+=longest,menuone,noselect
+set completeopt-=preview
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
@@ -451,6 +454,8 @@ let g:material_style = "palenight"
 
 lua require('neoscroll').setup({ hide_cursor = true })
 
+lua require("scrollbar").setup({ handle = { color = "#4E4E4E", cterm = 239, highlight = "ColorColumn", hide_if_all_visible = true }})
+
 
 " easy map to alternate favorite color schemes
 nmap <silent> <Leader>mo :color molokai<CR>
@@ -460,3 +465,4 @@ nmap <silent> <Leader>tf :color terafox<CR>
 nmap <silent> <Leader>cf :color carbonfox<CR>
 nmap <silent> <Leader>ma :color material<CR>
 nmap <silent> <Leader>go :color gotham256<CR>
+nmap <silent> <Leader>tn :color tokyonight-night<CR>

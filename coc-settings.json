@@ -1,8 +1,16 @@
 {
-    "r.lsp.path": "/usr/local/bin/R",
+    "pyright.enable": true,
+
     "r.lsp.diagnostics": false,
 
     "powershell.startAutomatically": false,
-    "powershell.powerShellExePath": "/usr/bin/pwsh"
+    "powershell.powerShellExePath": "/usr/bin/pwsh",
 
+    "languageserver": {
+        "R": {
+            "command": "/usr/local/bin/R",
+            "args" : [ "--slave", "-e", "languageserver::run()"],
+            "filetypes" : ["r"]
+        }
+    }
 }
