@@ -14,7 +14,8 @@ set nocompatible
 set history=700
 set autoread
 set ruler
-set cmdheight=2
+" set cmdheight=2
+set cmdheight=1
 set cmdwinheight=13
 set hid
 set hlsearch
@@ -53,6 +54,8 @@ set modeline
 set t_Co=256
 set formatprg=par\ -w75r "rj
 set updatetime=300
+set ignorecase
+set smartcase
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
@@ -66,8 +69,10 @@ call plug#begin(tmp_plugged_path)
 
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'vim-airline/vim-airline'
-Plug 'tonyfischetti/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'tonyfischetti/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tomtom/tcomment_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'jpalardy/vim-slime'
@@ -93,6 +98,7 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'folke/tokyonight.nvim'
 Plug 'whatyouhide/vim-gotham'
+
 
 " initialize plugin system
 call plug#end()
@@ -139,9 +145,6 @@ filetype plugin indent on
 if has("mouse")
     set mouse=a
 endif
-
-" easy window switching
-nmap <Leader>sw <C-W><C-W>
 
 " Find and replace
 " (with 'magic")
@@ -447,7 +450,7 @@ augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
 
-nmap <leader>rr <Plug>(coc-rename)
+" nmap <leader>rr <Plug>(coc-rename)
 command! -nargs=0 Format :call CocActionAsync('format')
 
 let g:material_style = "palenight"
@@ -466,3 +469,73 @@ nmap <silent> <Leader>cf :color carbonfox<CR>
 nmap <silent> <Leader>ma :color material<CR>
 nmap <silent> <Leader>go :color gotham256<CR>
 nmap <silent> <Leader>tn :color tokyonight-night<CR>
+
+tnoremap <Esc> <C-\><C-n>
+map <C-S> <C-W>
+
+lua << END
+local colors = {
+  blue   = '#80a0ff',
+  cyan   = '#79dac8',
+  -- black  = '#080808',
+  black  = '#121212',
+  white  = '#c6c6c6',
+  red    = '#ff5189',
+  violet = '#d183e8',
+  grey   = '#303030',
+
+  salmon = '#ffaf87',
+  lavender = '#8787d7',
+  purplepink = '#d787d7'
+}
+
+local bubbles_theme = {
+  normal = {
+    a = { fg = colors.black, bg = colors.lavender },
+    b = { fg = colors.white, bg = colors.grey },
+    c = { fg = colors.black, bg = colors.black },
+  },
+
+  insert = { a = { fg = colors.black, bg = colors.salmon } },
+  visual = { a = { fg = colors.black, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors.red } },
+
+  inactive = {
+    -- a = { fg = colors.white, bg = colors.black },
+    -- b = { fg = colors.white, bg = colors.black },
+    a = { fg = colors.black, bg = colors.black },
+    b = { fg = colors.black, bg = colors.black },
+    c = { fg = colors.black, bg = colors.black },
+  },
+}
+
+require('lualine').setup {
+  options = {
+    theme = bubbles_theme,
+    component_separators = '|',
+    section_separators = { left = '', right = '' },
+  },
+  sections = {
+    lualine_a = {
+      { 'mode', separator = { left = '', right = ''}, right_padding = 0 },
+    },
+    lualine_b = { 'filename', 'branch' },
+    lualine_c = { 'fileformat' },
+    lualine_x = {},
+    lualine_y = { 'filetype', 'progress' },
+    lualine_z = {
+      { 'location', separator = { right = '' }, left_padding = 2 },
+    },
+  },
+  inactive_sections = {
+    lualine_a = { 'filename' },
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = { 'location' },
+  },
+  tabline = {},
+  extensions = {},
+}
+END

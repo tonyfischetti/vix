@@ -14,10 +14,10 @@ List of vim plugins I use (besides vim-plug)
    Required for SnipMate
  - [mw-utils:](https://github.com/MarcWeber/vim-addon-mw-utils.git)
    Required for SnipMate
- - [airline:](https://github.com/bling/vim-airline)
-   A great all-vimscript status line
- - [airline-themes:](https://github.com/tonyfischetti/vim-airline-themes)
-   Some themes for airline (my fork)
+ - [lualine:](https://github.com/nvim-lualine/lualine.nvim)
+   A great status line! Fast! Lua!
+ - [nvim-web-devicons:](https://github.com/kyazdani42/nvim-web-devicons)
+   Icons
  - [tcomment](https://github.com/tomtom/tcomment_vim)
    Great commenting plugin
  - [snipmate:](https://github.com/garbas/vim-snipmate)
