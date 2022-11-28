@@ -69,8 +69,6 @@ call plug#begin(tmp_plugged_path)
 
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'vim-airline/vim-airline'
-" Plug 'tonyfischetti/vim-airline-themes'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tomtom/tcomment_vim'
@@ -99,6 +97,9 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'folke/tokyonight.nvim'
 Plug 'whatyouhide/vim-gotham'
 
+" old vim-only status line
+" Plug 'vim-airline/vim-airline'
+" Plug 'tonyfischetti/vim-airline-themes'
 
 " initialize plugin system
 call plug#end()
@@ -465,7 +466,6 @@ nmap <silent> <Leader>mo :color molokai<CR>
 nmap <silent> <Leader>fl :color flattr<CR>
 nmap <silent> <Leader>dr :color dracula<CR>
 nmap <silent> <Leader>tf :color terafox<CR>
-nmap <silent> <Leader>cf :color carbonfox<CR>
 nmap <silent> <Leader>ma :color material<CR>
 nmap <silent> <Leader>go :color gotham256<CR>
 nmap <silent> <Leader>tn :color tokyonight-night<CR>
