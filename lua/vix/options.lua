@@ -30,6 +30,9 @@ vim.opt.guifont = "Monaco for Powerline Nerd Font Complete:h13"
 vim.opt.mouse = "a"
 vim.opt.modelines = 3
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 vim.cmd("colorscheme lcars")
 
 vim.g['user_emmet_leader_key'] = ","
