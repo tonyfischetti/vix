@@ -1,23 +1,4 @@
 
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
-
-" let tmp_plugged_path = '~/.config/nvim/plugged'
-" if has("win32")
-"     let tmp_plugged_path = "~/AppData/Local/nvim/plugged"
-" endif
-"
-" " specify directory for plugins
-" call plug#begin(tmp_plugged_path)
-"
-"
-" " initialize plugin system
-" call plug#end()
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
-
-
-
-
 " function to toggle color column
 function! ColorColumn()
   if empty(&colorcolumn)

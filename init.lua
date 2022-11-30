@@ -9,5 +9,6 @@ require 'vix.hop'
 require 'vix.scrollbar'
 require 'vix.neoscroll'
 
-vim.cmd 'source ~/.config/nvim/residual-vimscript.vim'
+tmpcmd = 'source ' .. vim.fn.stdpath('config') .. '/residual-vimscript.vim'
+vim.cmd(tmpcmd)
 
