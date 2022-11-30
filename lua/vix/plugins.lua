@@ -1,7 +1,12 @@
 
 local Plug = vim.fn['plug#']
 
-vim.call('plug#begin', '~/.config/nvim/plugged')
+tmppath = '~/.config/nvim/plugged'
+if vim.fn.has("win32")==1 then
+    tmppath = '~/AppData/Local/nvim/plugged'
+end
+
+vim.call('plug#begin', tmppath)
 
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
