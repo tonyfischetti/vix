@@ -358,8 +358,5 @@ else {
     print "[38;5;253m 253 :da/da/da\n";
     print "[38;5;254m 254 :e4/e4/e4\n";
     print "[38;5;255m 255 :ee/ee/ee\n";
-    print "\n";
-    print "\n";
 }
-print "0m";
 exit;
