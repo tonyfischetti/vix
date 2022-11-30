@@ -1,6 +1,5 @@
 
 vim.opt.number = true
-
 vim.opt.cmdheight = 1
 vim.opt.cmdwinheight = 13
 vim.opt.showmatch = true
@@ -23,7 +22,6 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 1
 vim.opt.modeline = true
 vim.opt.termguicolors = true
-vim.opt.formatprg = [[ par\ -w75r "rj ]]
 vim.opt.updatetime = 300
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -45,13 +43,10 @@ vim.g['material_style'] = "palenight"
 
 vim.g['goyo_width'] = "80"
 
--- vim.g['mucomplete#chains'] = {}
--- vim.g['mucomplete#chains.default'] = {'path', 'omni', 'keyn', 'dict', 'uspl'}
-
 vim.cmd("set omnifunc=syntaxcomplete#Complete")
 vim.cmd("set completeopt+=longest,menuone,noselect")
 vim.cmd("set completeopt-=preview")
 vim.cmd("let g:mucomplete#chains = {}")
 vim.cmd("let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']")
 
-
+vim.cmd('set formatprg=par\\ -w75r "rj')
