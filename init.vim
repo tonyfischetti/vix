@@ -24,14 +24,7 @@ set nowrap
 set backspace=2
 set backspace=indent,eol,start
 set autochdir
-let os = substitute(system('uname'), "\n", "", "")
-if os == "Darwin"
-    set clipboard+=unnamed
-elseif os == "Linux"
-    set clipboard=unnamedplus
-else
-    set clipboard+=unnamed
-endif
+set clipboard=unnamedplus
 set title
 set noswapfile
 set ttyfast
@@ -75,7 +68,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'jpalardy/vim-slime'
 Plug 't9md/vim-smalls'
-""""""" Plug 'easymotion/vim-easymotion'
 Plug 'phaazon/hop.nvim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lifepillar/vim-mucomplete'

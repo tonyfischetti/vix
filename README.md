@@ -29,14 +29,12 @@ List of vim plugins I use (besides vim-plug)
    (preconfigured to use tmux)
  - [smalls:](https://github.com/t9md/vim-smalls)
    Cursor movement with simple search
- - [easymotion:](https://github.com/Lokaltog/vim-easymotion)
+ - [hop:](https://github.com/phaazon/hop.nvim)
    A great and easy way to quickly change cursor position
  - [vim-pandoc-syntax.vim:](https://github.com/vim-pandoc/vim-pandoc-syntax)
    Pandoc syntax module
  - [vim-mucomplete:](https://github.com/lifepillar/vim-mucomplete)
    Autocomplete framework
- - [coc.nvim](https://github.com/neoclide/coc.nvim)
-   Language servers and all of that
  - [vim-racket:](https://github.com/wlangstroth/vim-racket)
    Vim support for [Racket](http://racket-lang.org)
  - [stan.vim:](https://github.com/maverickg/stan.vim)
