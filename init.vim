@@ -14,7 +14,6 @@ set nocompatible
 set history=700
 set autoread
 set ruler
-" set cmdheight=2
 set cmdheight=1
 set cmdwinheight=13
 set hid
@@ -76,10 +75,10 @@ Plug 'tomtom/tcomment_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'jpalardy/vim-slime'
 Plug 't9md/vim-smalls'
-Plug 'easymotion/vim-easymotion'
+""""""" Plug 'easymotion/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lifepillar/vim-mucomplete'
-Plug 'neoclide/coc.nvim'
 Plug 'wlangstroth/vim-racket'
 Plug 'maverickg/stan.vim'
 Plug 'TovarishFin/vim-solidity'
@@ -211,8 +210,10 @@ nnoremap Q <nop>
 nmap <Leader>rw <C-W>r
 
 " EasyMotion stuff
-nmap <Leader>er <Leader><Leader>w
-nmap S <Leader><Leader>w
+" nmap <Leader>er <Leader><Leader>w
+" nmap S <Leader><Leader>w
+nmap <Leader>er :HopWord<CR>
+nmap S :HopWord<CR>
 
 " auto-reform ugly json
 nmap <Leader>rj :%!python3 -mjson.tool<CR>
@@ -364,8 +365,6 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt+=longest,menuone,noselect
 set completeopt-=preview
 
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
-
 let g:mucomplete#chains = {}
 let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']
 
@@ -454,9 +453,6 @@ augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
 
-" nmap <leader>rr <Plug>(coc-rename)
-command! -nargs=0 Format :call CocActionAsync('format')
-
 let g:material_style = "palenight"
 
 lua require('neoscroll').setup({ hide_cursor = true })
@@ -542,4 +538,8 @@ require('lualine').setup {
   tabline = {},
   extensions = {},
 }
+
+local hop = require('hop').setup {}
+
+
 END
