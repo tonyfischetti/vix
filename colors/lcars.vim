@@ -17,7 +17,7 @@ set t_Co=256
 let g:colors_name="lcars"
 
 " Basic Layout {{{
-hi Normal          guifg=#F8F8F2 guibg=#1B1E1F
+hi Normal          guifg=#F8F8F2 guibg=#121212
 hi Folded          guifg=#666666 guibg=bg
 hi CursorLine                    guibg=#232728
 " hi CursorColumn                  guibg=#232728
@@ -236,7 +236,7 @@ if &t_Co > 255
    hi String          ctermfg=227
    hi CursorLine                  ctermbg=234   cterm=none
    hi CursorColumn                ctermbg=234
-   hi ColorColumn                 ctermbg=234 guibg=#303030
+   hi ColorColumn                 ctermbg=234 guibg=#1C1C1C
    hi LineNr          ctermfg=250 ctermbg=233
    hi NonText         ctermfg=240 ctermbg=233
    hi htmlItalic          ctermfg=254 ctermbg=232

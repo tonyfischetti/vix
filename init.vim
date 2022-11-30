@@ -51,7 +51,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 set modeline
-set t_Co=256
+set termguicolors
 set formatprg=par\ -w75r "rj
 set updatetime=300
 set ignorecase
@@ -96,6 +96,8 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'folke/tokyonight.nvim'
 Plug 'whatyouhide/vim-gotham'
+
+Plug 'dstein64/vim-startuptime'
 
 " old vim-only status line
 " Plug 'vim-airline/vim-airline'
