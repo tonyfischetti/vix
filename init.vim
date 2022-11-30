@@ -471,6 +471,7 @@ nmap <silent> <Leader>tf :color terafox<CR>
 nmap <silent> <Leader>ma :color material<CR>
 nmap <silent> <Leader>go :color gotham256<CR>
 nmap <silent> <Leader>tn :color tokyonight-night<CR>
+nmap <silent> <Leader>ei :color Tomorrow-Night-Eighties<CR>
 
 tnoremap <Esc> <C-\><C-n>
 map <C-S> <C-W>
