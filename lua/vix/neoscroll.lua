@@ -1,0 +1,3 @@
+
+require('neoscroll').setup({ hide_cursor = true })
+
