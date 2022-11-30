@@ -91,55 +91,23 @@ Plug 'whatyouhide/vim-gotham'
 
 Plug 'dstein64/vim-startuptime'
 
-" old vim-only status line
-" Plug 'vim-airline/vim-airline'
-" Plug 'tonyfischetti/vim-airline-themes'
-
 " initialize plugin system
 call plug#end()
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
 colorscheme lcars
-" colorscheme molokai
 set background=dark
 
-if has("gui_running")
-    if has("gui_macvim")
-        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
-        set transparency=2
-        " colorscheme molokai
-        colorscheme lcars
-        set guioptions-=L
-        set guioptions-=r
-    endif
-    if has("gui_gtk2")
-        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h16
-        set guioptions-=m
-        set guioptions-=L
-        set guioptions-=r
-        set guioptions-=T
-    endif
-    if has("gui_gtk3")
-        set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h16
-        set guioptions-=m
-        set guioptions-=L
-        set guioptions-=r
-        set guioptions-=T
-    endif
-    if has("gui_win32")
-        set guifont=Inconsolata\ for\ Powerline:h13
-        set guioptions=m
-    endif
-endif
+set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
+set guioptions-=L
+set guioptions-=r
 
 syntax on
 filetype plugin on
 filetype plugin indent on
 
-if has("mouse")
-    set mouse=a
-endif
+set mouse=a
 
 " Find and replace
 " (with 'magic")
@@ -147,9 +115,6 @@ nmap <Leader>fr :%s/\v
 
 " repeat last command
 nmap <Leader>rt @:<CR>
-
-" toggle line wrap, also toggles the color column
-nmap <silent> <Leader>tw :set wrap!<CR>:call ColorColumn()<CR>
 
 " toggle just the color column
 nmap <silent> <Leader>cc :call ColorColumn()<CR>
@@ -192,18 +157,10 @@ nnoremap U <C-R>
 " Turn off highlights from search
 nmap <silent> <Leader>nh :noh<CR>
 
-" Resize current buffer to 85 columns
-nmap <Leader>nb 85<C-W>\|
-
 " No Ex mode
 nnoremap Q <nop>
 
-" rotate windows
-nmap <Leader>rw <C-W>r
-
-" EasyMotion stuff
-" nmap <Leader>er <Leader><Leader>w
-" nmap S <Leader><Leader>w
+" Hop (formerly EasyMotion) stuff
 nmap <Leader>er :HopWord<CR>
 nmap S :HopWord<CR>
 
@@ -216,17 +173,9 @@ nmap <silent> <Leader>tw :/\v\s+$/<CR>
 " remove trailing whitespace
 nmap <silent> <Leader>rw :%s/\v\s+$//<CR>
 
-" easy resizing of windows
-" resize height
-nmap + <C-W>+
-nmap _ <C-W>-
-" resize width
-nmap = <C-W>>
-nmap - <C-W><
-
 " Set visual mode indent
-:vnoremap < <gv
-:vnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " Allows for hashtag comments to be inserted on a visual block
 " (at the beginning of the line) with a question mark
@@ -235,73 +184,19 @@ vnoremap ? :TComment<CR>
 " remove auto string apostrophe concealing in json
 let g:vim_json_syntax_conceal = 0
 
-" airline overrides
-let g:airline_powerline_fonts = 1
-
-let g:airline_theme='lcars'
-
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
-nmap <silent> <Leader>nt :NERDTreeToggle<CR>
-
-nmap <silent> <Leader>tb :TagbarToggle<CR>
-
-function! ChangeSize(direction)
-    if has("gui_running")
-        if exists("&guifont")
-            if (len(&guifont) > 0)
-                let thesplit = split(&guifont, ":")
-                let fontname = thesplit[0]
-                let rawsize = thesplit[1]
-                let numsize = split(rawsize, "h")[0]
-                if (a:direction > 0)
-                    let numsize = numsize+1
-                elseif (a:direction < 0)
-                    let numsize = numsize-1
-                endif
-                let newfont = fontname . ":h" . numsize
-                let &guifont = newfont
-            endif
-        endif
-    endif
-endfunction
-
-function! MakeFontBigger()
-    call ChangeSize(1)
-endfunction
-
-function! MakeFontSmaller()
-    call ChangeSize(-1)
-endfunction
-
-nmap <silent> <Leader>bb :call MakeFontBigger()<CR>
-nmap <silent> <Leader>ss :call MakeFontSmaller()<CR>
-
 function! NotepadMode()
     set wrap
     set spell
-    " call ColorColumn()
-    " colorscheme soft
     Goyo
-    if has("gui_running")
-        if exists("&guifont")
-            if (len(&guifont) > 0)
-                call MakeFontBigger()
-                call MakeFontBigger()
-            endif
-        endif
-    endif
 endfunction
 
 " put into 'notepad mode'
 nmap <silent> <Leader>nm :call NotepadMode()<CR>
 
-:command -nargs=1 Width :set textwidth=<args>
-
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 function! s:goyo_enter()
-  " :color pencil
   let b:quitting = 0
   let b:quitting_bang = 0
   autocmd QuitPre <buffer> let b:quitting = 1
@@ -309,7 +204,6 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
     if b:quitting_bang
       qa!
@@ -347,11 +241,9 @@ imap <C-O><C-N> »
 
 let g:user_emmet_leader_key=','
 
-
 " Small motion plugin
 nmap s <Plug>(smalls)
 
-" set omnifunc=ccomplete#Complete
 set omnifunc=syntaxcomplete#Complete
 
 set completeopt+=longest,menuone,noselect
@@ -367,9 +259,8 @@ imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
 
+" ------------------
 " SLIME STUFF
-" Vim slime is (cli).vimrc only
-
 let g:slime_paste_file = "~/.slime_paste"
 
 " this function gets around the skipping-empty-lines problem
@@ -411,23 +302,11 @@ nmap <silent> <C-O> <Plug>SlimeLineSend
 nmap <silent> <C-Space> :call SlimeOneLine()<CR>
 xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
 
-nmap <silent> <A-Space> :call SlimeOneLine()<CR>
-nmap <silent> <M-Space> :call SlimeOneLine()<CR>
-vmap <silent> <A-Space> :call SlimeOneLine()<CR>
-vmap <silent> <M-Space> :call SlimeOneLine()<CR>
-
-:command -nargs=1 SS :SlimeSend1 <args>
-nmap <silent> <M-D> :SlimeSend1 <CR>
+command -nargs=1 SS :SlimeSend1 <args>
 nmap <silent> <C-L> :SlimeSend1 <CR>
 
 imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
 
-" select block in R
-" nmap <silent> <Leader>bb /^}\v%0
-" run block in R
-nmap <silent> <Leader>rr /^}v%0<C-Space>j<Leader>nh
-
-:command -nargs=0 RCopyLastValue :SlimeSend1 copy_last_value()
 
 nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
