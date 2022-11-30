@@ -9,32 +9,18 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-set nocompatible
-
-set history=700
-set autoread
-set ruler
 set cmdheight=1
 set cmdwinheight=13
-set hid
-set hlsearch
-set incsearch
 set showmatch
 set nowrap
-set backspace=2
-set backspace=indent,eol,start
 set autochdir
 set clipboard=unnamedplus
 set title
 set noswapfile
-set ttyfast
-set laststatus=2
-set encoding=utf8
 set scrolloff=5
-set lbr
+set linebreak
 set colorcolumn=79
 set expandtab
-set smarttab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -49,6 +35,16 @@ set formatprg=par\ -w75r "rj
 set updatetime=300
 set ignorecase
 set smartcase
+
+colorscheme lcars
+set background=dark
+set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
+set guioptions-=L
+set guioptions-=r
+syntax on
+filetype plugin on
+filetype plugin indent on
+set mouse=a
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
@@ -96,18 +92,6 @@ call plug#end()
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
-colorscheme lcars
-set background=dark
-
-set guifont=Monaco\ for\ Powerline\ Nerd\ Font\ Complete:h13
-set guioptions-=L
-set guioptions-=r
-
-syntax on
-filetype plugin on
-filetype plugin indent on
-
-set mouse=a
 
 " Find and replace
 " (with 'magic")
