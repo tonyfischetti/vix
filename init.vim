@@ -46,6 +46,8 @@ filetype plugin on
 filetype plugin indent on
 set mouse=a
 
+set modelines=3
+
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "
 
 let tmp_plugged_path = '~/.config/nvim/plugged'
@@ -67,14 +69,14 @@ Plug 't9md/vim-smalls'
 Plug 'phaazon/hop.nvim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lifepillar/vim-mucomplete'
-Plug 'wlangstroth/vim-racket'
-Plug 'maverickg/stan.vim'
-Plug 'TovarishFin/vim-solidity'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
+Plug 'wlangstroth/vim-racket',          {'for': 'racket'}
+Plug 'maverickg/stan.vim',              {'for': 'stan'}
+Plug 'TovarishFin/vim-solidity',        {'for': 'solidity'}
+Plug 'pangloss/vim-javascript',         {'for': 'javascript'}
+Plug 'leafgarland/typescript-vim',      {'for': 'typescript'}
+Plug 'mattn/emmet-vim',                 {'for': 'html'}
+Plug 'pprovost/vim-ps1',                {'for': 'ps1'}
 Plug 'elzr/vim-json'
-Plug 'mattn/emmet-vim'
-Plug 'pprovost/vim-ps1'
 Plug 'junegunn/goyo.vim'
 Plug 'losingkeys/vim-niji'
 Plug 'karb94/neoscroll.nvim'
@@ -395,6 +397,5 @@ require('lualine').setup {
 }
 
 local hop = require('hop').setup {}
-
 
 END
