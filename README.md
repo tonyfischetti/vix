@@ -1,4 +1,6 @@
-# Introduction
+# vix
+
+## Introduction
 
 vix is just a place to keep my particular (neo)vim setup and configuration
 so I can easily experiment with it and clone it on different systems. It's
@@ -76,8 +78,7 @@ importantly, help needy children in Uganda, please!
 www.vim.org
 
 
-Installation
--------------
+## Installation
 
 On GNU/Linux, Unix, etc... installation is simply
 
