@@ -117,3 +117,4 @@ augroup pandoc_syntax
 augroup END
 
 inoremap <expr> <cr> pumvisible() ? "<c-y>" : "<cr>"
+

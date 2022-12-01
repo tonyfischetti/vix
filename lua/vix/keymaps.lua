@@ -84,3 +84,5 @@ map("n", "<Leader>ei", ":color Tomorrow-Night-Eighties<CR>", { silent = true })
 map("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 map("n", "<C-S>", "<C-W>")
 
+-- x should not copy a single character into the clipboard
+map("n", "x", [["_x]], { noremap = true })
