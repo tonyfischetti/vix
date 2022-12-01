@@ -17,7 +17,7 @@ map("v",">", ">gv", { noremap = true })
 map("v","?", ":TComment<CR>", { noremap = true })
 
 --no Ex mode
-map("n","Q", "<nop>", { noremap = true })
+map("n", "Q", "<nop>", { noremap = true })
 
 --Easier Redo (u/U = Undo/Redo)
 map("n","U", "<C-R>", { noremap = true })

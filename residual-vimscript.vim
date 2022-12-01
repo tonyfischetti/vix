@@ -104,16 +104,28 @@ nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"na
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-au BufNewFile,BufRead,BufReadPost *.ps1 set ft=ps1
-au BufNewFile,BufRead *.lisp,*.lsp,*asd set ft=lisp
-au BufNewFile,BufRead *.hy    set ft=hy
-au BufNewFile,BufRead *.yaml,*.yml    set ft=yaml
+augroup alisp
+    autocmd!
+    autocmd BufNewFile,BufReadPre *.lisp,*.lsp,*asd set ft=lisp
+augroup END
 
-" Use better syntax highlighting for YAML
-au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
+augroup apowershell
+    autocmd!
+    autocmd BufNewFile,BufRead *.ps1 set ft=ps1
+augroup END
 
-augroup pandoc_syntax
-    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup apowershell
+    autocmd!
+    autocmd BufNewFile,BufRead *.hy set ft=hy
+augroup END
+
+augroup apowershell
+    autocmd!
+    autocmd BufNewFile,BufRead *.yaml,*.yml set ft=yaml
+augroup END
+
+augroup apandoc
+    au! BufNewFile,BufRead *.md set filetype=markdown.pandoc
 augroup END
 
 inoremap <expr> <cr> pumvisible() ? "<c-y>" : "<cr>"
