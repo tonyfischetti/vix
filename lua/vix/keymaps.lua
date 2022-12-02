@@ -1,4 +1,5 @@
 
+local fns = require('vix.functions')
 local map = vim.keymap.set
 
 
@@ -53,10 +54,14 @@ map("n", "x", [["_x]])
 map({"t", ""}, "<M-k>", "<C-\\><C-n><C-w>k")
 map({"t", ""}, "<M-j>", "<C-\\><C-n><C-w>j")
 
+-----------------------------------------------------
 ---- LEADER MAPS ------------------------------------
 
 --Turn off highlights from search
 map("n","<Leader>nh", ":noh<CR>", { silent = true })
+
+-- toggle ColorColumn
+map('n', '<Leader>cc', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
 
 -- another hop thing
 map("n", "<Leader>er", ":HopWord<CR>")
@@ -64,8 +69,8 @@ map("n", "<Leader>er", ":HopWord<CR>")
 --Find and replace (with 'magic')
 map("n", "<Leader>fr", ":%s/\\v")
 
--- toggle just the color column
-map("n", "<Leader>cc", ":call ColorColumn()<CR>", { silent = true })
+-- -- toggle just the color column
+-- map("n", "<Leader>cc", ":call ColorColumn()<CR>", { silent = true })
 
 -- " insert date right into document
 map("n", "<Leader>dd", ":r! date<CR>", { silent = true })

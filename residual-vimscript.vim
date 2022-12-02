@@ -1,20 +1,4 @@
 
-" function to toggle color column
-function! ColorColumn()
-  if empty(&colorcolumn)
-    if empty(&textwidth)
-      echo "colorcolumn=79"
-      setlocal colorcolumn=79
-    else
-      echo "colorcolumn=+1 (" . (&textwidth + 1) . ")"
-      setlocal colorcolumn=+1
-    endif
-  else
-    echo "colorcolumn="
-    setlocal colorcolumn=
-  endif
-endfunction
-
 function! NotepadMode()
     set wrap
     set spell
