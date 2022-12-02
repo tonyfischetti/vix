@@ -33,8 +33,6 @@ vim.opt.modelines = 3
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.cmd("colorscheme lcars")
-
 vim.g['user_emmet_leader_key'] = ","
 vim.g['niji_matching_filetypes'] = {'lisp', 'scheme', 'clojure', 'racket'}
 vim.g['vim_json_syntax_conceal'] = 0
@@ -46,6 +44,13 @@ vim.g['material_style'] = "palenight"
 
 vim.g['goyo_width'] = "80"
 
+vim.g['slime_paste_file'] = "~/.slime_paste"
+vim.g['slime_target'] = "tmux"
+vim.g['slime_default_config'] = [[{"socket_name": "default", "target_pane": "%1"}]]
+vim.g['slime_no_mappings'] = 1
+
+vim.cmd("colorscheme lcars")
+
 vim.cmd("set omnifunc=syntaxcomplete#Complete")
 vim.cmd("set completeopt+=longest,menuone,noselect")
 vim.cmd("set completeopt-=preview")
@@ -53,3 +58,4 @@ vim.cmd("let g:mucomplete#chains = {}")
 vim.cmd("let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']")
 
 vim.cmd('set formatprg=par\\ -w75r "rj')
+

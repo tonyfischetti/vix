@@ -1,7 +1,7 @@
 
 local Plug = vim.fn['plug#']
 
-plugloc = vim.fn.stdpath("config") .. '/plugged'
+local plugloc = vim.fn.stdpath("config") .. '/plugged'
 
 vim.call('plug#begin', plugloc)
 

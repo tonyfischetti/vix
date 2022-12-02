@@ -54,10 +54,6 @@ function! HLNext()
 endfunction
 
 
-" ------------------
-" SLIME STUFF
-let g:slime_paste_file = "~/.slime_paste"
-
 " this function gets around the skipping-empty-lines problem
 function! SlimeOneLine()
     let line = getline('.')
@@ -86,47 +82,14 @@ function! SlimeMultiLine()
     ":sleep 10m
 endfunction
 
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "%1"}
-let g:slime_no_mappings = 1
-vmap <silent> <C-Space> :call SlimeMultiLine()<CR>
-nmap <silent> <C-O> <Plug>SlimeLineSend
-nmap <silent> <C-Space> :call SlimeOneLine()<CR>
-xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
-
-command -nargs=1 SS :SlimeSend1 <args>
-nmap <silent> <C-L> :SlimeSend1 <CR>
-
-imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
-
-
 nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-augroup alisp
-    autocmd!
-    autocmd BufNewFile,BufReadPre *.lisp,*.lsp,*asd set ft=lisp
-augroup END
-
-augroup apowershell
-    autocmd!
-    autocmd BufNewFile,BufRead *.ps1 set ft=ps1
-augroup END
-
-augroup apowershell
-    autocmd!
-    autocmd BufNewFile,BufRead *.hy set ft=hy
-augroup END
-
-augroup apowershell
-    autocmd!
-    autocmd BufNewFile,BufRead *.yaml,*.yml set ft=yaml
-augroup END
-
-augroup apandoc
-    au! BufNewFile,BufRead *.md set filetype=markdown.pandoc
-augroup END
-
-inoremap <expr> <cr> pumvisible() ? "<c-y>" : "<cr>"
+nmap <silent> <C-Space> :call SlimeOneLine()<CR>
+vmap <silent> <C-Space> :call SlimeMultiLine()<CR>
+nmap <silent> <C-O> <Plug>SlimeLineSend
+xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
+nmap <silent> <C-L> :SlimeSend1 <CR>
+imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
 
