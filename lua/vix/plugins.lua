@@ -33,14 +33,11 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'marko-cerovac/material.nvim'
 Plug 'folke/tokyonight.nvim'
 Plug 'whatyouhide/vim-gotham'
-
 Plug 'dstein64/vim-startuptime'
-
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.0' })
-
 Plug 'nvim-telescope/telescope-symbols.nvim'
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
 vim.call('plug#end')
-
 

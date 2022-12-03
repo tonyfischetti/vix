@@ -69,6 +69,16 @@ List of vim plugins I use (besides vim-plug)
    Pretty theme
  - [vim-gotham:](https://github.com/whatyouhide/vim-gotham)
    A pretty fly color scheme
+ - [vim-startuptime](https://github.com/dstein64/vim-startuptime)
+   Something to monitor vim's start up time
+ - [plenary](https://github.com/nvim-lua/plenary.nvim)
+   Dependency of telescope
+ - [telescope](https://github.com/nvim-telescope/telescope.nvim)
+   Dope fuzzy finder
+ - [telescrope-symbols](https://github.com/nvim-telescope/telescope-symbols.nvim)
+   Fuzzy find of symbols, emojis, etc...
+ - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
+   Faster fuzzy search
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more

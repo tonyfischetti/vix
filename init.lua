@@ -16,4 +16,3 @@ require 'vix.scrollbar'
 require 'vix.neoscroll'
 require 'vix.telescope'
 
-
