@@ -37,7 +37,10 @@ Plug 'dstein64/vim-startuptime'
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.0' })
 Plug 'nvim-telescope/telescope-symbols.nvim'
-Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+
+if vim.fn.executable("make") == 1 then
+    Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+end
 
 vim.call('plug#end')
 

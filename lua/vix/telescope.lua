@@ -29,7 +29,9 @@ require("telescope").setup{
     }
 }
 
-require('telescope').load_extension('fzf')
+if vim.fn.executable("make") then
+    require('telescope').load_extension('fzf')
+end
 
 vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<Leader>co', builtin.colorscheme, {})

@@ -58,5 +58,8 @@ vim.cmd("set completeopt-=preview")
 vim.cmd("let g:mucomplete#chains = {}")
 vim.cmd("let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'uspl']")
 
-vim.cmd('set formatprg=par\\ -w75r "rj')
+if vim.fn.executable('par') == 1 then
+    vim.cmd('set formatprg=par\\ -w75r "rj')
+end
+
 
