@@ -8,6 +8,11 @@ require("telescope").setup{
                 ["<ESC>"] = actions.close
             },
         },
+        layout_config = {
+            -- prompt_position = "top",
+            -- mirror = false,
+            -- anchor = "N"
+        }
     },
     pickers = {
         find_files = {
