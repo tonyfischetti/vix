@@ -38,7 +38,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.0' })
 Plug 'nvim-telescope/telescope-symbols.nvim'
 
-if vim.fn.executable("make") == 1 then
+-- don't load fzf native on window$
+if vim.fn.has("win32") == 0 then
     Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 end
 

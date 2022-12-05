@@ -29,7 +29,8 @@ require("telescope").setup{
     }
 }
 
-if vim.fn.executable("make") then
+-- don't load this on window$
+if vim.fn.has("win32") == 0 then
     require('telescope').load_extension('fzf')
 end
 
