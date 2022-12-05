@@ -5,13 +5,15 @@ require("telescope").setup{
     defaults = {
         mappings = {
             i = {
-                ["<ESC>"] = actions.close
+                ["<ESC>"] = actions.close,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
             },
+
         },
+        sorting_strategy   = "ascending",
         layout_config = {
-            -- prompt_position = "top",
-            -- mirror = false,
-            -- anchor = "N"
+            prompt_position = "top",
         }
     },
     pickers = {
