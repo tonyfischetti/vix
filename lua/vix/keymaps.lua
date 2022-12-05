@@ -1,5 +1,5 @@
 
-local fns = require('vix.functions')
+local fns = require('vix.lib.functions')
 local map = vim.keymap.set
 
 
