@@ -23,7 +23,7 @@ Plug('pangloss/vim-javascript',         {['for'] = 'javascript'})
 Plug('leafgarland/typescript-vim',      {['for'] = 'typescript'})
 Plug('mattn/emmet-vim',                 {['for'] = 'html'})
 Plug('pprovost/vim-ps1',                {['for'] = 'ps1'})
-Plug 'elzr/vim-json'
+Plug('elzr/vim-json',                   {['for'] = 'json'})
 Plug 'junegunn/goyo.vim'
 Plug 'losingkeys/vim-niji'
 Plug 'karb94/neoscroll.nvim'
