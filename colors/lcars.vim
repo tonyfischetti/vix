@@ -137,5 +137,7 @@ hi typescriptReserved ctermfg=204 guifg=#ff5f87                           cterm=
 hi typescriptBranch   ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi jsTemplateExpression ctermfg=139 guifg=#AF87AF
 
-
-
+hi ps1Keyword         ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
+hi ps1Cmdlet          ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
+hi ps1Label           ctermfg=152 guifg=#AFD7D7
+hi ps1InterpolationDelimiter        ctermfg=168 guifg=#ef5939                           cterm=bold gui=bold
