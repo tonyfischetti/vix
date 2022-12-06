@@ -124,8 +124,10 @@ hi racketSyntax       ctermfg=204 guifg=#ff5f87                           cterm=
 hi racketFunc         ctermfg=176 guifg=#D787D7
 
 hi makeCommands       ctermfg=147 guifg=#AFAFFF
-
 hi gitcommitSummary   ctermfg=161 guifg=#F92672                           cterm=bold gui=bold
+hi shOption           ctermfg=139 guifg=#AF87AF
+hi zshCommands        ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
+hi shStatement        ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 
 hi jsConditional      ctermfg=167 guifg=#D75F5F                           cterm=bold gui=bold
 hi jsGlobalObjects    ctermfg=139 guifg=#AF87AF                           cterm=bold gui=bold
@@ -135,9 +137,11 @@ hi jsArrowFunction    ctermfg=168 guifg=#D75F87                           cterm=
 hi jsStorageClass     ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
 hi typescriptReserved ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi typescriptBranch   ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi jsTemplateExpression ctermfg=139 guifg=#AF87AF
 
 hi ps1Keyword         ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
 hi ps1Cmdlet          ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi ps1Label           ctermfg=152 guifg=#AFD7D7
-hi ps1InterpolationDelimiter        ctermfg=168 guifg=#ef5939                           cterm=bold gui=bold
+
+hi jsTemplateExpression       ctermfg=139 guifg=#AF87AF
+hi ps1InterpolationDelimiter  ctermfg=168 guifg=#ef5939                   cterm=bold gui=bold
+
