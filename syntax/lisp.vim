@@ -529,6 +529,7 @@ syn keyword lispDecl		defsetf				do-external-symbols	let
 syn keyword lispDecl		deftype				do-symbols		locally
 syn keyword lispDecl		defun				dotimes			macrolet
 syn keyword lispDecl		do*				flet			multiple-value-bind
+syn keyword lispDecl		defvar
 if exists("g:lispsyntax_clisp")
   " CLISP FFI:
   syn match lispDecl	"\<\(ffi:\)\?def-c-\(var\|const\|enum\|type\|struct\)\>"

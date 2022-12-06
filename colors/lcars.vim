@@ -104,7 +104,7 @@ hi lispDecl           ctermfg=204 guifg=#ff5f87                           cterm=
 hi lispFunc           ctermfg=176 guifg=#D787D7
 hi lispBarSymbol      ctermfg=176 guifg=#D787D7
 hi lispKey            ctermfg=147 guifg=#AFAFFF
-hi lispEscapeSpecial  ctermfg=176 guifg=#D787D7
+hi lispEscapeSpecial  ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
 
 hi pythonRepeat       ctermfg=161 guifg=#F92672                           cterm=bold gui=bold
 hi pythonConditional  ctermfg=176 guifg=#D787D7                           cterm=bold gui=bold
