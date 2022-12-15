@@ -114,6 +114,7 @@ hi pythonStatement    ctermfg=104 guifg=#8787D7                           cterm=
 hi pythonRepeat       ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi pythonConstant     ctermfg=167 guifg=#D75F5F                           cterm=bold gui=bold
 hi pythonParameters   ctermfg=152 guifg=#AFD7D7
+hi pythonComment      ctermfg=152 guifg=#AFD7D7
 
 hi cType              ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
 hi cFormat            ctermfg=152 guifg=#AFD7D7
@@ -135,6 +136,7 @@ hi jsFuncCall         ctermfg=104 guifg=#8787D7                           cterm=
 hi jsObjectProp       ctermfg=152 guifg=#AFD7D7                           cterm=bold gui=bold
 hi jsArrowFunction    ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
 hi jsStorageClass     ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
+hi jsComment          ctermfg=152 guifg=#AFD7D7
 hi typescriptReserved ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi typescriptBranch   ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 
