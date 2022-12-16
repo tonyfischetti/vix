@@ -59,6 +59,7 @@ map({"t", ""}, "<M-j>", "<C-\\><C-n><C-w>j")
 
 --Turn off highlights from search
 map("n","<Leader>nh", ":noh<CR>", { silent = true })
+map("n","<C-c>", ":noh<CR>", { silent = true })
 
 -- toggle ColorColumn
 map('n', '<Leader>cc', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
