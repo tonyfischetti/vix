@@ -88,6 +88,8 @@ map("n", "<Leader>rw", ":%s/\\v\\s+$//<CR>", { silent = true })
 map("n", "<Leader>rp", ":call niji#highlight()<CR>", { silent = true })
 
 -- easy map to alternate favorite color schemes
+map("n", "<Leader>lc", ":color lcars<CR>", { silent = true })
+map("n", "<Leader>lb", ":color lcars-black<CR>", { silent = true })
 map("n", "<Leader>mo", ":color molokai<CR>", { silent = true })
 map("n", "<Leader>fl", ":color flattr<CR>", { silent = true })
 map("n", "<Leader>dr", ":color dracula<CR>", { silent = true })

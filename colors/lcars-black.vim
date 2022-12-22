@@ -22,8 +22,8 @@ set t_Co=256
 let g:colors_name = "lcars"
 
 
-" hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000
-hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#121212
+" hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#121212
+hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000
 hi Type               ctermfg=122 guifg=#87ffd7
 hi Comment            ctermfg=122 guifg=#87ffd7
 hi String             ctermfg=228 guifg=#ffff87
