@@ -14,6 +14,8 @@ snippet #!
 	options(datatable.print.keys=TRUE)
 	options(datatable.fwrite.sep='\\t')
 	options(datatable.na.strings="")
+	options(mc.cores = parallel::detectCores())
+	rstan_options(auto_write = TRUE)
 
 	args <- commandArgs(trailingOnly=TRUE)
 	
@@ -53,6 +55,8 @@ snippet template
 	options(datatable.print.class=TRUE)
 	options(datatable.print.keys=TRUE)
 	options(datatable.fwrite.sep='\\t')
+	options(mc.cores = parallel::detectCores())
+	rstan_options(auto_write = TRUE)
 
 	args <- commandArgs(trailingOnly=TRUE)
 	
