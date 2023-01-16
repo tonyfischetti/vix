@@ -121,6 +121,7 @@ hi cType              ctermfg=168 guifg=#D75F87                           cterm=
 hi cFormat            ctermfg=152 guifg=#AFD7D7
 hi cLabel             ctermfg=152 guifg=#AFD7D7
 hi cCharacter         ctermfg=216 guifg=#FFAF87
+hi cDefine            ctermfg=228 guifg=#ffff87
 
 hi racketSyntax       ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi racketFunc         ctermfg=176 guifg=#D787D7
