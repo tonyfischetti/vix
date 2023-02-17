@@ -85,6 +85,7 @@ syn keyword arduinoFunc gamma8
 syn keyword arduinoFunc Color
 syn keyword arduinoFunc ColorHSV
 syn keyword arduinoFunc gamma32
+syn keyword arduinoFunc pgm_read_byte
 
 " Wire
 syn keyword arduinoFunc begin setClock beginTransmission endTransmission requestFrom send receive onReceive onRequest Wire Wire1
@@ -106,7 +107,7 @@ syn keyword arduinoFunc remoteIP remotePort
 
 " RTClib ?
 " Arduino-IRremote ?
-" IRLib ?
+" IRremote or IRLib ?
 " Low-Power ?
 " CryptoSuite ?
 " HID ?
