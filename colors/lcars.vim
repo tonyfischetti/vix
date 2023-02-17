@@ -121,13 +121,16 @@ hi cType              ctermfg=168 guifg=#D75F87                           cterm=
 hi cFormat            ctermfg=152 guifg=#AFD7D7
 hi cLabel             ctermfg=152 guifg=#AFD7D7
 hi cCharacter         ctermfg=216 guifg=#FFAF87
-hi cDefine            ctermfg=228 guifg=#ffff87
+hi cDefine            ctermfg=228 guifg=#ffff87                           cterm=bold gui=bold
+hi cComment           ctermfg=152 guifg=#AFD7D7
+hi cPreCondit         ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
+hi cTypeDef           ctermfg=147 guifg=#AFAFFF
 
 hi racketSyntax       ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi racketFunc         ctermfg=176 guifg=#D787D7
 
 hi makeCommands       ctermfg=147 guifg=#AFAFFF
-hi gitcommitSummary   ctermfg=161 guifg=#F92672                           cterm=bold gui=bold
+hi gitcommitSummary   ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi shOption           ctermfg=139 guifg=#AF87AF
 hi zshCommands        ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi shStatement        ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold

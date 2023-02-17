@@ -2170,6 +2170,7 @@ syn keyword rFunction str_replace
 syn keyword rFunction str_replace_all
 syn keyword rFunction str_sub
 syn keyword rFunction str_detect
+syn keyword rFunction str_split
 syn keyword rFunction setnames
 syn keyword rFunction setkey
 syn keyword rFunction setcolorder

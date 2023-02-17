@@ -74,7 +74,13 @@ map("n", "<Leader>fr", ":%s/\\v")
 -- map("n", "<Leader>cc", ":call ColorColumn()<CR>", { silent = true })
 
 -- " insert date right into document
-map("n", "<Leader>dd", ":r! date<CR>", { silent = true })
+--     old way
+map("n", "<Leader>do", ":r! date<CR>", { silent = true })
+--     new way
+map("n", "<Leader>dd", "o<Esc>18i#<Esc>3a<Space><Esc>o<Esc>:.!date<CR>kJ3A<Space><Esc>18a#<Esc><CR>")
+
+
+
 -- auto-reform ugly json
 map("n", "<Leader>rj", ":%!python3 -mjson.tool<CR>")
 

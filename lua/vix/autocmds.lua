@@ -13,6 +13,12 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     command = "set ft=hy"
 })
 
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    group = vixgroup,
+    pattern = "*.ino",
+    command = "set ft=arduino"
+})
+
 vim.api.nvim_create_autocmd("BufEnter", {
     command = [[set fo-=c fo-=r fo-=o]]
 })
