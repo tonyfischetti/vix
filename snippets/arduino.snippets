@@ -40,8 +40,6 @@ snippet template
 	/* -----------------------------------------------------------------------
 	 * PROGMEM (so we can put it at the bottom)                             */
 	
-	extern const byte gamma_xlate[];
-	
 	
 	
 	/* -----------------------------------------------------------------------
@@ -105,10 +103,12 @@ snippet template
 	 * DEBUG AND PROFILING                                                  */
 	
 	
+
 	/* -----------------------------------------------------------------------
 	 * REMOTE MUTATE FUNCTIONS                                             */
 	
 	
+
 	/* -----------------------------------------------------------------------
 	 * SENSOR UPDATE FUNCTIONS                                              */
 	
@@ -117,7 +117,10 @@ snippet template
 	
 	    /******* ANALOG *******/
 	
+
 	
+	/* -----------------------------------------------------------------------
+	 * HELPER FUNCTIONS                                                     */
 	
 	
 	bool update_all_devices() {
@@ -147,6 +150,8 @@ snippet template
 	
 	
 	void loop() {
+
+		update_all_devices();
 
 	}
 	
