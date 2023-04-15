@@ -44,7 +44,6 @@ vim.g['material_style'] = "palenight"
 
 vim.g['goyo_width'] = "80"
 
-vim.g['slime_paste_file'] = "~/.slime_paste"
 vim.g['slime_target'] = "tmux"
 vim.g['slime_default_config'] = [[{"socket_name": "default", "target_pane": "%1"}]]
 vim.g['slime_no_mappings'] = 1
