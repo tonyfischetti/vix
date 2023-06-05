@@ -120,3 +120,5 @@ hi def link arduinoType Type
 hi def link arduinoConstant Constant
 hi def link arduinoFunc Function
 hi def link arduinoIdentifier Identifier
+
+syn match darkDebug "^\s*deebug.*$"
