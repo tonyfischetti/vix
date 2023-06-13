@@ -118,6 +118,7 @@ hi pythonParameters   ctermfg=152 guifg=#AFD7D7
 hi pythonComment      ctermfg=152 guifg=#AFD7D7
 
 hi cType              ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
+hi cppType            ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
 hi cFormat            ctermfg=152 guifg=#AFD7D7
 hi cLabel             ctermfg=152 guifg=#AFD7D7
 hi cCharacter         ctermfg=216 guifg=#FFAF87
