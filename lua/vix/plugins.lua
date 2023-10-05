@@ -37,6 +37,7 @@ Plug 'dstein64/vim-startuptime'
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.0' })
 Plug 'nvim-telescope/telescope-symbols.nvim'
+Plug 'akinsho/bufferline.nvim'
 
 -- don't load fzf native on window$
 if vim.fn.has("win32") == 0 then

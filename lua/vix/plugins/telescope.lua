@@ -39,4 +39,5 @@ end
 vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<Leader>co', builtin.colorscheme, {})
 vim.keymap.set("n", "<Leader>ee", builtin.symbols, {})
+vim.keymap.set('n', '<leader>bb', builtin.buffers, {})
 

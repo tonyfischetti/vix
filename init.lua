@@ -10,9 +10,11 @@ require 'vix.commands'
 require 'vix.keymaps'
 require 'vix.autocmds'
 
+require 'vix.plugins.devicons'
 require 'vix.plugins.lualine'
 require 'vix.plugins.hop'
 require 'vix.plugins.scrollbar'
 require 'vix.plugins.neoscroll'
 require 'vix.plugins.telescope'
+require 'vix.plugins.bufferline'
 
