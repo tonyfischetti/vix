@@ -1,0 +1,30 @@
+
+snippet #!
+	
+	.DELETE_ON_ERROR:
+	
+	CC       := gcc
+	CXX      := g++
+	CFLAGS   := -O2 -Wall -Wextra -I.
+	CXXFLAGS := -O2 -Wall -Wextra -I.
+	CPPFLAGS :=
+	LDFLAGS  :=
+	
+	EXE      := driver
+	OBJS     := driver.o
+	# DEPS     := driver.h
+	
+	
+	$(EXE): $(OBJS)
+		$(CXX) -o $@ $^ $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)
+	
+	%.o: %.cpp $(DEPS)
+		$(CXX) -c -o $@ $< $(CXXFLAGS) $(CPPFLAGS)
+	
+	
+	.PHONY: clean
+	clean:
+		rm *.o
+		rm $(EXE)
+	
+	
