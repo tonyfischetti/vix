@@ -45,12 +45,14 @@ List of vim plugins I use (besides vim-plug)
    Better syntax file for Javascript
  - [typescript-vim:](https://github.com/leafgarland/typescript-vim)
    Better syntax file for Typescript
- - [json:](https://github.com/vim-scripts/vim-json-bundle)
-   Great JSON syntax highlighting support
  - [emmit](https://github.com/mattn/emmet-vim)
    Emmet! For HTML!
  - [vim-ps1](https://github.com/PProvost/vim-ps1)
    Plugin for powershell support
+ - [json:](https://github.com/vim-scripts/vim-json-bundle)
+   Great JSON syntax highlighting support
+ - [vim-cpp-modern:](https://github.com/bfrg/vim-cpp-modern)
+   Extended C++ syntax
  - [goyo](https://github.com/junegunn/goyo.vim)
    Awesome distraction free writing
  - [vim-niji:](https://github.com/luochen1990/rainbow)
@@ -79,6 +81,8 @@ List of vim plugins I use (besides vim-plug)
    Fuzzy find of symbols, emojis, etc...
  - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
    Faster fuzzy search
+ - [bufferline.nvim](https://github.com/nvim-telescope/akinsho/bufferline.nvim)
+   Cool bufferline
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more
