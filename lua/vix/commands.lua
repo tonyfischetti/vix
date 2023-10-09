@@ -10,3 +10,4 @@ vim.api.nvim_create_user_command("PU", "PlugUpdate", {})
 
 vim.api.nvim_create_user_command("Sep", ":normal! i<args> --------------------------------------------------------------- <args><ESC>o", { nargs = 1 })
 
+vim.api.nvim_create_user_command("Tree", "NvimTreeToggle", {})

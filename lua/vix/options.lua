@@ -33,6 +33,9 @@ vim.opt.modelines = 3
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.g['user_emmet_leader_key'] = ","
 vim.g['niji_matching_filetypes'] = {'lisp', 'scheme', 'clojure', 'racket'}
 vim.g['vim_json_syntax_conceal'] = 0

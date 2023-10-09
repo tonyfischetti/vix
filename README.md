@@ -83,6 +83,8 @@ List of vim plugins I use (besides vim-plug)
    Faster fuzzy search
  - [bufferline.nvim](https://github.com/nvim-telescope/akinsho/bufferline.nvim)
    Cool bufferline
+ - [nvim-tree](https://github.com/nvim-telescope/nvim-tree/nvim-tree.lua)
+   File explorer tree
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more

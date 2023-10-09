@@ -108,4 +108,3 @@ map("n", "<Leader>ei", ":color Tomorrow-Night-Eighties<CR>", { silent = true })
 map("n", "<Leader>vt", ":vsplit | terminal <CR> i")
 map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
-
