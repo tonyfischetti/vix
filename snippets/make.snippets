@@ -16,16 +16,16 @@ snippet #!
 	# DEPS     := driver.h
 	
 	
-	$(EXE): $(OBJS)
-		$(CXX) -o $@ $^ $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)
+	\$(EXE): \$(OBJS)
+		\$(CXX) -o \$@ \$^ \$(CXXFLAGS) \$(CPPFLAGS) \$(LDFLAGS)
 	
-	%.o: %.cpp $(DEPS)
-		$(CXX) -c -o $@ $< $(CXXFLAGS) $(CPPFLAGS)
+	%.o: %.cpp \$(DEPS)
+		\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
 	
 	
 	.PHONY: clean
 	clean:
 		rm *.o
-		rm $(EXE)
+		rm \$(EXE)
 	
 	
