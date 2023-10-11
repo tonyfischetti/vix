@@ -3,35 +3,72 @@ snippet #!
 	
 	.DELETE_ON_ERROR:
 	
-	CC       := gcc
-	CXX      := g++
-	CFLAGS   := -O2 -Wall -Wextra -I.
-	CXXFLAGS := -std=c++20 -O2 -I. -pedantic -Wall -Wextra -Werror -Wshadow
-	CXXFLAGS += -Wconversion -Wsign-conversion -Wunreachable-code
-	CPPFLAGS :=
-	LDFLAGS  :=
+	INCDIR    := include
+	SRCDIR    := src
+	DOCDIR    := docs
+	BUILDDIR  := build
+	TARGETDIR := target
 	
-	EXE      := driver
-	OBJS     := \$(subst src/, , \$(patsubst %.cpp, %.o, \$(wildcard src/*.cpp)))
-	DEPS     := \$(subst include/, , \$(patsubst %.cpp, %.o, \$(wildcard include/*.h)))
-	DEPS     += \$(subst include/, , \$(patsubst %.cpp, %.o, \$(wildcard include/*.hpp)))
-
-	vpath %.h   ./include
-	vpath %.hpp ./include
-	vpath %.cpp ./src
-
-	.PHONY: all clean
+	CC        := gcc
+	CXX       := g++
+	CFLAGS    := -O2 -Wall -Wextra -I.
+	CXXFLAGS  := -std=c++20 -O2 -I. -pedantic -Wall -Wextra -Werror -Wshadow
+	CXXFLAGS  += -Wconversion -Wsign-conversion -Wunreachable-code
+	CXXFLAGS  += -I\$(INCDIR)
+	CPPFLAGS  :=
+	LDFLAGS   :=
+	LDLIBS    := -lsystemd
 	
-	all: \$(EXE)
+	EXE       := farm
+	SRCS      := \$(wildcard \$(SRCDIR)/*.cpp \$(SRCDIR)/*.c)
+	OBJS      := \$(notdir \$(patsubst %.cpp, %.o, \$(SRCS)))
+	DESTOBJS  := \$(addprefix \$(BUILDDIR)/, \$(OBJS))
+	RAWDOCS   := \$(notdir \$(wildcard \$(DOCDIR)/*.md))
+	DESTDOCS  := \$(patsubst %.md, %.pdf, \$(addprefix \$(TARGETDIR)/\$(DOCDIR)/, \$(RAWDOCS)))
+	DEPS      := \$(wildcard \$(INCDIR)/*.h) # leaving out the hpp files
 	
-	\$(EXE): \$(OBJS)
-		\$(CXX) -o \$@ \$^ \$(CXXFLAGS) \$(CPPFLAGS) \$(LDFLAGS)
 	
-	%.o: %.cpp \$(DEPS)
-		\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
+	vpath %.h   \$(INCDIR)
+	vpath %.hpp \$(INCDIR)
+	vpath %.cpp \$(SRCDIR)
+	vpath %.o   \$(BUILDDIR)
+	vpath %.md  \$(DOCDIR)
+	
+	.PHONY: all clean mrproper dist check test install done
+	
+	all: \$(TARGETDIR)/\$(EXE) \$(DESTDOCS) done
+	
+	\$(TARGETDIR)/\$(EXE): \$(DESTOBJS)
+		@mkdir -p \$(TARGETDIR)
+		\$(info [•] linking final executable)
+		@\$(CXX) -o \$@ \$^ \$(CXXFLAGS) \$(CPPFLAGS) \$(LDFLAGS) \$(LDLIBS)
+	
+	\$(BUILDDIR)/%.o: %.cpp \$(DEPS)
+		@mkdir -p \$(BUILDDIR)
+		\$(info [*] compiling "\$@")
+		@\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
+	
+	# this is a more specific rule than above...
+	# this is where we use the .hpp file
+	\$(BUILDDIR)/farm.o: farm.cpp \$(DEPS) rang.hpp
+		@mkdir -p \$(BUILDDIR)
+		\$(info [*] compiling "\$@")
+		@\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
+	
+	
+	\$(TARGETDIR)/\$(DOCDIR)/%.pdf: %.md
+		\$(info)
+		\$(info [*] building doc "\$^")
+		@mkdir -p \$(TARGETDIR)/\$(DOCDIR)
+		@pandoc \$^ -o \$@
+	
+	
+	done:
+		\$(info [•] done!)
 	
 	
 	clean:
-		rm -f \$(OBJS) \$(EXE)
+		rm -f \$(EXE)
+		rm -rf \$(BUILDDIR) \$(TARGETDIR)
 	
-	
+
