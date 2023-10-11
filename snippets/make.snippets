@@ -12,9 +12,17 @@ snippet #!
 	LDFLAGS  :=
 	
 	EXE      := driver
-	OBJS     := driver.o
-	# DEPS     := driver.h
+	OBJS     := \$(subst src/, , \$(patsubst %.cpp, %.o, \$(wildcard src/*.cpp)))
+	DEPS     := \$(subst include/, , \$(patsubst %.cpp, %.o, \$(wildcard include/*.h)))
+	DEPS     += \$(subst include/, , \$(patsubst %.cpp, %.o, \$(wildcard include/*.hpp)))
+
+	vpath %.h   ./include
+	vpath %.hpp ./include
+	vpath %.cpp ./src
+
+	.PHONY: all clean
 	
+	all: \$(EXE)
 	
 	\$(EXE): \$(OBJS)
 		\$(CXX) -o \$@ \$^ \$(CXXFLAGS) \$(CPPFLAGS) \$(LDFLAGS)
@@ -23,8 +31,7 @@ snippet #!
 		\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
 	
 	
-	.PHONY: clean
 	clean:
-		rm -f *.o \$(EXE)
+		rm -f \$(OBJS) \$(EXE)
 	
 	
