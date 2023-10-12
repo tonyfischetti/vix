@@ -11,14 +11,16 @@ local colors = {
 
   salmon = '#ffaf87',
   lavender = '#8787d7',
-  purplepink = '#d787d7'
+  purplepink = '#d787d7',
+  paynes = '#131a24'
 }
 
 local bubbles_theme = {
   normal = {
     a = { fg = colors.black, bg = colors.lavender },
     b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    c = { fg = colors.black, bg = colors.paynes },
+    -- c = { fg = colors.black, bg = colors.black },
   },
 
   insert = { a = { fg = colors.black, bg = colors.salmon } },
@@ -26,11 +28,10 @@ local bubbles_theme = {
   replace = { a = { fg = colors.black, bg = colors.red } },
 
   inactive = {
-    -- a = { fg = colors.white, bg = colors.black },
-    -- b = { fg = colors.white, bg = colors.black },
-    a = { fg = colors.black, bg = colors.black },
-    b = { fg = colors.black, bg = colors.black },
-    c = { fg = colors.black, bg = colors.black },
+    -- a = { fg = colors.black, bg = colors.black }, ...
+    a = { fg = colors.black, bg = colors.paynes },
+    b = { fg = colors.black, bg = colors.paynes },
+    c = { fg = colors.black, bg = colors.paynes },
   },
 }
 

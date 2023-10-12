@@ -1,4 +1,6 @@
 
+vim.cmd("colorscheme lcars")
+
 vim.opt.number = true
 vim.opt.cmdheight = 1
 vim.opt.cmdwinheight = 13
@@ -54,8 +56,6 @@ vim.g['slime_no_mappings'] = 1
 vim.g['perl_host_prog'] = "/usr/bin/perl"
 
 
-vim.cmd("colorscheme lcars")
-
 vim.cmd("set omnifunc=syntaxcomplete#Complete")
 vim.cmd("set completeopt+=longest,menuone,noselect")
 vim.cmd("set completeopt-=preview")
@@ -65,5 +65,4 @@ vim.cmd("let g:mucomplete#chains.default = ['path', 'omni', 'keyn', 'dict', 'usp
 if vim.fn.executable('par') == 1 then
     vim.cmd('set formatprg=par\\ -w75r "rj')
 end
-
 

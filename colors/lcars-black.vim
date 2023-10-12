@@ -1,4 +1,4 @@
-" Vim color file - lcars
+" Vim color file - lcars-black
 " Designed by Tony Fischetti <tony.fischetti@gmail.com>
 "                                                                           "
 "           ___       ___           ___           ___           ___         "
@@ -19,10 +19,9 @@ hi clear
 set background=dark
 
 set t_Co=256
-let g:colors_name = "lcars"
+let g:colors_name = "lcars-black"
 
 
-" hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#121212
 hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000
 hi Type               ctermfg=122 guifg=#87ffd7
 hi Comment            ctermfg=122 guifg=#87ffd7
@@ -156,3 +155,5 @@ hi jsTemplateExpression       ctermfg=139 guifg=#AF87AF
 hi ps1InterpolationDelimiter  ctermfg=168 guifg=#EF5939                   cterm=bold gui=bold
 
 hi darkDebug ctermfg=238 guifg=#444444
+
+hi NonText            ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000

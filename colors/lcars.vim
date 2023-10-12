@@ -21,9 +21,9 @@ set background=dark
 set t_Co=256
 let g:colors_name = "lcars"
 
+set t_ut=
 
-" hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000
-hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#121212
+hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#131a24
 hi Type               ctermfg=122 guifg=#87ffd7
 hi Comment            ctermfg=122 guifg=#87ffd7
 hi String             ctermfg=228 guifg=#ffff87
@@ -89,7 +89,6 @@ hi CursorLine                                   ctermbg=234 guibg=#232728 cterm=
 hi CursorColumn                                 ctermbg=234 guibg=#1C1C1C
 hi ColorColumn                                  ctermbg=234 guibg=#1C1C1C
 hi LineNr             ctermfg=250 guifg=#AAAAAA ctermbg=233 guibg=#121212
-hi NonText            ctermfg=240 guifg=#444444 ctermbg=233 guibg=#121212
 hi htmlItalic         ctermfg=254 guifg=#E4E4E4 ctermbg=232 guibg=#080808
 hi PreProc            ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi Function           ctermfg=122 guifg=#87ffd7
@@ -156,3 +155,5 @@ hi jsTemplateExpression       ctermfg=139 guifg=#AF87AF
 hi ps1InterpolationDelimiter  ctermfg=168 guifg=#EF5939                   cterm=bold gui=bold
 
 hi darkDebug ctermfg=238 guifg=#444444
+
+hi NonText            ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#131a24
