@@ -52,8 +52,8 @@ hi FoldColumn         ctermfg=67  guifg=#AAAAAA ctermbg=233
 hi Folded             ctermfg=67  guifg=#666666 ctermbg=233
 hi Identifier         ctermfg=176 guifg=#D787D7
 hi Ignore             ctermfg=244 guifg=#808080 ctermbg=232
-hi IncSearch          ctermfg=193 guibg=#000000 ctermbg=16  guifg=#FF8D00
-hi Search             ctermfg=194 guifg=#000000 ctermbg=124 guibg=#E4E500
+hi IncSearch          ctermfg=193 guifg=#ca6164 ctermbg=16  guibg=#ffaf87
+hi Search             ctermfg=194 guifg=#ca6164 ctermbg=124 guibg=#ffaf87
 hi Keyword            ctermfg=167 guifg=#D75f5F                           cterm=bold gui=bold
 hi Label              ctermfg=229 guifg=#E6DB74                           cterm=none gui=none
 hi Macro              ctermfg=193 guifg=#C4BE89                           cterm=italic gui=italic
@@ -84,10 +84,10 @@ hi VertSplit          ctermfg=244 guifg=#AAAAAA ctermbg=232 guibg=#080808 cterm=
 hi VisualNOS                                    ctermbg=238 guibg=#403D3D
 hi Visual                                       ctermbg=239 guibg=#403D3D
 hi WarningMsg         ctermfg=231 guifg=#FFFFFF ctermbg=238 guibg=#333333 cterm=bold gui=bold
-hi WildMenu           ctermfg=81  guifg=#66D9EF ctermbg=16 guibg=#000000
-hi CursorLine                                   ctermbg=234 guibg=#232728 cterm=none
-hi CursorColumn                                 ctermbg=234 guibg=#1C1C1C
-hi ColorColumn                                  ctermbg=234 guibg=#1C1C1C
+hi WildMenu           ctermfg=81  guifg=#66D9EF ctermbg=16  guibg=#000000
+hi CursorLine                                   ctermbg=234 guibg=#232931
+hi CursorColumn                                 ctermbg=234 guibg=#0c1117
+hi ColorColumn                                  ctermbg=234 guibg=#232931
 hi LineNr             ctermfg=250 guifg=#AAAAAA ctermbg=233 guibg=#121212
 hi htmlItalic         ctermfg=254 guifg=#E4E4E4 ctermbg=232 guibg=#080808
 hi PreProc            ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold

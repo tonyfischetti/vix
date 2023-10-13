@@ -31,6 +31,7 @@ vim.opt.background = "dark"
 vim.opt.guifont = "Monaco for Powerline Nerd Font Complete:h13"
 vim.opt.mouse = "a"
 vim.opt.modelines = 3
+vim.opt.cursorline = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
