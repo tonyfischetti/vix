@@ -157,3 +157,4 @@ hi ps1InterpolationDelimiter  ctermfg=168 guifg=#EF5939                   cterm=
 hi darkDebug ctermfg=238 guifg=#444444
 
 hi NonText            ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#131a24
+hi EndOfBuffer        ctermfg=254 guifg=#deaded ctermbg=233 guibg=#131a24
