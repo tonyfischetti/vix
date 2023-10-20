@@ -10,12 +10,12 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'tomtom/tcomment_vim'
+Plug 'lifepillar/vim-mucomplete'
 Plug 'garbas/vim-snipmate'
 Plug 'jpalardy/vim-slime'
 Plug 't9md/vim-smalls'
 Plug 'phaazon/hop.nvim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'lifepillar/vim-mucomplete'
 Plug('wlangstroth/vim-racket',          {['for'] = 'racket'})
 Plug('maverickg/stan.vim',              {['for'] = 'stan'})
 Plug('TovarishFin/vim-solidity',        {['for'] = 'solidity'})

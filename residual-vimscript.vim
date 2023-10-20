@@ -77,3 +77,5 @@ xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
 nmap <silent> <C-L> :SlimeSend1 <CR>
 imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
 
+let g:mucomplete#user_mappings = { 'snipmate' : "\<C-J>" }
+
