@@ -1,74 +1,98 @@
-
 snippet #!
-	
+
 	.DELETE_ON_ERROR:
-	
+
+
+	OS        := \$(shell uname -s)
+	ARCH      := \$(shell uname -m)
+
 	INCDIR    := include
 	SRCDIR    := src
 	DOCDIR    := docs
 	BUILDDIR  := build
 	TARGETDIR := target
-	
+
 	CC        := gcc
 	CXX       := g++
 	CFLAGS    := -O2 -Wall -Wextra -I.
-	CXXFLAGS  := -std=c++20 -O2 -I. -pedantic -Wall -Wextra -Werror -Wshadow
+	CXXFLAGS  := -std=c++20 -O2 -I. -Wall -Wextra -Werror -Wpedantic -Wshadow
 	CXXFLAGS  += -Wconversion -Wsign-conversion -Wunreachable-code
+	CXXFLAGS  += -Weffc++ -Wmissing-braces -Wnon-virtual-dtor #-Winline
+	CXXFLAGS  += -Wnormalized -Wold-style-cast -Wrange-loop-construct
+	CXXFLAGS  += -Wreturn-local-addr -Wredundant-move -Wsuggest-final-types
+	CXXFLAGS  += -Wsuggest-override -Wvirtual-inheritance -Wvirtual-move-assign
+	CXXFLAGS  += -DSAYBYE
 	CXXFLAGS  += -I\$(INCDIR)
 	CPPFLAGS  :=
 	LDFLAGS   :=
 	LDLIBS    := -lsystemd
-	
-	EXE       := farm
+
+	EXE       := farm-\$(OS)-\$(ARCH)
 	SRCS      := \$(wildcard \$(SRCDIR)/*.cpp \$(SRCDIR)/*.c)
 	OBJS      := \$(notdir \$(patsubst %.cpp, %.o, \$(SRCS)))
 	DESTOBJS  := \$(addprefix \$(BUILDDIR)/, \$(OBJS))
 	RAWDOCS   := \$(notdir \$(wildcard \$(DOCDIR)/*.md))
 	DESTDOCS  := \$(patsubst %.md, %.pdf, \$(addprefix \$(TARGETDIR)/\$(DOCDIR)/, \$(RAWDOCS)))
 	DEPS      := \$(wildcard \$(INCDIR)/*.h) # leaving out the hpp files
-	
-	
+
+
 	vpath %.h   \$(INCDIR)
 	vpath %.hpp \$(INCDIR)
 	vpath %.cpp \$(SRCDIR)
 	vpath %.o   \$(BUILDDIR)
 	vpath %.md  \$(DOCDIR)
-	
-	.PHONY: all clean mrproper dist check test install done
-	
-	all: \$(TARGETDIR)/\$(EXE) \$(DESTDOCS) done
-	
+
+	.PHONY: all clean mrproper dist check test install begin help done verify
+
+	all: begin \$(TARGETDIR)/\$(EXE) \$(DESTDOCS) done
+
+	begin:
+		@echo "\$\$(tput bold)\$\$(tput setaf 3)Building \$(EXE)\$\$(tput sgr0)"
+		@printf "\\n"
+
+	help:
+		@echo "P.S. I Love You"
+
+
 	\$(TARGETDIR)/\$(EXE): \$(DESTOBJS)
 		@mkdir -p \$(TARGETDIR)
-		\$(info [•] linking final executable)
+		\$(info [•] linking final exe:	{ \$(EXE) })
 		@\$(CXX) -o \$@ \$^ \$(CXXFLAGS) \$(CPPFLAGS) \$(LDFLAGS) \$(LDLIBS)
-	
+		@printf "\\n"
+
 	\$(BUILDDIR)/%.o: %.cpp \$(DEPS)
 		@mkdir -p \$(BUILDDIR)
-		\$(info [*] compiling "\$@")
+		\$(info [*] compiling		{ \$@ })
 		@\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
-	
+
 	# this is a more specific rule than above...
 	# this is where we use the .hpp file
 	\$(BUILDDIR)/farm.o: farm.cpp \$(DEPS) rang.hpp
 		@mkdir -p \$(BUILDDIR)
-		\$(info [*] compiling "\$@")
+		\$(info [*] compiling		{ \$@ })
 		@\$(CXX) -c -o \$@ \$< \$(CXXFLAGS) \$(CPPFLAGS)
-	
-	
+
+
 	\$(TARGETDIR)/\$(DOCDIR)/%.pdf: %.md
 		\$(info)
-		\$(info [*] building doc "\$^")
+		\$(info [*] building doc:	{ \$^ })
 		@mkdir -p \$(TARGETDIR)/\$(DOCDIR)
 		@pandoc \$^ -o \$@
-	
-	
+
+
 	done:
-		\$(info [•] done!)
-	
-	
+		@printf '\\n'
+		@echo "\$\$(tput bold)\$\$(tput setaf 2)[•] Build done!\$\$(tput sgr0)"
+
+	verify:
+		@read -p "Are you sure? [y/N] " resp && resp=\$\${resp:-1} ; \\
+		if [ \$\${resp} != y ] && [ \$\${resp} != Y ]; then \\
+			echo "bailing out..." ; \\
+			exit 1 ; \\
+		fi
+
 	clean:
 		rm -f \$(EXE)
 		rm -rf \$(BUILDDIR) \$(TARGETDIR)
-	
+
 

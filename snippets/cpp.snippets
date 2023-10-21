@@ -9,10 +9,15 @@ snippet cerr
 	std::cerr
 snippet vector
 	std::vector
+snippet map
+	std::map
 snippet string
 	std::string
 snippet endl
 	std::endl
+snippet string_view
+	std::string_view
+
 
 snippet using
 	using std::cout, std::endl, std::string, std::vector, std::cin, std::cerr;
@@ -26,12 +31,6 @@ snippet readfile
 			v.insert(v.end(), buf, buf + len);
 		fclose($2);
 	}${3}
-# std::map
-snippet map
-	std::map<${1:key}, ${2:value}> map${3};
-# std::vector
-snippet vector
-	std::vector<${1:char}> v${2};
 # Namespace
 snippet ns
 	namespace ${1:`Filename('', 'my')`} {
