@@ -2,6 +2,7 @@ snippet #!
 
 	.DELETE_ON_ERROR:
 
+	COMPTYPE  := debug
 
 	OS        := \$(shell uname -s)
 	ARCH      := \$(shell uname -m)
@@ -15,17 +16,21 @@ snippet #!
 	CC        := gcc
 	CXX       := g++
 	CFLAGS    := -O2 -Wall -Wextra -I.
-	CXXFLAGS  := -std=c++20 -O2 -I. -Wall -Wextra -Werror -Wpedantic -Wshadow
+	CXXFLAGS  := -std=c++2b -O2 -I. -Wall -Wextra -Werror -Wpedantic -Wshadow
 	CXXFLAGS  += -Wconversion -Wsign-conversion -Wunreachable-code
 	CXXFLAGS  += -Weffc++ -Wmissing-braces -Wnon-virtual-dtor #-Winline
 	CXXFLAGS  += -Wnormalized -Wold-style-cast -Wrange-loop-construct
 	CXXFLAGS  += -Wreturn-local-addr -Wredundant-move -Wsuggest-final-types
 	CXXFLAGS  += -Wsuggest-override -Wvirtual-inheritance -Wvirtual-move-assign
+	CXXFLAGS  += -Wuninitialized -Wswitch-enum -Wswitch
+	ifeq ($(COMPTYPE), debug)
+		CXXFLAGS += -fsanitize=address -fsanitize=undefined
+	endif
 	CXXFLAGS  += -DSAYBYE
 	CXXFLAGS  += -I\$(INCDIR)
 	CPPFLAGS  :=
 	LDFLAGS   :=
-	LDLIBS    := -lsystemd
+	LDLIBS    := -lsystemd -lfmt
 
 	EXE       := farm-\$(OS)-\$(ARCH)
 	SRCS      := \$(wildcard \$(SRCDIR)/*.cpp \$(SRCDIR)/*.c)
