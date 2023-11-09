@@ -23,7 +23,7 @@ snippet #!
 	CXXFLAGS  += -Wreturn-local-addr -Wredundant-move -Wsuggest-final-types
 	CXXFLAGS  += -Wsuggest-override -Wvirtual-inheritance -Wvirtual-move-assign
 	CXXFLAGS  += -Wuninitialized -Wswitch-enum -Wswitch
-	ifeq ($(COMPTYPE), debug)
+	ifeq (\$(COMPTYPE), debug)
 		CXXFLAGS += -fsanitize=address -fsanitize=undefined
 	endif
 	CXXFLAGS  += -DSAYBYE
