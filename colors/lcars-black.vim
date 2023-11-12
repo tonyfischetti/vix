@@ -21,6 +21,7 @@ set background=dark
 set t_Co=256
 let g:colors_name = "lcars-black"
 
+set t_ut=
 
 hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000
 hi Type               ctermfg=122 guifg=#87ffd7
@@ -51,8 +52,8 @@ hi FoldColumn         ctermfg=67  guifg=#AAAAAA ctermbg=233
 hi Folded             ctermfg=67  guifg=#666666 ctermbg=233
 hi Identifier         ctermfg=176 guifg=#D787D7
 hi Ignore             ctermfg=244 guifg=#808080 ctermbg=232
-hi IncSearch          ctermfg=193 guibg=#000000 ctermbg=16  guifg=#FF8D00
-hi Search             ctermfg=194 guifg=#000000 ctermbg=124 guibg=#E4E500
+hi IncSearch          ctermfg=193 guifg=#ca6164 ctermbg=16  guibg=#ffaf87
+hi Search             ctermfg=194 guifg=#ca6164 ctermbg=124 guibg=#ffaf87
 hi Keyword            ctermfg=167 guifg=#D75f5F                           cterm=bold gui=bold
 hi Label              ctermfg=229 guifg=#E6DB74                           cterm=none gui=none
 hi Macro              ctermfg=193 guifg=#C4BE89                           cterm=italic gui=italic
@@ -83,12 +84,11 @@ hi VertSplit          ctermfg=244 guifg=#AAAAAA ctermbg=232 guibg=#080808 cterm=
 hi VisualNOS                                    ctermbg=238 guibg=#403D3D
 hi Visual                                       ctermbg=239 guibg=#403D3D
 hi WarningMsg         ctermfg=231 guifg=#FFFFFF ctermbg=238 guibg=#333333 cterm=bold gui=bold
-hi WildMenu           ctermfg=81  guifg=#66D9EF ctermbg=16 guibg=#000000
-hi CursorLine                                   ctermbg=234 guibg=#232728 cterm=none
-hi CursorColumn                                 ctermbg=234 guibg=#1C1C1C
-hi ColorColumn                                  ctermbg=234 guibg=#1C1C1C
+hi WildMenu           ctermfg=81  guifg=#66D9EF ctermbg=16  guibg=#000000
+hi CursorLine                                   ctermbg=234 guibg=#232931
+hi CursorColumn                                 ctermbg=234 guibg=#0c1117
+hi ColorColumn                                  ctermbg=234 guibg=#232931
 hi LineNr             ctermfg=250 guifg=#AAAAAA ctermbg=233 guibg=#121212
-hi NonText            ctermfg=240 guifg=#444444 ctermbg=233 guibg=#121212
 hi htmlItalic         ctermfg=254 guifg=#E4E4E4 ctermbg=232 guibg=#080808
 hi PreProc            ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
 hi Function           ctermfg=122 guifg=#87ffd7
@@ -115,9 +115,17 @@ hi pythonRepeat       ctermfg=204 guifg=#ff5f87                           cterm=
 hi pythonConstant     ctermfg=167 guifg=#D75F5F                           cterm=bold gui=bold
 hi pythonParameters   ctermfg=152 guifg=#AFD7D7
 hi pythonComment      ctermfg=152 guifg=#AFD7D7
-
 hi cType              ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
 hi cppType            ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
+hi cppSTLtype         ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
+hi cppFunction        ctermfg=122 guifg=#87ffd7                           cterm=bold gui=bold
+hi cppSTLfunction     ctermfg=122 guifg=#87ffd7                           cterm=bold gui=bold
+hi cppSTLnamespace    ctermfg=31  guifg=#0087AF                            cterm=bold gui=bold
+hi cppSTLnamespace    ctermfg=30  guifg=#008787                            cterm=bold gui=bold
+hi cppInNamespace     ctermfg=30  guifg=#008787                            cterm=bold gui=bold
+hi cStorageClass      ctermfg=182 guifg=#D7AFD7                           cterm=bold gui=bold
+hi cppStorageClass    ctermfg=182 guifg=#D7AFD7                           cterm=bold gui=bold
+hi cppDelimiter       ctermfg=241 guifg=#8F8F8F
 hi cFormat            ctermfg=152 guifg=#AFD7D7
 hi cLabel             ctermfg=152 guifg=#AFD7D7
 hi cCharacter         ctermfg=216 guifg=#FFAF87
@@ -157,3 +165,4 @@ hi ps1InterpolationDelimiter  ctermfg=168 guifg=#EF5939                   cterm=
 hi darkDebug ctermfg=238 guifg=#444444
 
 hi NonText            ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000
+hi EndOfBuffer        ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#000000

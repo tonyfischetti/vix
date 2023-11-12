@@ -115,9 +115,17 @@ hi pythonRepeat       ctermfg=204 guifg=#ff5f87                           cterm=
 hi pythonConstant     ctermfg=167 guifg=#D75F5F                           cterm=bold gui=bold
 hi pythonParameters   ctermfg=152 guifg=#AFD7D7
 hi pythonComment      ctermfg=152 guifg=#AFD7D7
-
 hi cType              ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
 hi cppType            ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
+hi cppSTLtype         ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
+hi cppFunction        ctermfg=122 guifg=#87ffd7                           cterm=bold gui=bold
+hi cppSTLfunction     ctermfg=122 guifg=#87ffd7                           cterm=bold gui=bold
+hi cppSTLnamespace    ctermfg=31  guifg=#0087AF                            cterm=bold gui=bold
+hi cppSTLnamespace    ctermfg=30  guifg=#008787                            cterm=bold gui=bold
+hi cppInNamespace     ctermfg=30  guifg=#008787                            cterm=bold gui=bold
+hi cStorageClass      ctermfg=182 guifg=#D7AFD7                           cterm=bold gui=bold
+hi cppStorageClass    ctermfg=182 guifg=#D7AFD7                           cterm=bold gui=bold
+hi cppDelimiter       ctermfg=241 guifg=#8F8F8F
 hi cFormat            ctermfg=152 guifg=#AFD7D7
 hi cLabel             ctermfg=152 guifg=#AFD7D7
 hi cCharacter         ctermfg=216 guifg=#FFAF87
