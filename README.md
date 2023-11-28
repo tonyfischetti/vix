@@ -85,6 +85,8 @@ List of vim plugins I use (besides vim-plug)
    Cool bufferline
  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
    File explorer tree
+ - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
+   Floating terminal (for `make`, etc...)
 
 
 Donate to Vim by sponsoring or registering to vote on features and, more

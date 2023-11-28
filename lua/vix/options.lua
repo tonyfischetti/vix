@@ -67,3 +67,4 @@ if vim.fn.executable('par') == 1 then
     vim.cmd('set formatprg=par\\ -w75r "rj')
 end
 
+vim.g['floaterm_width'] = 0.7

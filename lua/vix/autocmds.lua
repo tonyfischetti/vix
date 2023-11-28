@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     group = vixgroup,
-    pattern = "*.cpp",
+    pattern = { "*.cpp", "*.hpp", "*.cc" },
     command = "setlocal omnifunc=syntaxcomplete#Complete"
 })
 
