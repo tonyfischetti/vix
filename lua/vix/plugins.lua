@@ -40,7 +40,6 @@ Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.0' })
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
-
 Plug 'voldikss/vim-floaterm'
 
 -- don't load fzf native on window$
