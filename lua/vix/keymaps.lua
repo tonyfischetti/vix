@@ -58,55 +58,37 @@ map({"t", ""}, "<M-j>", "<C-\\><C-n><C-w>j")
 ---- LEADER MAPS ------------------------------------
 
 --Turn off highlights from search
-map("n","<Leader>nh", ":noh<CR>", { silent = true })
+map("n","<Leader>h", ":noh<CR>", { silent = true })
 map("n","<C-c>", ":noh<CR>", { silent = true })
 
 -- toggle ColorColumn
-map('n', '<Leader>cc', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
+map('n', '<Leader>C', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
 
 -- another hop thing
-map("n", "<Leader>er", ":HopWord<CR>")
+map("n", "<Leader>s", ":HopWord<CR>")
 
 --Find and replace (with 'magic')
-map("n", "<Leader>fr", ":%s/\\v")
-
--- -- toggle just the color column
--- map("n", "<Leader>cc", ":call ColorColumn()<CR>", { silent = true })
+map("n", "<Leader>r", ":%s/\\v")
 
 -- " insert date right into document
---     old way
-map("n", "<Leader>do", ":r! date<CR>", { silent = true })
+-- --     old way
+-- map("n", "<Leader>do", ":r! date<CR>", { silent = true })
 --     new way
-map("n", "<Leader>dd", "o<Esc>18i#<Esc>3a<Space><Esc>o<Esc>:.!date<CR>kJ3A<Space><Esc>18a#<Esc><CR>")
-
+map("n", "<Leader>d", "o<Esc>18i#<Esc>3a<Space><Esc>o<Esc>:.!date<CR>kJ3A<Space><Esc>18a#<Esc><CR>")
 
 
 -- auto-reform ugly json
-map("n", "<Leader>rj", ":%!python3 -mjson.tool<CR>")
-
--- highlight trailing whitespace
-map("n", "<Leader>tw", ":/\\v\\s+$/<CR>", { silent = true })
+map("n", "<Leader>j", ":%!python3 -mjson.tool<CR>")
 
 -- remove trailing whitespace
-map("n", "<Leader>rw", ":%s/\\v\\s+$//<CR>", { silent = true })
+map("n", "<Leader>W", ":%s/\\v\\s+$//<CR>", { silent = true })
 
 -- easy map to turn back on rainbow parens after color scheme change
-map("n", "<Leader>rp", ":call niji#highlight()<CR>", { silent = true })
-
--- easy map to alternate favorite color schemes
-map("n", "<Leader>lc", ":color lcars<CR>", { silent = true })
-map("n", "<Leader>lb", ":color lcars-black<CR>", { silent = true })
-map("n", "<Leader>mo", ":color molokai<CR>", { silent = true })
-map("n", "<Leader>fl", ":color flattr<CR>", { silent = true })
-map("n", "<Leader>dr", ":color dracula<CR>", { silent = true })
-map("n", "<Leader>tf", ":color terafox<CR>", { silent = true })
-map("n", "<Leader>ma", ":color material<CR>", { silent = true })
-map("n", "<Leader>go", ":color gotham256<CR>", { silent = true })
-map("n", "<Leader>tn", ":color tokyonight-night<CR>", { silent = true })
-map("n", "<Leader>ei", ":color Tomorrow-Night-Eighties<CR>", { silent = true })
+map("n", "<Leader>P", ":call niji#highlight()<CR>", { silent = true })
 
 map("n", "<Leader>vt", ":vsplit | terminal <CR> i")
 map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
-map("n", "<Leader>tt", ":FloatermToggle<CR>")
-map("n", "<Leader>mm", ":FloatermNew --cwd=<root><CR>")
+map("n", "<Leader>T", ":FloatermToggle<CR>")
+map("n", "<Leader>m", ":FloatermNew --cwd=<root><CR>")
+map("n", "<Leader>e", ":NvimTreeToggle<CR>")
