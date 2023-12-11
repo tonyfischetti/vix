@@ -1,6 +1,10 @@
 
 vim.cmd("colorscheme lcars")
 
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+-- vim.opt.signcolumn = "yes:1"    -- TODO: MAYBE!
+vim.opt.laststatus = 3
 vim.opt.number = true
 vim.opt.cmdheight = 1
 vim.opt.cmdwinheight = 13
@@ -67,4 +71,5 @@ if vim.fn.executable('par') == 1 then
     vim.cmd('set formatprg=par\\ -w75r "rj')
 end
 
-vim.g['floaterm_width'] = 0.7
+vim.g.floaterm_width = 0.7
+vim.g.floaterm_title = '  floatterm  '
