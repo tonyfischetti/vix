@@ -41,6 +41,7 @@ Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
+Plug 'norcalli/nvim-colorizer.lua'
 
 -- don't load fzf native on window$
 if vim.fn.has("win32") == 0 then
@@ -49,3 +50,4 @@ end
 
 vim.call('plug#end')
 
+vim.cmd("colorscheme lcars")

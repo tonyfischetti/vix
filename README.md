@@ -81,13 +81,14 @@ List of vim plugins I use (besides vim-plug)
    Fuzzy find of symbols, emojis, etc...
  - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
    Faster fuzzy search
- - [bufferline.nvim](https://github.com/nvim-telescope/akinsho/bufferline.nvim)
+ - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
    Cool bufferline
  - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
    File explorer tree
  - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
    Floating terminal (for `make`, etc...)
-
+ - [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
+   Shows the color of HTML codes
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!

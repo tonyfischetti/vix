@@ -18,4 +18,5 @@ require 'vix.plugins.neoscroll'
 require 'vix.plugins.telescope'
 require 'vix.plugins.bufferline'
 require 'vix.plugins.nvimtree'
+require 'vix.plugins.colorizer'
 
