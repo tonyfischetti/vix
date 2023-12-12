@@ -44,8 +44,8 @@ hi DiffDelete  ctermbg=168 guibg=#d75f87
 hi DiffText  ctermbg=73 guibg=#5fafaf cterm=bold,underline gui=bold,underline
 hi Directory ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
 hi EndOfBuffer ctermfg=183 guifg=#deaded ctermbg=233 guibg=#131a24 
-hi Error ctermfg=197 guifg=#f92672  cterm=bold gui=bold
-hi ErrorMsg ctermfg=197 guifg=#f92672  cterm=bold gui=bold
+hi Error ctermfg=197 guifg=#f92672 ctermbg=16 guibg=#000000 cterm=bold gui=bold
+hi ErrorMsg ctermfg=197 guifg=#f92672 ctermbg=16 guibg=#000000 cterm=bold gui=bold
 hi Exception ctermfg=176 guifg=#d787d7  cterm=bold gui=bold
 hi Float ctermfg=147 guifg=#afafff  cterm=bold gui=bold
 hi FloatBorder ctermfg=104 guifg=#8787d7 ctermbg=16 guibg=#0b131d 

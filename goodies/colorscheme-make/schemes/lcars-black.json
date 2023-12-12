@@ -239,9 +239,15 @@
             "bold": true
         },
 
+        "Error": {
+            "fg": "error",
+            "bg": "black",
+            "bold": true
+        },
+
         "ErrorMsg": { 
             "fg": "error",
-            "bg": null,
+            "bg": "black",
             "bold": true
         },
 
@@ -578,12 +584,6 @@
 
         "Debug": { 
             "fg": "lc_pop_blue",
-            "bg": null,
-            "bold": true
-        },
-
-        "Error": { 
-            "fg": "error",
             "bg": null,
             "bold": true
         },
