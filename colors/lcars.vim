@@ -14,155 +14,172 @@
 "          \/__/     \/__/         \/__/         \|__|         \/__/        "
 "                                                                           "
 
-hi clear
-
 set background=dark
+hi clear
+syntax reset
 
-set t_Co=256
 let g:colors_name = "lcars"
 
-set t_ut=
-
-hi Normal             ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#131a24
-hi Type               ctermfg=122 guifg=#87ffd7
-hi Comment            ctermfg=122 guifg=#87ffd7
-hi String             ctermfg=228 guifg=#ffff87
-hi Boolean            ctermfg=135 guifg=#AE81FF
-hi Character          ctermfg=144 guifg=#E6DB74
-hi Number             ctermfg=104 guifg=#AE81FF
-hi Conditional        ctermfg=176 guifg=#D787D7                           cterm=bold gui=bold
-hi Constant           ctermfg=147 guifg=#AE81FF                           cterm=bold gui=bold
-hi Cursor             ctermfg=16  guifg=#000000 ctermbg=253 guibg=#F35FBC
-hi Debug              ctermfg=225 guifg=#BCA3A3                           cterm=bold gui=bold 
-hi Define             ctermfg=81  guifg=#66D9EF
-hi Delimiter          ctermfg=241 guifg=#8F8F8F
-hi Builtin            ctermfg=135 guifg=#AE81FF                           cterm=bold gui=bold 
-hi EasyMotionTarget   ctermfg=11  guifg=#E4E500                           gui=bold
-hi EasyMotionShade    ctermfg=8   guifg=#444444                           guibg=bg gui=bold "!!!
-hi DiffAdd                                      ctermbg=24  guibg=#0F1D0B
-hi DiffChange         ctermfg=181 guifg=#89807D ctermbg=239 guibg=#322F2D
-hi DiffDelete         ctermfg=162 guifg=#960050 ctermbg=53  guibg=#1E0010
-hi DiffText                                     ctermbg=102 guibg=#4A4340 cterm=bold,italic gui=bold,italic
-hi Directory          ctermfg=118 guifg=#A6E22E                           cterm=bold gui=bold
-hi Error              ctermfg=219 guifg=#960050 ctermbg=89  guibg=#1E0010
-hi ErrorMsg           ctermfg=199 guifg=#F92672 ctermbg=16  guibg=#232526 cterm=bold gui=bold
-hi Exception          ctermfg=118 guifg=#A6E22E                           cterm=bold gui=bold
-hi Float              ctermfg=135 guifg=#AE81FF
-hi FoldColumn         ctermfg=67  guifg=#AAAAAA ctermbg=233
-hi Folded             ctermfg=67  guifg=#666666 ctermbg=233
-hi Identifier         ctermfg=176 guifg=#D787D7
-hi Ignore             ctermfg=244 guifg=#808080 ctermbg=232
-hi IncSearch          ctermfg=193 guifg=#ca6164 ctermbg=16  guibg=#ffaf87
-hi Search             ctermfg=194 guifg=#ca6164 ctermbg=124 guibg=#ffaf87
-hi Keyword            ctermfg=167 guifg=#D75f5F                           cterm=bold gui=bold
-hi Label              ctermfg=229 guifg=#E6DB74                           cterm=none gui=none
-hi Macro              ctermfg=193 guifg=#C4BE89                           cterm=italic gui=italic
-hi MatchParen         ctermfg=16  guifg=#E4E400 ctermbg=208 guibg=#434748 cterm=bold gui=bold
-hi ModeMsg            ctermfg=229 guifg=#E6DB74
-hi Pmenu              ctermfg=81  guifg=#cccccc ctermbg=16  guibg=#232728
-hi PmenuSel                       guifg=#000000 ctermbg=244 guibg=#AAF412
-hi PmenuSbar                                    ctermbg=232 guibg=#131414
-hi PmenuThumb         ctermfg=81  guifg=#777777
-hi PreCondit          ctermfg=118 guifg=#A6E22E                           cterm=bold gui=bold
-hi Question           ctermfg=81  guifg=#66D9EF
-hi SignColumn         ctermfg=100 guifg=#A6E22E ctermbg=235 guibg=#151617 cterm=underline
-hi Special            ctermfg=122 guifg=#87FFD7                           cterm=bold gui=italic
-hi SpecialChar        ctermfg=161 guifg=#F92672                           cterm=bold gui=bold
-hi SpecialChar        ctermfg=122 guifg=#87FFD7                           cterm=bold gui=italic
-hi SpecialComment     ctermfg=245 guifg=#465457                           cterm=bold gui=bold
-hi SpecialKey         ctermfg=100 guifg=#444444                           cterm=underline gui=bold
-hi Statement          ctermfg=104 guifg=#8787D7                           cterm=bold gui=bold 
-hi StatusLine         ctermfg=238 guifg=#CD5907 ctermbg=253 guibg=#DADADA
-hi StatusLineNC       ctermfg=244 guifg=#808080 ctermbg=232 guibg=#080808
-hi Structure          ctermfg=81  guifg=#66D9EF
-hi Tag                ctermfg=161 guifg=#F92672                           cterm=bold gui=italic
-hi Title              ctermfg=168 guifg=#ef5939                           cterm=bold gui=bold
-hi Todo               ctermfg=231 guifg=#FFFFFF ctermbg=232 guibg=#080808 cterm=bold gui=bold
-hi Typedef            ctermfg=81  guifg=#66D9EF
-hi Underlined         ctermfg=244 guifg=#808080                           cterm=underline gui=underline
-hi VertSplit          ctermfg=244 guifg=#AAAAAA ctermbg=232 guibg=#080808 cterm=bold gui=bold
-hi VisualNOS                                    ctermbg=238 guibg=#403D3D
-hi Visual                                       ctermbg=239 guibg=#403D3D
-hi WarningMsg         ctermfg=231 guifg=#FFFFFF ctermbg=238 guibg=#333333 cterm=bold gui=bold
-hi WildMenu           ctermfg=81  guifg=#66D9EF ctermbg=16  guibg=#000000
-hi CursorLine                                   ctermbg=234 guibg=#232931
-hi CursorColumn                                 ctermbg=234 guibg=#0c1117
-hi ColorColumn                                  ctermbg=234 guibg=#232931
-hi LineNr             ctermfg=250 guifg=#AAAAAA ctermbg=233 guibg=#121212
-hi htmlItalic         ctermfg=254 guifg=#E4E4E4 ctermbg=232 guibg=#080808
-hi PreProc            ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi Function           ctermfg=122 guifg=#87ffd7
-hi Operator           ctermfg=204 guifg=#ff5f87
-hi StorageClass       ctermfg=167 guifg=#D75f5F                           cterm=bold gui=bold
-hi InheritUnderlined  ctermfg=118 guifg=#87FF00                           cterm=underline gui=underline
-
-hi rComment           ctermfg=147 guifg=#AFAFFF
-hi rArrow             ctermfg=167 guifg=#D75F7F
-hi rPreProc           ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-
-hi lispDecl           ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi lispFunc           ctermfg=176 guifg=#D787D7
-hi lispBarSymbol      ctermfg=176 guifg=#D787D7
-hi lispKey            ctermfg=147 guifg=#AFAFFF
-hi lispEscapeSpecial  ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
-
-hi pythonRepeat       ctermfg=161 guifg=#F92672                           cterm=bold gui=bold
-hi pythonConditional  ctermfg=176 guifg=#D787D7                           cterm=bold gui=bold
-hi pythonException    ctermfg=176 guifg=#D787D7                           cterm=bold gui=bold
-hi pythonBuiltin      ctermfg=176 guifg=#D787D7
-hi pythonStatement    ctermfg=104 guifg=#8787D7                           cterm=bold gui=bold 
-hi pythonRepeat       ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi pythonConstant     ctermfg=167 guifg=#D75F5F                           cterm=bold gui=bold
-hi pythonParameters   ctermfg=152 guifg=#AFD7D7
-hi pythonComment      ctermfg=152 guifg=#AFD7D7
-hi cType              ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
-hi cppType            ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
-hi cppSTLtype         ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
-hi cppFunction        ctermfg=122 guifg=#87ffd7                           cterm=bold gui=bold
-hi cppSTLfunction     ctermfg=122 guifg=#87ffd7                           cterm=bold gui=bold
-hi cppSTLnamespace    ctermfg=31  guifg=#0087AF                            cterm=bold gui=bold
-hi cppSTLnamespace    ctermfg=30  guifg=#008787                            cterm=bold gui=bold
-hi cppInNamespace     ctermfg=30  guifg=#008787                            cterm=bold gui=bold
-hi cStorageClass      ctermfg=182 guifg=#D7AFD7                           cterm=bold gui=bold
-hi cppStorageClass    ctermfg=182 guifg=#D7AFD7                           cterm=bold gui=bold
-hi cppDelimiter       ctermfg=241 guifg=#8F8F8F
-hi cFormat            ctermfg=152 guifg=#AFD7D7
-hi cLabel             ctermfg=152 guifg=#AFD7D7
-hi cCharacter         ctermfg=216 guifg=#FFAF87
-hi cDefine            ctermfg=228 guifg=#ffff87                           cterm=bold gui=bold
-hi cComment           ctermfg=152 guifg=#AFD7D7
-hi cPreCondit         ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
-hi cTypeDef           ctermfg=147 guifg=#AFAFFF
-
-hi cppExceptions      ctermfg=122 guifg=#87ffd7
-
-hi racketSyntax       ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi racketFunc         ctermfg=176 guifg=#D787D7
-
-hi makeCommands       ctermfg=147 guifg=#AFAFFF
-hi gitcommitSummary   ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi shOption           ctermfg=139 guifg=#AF87AF
-hi zshCommands        ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi shStatement        ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-
-hi jsConditional      ctermfg=167 guifg=#D75F5F                           cterm=bold gui=bold
-hi jsGlobalObjects    ctermfg=139 guifg=#AF87AF                           cterm=bold gui=bold
-hi jsFuncCall         ctermfg=104 guifg=#8787D7                           cterm=bold gui=bold
-hi jsObjectProp       ctermfg=152 guifg=#AFD7D7                           cterm=bold gui=bold
-hi jsArrowFunction    ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
-hi jsStorageClass     ctermfg=168 guifg=#D75F87                           cterm=bold gui=bold
-hi jsComment          ctermfg=152 guifg=#AFD7D7
-hi typescriptReserved ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi typescriptBranch   ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-
-hi ps1Keyword         ctermfg=147 guifg=#AFAFFF                           cterm=bold gui=bold
-hi ps1Cmdlet          ctermfg=204 guifg=#ff5f87                           cterm=bold gui=bold
-hi ps1Label           ctermfg=152 guifg=#AFD7D7
-
-hi jsTemplateExpression       ctermfg=139 guifg=#AF87AF
-hi ps1InterpolationDelimiter  ctermfg=168 guifg=#EF5939                   cterm=bold gui=bold
-
-hi darkDebug ctermfg=238 guifg=#444444
-
-hi NonText            ctermfg=254 guifg=#F8F8F2 ctermbg=233 guibg=#131a24
-hi EndOfBuffer        ctermfg=254 guifg=#deaded ctermbg=233 guibg=#131a24
+hi Bold   cterm=bold gui=bold
+hi Boolean ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi Builtin ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi Character ctermfg=186 guifg=#e6db74  
+hi ColorColumn  ctermbg=16 guibg=#232931 
+hi Comment ctermfg=152 guifg=#afd7d7  
+hi Conceal ctermfg=16 guifg=#080808  
+hi Conditional ctermfg=176 guifg=#d787d7  cterm=bold gui=bold
+hi Constant ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi CurSearch ctermfg=231 guifg=#f8f8f2 ctermbg=176 guibg=#d787d7 
+hi Cursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
+hi CursorColumn  ctermbg=60 guibg=#666d7a 
+hi CursorIM ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
+hi CursorLine  ctermbg=16 guibg=#232931 
+hi CursorLineNr ctermfg=183 guifg=#deaded  
+hi Debug ctermfg=116 guifg=#98dccf  cterm=bold gui=bold
+hi Define ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
+hi Delimiter ctermfg=102 guifg=#808080  
+hi DiffAdd  ctermbg=73 guibg=#5fafaf 
+hi DiffChange  ctermbg=60 guibg=#565f89 
+hi DiffDelete  ctermbg=168 guibg=#d75f87 
+hi DiffText  ctermbg=73 guibg=#5fafaf cterm=bold,underline gui=bold,underline
+hi Directory ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
+hi EndOfBuffer ctermfg=183 guifg=#deaded ctermbg=233 guibg=#131a24 
+hi Error ctermfg=197 guifg=#f92672  cterm=bold gui=bold
+hi ErrorMsg ctermfg=197 guifg=#f92672  cterm=bold gui=bold
+hi Exception ctermfg=176 guifg=#d787d7  cterm=bold gui=bold
+hi Float ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi FloatBorder ctermfg=104 guifg=#8787d7 ctermbg=16 guibg=#0b131d 
+hi Floaterm  ctermbg=16 guibg=#0b131d 
+hi FloatermBorder ctermfg=104 guifg=#8787d7 ctermbg=16 guibg=#0b131d 
+hi FoldColumn ctermfg=60 guifg=#565f89 ctermbg=233 guibg=#131a24 
+hi Folded ctermfg=30 guifg=#008787 ctermbg=60 guibg=#666d7a 
+hi Function ctermfg=116 guifg=#98dccf  cterm=bold gui=bold
+hi Identifier ctermfg=147 guifg=#afafff  
+hi IncSearch ctermfg=231 guifg=#f8f8f2 ctermbg=176 guibg=#d787d7 
+hi Include ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Keyword ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi Label ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+hi LineNr ctermfg=60 guifg=#666d7a  
+hi LispBarSymbol ctermfg=104 guifg=#8787d7  
+hi LispDecl ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi LispEscapeSpecial ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi LispFunc ctermfg=147 guifg=#afafff  
+hi LispKey ctermfg=104 guifg=#8787d7  
+hi Macro ctermfg=180 guifg=#C4BE89  
+hi MatchParen ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
+hi ModeMsg ctermfg=186 guifg=#e6db74  
+hi MoreMsg ctermfg=152 guifg=#afd7d7  
+hi MsgArea ctermfg=146 guifg=#afafd7  
+hi MsgSeparator ctermfg=231 guifg=#f8f8f2 ctermbg=233 guibg=#131a24 
+hi NonText ctermfg=16 guifg=#0b131d  
+hi Normal ctermfg=231 guifg=#f8f8f2 ctermbg=233 guibg=#131a24 
+hi NormalFloat ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
+hi NormalNC ctermfg=231 guifg=#f8f8f2 ctermbg=233 guibg=#131a24 
+hi NormalSB ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
+hi Number ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi NvimTreeCursorLine  ctermbg=16 guibg=#232931 
+hi NvimTreeEmptyFolderName ctermfg=152 guifg=#afd7d7  
+hi NvimTreeEndOfBuffer ctermfg=16 guifg=#0b131d  
+hi NvimTreeExecFile ctermfg=67 guifg=#5f87af  
+hi NvimTreeFolderIcon ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
+hi NvimTreeFolderName ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+hi NvimTreeGitDeleted ctermfg=95 guifg=#875f5f  
+hi NvimTreeGitDirty ctermfg=204 guifg=#ff5f87  
+hi NvimTreeGitIgnored ctermfg=152 guifg=#afd7d7  
+hi NvimTreeGitMerge ctermfg=67 guifg=#5f87af  
+hi NvimTreeGitNew ctermfg=122 guifg=#87ffd7  
+hi NvimTreeGitRenamed ctermfg=73 guifg=#5fafaf  
+hi NvimTreeGitStaged ctermfg=73 guifg=#5fafaf  
+hi NvimTreeImageFile ctermfg=146 guifg=#afafd7  
+hi NvimTreeIndentMarker ctermfg=60 guifg=#666d7a  
+hi NvimTreeNormal  ctermbg=16 guibg=#0b131d 
+hi NvimTreeNormalNC ctermfg=146 guifg=#afafd7 ctermbg=16 guibg=#0b131d 
+hi NvimTreeOpenedFile  ctermbg=60 guibg=#666d7a 
+hi NvimTreeOpenedFolderName ctermfg=116 guifg=#98dccf  cterm=bold gui=bold
+hi NvimTreeRootFolder ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
+hi NvimTreeSpecialFile ctermfg=122 guifg=#87ffd7  cterm=underline gui=underline
+hi NvimTreeSymlink ctermfg=16 guifg=#000000  
+hi NvimTreeVertSplit ctermfg=146 guifg=#afafd7 ctermbg=146 guibg=#afafd7 
+hi NvimTreeWinSeparator ctermfg=16 guifg=#0b131d ctermbg=16 guibg=#0b131d 
+hi OLDIdentifier ctermfg=176 guifg=#d787d7  
+hi OLDNumber ctermfg=147 guifg=#afafff  
+hi OLDOperator ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi OLDType ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
+hi OLD_MatchParen ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Operator ctermfg=204 guifg=#ff5f87  
+hi Pmenu ctermfg=122 guifg=#87ffd7 ctermbg=16 guibg=#0b131d 
+hi PmenuSbar  ctermbg=16 guibg=#0b131d 
+hi PmenuSel ctermfg=16 guifg=#000000 ctermbg=204 guibg=#ff5f87 
+hi PmenuThumb  ctermbg=60 guibg=#666d7a 
+hi PreCondit ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi PreProc ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Question ctermfg=116 guifg=#98dccf  
+hi QuickFixLine  ctermbg=60 guibg=#666d7a cterm=bold gui=bold
+hi Repeat ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Search ctermfg=231 guifg=#f8f8f2 ctermbg=204 guibg=#ff5f87 
+hi SignColumn ctermfg=231 guifg=#f8f8f2 ctermbg=233 guibg=#131a24 
+hi SignColumnSB ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
+hi Special ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
+hi SpecialChar ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
+hi SpecialKey ctermfg=16 guifg=#131a24  cterm=bold gui=bold
+hi Statement ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
+hi StatusLine ctermfg=166 guifg=#cd5907 ctermbg=188 guibg=#dadada 
+hi StatusLineNC ctermfg=102 guifg=#808080 ctermbg=16 guibg=#080808 
+hi StorageClass ctermfg=182 guifg=#d7afd7  cterm=bold gui=bold
+hi String ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
+hi Structure ctermfg=116 guifg=#98dccf  
+hi Substitute ctermfg=16 guifg=#000000 ctermbg=210 guibg=#f7768e 
+hi TabLine ctermfg=60 guifg=#666d7a ctermbg=16 guibg=#080808 
+hi TabLineFill  ctermbg=16 guibg=#000000 
+hi TabLineSel ctermfg=16 guifg=#000000 ctermbg=30 guibg=#008787 
+hi Tag ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi TelescopeBorder ctermfg=104 guifg=#8787d7 ctermbg=16 guibg=#0b131d 
+hi TelescopeMatching ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
+hi TelescopeNormal ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
+hi TelescopePreviewHyphen ctermfg=210 guifg=#f7768e  
+hi TelescopePreviewTitle ctermfg=204 guifg=#ff5f87  
+hi TelescopePromptCounter ctermfg=210 guifg=#f7768e  
+hi TelescopePromptPrefix ctermfg=204 guifg=#ff5f87  
+hi TelescopePromptTitle ctermfg=204 guifg=#ff5f87  
+hi TelescopeResultsTitle ctermfg=204 guifg=#ff5f87  
+hi TelescopeSelection  ctermbg=60 guibg=#666d7a 
+hi TelescopeSelectionCaret ctermfg=210 guifg=#f7768e ctermbg=60 guibg=#666d7a 
+hi TermCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
+hi TermCursorNC ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
+hi Title ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Todo ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Type ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Typedef ctermfg=147 guifg=#afafff  
+hi Underlined   cterm=underline gui=underline
+hi Variable ctermfg=231 guifg=#f8f8f2  
+hi VertSplit ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Visual  ctermbg=60 guibg=#666d7a 
+hi VisualNOS  ctermbg=60 guibg=#666d7a 
+hi WarningMsg ctermfg=228 guifg=#ffff87  cterm=bold gui=bold
+hi Whitespace ctermfg=60 guifg=#666d7a  
+hi WildMenu  ctermbg=60 guibg=#666d7a cterm=bold gui=bold
+hi WinSeparator ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
+hi cFormat ctermfg=152 guifg=#afd7d7  
+hi cTypeDef ctermfg=147 guifg=#afafff  
+hi cppExceptions ctermfg=122 guifg=#87ffd7  
+hi cppInNamespace ctermfg=30 guifg=#008787  
+hi cppSTLFunction ctermfg=122 guifg=#87ffd7  
+hi cppSTLnamespace ctermfg=30 guifg=#008787  
+hi gitcommitSummary ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi jsArrowFunction ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
+hi jsFuncCall ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
+hi jsGlobalObjects ctermfg=139 guifg=#af87af  cterm=bold gui=bold
+hi jsObjectProp ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+hi lCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
+hi lispComment ctermfg=122 guifg=#87ffd7  
+hi makeCommands ctermfg=147 guifg=#afafff  
+hi ps1Cmdlet ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi ps1InterpolationDelimiter ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi pythonBuiltin ctermfg=176 guifg=#d787d7  
+hi pythonParameters ctermfg=152 guifg=#afd7d7  
+hi rArrow ctermfg=147 guifg=#afafff  
+hi racketFunc ctermfg=176 guifg=#d787d7  
+hi racketSyntax ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi typescriptBranch ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi typescriptReserved ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi zshCommands ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold

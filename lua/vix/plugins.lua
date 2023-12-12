@@ -49,5 +49,3 @@ if vim.fn.has("win32") == 0 then
 end
 
 vim.call('plug#end')
-
-vim.cmd("colorscheme lcars")
