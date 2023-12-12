@@ -37,8 +37,9 @@ if vim.fn.executable("fzf") == 0 then
 end
 
 -- vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<Leader>ff', builtin.git_files, {})
-vim.keymap.set('n', '<Leader>co', builtin.colorscheme, {})
-vim.keymap.set("n", "<Leader>ee", builtin.symbols, {})
-vim.keymap.set('n', '<leader>bb', builtin.buffers, {})
+vim.keymap.set('n', '<Leader>f', builtin.git_files, {})
+vim.keymap.set('n', '<Leader>F', builtin.find_files, {})
+vim.keymap.set('n', '<Leader>c', builtin.colorscheme, {})
+vim.keymap.set("n", "<Leader>E", builtin.symbols, {})
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 

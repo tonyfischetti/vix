@@ -58,14 +58,11 @@ map({"t", ""}, "<M-j>", "<C-\\><C-n><C-w>j")
 ---- LEADER MAPS ------------------------------------
 
 --Turn off highlights from search
-map("n","<Leader>h", ":noh<CR>", { silent = true })
+map("n","<Leader>H", ":noh<CR>", { silent = true })
 map("n","<C-c>", ":noh<CR>", { silent = true })
 
 -- toggle ColorColumn
 map('n', '<Leader>C', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
-
--- another hop thing
-map("n", "<Leader>s", ":HopWord<CR>")
 
 --Find and replace (with 'magic')
 map("n", "<Leader>r", ":%s/\\v")
@@ -89,6 +86,6 @@ map("n", "<Leader>P", ":call niji#highlight()<CR>", { silent = true })
 map("n", "<Leader>vt", ":vsplit | terminal <CR> i")
 map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
-map("n", "<Leader>T", ":FloatermToggle<CR>")
-map("n", "<Leader>m", ":FloatermNew --cwd=<root><CR>")
+map("n", "<Leader>m", ":FloatermToggle<CR>")
+map("n", "<Leader>M", ":FloatermNew --cwd=<root><CR>")
 map("n", "<Leader>e", ":NvimTreeToggle<CR>")
