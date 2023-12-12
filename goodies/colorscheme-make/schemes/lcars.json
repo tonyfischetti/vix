@@ -1,0 +1,958 @@
+{
+    "name": "lcars",
+    "author": "Tony Fischetti",
+    "email": "tony.fischetti@gmail.com",
+    "background": "dark",
+    "t_Co": "256",
+    "header": [
+        "\"                                                                           \"",
+        "\"           ___       ___           ___           ___           ___         \"",
+        "\"          /\\__\\     /\\  \\         /\\  \\         /\\  \\         /\\  \\        \"",
+        "\"         /:/  /    /::\\  \\       /::\\  \\       /::\\  \\       /::\\  \\       \"",
+        "\"        /:/  /    /:/\\:\\  \\     /:/\\:\\  \\     /:/\\:\\  \\     /:/\\ \\  \\      \"",
+        "\"       /:/  /    /:/  \\:\\  \\   /::\\~\\:\\  \\   /::\\~\\:\\  \\   _\\:\\~\\ \\  \\     \"",
+        "\"      /:/__/    /:/__/ \\:\\__\\ /:/\\:\\ \\:\\__\\ /:/\\:\\ \\:\\__\\ /\\ \\:\\ \\ \\__\\    \"",
+        "\"      \\:\\  \\    \\:\\  \\  \\/__/ \\/__\\:\\/:/  / \\/_|::\\/:/  / \\:\\ \\:\\ \\/__/    \"",
+        "\"       \\:\\  \\    \\:\\  \\            \\::/  /     |:|::/  /   \\:\\ \\:\\__\\      \"",
+        "\"        \\:\\  \\    \\:\\  \\           /:/  /      |:|\\/__/     \\:\\/:/  /      \"",
+        "\"         \\:\\__\\    \\:\\__\\         /:/  /       |:|  |        \\::/  /       \"",
+        "\"          \\/__/     \\/__/         \\/__/         \\|__|         \\/__/        \"",
+        "\"                                                                           \""
+    ],
+
+    "palette": [
+        { "name": "fg",               "color": { "rgbhex": "#f8f8f2", "cterm": 231 } },
+        { "name": "bg",               "color": { "rgbhex": "#131a24", "cterm":  233 } },
+        { "name": "bg_dark",          "color": { "rgbhex": "#0b131d", "cterm":  16 } },
+        { "name": "bg_highlight",     "color": { "rgbhex": "#666d7a", "cterm":  60 } },
+        { "name": "bg_highlight2",    "color": { "rgbhex": "#232931", "cterm":  16 } },
+        { "name": "bg_lighter",       "color": { "rgbhex": "#565f89", "cterm":  60 } },
+        { "name": "bg_dark2",         "color": { "rgbhex": "#131a24", "cterm":  16 } },
+        { "name": "lite_purple",      "color": { "rgbhex": "#deaded", "cterm":  183 } },
+        { "name": "some_grey",        "color": { "rgbhex": "#dadada", "cterm":  188 } },
+        { "name": "dark_grey",        "color": { "rgbhex": "#808080", "cterm":  102 } },
+        { "name": "rust",             "color": { "rgbhex": "#cd5907", "cterm":  166 } },
+        { "name": "almost_black",     "color": { "rgbhex": "#080808", "cterm":  16 } },
+        { "name": "drab_yellow",      "color": { "rgbhex": "#e6db74", "cterm":  186 } },
+        { "name": "lc_teal",          "color": { "rgbhex": "#87ffd7", "cterm":  122 } },
+        { "name": "lc_yellow_PU",     "color": { "rgbhex": "#ffff87", "cterm":  228 } },
+        { "name": "lc_yellow_PUD",    "color": { "rgbhex": "#C4BE89", "cterm":  180 } },
+        { "name": "lc_yellow",        "color": { "rgbhex": "#ffe587", "cterm":  222 } },
+        { "name": "lc_ppink",         "color": { "rgbhex": "#d787d7", "cterm":  176 } },
+        { "name": "lc_ppink_dsat",    "color": { "rgbhex": "#af87af", "cterm":  139 } },
+        { "name": "lc_ppink_pale",    "color": { "rgbhex": "#d7afd7", "cterm":  182 } },
+        { "name": "lc_lavender",      "color": { "rgbhex": "#8787d7", "cterm":  104 } },
+        { "name": "lc_periwinkle",    "color": { "rgbhex": "#afafff", "cterm":  147 } },
+        { "name": "lc_read_grey",     "color": { "rgbhex": "#afafd7", "cterm":  146 } },
+        { "name": "lc_cobalt",        "color": { "rgbhex": "#5f87af", "cterm":  67 } },
+        { "name": "lc_dark_teal",     "color": { "rgbhex": "#5fafaf", "cterm":  73 } },
+        { "name": "lc_sly_purple",    "color": { "rgbhex": "#875f5f", "cterm":  95 } },
+        { "name": "lc_deep_sea",      "color": { "rgbhex": "#008787", "cterm":  30 } },
+        { "name": "lc_red_dsat",      "color": { "rgbhex": "#d75f87", "cterm":  168 } },
+        { "name": "lc_hot_red",       "color": { "rgbhex": "#ff5f87", "cterm":  204 } },
+        { "name": "lc_light_blue",    "color": { "rgbhex": "#afd7d7", "cterm":  152 } },
+        { "name": "lc_pop_blue",      "color": { "rgbhex": "#98dccf", "cterm":  116 } },
+        { "name": "lc_salmon",        "color": { "rgbhex": "#ffaf87", "cterm":  216 } },
+        { "name": "lc_weird_purp",    "color": { "rgbhex": "#ae81ff", "cterm":  141 } },
+        { "name": "lowkey_comment",   "color": { "rgbhex": "#565f89", "cterm":  60 } },
+        { "name": "red",              "color": { "rgbhex": "#f7768e", "cterm":  210 } },
+        { "name": "black",            "color": { "rgbhex": "#000000", "cterm":  16 } },
+        { "name": "error",            "color": { "rgbhex": "#f92672", "cterm":  197 } }
+    ],
+
+    "highlights": {
+        "Normal": {
+            "fg": "fg",
+            "bg": "bg"
+        },
+
+        "NormalNC": {
+            "fg": "fg",
+            "bg": "bg"
+        },
+
+        "NormalSB": {
+            "fg": "fg",
+            "bg": "bg_dark" 
+        },
+
+        "Cursor": {
+            "fg": "bg",
+            "bg": "fg"
+        },
+
+        "lCursor": {
+            "fg": "bg",
+            "bg": "fg"
+        },
+
+        "CursorIM": {
+            "fg": "bg",
+            "bg": "fg"
+        },
+
+        "CursorLine": {
+            "fg": null,
+            "bg": "bg_highlight2"
+        },
+
+        "CursorLineNr": {
+            "fg": "lite_purple",
+            "bg": null
+        },
+
+        "CursorColumn": {
+            "fg": null,
+            "bg": "bg_highlight"
+        },
+
+        "TermCursor": {
+            "fg": "bg",
+            "bg": "fg"
+        },
+
+        "TermCursorNC": {
+            "fg": "bg",
+            "bg": "fg"
+        },
+
+        "SignColumn": {
+            "fg": "fg",
+            "bg": "bg"
+        },
+
+        "SignColumnSB": {
+            "fg": "fg",
+            "bg": "bg_dark"
+        },
+
+        "ColorColumn": {
+            "fg": null,
+            "bg": "bg_highlight2"
+        },
+
+        "LineNr": {
+            "fg": "bg_highlight",
+            "bg": null },
+
+        "EndOfBuffer": {
+            "fg": "lite_purple",
+            "bg": "bg"
+        },
+
+        "NonText": {
+            "fg": "bg_dark",
+            "bg": null
+        },
+
+        "FloatBorder": {
+            "fg": "lc_lavender",
+            "bg": "bg_dark"
+        },
+
+        "Visual": {
+            "fg": null,
+            "bg": "bg_highlight"
+        },
+
+        "VisualNOS": {
+            "fg": null,
+            "bg": "bg_highlight"
+        },
+
+        "WildMenu": {
+            "fg": null,
+            "bg": "bg_highlight",
+            "bold": true
+        },
+
+        "StatusLine": {
+            "fg": "rust",
+            "bg": "some_grey"
+        },
+
+        "StatusLineNC": {
+            "fg": "dark_grey",
+            "bg": "almost_black"
+        },
+
+        "DiffText": {
+            "fg": null,
+            "bg": "lc_dark_teal",
+            "bold": true,
+            "underline": true
+        },
+
+        "DiffAdd": {
+            "fg": null,
+            "bg": "lc_dark_teal"
+        },
+
+        "DiffChange": {
+            "fg": null,
+            "bg": "lowkey_comment"
+        },
+
+        "DiffDelete": {
+            "fg": null,
+            "bg": "lc_red_dsat"
+        },
+
+        "Pmenu": {
+            "fg": "lc_teal",
+            "bg": "bg_dark"
+        },
+
+        "PmenuSel": {
+            "fg": "black",
+            "bg": "lc_hot_red"
+        },
+
+        "PmenuSbar": {
+            "fg": null,
+            "bg": "bg_dark"
+        },
+
+        "PmenuThumb": {
+            "fg": null,
+            "bg": "bg_highlight"
+        },
+
+        "MsgArea": {
+            "fg": "lc_read_grey",
+            "bg": null
+        },
+
+        "MsgSeparator": {
+            "fg": "fg",
+            "bg": "bg"
+        },
+
+        "MoreMsg": {
+            "fg": "lc_light_blue",
+            "bg": null
+        },
+
+        "WarningMsg": { 
+            "fg": "lc_yellow_PU",
+            "bg": null,
+            "bold": true
+        },
+
+        "ErrorMsg": { 
+            "fg": "error",
+            "bg": null,
+            "bold": true
+        },
+
+        "OLD_MatchParen": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "MatchParen": { 
+            "fg": "lc_yellow",
+            "bg": null,
+            "bold": true
+        },
+
+        "TabLine": {
+            "fg": "bg_highlight",
+            "bg": "almost_black"
+        },
+
+        "TabLineSel": {
+            "fg": "black",
+            "bg": "lc_deep_sea"
+        },
+
+        "TabLineFill": {
+            "fg": null,
+            "bg": "black"
+        },
+
+        "Search": {
+            "fg": "fg",
+            "bg": "lc_hot_red"
+        },
+
+        "IncSearch": {
+            "fg": "fg",
+            "bg": "lc_ppink"
+        },
+
+        "CurSearch": {
+            "fg": "fg",
+            "bg": "lc_ppink"
+        },
+
+        "Folded": {
+            "fg": "lc_deep_sea",
+            "bg": "bg_highlight"
+        },
+
+        "FoldColumn": {
+            "fg": "lowkey_comment",
+            "bg": "bg"
+        },
+
+        "VertSplit": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "WinSeparator": { 
+            "fg": "lc_red_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "NormalFloat": {
+            "fg": "fg",
+            "bg": "bg_dark"
+        },
+
+        "QuickFixLine": { 
+            "fg": null,
+            "bg": "bg_highlight",
+            "bold": true
+        },
+
+        "Directory": { 
+            "fg": "lc_yellow",
+            "bg": null,
+            "bold": true
+        },
+
+        "Question": {
+            "fg": "lc_pop_blue",
+            "bg": null
+        },
+
+        "Conceal": {
+            "fg": "almost_black",
+            "bg": null
+        },
+
+        "SpecialKey": { 
+            "fg": "bg_dark2",
+            "bg": null,
+            "bold": true
+        },
+
+        "Whitespace": {
+            "fg": "bg_highlight",
+            "bg": null
+        },
+
+        "Substitute": {
+            "fg": "black",
+            "bg": "red"
+        },
+
+        "Title": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+
+
+        "OLDType": { 
+            "fg": "lc_red_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "Type": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "Comment": {
+            "fg": "lc_light_blue",
+            "bg": null
+        },
+
+        "lispComment": {
+            "fg": "lc_teal",
+            "bg": null
+        },
+
+
+        "String": { 
+            "fg": "lc_yellow",
+            "bg": null,
+            "bold": true
+        },
+
+        "Todo": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "Boolean": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "OLDNumber": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+        "Number": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Constant": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Builtin": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Float": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Character": {
+            "fg": "drab_yellow",
+            "bg": null
+        },
+
+        "Label": { 
+            "fg": "lc_light_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "ModeMsg": {
+            "fg": "drab_yellow",
+            "bg": null
+        },
+
+        "Conditional": { 
+            "fg": "lc_ppink",
+            "bg": null,
+            "bold": true
+        },
+
+        "OLDIdentifier": {
+            "fg": "lc_ppink",
+            "bg": null
+        },
+
+        "Identifier": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+        "OLDOperator": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "Operator": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "PreProc": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "Special": { 
+            "fg": "lc_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "SpecialChar": { 
+            "fg": "lc_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "Variable": {
+            "fg": "fg",
+            "bg": null
+        },
+
+        "Function": { 
+            "fg": "lc_pop_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "Statement": { 
+            "fg": "lc_lavender",
+            "bg": null,
+            "bold": true
+        },
+
+        "Repeat": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "Keyword": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Exception": { 
+            "fg": "lc_ppink",
+            "bg": null,
+            "bold": true
+        },
+
+        "Define": { 
+            "fg": "lc_yellow",
+            "bg": null,
+            "bold": true
+        },
+
+        "Macro": {
+            "fg": "lc_yellow_PUD",
+            "bg": null
+        },
+
+        "Include": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "StorageClass": { 
+            "fg": "lc_ppink_pale",
+            "bg": null,
+            "bold": true
+        },
+
+        "PreCondit": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Structure": {
+            "fg": "lc_pop_blue",
+            "bg": null
+        },
+
+        "Typedef": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+        "Tag": { 
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "Delimiter": {
+            "fg": "dark_grey",
+            "bg": null
+        },
+
+        "Debug": { 
+            "fg": "lc_pop_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "Error": { 
+            "fg": "error",
+            "bg": null,
+            "bold": true
+        },
+
+        "Bold": { 
+            "fg": null,
+            "bg": null,
+            "bold": true
+        },
+
+        "Underlined": { 
+            "fg": null,
+            "bg": null,
+            "underline": true
+        },
+
+
+        "LispFunc": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+        "LispBarSymbol": {
+            "fg": "lc_lavender",
+            "bg": null
+        },
+
+        "LispDecl": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "LispKey": {
+            "fg": "lc_lavender",
+            "bg": null
+        },
+
+        "LispEscapeSpecial": { 
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+
+        "cTypeDef": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+        "cFormat": {
+            "fg": "lc_light_blue",
+            "bg": null
+        },
+
+        "cppSTLFunction": {
+            "fg": "lc_teal",
+            "bg": null
+        },
+
+        "cppExceptions": {
+            "fg": "lc_teal",
+            "bg": null
+        },
+
+        "cppSTLnamespace": {
+            "fg": "lc_deep_sea",
+            "bg": null
+        },
+
+        "cppInNamespace": {
+            "fg": "lc_deep_sea",
+            "bg": null
+        },
+
+
+        "pythonBuiltin": {
+            "fg": "lc_ppink",
+            "bg": null
+        },
+
+        "pythonParameters": {
+            "fg": "lc_light_blue",
+            "bg": null
+        },
+
+
+        "racketFunc": {
+            "fg": "lc_ppink",
+            "bg": null
+        },
+
+        "racketSyntax": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+
+        "rArrow": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+
+        "ps1Cmdlet": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "ps1InterpolationDelimiter": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+
+        "jsObjectProp": { 
+            "fg": "lc_light_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsArrowFunction": { 
+            "fg": "lc_red_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsGlobalObjects": { 
+            "fg": "lc_ppink_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsFuncCall": { 
+            "fg": "lc_lavender",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptReserved": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptBranch": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+
+        "gitcommitSummary": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "zshCommands": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "makeCommands": {
+            "fg": "lc_periwinkle",
+            "bg": null
+        },
+
+
+
+        "TelescopeBorder": {
+            "fg": "lc_lavender",
+            "bg": "bg_dark"
+        },
+
+        "TelescopePromptTitle": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "TelescopePromptPrefix": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "TelescopeResultsTitle": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "TelescopePreviewTitle": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "TelescopeSelection": {
+            "fg": null,
+            "bg": "bg_highlight"
+        },
+
+        "TelescopeSelectionCaret": {
+            "fg": "red",
+            "bg": "bg_highlight"
+        },
+
+        "TelescopeMatching": { 
+            "fg": "lc_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "TelescopeNormal": {
+            "fg": "fg",
+            "bg": "bg_dark"
+        },
+
+        "TelescopePromptCounter": {
+            "fg": "red",
+            "bg": null
+        },
+
+        "TelescopePreviewHyphen": {
+            "fg": "red",
+            "bg": null
+        },
+
+
+        "NvimTreeNormal": {
+            "fg": null,
+            "bg": "bg_dark"
+        },
+
+        "NvimTreeNormalNC": {
+            "fg": "lc_read_grey",
+            "bg": "bg_dark"
+        },
+
+        "NvimTreeEndOfBuffer": {
+            "fg": "bg_dark",
+            "bg": null
+        },
+
+        "NvimTreeWinSeparator": {
+            "fg": "bg_dark",
+            "bg": "bg_dark"
+        },
+
+        "NvimTreeFolderName": { 
+            "fg": "lc_light_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "NvimTreeFolderIcon": { 
+            "fg": "lc_yellow",
+            "bg": null,
+            "bold": true
+        },
+
+        "NvimTreeIndentMarker": {
+            "fg": "bg_highlight",
+            "bg": null
+        },
+
+        "NvimTreeVertSplit": {
+            "fg": "lc_read_grey",
+            "bg": "lc_read_grey"
+        },
+
+        "NvimTreeOpenedFolderName": { 
+            "fg": "lc_pop_blue",
+            "bg": null,
+            "bold": true,
+            "italic": true
+        },
+
+        "NvimTreeEmptyFolderName": {
+            "fg": "lc_light_blue",
+            "bg": null
+        },
+
+        "NvimTreeOpenedFile": {
+            "fg": null,
+            "bg": "bg_highlight"
+        },
+
+        "NvimTreeGitIgnored": {
+            "fg": "lc_light_blue",
+            "bg": null
+        },
+
+        "NvimTreeImageFile": {
+            "fg": "lc_read_grey",
+            "bg": null
+        },
+
+        "NvimTreeSpecialFile": { 
+            "fg": "lc_teal",
+            "bg": null,
+            "underline": true
+        },
+
+        "NvimTreeCursorLine": {
+            "fg": null,
+            "bg": "bg_highlight2"
+        },
+
+
+        "NvimTreeGitStaged": {
+            "fg": "lc_dark_teal",
+            "bg": null
+        },
+
+        "NvimTreeGitNew": {
+            "fg": "lc_teal",
+            "bg": null
+        },
+
+        "NvimTreeGitRenamed": {
+            "fg": "lc_dark_teal",
+            "bg": null
+        },
+
+        "NvimTreeGitDeleted": {
+            "fg": "lc_sly_purple",
+            "bg": null
+        },
+
+        "NvimTreeGitMerge": {
+            "fg": "lc_cobalt",
+            "bg": null
+        },
+
+        "NvimTreeGitDirty": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "NvimTreeSymlink": {
+            "fg": "cyan",
+            "bg": null
+        },
+
+        "NvimTreeRootFolder": { 
+            "fg": "lc_dark_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "NvimTreeExecFile": { 
+            "fg": "lc_cobalt",
+            "bg": null,
+            "italic": true
+        },
+
+
+        "Floaterm": {
+            "fg": null,
+            "bg": "bg_dark"
+        },
+
+        "FloatermBorder": {
+            "fg": "lc_lavender",
+            "bg": "bg_dark"
+        }
+
+    }
+}

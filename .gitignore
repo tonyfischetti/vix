@@ -4,3 +4,10 @@
 bundle/
 plugged
 perf.log
+
+*.o
+*.so
+*.a
+*.gch 
+
+**/to-vim
