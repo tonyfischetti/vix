@@ -10,9 +10,6 @@ map("i", "<C-O><C-O>", "•")
 map("i", "<C-O><C-B>", "«")
 map("i", "<C-O><C-N>", "»")
 
---hop things
-map("n", "S", ":HopWord<CR>")
-
 --Set visual mode indent
 map("v", "<", "<gv")
 map("v", ">", ">gv")
@@ -34,9 +31,6 @@ map({"n", "i"}, "<Down>",  "<nop>")
 
 -- snipmate
 map("i", "<C-J>", "<Plug>snipMateNextOrTrigger")
-
--- Small motion plugin
-map("n", "s", "<Plug>(smalls)")
 
 -- This makes the current match more visible
 -- and also centers the match vertically in the buffer

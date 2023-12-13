@@ -119,6 +119,7 @@ hi Repeat ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Search ctermfg=231 guifg=#f8f8f2 ctermbg=204 guibg=#ff5f87 
 hi SignColumn ctermfg=231 guifg=#f8f8f2 ctermbg=233 guibg=#131a24 
 hi SignColumnSB ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
+hi Sneak ctermfg=16 guifg=#000000 ctermbg=204 guibg=#ff5f87 cterm=bold gui=bold
 hi Special ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
 hi SpecialChar ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
 hi SpecialKey ctermfg=16 guifg=#131a24  cterm=bold gui=bold
@@ -147,7 +148,7 @@ hi TelescopeSelectionCaret ctermfg=210 guifg=#f7768e ctermbg=60 guibg=#666d7a
 hi TermCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi TermCursorNC ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi Title ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi Todo ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Todo ctermfg=16 guifg=#000000 ctermbg=204 guibg=#ff5f87 cterm=bold gui=bold
 hi Type ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Typedef ctermfg=147 guifg=#afafff  
 hi Underlined   cterm=underline gui=underline

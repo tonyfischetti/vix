@@ -73,3 +73,4 @@ end
 
 vim.g.floaterm_width = 0.7
 vim.g.floaterm_title = '  floatterm  '
+

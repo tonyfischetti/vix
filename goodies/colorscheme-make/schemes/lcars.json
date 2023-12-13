@@ -22,42 +22,42 @@
 
     "palette": [
         { "name": "fg",               "color": { "rgbhex": "#f8f8f2", "cterm": 231 } },
-        { "name": "bg",               "color": { "rgbhex": "#131a24", "cterm":  233 } },
-        { "name": "bg_dark",          "color": { "rgbhex": "#0b131d", "cterm":  16 } },
-        { "name": "bg_highlight",     "color": { "rgbhex": "#666d7a", "cterm":  60 } },
-        { "name": "bg_highlight2",    "color": { "rgbhex": "#232931", "cterm":  16 } },
-        { "name": "bg_lighter",       "color": { "rgbhex": "#565f89", "cterm":  60 } },
-        { "name": "bg_dark2",         "color": { "rgbhex": "#131a24", "cterm":  16 } },
-        { "name": "lite_purple",      "color": { "rgbhex": "#deaded", "cterm":  183 } },
-        { "name": "some_grey",        "color": { "rgbhex": "#dadada", "cterm":  188 } },
-        { "name": "dark_grey",        "color": { "rgbhex": "#808080", "cterm":  102 } },
-        { "name": "rust",             "color": { "rgbhex": "#cd5907", "cterm":  166 } },
-        { "name": "almost_black",     "color": { "rgbhex": "#080808", "cterm":  16 } },
-        { "name": "drab_yellow",      "color": { "rgbhex": "#e6db74", "cterm":  186 } },
-        { "name": "lc_teal",          "color": { "rgbhex": "#87ffd7", "cterm":  122 } },
-        { "name": "lc_yellow_PU",     "color": { "rgbhex": "#ffff87", "cterm":  228 } },
-        { "name": "lc_yellow_PUD",    "color": { "rgbhex": "#C4BE89", "cterm":  180 } },
-        { "name": "lc_yellow",        "color": { "rgbhex": "#ffe587", "cterm":  222 } },
-        { "name": "lc_ppink",         "color": { "rgbhex": "#d787d7", "cterm":  176 } },
-        { "name": "lc_ppink_dsat",    "color": { "rgbhex": "#af87af", "cterm":  139 } },
-        { "name": "lc_ppink_pale",    "color": { "rgbhex": "#d7afd7", "cterm":  182 } },
-        { "name": "lc_lavender",      "color": { "rgbhex": "#8787d7", "cterm":  104 } },
-        { "name": "lc_periwinkle",    "color": { "rgbhex": "#afafff", "cterm":  147 } },
-        { "name": "lc_read_grey",     "color": { "rgbhex": "#afafd7", "cterm":  146 } },
-        { "name": "lc_cobalt",        "color": { "rgbhex": "#5f87af", "cterm":  67 } },
-        { "name": "lc_dark_teal",     "color": { "rgbhex": "#5fafaf", "cterm":  73 } },
-        { "name": "lc_sly_purple",    "color": { "rgbhex": "#875f5f", "cterm":  95 } },
-        { "name": "lc_deep_sea",      "color": { "rgbhex": "#008787", "cterm":  30 } },
-        { "name": "lc_red_dsat",      "color": { "rgbhex": "#d75f87", "cterm":  168 } },
-        { "name": "lc_hot_red",       "color": { "rgbhex": "#ff5f87", "cterm":  204 } },
-        { "name": "lc_light_blue",    "color": { "rgbhex": "#afd7d7", "cterm":  152 } },
-        { "name": "lc_pop_blue",      "color": { "rgbhex": "#98dccf", "cterm":  116 } },
-        { "name": "lc_salmon",        "color": { "rgbhex": "#ffaf87", "cterm":  216 } },
-        { "name": "lc_weird_purp",    "color": { "rgbhex": "#ae81ff", "cterm":  141 } },
-        { "name": "lowkey_comment",   "color": { "rgbhex": "#565f89", "cterm":  60 } },
-        { "name": "red",              "color": { "rgbhex": "#f7768e", "cterm":  210 } },
-        { "name": "black",            "color": { "rgbhex": "#000000", "cterm":  16 } },
-        { "name": "error",            "color": { "rgbhex": "#f92672", "cterm":  197 } }
+        { "name": "bg",               "color": { "rgbhex": "#131a24", "cterm": 233 } },
+        { "name": "bg_dark",          "color": { "rgbhex": "#0b131d", "cterm": 16 } },
+        { "name": "bg_highlight",     "color": { "rgbhex": "#666d7a", "cterm": 60 } },
+        { "name": "bg_highlight2",    "color": { "rgbhex": "#232931", "cterm": 16 } },
+        { "name": "bg_lighter",       "color": { "rgbhex": "#565f89", "cterm": 60 } },
+        { "name": "bg_dark2",         "color": { "rgbhex": "#131a24", "cterm": 16 } },
+        { "name": "lite_purple",      "color": { "rgbhex": "#deaded", "cterm": 183 } },
+        { "name": "some_grey",        "color": { "rgbhex": "#dadada", "cterm": 188 } },
+        { "name": "dark_grey",        "color": { "rgbhex": "#808080", "cterm": 102 } },
+        { "name": "rust",             "color": { "rgbhex": "#cd5907", "cterm": 166 } },
+        { "name": "almost_black",     "color": { "rgbhex": "#080808", "cterm": 16 } },
+        { "name": "drab_yellow",      "color": { "rgbhex": "#e6db74", "cterm": 186 } },
+        { "name": "lc_teal",          "color": { "rgbhex": "#87ffd7", "cterm": 122 } },
+        { "name": "lc_yellow_PU",     "color": { "rgbhex": "#ffff87", "cterm": 228 } },
+        { "name": "lc_yellow_PUD",    "color": { "rgbhex": "#C4BE89", "cterm": 180 } },
+        { "name": "lc_yellow",        "color": { "rgbhex": "#ffe587", "cterm": 222 } },
+        { "name": "lc_ppink",         "color": { "rgbhex": "#d787d7", "cterm": 176 } },
+        { "name": "lc_ppink_dsat",    "color": { "rgbhex": "#af87af", "cterm": 139 } },
+        { "name": "lc_ppink_pale",    "color": { "rgbhex": "#d7afd7", "cterm": 182 } },
+        { "name": "lc_lavender",      "color": { "rgbhex": "#8787d7", "cterm": 104 } },
+        { "name": "lc_periwinkle",    "color": { "rgbhex": "#afafff", "cterm": 147 } },
+        { "name": "lc_read_grey",     "color": { "rgbhex": "#afafd7", "cterm": 146 } },
+        { "name": "lc_cobalt",        "color": { "rgbhex": "#5f87af", "cterm": 67 } },
+        { "name": "lc_dark_teal",     "color": { "rgbhex": "#5fafaf", "cterm": 73 } },
+        { "name": "lc_sly_purple",    "color": { "rgbhex": "#875f5f", "cterm": 95 } },
+        { "name": "lc_deep_sea",      "color": { "rgbhex": "#008787", "cterm": 30 } },
+        { "name": "lc_red_dsat",      "color": { "rgbhex": "#d75f87", "cterm": 168 } },
+        { "name": "lc_hot_red",       "color": { "rgbhex": "#ff5f87", "cterm": 204 } },
+        { "name": "lc_light_blue",    "color": { "rgbhex": "#afd7d7", "cterm": 152 } },
+        { "name": "lc_pop_blue",      "color": { "rgbhex": "#98dccf", "cterm": 116 } },
+        { "name": "lc_salmon",        "color": { "rgbhex": "#ffaf87", "cterm": 216 } },
+        { "name": "lc_weird_purp",    "color": { "rgbhex": "#ae81ff", "cterm": 141 } },
+        { "name": "lowkey_comment",   "color": { "rgbhex": "#565f89", "cterm": 60 } },
+        { "name": "red",              "color": { "rgbhex": "#f7768e", "cterm": 210 } },
+        { "name": "black",            "color": { "rgbhex": "#000000", "cterm": 16 } },
+        { "name": "error",            "color": { "rgbhex": "#f92672", "cterm": 197 } }
     ],
 
     "highlights": {
@@ -396,8 +396,8 @@
         },
 
         "Todo": { 
-            "fg": "lc_hot_red",
-            "bg": null,
+            "fg": "black",
+            "bg": "lc_hot_red",
             "bold": true
         },
 
@@ -952,6 +952,12 @@
         "FloatermBorder": {
             "fg": "lc_lavender",
             "bg": "bg_dark"
+        },
+
+        "Sneak": {
+            "fg": "black",
+            "bg": "lc_hot_red",
+            "bold": true
         }
 
     }
