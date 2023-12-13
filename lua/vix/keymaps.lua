@@ -83,3 +83,6 @@ map("n", "<Leader>ht", ":split | terminal  <CR> i")
 map("n", "<Leader>m", ":FloatermToggle<CR>")
 map("n", "<Leader>M", ":FloatermNew --cwd=<root><CR>")
 map("n", "<Leader>e", ":NvimTreeToggle<CR>")
+
+map("n", "<Leader>.", ":BufferLineCycleNext<CR>", { silent = true })
+map("n", "<Leader>,", ":BufferLineCyclePrev<CR>", { silent = true })

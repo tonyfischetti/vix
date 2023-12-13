@@ -4,6 +4,7 @@ vim.cmd("colorscheme lcars")
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- vim.opt.signcolumn = "yes:1"    -- TODO: MAYBE!
+vim.opt.undofile = true
 vim.opt.laststatus = 3
 vim.opt.number = true
 vim.opt.cmdheight = 1
