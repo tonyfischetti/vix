@@ -80,3 +80,4 @@ imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
 let g:mucomplete#user_mappings = { 'snipmate' : "\<C-J>" }
 
 let g:sneak#prompt = 'sneak: '
+let g:sneak#label = 1
