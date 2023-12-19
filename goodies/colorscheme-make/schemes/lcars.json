@@ -55,7 +55,9 @@
         { "name": "lc_salmon",        "color": { "rgbhex": "#ffaf87", "cterm": 216 } },
         { "name": "lc_weird_purp",    "color": { "rgbhex": "#ae81ff", "cterm": 141 } },
         { "name": "lowkey_comment",   "color": { "rgbhex": "#565f89", "cterm": 60 } },
+        { "name": "peach",            "color": { "rgbhex": "#fe9d63", "cterm": 216 } },
         { "name": "red",              "color": { "rgbhex": "#f7768e", "cterm": 210 } },
+        { "name": "dark",             "color": { "rgbhex": "#444444", "cterm": 238 } },
         { "name": "black",            "color": { "rgbhex": "#000000", "cterm": 16 } },
         { "name": "error",            "color": { "rgbhex": "#f92672", "cterm": 197 } }
     ],
@@ -539,8 +541,9 @@
         },
 
         "Macro": {
-            "fg": "lc_yellow_PUD",
-            "bg": null
+            "fg": "lc_yellow",
+            "bg": null,
+            "bold": true
         },
 
         "Include": { 
@@ -550,7 +553,7 @@
         },
 
         "StorageClass": { 
-            "fg": "lc_ppink_pale",
+            "fg": "lc_cobalt",
             "bg": null,
             "bold": true
         },
@@ -752,10 +755,54 @@
         },
 
         "makeCommands": {
-            "fg": "lc_periwinkle",
+            "fg": "lc_yellow",
             "bg": null
         },
 
+        "makeIdent": {
+            "fg": "lc_pop_blue",
+            "bg": null
+        },
+
+        "makeStatement": {
+            "fg": "red",
+            "bg": null,
+            "bold": true
+        },
+
+        "makeInclude": {
+            "fg": "red",
+            "bg": null,
+            "bold": true
+        },
+
+        "makeSpecTarget": {
+            "fg": "red",
+            "bg": null,
+            "bold": true
+        },
+
+        "makeSpecial": {
+            "fg": "red",
+            "bg": null,
+            "bold": true
+        },
+
+        "makeTarget": {
+            "fg": "lc_periwinkle",
+            "bg": null,
+            "bold": true
+        },
+
+        "makeComment": {
+            "fg": "lc_read_grey",
+            "bg": null
+        },
+
+        "darkDebug": {
+            "fg": "dark",
+            "bg": null
+        },
 
 
         "TelescopeBorder": {

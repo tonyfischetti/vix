@@ -67,7 +67,7 @@ hi Statement guifg=#6cddf1 guibg=NONE guisp=NONE gui=bold ctermfg=81 ctermbg=NON
 hi SpellRare guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
 hi ColorColumn guifg=NONE guibg=#536991 guisp=NONE ctermfg=NONE ctermbg=60 cterm=NONE
 hi OverColLimit term=inverse,bold cterm=bold ctermbg=red ctermfg=white gui=bold guibg=red guifg=white
-hi Comment guifg=#9c38bd guibg=#000000 guisp=NONE gui=NONE ctermfg=5 ctermbg=0 cterm=NONE
+hi Comment guifg=#9c38bd guibg=NONE guisp=NONE gui=NONE ctermfg=5 ctermbg=NONE cterm=NONE
 hi Character guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Float guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Number guifg=#ff00bb guibg=NONE guisp=NONE gui=NONE ctermfg=199 ctermbg=NONE cterm=NONE
@@ -89,7 +89,7 @@ hi Visual guifg=NONE guibg=#530060 guisp=#F9F9FF gui=NONE ctermfg=0 ctermbg=51 c
 hi MoreMsg guifg=#c051d3 guibg=NONE guisp=NONE gui=bold ctermfg=164 ctermbg=0 cterm=bold
 hi SpellCap guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
 hi VertSplit guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
-hi Exception guifg=#bd0065 guibg=#000000 guisp=#000000 gui=bold ctermfg=5 ctermbg=NONE cterm=bold
+hi Exception guifg=#bd0065 guibg=NONE guisp=#000000 gui=bold ctermfg=5 ctermbg=NONE cterm=bold
 hi Keyword guifg=#0098a3 guibg=NONE guisp=NONE gui=bold ctermfg=37 ctermbg=NONE cterm=bold
 hi Type guifg=#536991 guibg=NONE guisp=NONE gui=bold ctermfg=60 ctermbg=NONE cterm=bold
 hi DiffChange guifg=#ff0000 guibg=#492224 guisp=#492224 gui=NONE ctermfg=196 ctermbg=52 cterm=NONE
@@ -100,7 +100,7 @@ hi PMenu guifg=#00ffd5 guibg=#275b6c guisp=#275b6c gui=NONE ctermfg=50 ctermbg=2
 hi SpecialKey guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
 hi Constant guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi Tag guifg=#c051d3 guibg=NONE guisp=NONE gui=NONE ctermfg=164 ctermbg=0 cterm=NONE
-hi String guifg=#dd00ff guibg=#000000 guisp=#000000 gui=NONE ctermfg=165 ctermbg=NONE cterm=NONE
+hi String guifg=#dd00ff guibg=NONE guisp=#000000 gui=NONE ctermfg=165 ctermbg=NONE cterm=NONE
 hi PMenuThumb guifg=#00858f guibg=#00f7ff guisp=#00f7ff gui=NONE ctermfg=30 ctermbg=51 cterm=NONE
 hi MatchParen guifg=#dd00ff guibg=#000000 guisp=#000000 gui=bold ctermfg=0 ctermbg=51 cterm=NONE
 hi Repeat guifg=#ff00f7 guibg=NONE guisp=NONE gui=bold ctermfg=201 ctermbg=NONE cterm=bold

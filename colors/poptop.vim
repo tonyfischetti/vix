@@ -1,4 +1,4 @@
-" Vim color file - lcars
+" Vim color file - poptop
 " Designed by Tony Fischetti <tony.fischetti@gmail.com>
 "                                                                           "
 "           ___       ___           ___           ___           ___         "
@@ -18,7 +18,7 @@ set background=dark
 hi clear
 syntax reset
 
-let g:colors_name = "lcars"
+let g:colors_name = "poptop"
 
 hi Bold   cterm=bold gui=bold
 hi Boolean ctermfg=147 guifg=#afafff  cterm=bold gui=bold
@@ -126,7 +126,7 @@ hi SpecialKey ctermfg=16 guifg=#131a24  cterm=bold gui=bold
 hi Statement ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
 hi StatusLine ctermfg=166 guifg=#cd5907 ctermbg=188 guibg=#dadada 
 hi StatusLineNC ctermfg=102 guifg=#808080 ctermbg=16 guibg=#080808 
-hi StorageClass ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi StorageClass ctermfg=182 guifg=#d7afd7  cterm=bold gui=bold
 hi String ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
 hi Structure ctermfg=116 guifg=#98dccf  
 hi Substitute ctermfg=16 guifg=#000000 ctermbg=210 guibg=#f7768e 
@@ -166,7 +166,6 @@ hi cppExceptions ctermfg=122 guifg=#87ffd7
 hi cppInNamespace ctermfg=30 guifg=#008787  
 hi cppSTLFunction ctermfg=122 guifg=#87ffd7  
 hi cppSTLnamespace ctermfg=30 guifg=#008787  
-hi darkDebug ctermfg=238 guifg=#444444  
 hi gitcommitSummary ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi jsArrowFunction ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
 hi jsFuncCall ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
@@ -174,14 +173,7 @@ hi jsGlobalObjects ctermfg=139 guifg=#af87af  cterm=bold gui=bold
 hi jsObjectProp ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
 hi lCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi lispComment ctermfg=122 guifg=#87ffd7  
-hi makeCommands ctermfg=222 guifg=#ffe587  
-hi makeComment ctermfg=146 guifg=#afafd7  
-hi makeIdent ctermfg=116 guifg=#98dccf  
-hi makeInclude ctermfg=210 guifg=#f7768e  cterm=bold gui=bold
-hi makeSpecTarget ctermfg=210 guifg=#f7768e  cterm=bold gui=bold
-hi makeSpecial ctermfg=210 guifg=#f7768e  cterm=bold gui=bold
-hi makeStatement ctermfg=210 guifg=#f7768e  cterm=bold gui=bold
-hi makeTarget ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi makeCommands ctermfg=147 guifg=#afafff  
 hi ps1Cmdlet ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi ps1InterpolationDelimiter ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi pythonBuiltin ctermfg=176 guifg=#d787d7  
