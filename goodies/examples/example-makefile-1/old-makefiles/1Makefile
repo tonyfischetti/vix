@@ -1,0 +1,31 @@
+
+.DELETE_ON_ERROR:
+
+CC       := gcc
+CXX      := g++
+CFLAGS   := -O2 -Wall -Wextra -I.
+CXXFLAGS := -std=c++20 -O2 -I. -pedantic -Wall -Wextra -Werror -Wshadow
+CXXFLAGS += -Wconversion -Wsign-conversion -Wunreachable-code
+CXXFLAGS += -I/home/tony/Desktop/cpp/include
+CPPFLAGS :=
+LDFLAGS  :=
+
+EXE      := farm
+
+vpath %.h ./include
+vpath %.cpp ./src
+
+.PHONY: all clean
+
+all: $(EXE)
+
+$(EXE): farm.o Dog.o Cow.o
+	$(CXX) -o $@ $^ $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)
+
+%.o: %.cpp common.h Animal.h
+	$(CXX) -c -o $@ $< $(CXXFLAGS) $(CPPFLAGS)
+
+
+clean:
+	rm -f *.o $(EXE)
+

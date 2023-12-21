@@ -33,12 +33,8 @@ struct Color {
     std::string rgbhex;
     int cterm;
 };
-Color make_color(const std::string& rgbhex, int cterm) {
-    Color color(rgbhex, cterm);
-    return color;
-}
 
-std::unordered_map<std::string, Color> COLOR_MAP {};
+static std::unordered_map<std::string, Color> COLOR_MAP {};
 
 
 

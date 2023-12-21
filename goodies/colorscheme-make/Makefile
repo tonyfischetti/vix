@@ -3,7 +3,7 @@
 
 ## INSTALL should place in ~/.config/nvim/colors/
 
-COMPTYPE  := debug
+# COMPTYPE  := debug
 
 INCDIR    := include
 SRCDIR    := src
