@@ -673,6 +673,11 @@
             "bg": null
         },
 
+        "pythonDecorator": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
 
         "racketFunc": {
             "fg": "lc_ppink",

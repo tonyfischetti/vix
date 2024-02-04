@@ -185,6 +185,7 @@ hi makeTarget ctermfg=147 guifg=#afafff  cterm=bold gui=bold
 hi ps1Cmdlet ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi ps1InterpolationDelimiter ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi pythonBuiltin ctermfg=176 guifg=#d787d7  
+hi pythonDecorator ctermfg=204 guifg=#ff5f87  
 hi pythonParameters ctermfg=152 guifg=#afd7d7  
 hi rArrow ctermfg=147 guifg=#afafff  
 hi racketFunc ctermfg=176 guifg=#d787d7  
