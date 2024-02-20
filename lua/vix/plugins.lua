@@ -35,7 +35,7 @@ Plug 'folke/tokyonight.nvim'
 Plug 'whatyouhide/vim-gotham'
 Plug 'dstein64/vim-startuptime'
 Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.0' })
+Plug('nvim-telescope/telescope.nvim',   { ['tag'] = '0.1.4' })
 Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug('nvim-tree/nvim-tree.lua',         { ['commit'] = '78a9ca5ed6557f29cd'})
