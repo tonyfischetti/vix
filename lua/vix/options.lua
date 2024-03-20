@@ -1,6 +1,9 @@
 
 vim.cmd("colorscheme lcars")
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- vim.opt.signcolumn = "yes:1"    -- TODO: MAYBE!
@@ -40,9 +43,6 @@ vim.opt.cursorline = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 vim.g['user_emmet_leader_key'] = ","
 vim.g['niji_matching_filetypes'] = {'lisp', 'scheme', 'clojure', 'racket'}

@@ -9,8 +9,14 @@ require('nvim-web-devicons').setup {
             cterm_color = "65",
             name = "lisp"
         },
-        r = {
+        R = {
             icon = "",
+            color = "#428850",
+            cterm_color = "65",
+            name = "R"
+        },
+        js = {
+            icon = "js",
             color = "#428850",
             cterm_color = "65",
             name = "R"
@@ -22,7 +28,12 @@ require('nvim-web-devicons').setup {
             name = "dockerfile"
         },
         text = {
-            icons = "",
+            icons = "🗎",
+            color = "#deaded",
+            name = "text"
+        },
+        default = {
+            icons = "🗎",
             color = "#deaded",
             name = "text"
         }

@@ -2,12 +2,21 @@
 require("nvim-tree").setup({
     sort_by = "case_sensitive",
     view = {
-        width = 30,
+        width = 25,
     },
     renderer = {
         group_empty = true,
         icons = {
-            webdev_colors = true,
+            web_devicons = {
+                file = {
+                    enable = true,
+                    color = true
+                },
+                folder = {
+                    enable = false,
+                    color = true
+                }
+            },
             glyphs = {
                 folder = {
                   arrow_closed = '',
