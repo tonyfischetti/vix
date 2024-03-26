@@ -23,7 +23,7 @@ require("nvim-tree").setup({
                   arrow_open = '',
                   default = '',
                   open = '',
-                  empty = '',
+                  empty = ' ',
                   empty_open = '',
                   symlink = '',
                   symlink_open = ''
