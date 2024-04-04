@@ -41,6 +41,9 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript' -- MAYBE IT WON'T WORK
+Plug 'evanleck/vim-svelte'
 
 -- don't load fzf native on window$
 if vim.fn.has("win32") == 0 then
