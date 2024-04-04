@@ -72,7 +72,7 @@ require('nvim-web-devicons').setup {
     override_by_extension = {
         ["txt"] = {
             icon = "",
-            color = "#f1502f",
+            color = "#DEADED",
             name = "text"
         },
         ["list"] = {
