@@ -162,10 +162,10 @@
   - JSON
 
 - Filesystem
-  - Check if file exists
-  - Resolve path
-  - Basename and extension
-  - Combining
+  - Check if path exists
+    * js
+  - Path manipulation
+    * js
   - Get file info
     * js
   - Recursively list all files in directory
