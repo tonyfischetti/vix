@@ -164,6 +164,10 @@
   - Resolve path
   - Basename and extension
   - Combining
+  - Get file info
+    * js
+  - Recursively list all files in directory
+    * js
 
 - Web
   - URL encoding and decoding
