@@ -163,9 +163,9 @@
 
 - Filesystem
   - Check if file exists
-  - Resolve path
-  - Basename and extension
-  - Combining
+    * js
+  - Manipulate paths
+    * js
   - Get file info
     * js
   - Recursively list all files in directory
