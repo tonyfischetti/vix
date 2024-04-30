@@ -23,28 +23,23 @@ path.extname(doesExist);
 
 // console.log(path.parse(doesExist));
 
-// CHECK IF EXISTS
-// will directories work?!
-const fileExistsP = async (apath) => {
-  try {
-    const ret = await fs.stat(apath);
-    console.log(ret);
-    return true;
-  }
-  catch (err) {
-    if (err.code !== 'ENOENT')
-      throw err;
-    return false;
-  }
+
+const fileExistsP = (apath) => {
+  return new Promise((resolve, reject) => {
+    fs.stat(apath).
+      then(() => resolve(true)).
+      catch((err) => {
+        if (err.code === 'ENOENT')
+          resolve(false);
+        reject(err);
+      });
+  });
 };
 
-
 fileExistsP(doesExist).
-  then(console.log);
+  then(i => console.log(`does1: ${i}`));
 
 fileExistsP(doesntExist).
-  then(console.log);
-
-
+  then(i => console.log(`doesnt1: ${i}`));
 
 
