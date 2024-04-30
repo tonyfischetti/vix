@@ -1,0 +1,145 @@
+
+- Basics
+  - Implementation details
+  - Runtimes
+  - Data types
+  - Special values
+  - Truthies and falsies
+  - Conditionals
+  - Loops and breaking them
+  - Try catch blocks
+  - !Shebang
+  - Best practices
+  - Common gotchas
+
+- Strings
+  - !Substrings
+  - !String interpolation
+  - !String length
+  - Formatting
+  - !Padding
+  - Unicode Awareness
+  - Unicode normalization
+  - Regex
+	- Detect
+	- Split
+	- Replace and capture
+
+- Functions
+  - Closures
+  - Named parameters
+  - Optional parameters
+  - Rest args
+  - Currying
+  - Partial application
+
+- Arrays
+  - Creating, indexing, and length
+  - Concatenate
+  - Push and pop
+  - Slicing
+  - Iota
+  - Imperative loop
+  - Predicates
+  - Filter
+  - Mapcar
+  - Zip
+  - Reverse
+  - Sort
+  - Reduce
+  - Joining
+  - Array Destructuring
+  - Array Random Shuffle
+  
+
+- Hash tables
+  - Create a hash table
+  - Iteration
+
+- File IO
+  - Read file line by line
+  - Read file all at once
+  - Write to a file all at once
+  - Write to a file line by line
+  - Read character by character
+  - Read from middle of file
+
+- OS
+  - Run system command
+  - Sleep
+  - CLI arguments
+  - Parsing command line arguments
+  - Environment variables
+  - Program termination
+  - Handle Signals
+  
+- Terminal IO
+  - Read line from console
+  - Read character from console
+  - Output colored text
+  - Progress bar?
+  - Check if IO device is terminal
+
+- Math
+  - Incrementing
+  - Rounding and formatting
+  - Minimum Maximum
+  - Parse integers and floats
+  - Modular arithmetic
+  - Exponentiation
+  - Trigonometry?
+  - Random Numbers
+    - Generate a random number in a range
+    - Random array element
+
+- Date and Time
+  - Get current date and time
+  - Get current UNIX time
+  - Date parsing
+  - Date arithmetic
+  - Timing functions
+
+
+- Data formats
+  - XML
+  - JSON
+
+- Filesystem
+  - Check if file exists
+  - Resolve path
+  - Basename and extension
+  - Combining
+
+- Web
+  - URL encoding and decoding
+  - GET request
+  - XPath
+  - CSS selection
+  - Simple web server
+
+- Classes and structs
+  - Structs
+  - Class
+  - Inheritance
+  - Object serialization
+
+- Concurrency
+  - Threads
+
+- Miscellany
+  - Modules
+  - Streams
+  - Compiling executables
+  - Logging
+  - Threading operator
+  - Async and promises
+  - Bit manipulation
+  - Destructuring
+  - FFI
+  - Cryptography
+  - Metaprogramming
+
+- Language-Specific
+  - Javascript
+	  - Event Emitters
+	  - Nullish coalescing
