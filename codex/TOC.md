@@ -114,6 +114,8 @@
   - Read from middle of file
 
 - OS
+  - Get OS info
+    * js
   - Run system command
     * js
   - Sleep
