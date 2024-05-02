@@ -29,6 +29,8 @@
     * lisp
     * cpp
     * r
+  - Lower upper case
+    * js
   - Formatting
   - Padding
     * js
@@ -36,7 +38,9 @@
     * cpp
     * r
   - Unicode Awareness
+    * js
   - Unicode normalization
+    * js
   - Regex
 	- Detect
       * js
@@ -178,11 +182,9 @@
   - CSS selection
   - Simple web server
 
-- Classes and structs
-  - Structs
-  - Class
-  - Inheritance
-  - Object serialization
+- Classes
+  - Classes
+    * js
 
 - Concurrency
   - Threads
@@ -206,6 +208,6 @@
 - Language-Specific
   - Javascript
 	  - Event Emitters
-        * js
+      * js
 	  - Nullish coalescing
       - Optional chaining operator
