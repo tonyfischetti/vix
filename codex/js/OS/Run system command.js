@@ -112,3 +112,26 @@ com.on('close', (code, signal) => {
  * AND SO ON...
  *
  */
+
+/*
+ * This is an example of wrapping a `spawn` in
+ * a promise that returns an object containing the
+ * stdout, stderr, exit code, and signal (if applicable)
+ */
+
+const promSpawn = (command, more) => {
+  return new Promise((resolve, reject) => {
+    try {
+      const com = proc.spawn(command, more);
+      let out = ""; let err = "";
+      com.on('error',       (err) => reject(err));
+      com.stdout.on('data', (data) => out = out + data.toString());
+      com.stderr.on('data', (data) => err = err + data.toString());
+      com.on('close', (code, signal) => {
+        resolve({out: out.trim(), err: err.trim(), code: code, signal: signal});
+      });
+    } catch(err) {
+      reject(err);
+    }
+  });
+};
