@@ -1,3 +1,9 @@
+/*
+ * Strings in Javascript are internally stored in UTF-16 encoding...
+ * but some characters require more than one code point...
+ * like these...
+ */
+
 let nfc = "Όλοι οι άνθρωποι";
 let nfd = "Όλοι οι άνθρωποι";
 

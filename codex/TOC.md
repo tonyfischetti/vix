@@ -4,6 +4,7 @@
   - Runtimes
   - Data types
   - Special values
+    * js
   - Truthies and falsies
   - Conditionals
   - Loops and breaking them
@@ -95,9 +96,9 @@
     * js
   - Joining
     * js
-  - Array Destructuring
+  - Array destructuring
     * js
-  - Array Random Shuffle
+  - Array random shuffle
     * js
   
 
@@ -137,17 +138,37 @@
   - Check if IO device is terminal
 
 - Math
-  - Incrementing
-  - Rounding and formatting
-  - Minimum Maximum
+  - Representing numbers
+    * js
+  - Limits
+    * js
+  - Constants
+    * js
+  - Special numbers
+    * js
+  - Incrementing decrementing
+    * js
+  - Absolute value
+    * js
+  - Rounding
+    * js
+  - Formatting
+  - Minimum maximum
+    * js
   - Parse integers and floats
     * js
   - Modular arithmetic
+    * js
   - Exponentiation
-  - Trigonometry?
+    * js
+  - Logarithms
+    * js
+  - Trigonometry
+    * js
   - Random Numbers
-    - Generate a random number in a range
-    - Random array element
+    * js
+  - Big integers
+  - Performance
 
 - Date and Time
   - Get current date and time
@@ -200,7 +221,10 @@
   - Threading operator
   - Async and promises
   - Bit manipulation
+  - UUIDs
+    * js
   - Destructuring
+    * js
   - FFI
   - Cryptography
   - Metaprogramming
