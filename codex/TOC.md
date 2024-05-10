@@ -3,6 +3,7 @@
   - Implementation details
   - Runtimes
   - Data types
+  - Declaring variables
   - Special values
     * js
   - Truthies and falsies
@@ -11,6 +12,9 @@
   - Try catch blocks
   - Shebang
     * js
+  - Syntax highlighting
+    * js
+  - Tooling
   - Best practices
   - Common gotchas
 
@@ -125,6 +129,7 @@
     * js
   - Sleep
   - CLI arguments
+    * js
   - Parsing command line arguments
   - Environment variables
   - Program termination
@@ -183,6 +188,7 @@
 
 
 - Data formats
+  - CSV
   - XML
   - JSON
 
@@ -228,10 +234,12 @@
   - FFI
   - Cryptography
   - Metaprogramming
+  - Profiling
+  - Debugging
 
 - Language-Specific
   - Javascript
 	  - Event Emitters
       * js
 	  - Nullish coalescing
-      - Optional chaining operator
+    - Optional chaining operator

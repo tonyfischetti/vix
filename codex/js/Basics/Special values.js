@@ -25,6 +25,8 @@ typeof(foo()) === 'undefined';    // true
 let j = null;
 j === null;                       // true
 
+// null is also what you push to streams to signal that it's done
+
 
 Number.NaN;                // NaN
 Number.NEGATIVE_INFINITY;  // Infinity
