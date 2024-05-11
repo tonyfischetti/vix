@@ -125,8 +125,11 @@
 - OS
   - Get OS info
     * js
+  - Get set cwd pwd
+    * js
   - Run system command
     * js
+  - Exit https://nodejs.org/api/process.html#processexitcode
   - Sleep
   - CLI arguments
     * js
@@ -184,7 +187,7 @@
     * js
   - Date arithmetic
     * js
-  - Timing functions
+  - Timing functions {process.hrtime.bigint() and see "OS"}
 
 
 - Data formats
