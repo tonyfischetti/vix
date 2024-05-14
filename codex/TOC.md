@@ -206,6 +206,7 @@
       * js
     - Recursively list all files in directory
       * js
+    - Globbing
 
   - Web
     - URL encoding and decoding
@@ -258,9 +259,12 @@
     - Symmetric encryption
     - Restart agent
     ---- sign, detach, verify, etc...
-  - Systemd journal
-  - Curl
-  - Ack
-  - Find
-  - Rsync
+  - systemd journal
+  - curl
+  - ack
+  - find
+  - rsync
+  - npm
+    * Install a dev dependency.sh
+    * Start electron app.sh ?????
 
