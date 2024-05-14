@@ -36,11 +36,9 @@ if vim.fn.executable("fzf") == 0 then
     require('telescope').load_extension('fzf')
 end
 
--- vim.keymap.set('n', '<Leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<Leader>f', builtin.git_files, {})
 vim.keymap.set('n', '<Leader>F', builtin.find_files, {})
 vim.keymap.set('n', '<Leader>c', builtin.colorscheme, {})
 vim.keymap.set("n", "<Leader>E", builtin.symbols, {})
-vim.keymap.set('n', '<Leader>b', builtin.buffers, {})
 vim.keymap.set('n', '<Leader>/', builtin.buffers, {})
--- vim.keymap.set('n', '<Leader>z', builtin.live_grep, {})
+vim.keymap.set('n', '<Leader>g', builtin.live_grep, {})

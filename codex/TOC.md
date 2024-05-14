@@ -3,13 +3,18 @@
   - Implementation details
   - Runtimes
   - Data types
+  - Declaring variables
   - Special values
+    * js
   - Truthies and falsies
   - Conditionals
   - Loops and breaking them
   - Try catch blocks
   - Shebang
     * js
+  - Syntax highlighting
+    * js
+  - Tooling
   - Best practices
   - Common gotchas
 
@@ -29,6 +34,8 @@
     * lisp
     * cpp
     * r
+  - Lower upper case
+    * js
   - Formatting
   - Padding
     * js
@@ -36,7 +43,9 @@
     * cpp
     * r
   - Unicode Awareness
+    * js
   - Unicode normalization
+    * js
   - Regex
 	- Detect
       * js
@@ -91,9 +100,9 @@
     * js
   - Joining
     * js
-  - Array Destructuring
+  - Array destructuring
     * js
-  - Array Random Shuffle
+  - Array random shuffle
     * js
   
 
@@ -116,10 +125,14 @@
 - OS
   - Get OS info
     * js
+  - Get set cwd pwd
+    * js
   - Run system command
     * js
+  - Exit https://nodejs.org/api/process.html#processexitcode
   - Sleep
   - CLI arguments
+    * js
   - Parsing command line arguments
   - Environment variables
   - Program termination
@@ -133,17 +146,37 @@
   - Check if IO device is terminal
 
 - Math
-  - Incrementing
-  - Rounding and formatting
-  - Minimum Maximum
+  - Representing numbers
+    * js
+  - Limits
+    * js
+  - Constants
+    * js
+  - Special numbers
+    * js
+  - Incrementing decrementing
+    * js
+  - Absolute value
+    * js
+  - Rounding
+    * js
+  - Formatting
+  - Minimum maximum
+    * js
   - Parse integers and floats
     * js
   - Modular arithmetic
+    * js
   - Exponentiation
-  - Trigonometry?
+    * js
+  - Logarithms
+    * js
+  - Trigonometry
+    * js
   - Random Numbers
-    - Generate a random number in a range
-    - Random array element
+    * js
+  - Big integers
+  - Performance
 
 - Date and Time
   - Get current date and time
@@ -154,17 +187,18 @@
     * js
   - Date arithmetic
     * js
-  - Timing functions
+  - Timing functions {process.hrtime.bigint() and see "OS"}
 
 
 - Data formats
+  - CSV
   - XML
   - JSON
 
 - Filesystem
-  - Check if file exists
+  - Check if path exists
     * js
-  - Manipulate paths
+  - Path manipulation
     * js
   - Get file info
     * js
@@ -178,11 +212,9 @@
   - CSS selection
   - Simple web server
 
-- Classes and structs
-  - Structs
-  - Class
-  - Inheritance
-  - Object serialization
+- Classes
+  - Classes
+    * js
 
 - Concurrency
   - Threads
@@ -198,14 +230,19 @@
   - Threading operator
   - Async and promises
   - Bit manipulation
+  - UUIDs
+    * js
   - Destructuring
+    * js
   - FFI
   - Cryptography
   - Metaprogramming
+  - Profiling
+  - Debugging
 
 - Language-Specific
   - Javascript
 	  - Event Emitters
-        * js
+      * js
 	  - Nullish coalescing
-      - Optional chaining operator
+    - Optional chaining operator
