@@ -29,7 +29,6 @@ hi Comment ctermfg=152 guifg=#afd7d7
 hi Conceal ctermfg=16 guifg=#080808  
 hi Conditional ctermfg=176 guifg=#d787d7  cterm=bold gui=bold
 hi Constant ctermfg=147 guifg=#afafff  cterm=bold gui=bold
-hi CurSearch ctermfg=231 guifg=#f8f8f2 ctermbg=176 guibg=#d787d7 
 hi Cursor ctermfg=16 guifg=#000000 ctermbg=231 guibg=#f8f8f2 
 hi CursorColumn  ctermbg=60 guibg=#666d7a 
 hi CursorIM ctermfg=16 guifg=#000000 ctermbg=231 guibg=#f8f8f2 
@@ -55,7 +54,7 @@ hi FoldColumn ctermfg=60 guifg=#565f89 ctermbg=16 guibg=#000000
 hi Folded ctermfg=30 guifg=#008787 ctermbg=60 guibg=#666d7a 
 hi Function ctermfg=116 guifg=#98dccf  cterm=bold gui=bold
 hi Identifier ctermfg=147 guifg=#afafff  
-hi IncSearch ctermfg=231 guifg=#f8f8f2 ctermbg=176 guibg=#d787d7 
+hi IncSearch ctermfg=204 guifg=#ff5f87 ctermbg=16 guibg=#000000 
 hi Include ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Keyword ctermfg=147 guifg=#afafff  cterm=bold gui=bold
 hi Label ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
@@ -116,7 +115,7 @@ hi PreProc ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Question ctermfg=116 guifg=#98dccf  
 hi QuickFixLine  ctermbg=60 guibg=#666d7a cterm=bold gui=bold
 hi Repeat ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi Search ctermfg=231 guifg=#f8f8f2 ctermbg=204 guibg=#ff5f87 
+hi Search ctermfg=183 guifg=#deaded ctermbg=16 guibg=#000000 
 hi SignColumn ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#000000 
 hi SignColumnSB ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
 hi Sneak ctermfg=16 guifg=#000000 ctermbg=204 guibg=#ff5f87 cterm=bold gui=bold
@@ -130,6 +129,7 @@ hi StorageClass ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi String ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
 hi Structure ctermfg=116 guifg=#98dccf  
 hi Substitute ctermfg=16 guifg=#000000 ctermbg=210 guibg=#f7768e 
+hi TODO ctermfg=176 guifg=#d787d7 ctermbg=16 guibg=#000000 
 hi TabLine ctermfg=60 guifg=#666d7a ctermbg=16 guibg=#080808 
 hi TabLineFill  ctermbg=16 guibg=#000000 
 hi TabLineSel ctermfg=16 guifg=#000000 ctermbg=30 guibg=#008787 
@@ -187,7 +187,9 @@ hi ps1InterpolationDelimiter ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi pythonBuiltin ctermfg=176 guifg=#d787d7  
 hi pythonDecorator ctermfg=204 guifg=#ff5f87  
 hi pythonParameters ctermfg=152 guifg=#afd7d7  
-hi rArrow ctermfg=147 guifg=#afafff  
+hi rArrow ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi rBoolean ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi rConstant ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi racketFunc ctermfg=176 guifg=#d787d7  
 hi racketSyntax ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi typescriptBranch ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold

@@ -77,6 +77,10 @@
             "fg": "fg",
             "bg": "bg_dark" 
         },
+        "TODO": {
+            "fg": "lc_ppink",
+            "bg": "bg"
+        },
 
         "Cursor": {
             "fg": "bg",
@@ -280,19 +284,14 @@
             "bg": "black"
         },
 
-        "Search": {
-            "fg": "fg",
-            "bg": "lc_hot_red"
-        },
-
         "IncSearch": {
-            "fg": "fg",
-            "bg": "lc_ppink"
+            "fg": "lc_hot_red",
+            "bg": "black"
         },
 
-        "CurSearch": {
-            "fg": "fg",
-            "bg": "lc_ppink"
+        "Search": {
+            "fg": "lite_purple",
+            "bg": "bg"
         },
 
         "Folded": {
@@ -366,8 +365,6 @@
             "bold": true
         },
 
-
-
         "OLDType": { 
             "fg": "lc_red_dsat",
             "bg": null,
@@ -389,7 +386,6 @@
             "fg": "lc_teal",
             "bg": null
         },
-
 
         "String": { 
             "fg": "lc_yellow",
@@ -692,8 +688,21 @@
 
 
         "rArrow": {
-            "fg": "lc_periwinkle",
-            "bg": null
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "rBoolean": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "rConstant": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
         },
 
 

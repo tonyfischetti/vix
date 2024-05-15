@@ -78,12 +78,12 @@ syn keyword rRepeat      for in repeat while
 syn keyword rConstant T F LETTERS letters month.abb month.name pi
 syn keyword rConstant R.version.string
 
-syn keyword rNumber   NA_integer_ NA_real_ NA_complex_ NA_character_
 
 " Constants
 syn keyword rConstant NULL
+syn keyword rConstant   NA Inf NaN
+syn keyword rConstant   NA_integer_ NA_real_ NA_complex_ NA_character_
 syn keyword rBoolean  FALSE TRUE
-syn keyword rNumber   NA Inf NaN
 
 " integer
 syn match rInteger "\<\d\+L"
@@ -133,6 +133,8 @@ syn match rArrow "->\{1,2}"
 
 " Special
 syn match rDelimiter "[,;:]"
+
+syn match rOperator    ":="
 
 " Error
 if exists("g:r_syntax_folding")
