@@ -115,7 +115,7 @@ hi PreProc ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Question ctermfg=116 guifg=#98dccf  
 hi QuickFixLine  ctermbg=60 guibg=#666d7a cterm=bold gui=bold
 hi Repeat ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi Search ctermfg=183 guifg=#deaded ctermbg=233 guibg=#131a24 
+hi Search ctermfg=204 guifg=#ff5f87 ctermbg=233 guibg=#131a24 cterm=bold gui=bold
 hi SignColumn ctermfg=231 guifg=#f8f8f2 ctermbg=233 guibg=#131a24 
 hi SignColumnSB ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
 hi Sneak ctermfg=16 guifg=#000000 ctermbg=204 guibg=#ff5f87 cterm=bold gui=bold
@@ -129,7 +129,6 @@ hi StorageClass ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi String ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
 hi Structure ctermfg=116 guifg=#98dccf  
 hi Substitute ctermfg=16 guifg=#000000 ctermbg=210 guibg=#f7768e 
-hi TODO ctermfg=176 guifg=#d787d7 ctermbg=233 guibg=#131a24 
 hi TabLine ctermfg=60 guifg=#666d7a ctermbg=16 guibg=#080808 
 hi TabLineFill  ctermbg=16 guibg=#000000 
 hi TabLineSel ctermfg=16 guifg=#000000 ctermbg=30 guibg=#008787 
@@ -148,7 +147,7 @@ hi TelescopeSelectionCaret ctermfg=210 guifg=#f7768e ctermbg=60 guibg=#666d7a
 hi TermCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi TermCursorNC ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi Title ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi Todo ctermfg=16 guifg=#000000 ctermbg=204 guibg=#ff5f87 cterm=bold gui=bold
+hi Todo ctermfg=204 guifg=#ff5f87 ctermbg=16 guibg=#000000 cterm=bold gui=bold
 hi Type ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Typedef ctermfg=147 guifg=#afafff  
 hi Underlined   cterm=underline gui=underline
@@ -169,9 +168,13 @@ hi cppSTLnamespace ctermfg=30 guifg=#008787
 hi darkDebug ctermfg=238 guifg=#444444  
 hi gitcommitSummary ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi jsArrowFunction ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
-hi jsFuncCall ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
+hi jsFuncArgs ctermfg=116 guifg=#98dccf  cterm=bold gui=bold
+hi jsFuncCall ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi jsGlobalObjects ctermfg=139 guifg=#af87af  cterm=bold gui=bold
-hi jsObjectProp ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+hi jsImport ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi jsObjectProp ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
+hi jsParen ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+hi jsStorageClass ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi lCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi lispComment ctermfg=122 guifg=#87ffd7  
 hi makeCommands ctermfg=222 guifg=#ffe587  
@@ -192,6 +195,13 @@ hi rBoolean ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi rConstant ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi racketFunc ctermfg=176 guifg=#d787d7  
 hi racketSyntax ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi typescriptBranch ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi typescriptReserved ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi tsArgumentDef ctermfg=30 guifg=#008787  cterm=bold gui=bold
+hi tsDefinition ctermfg=30 guifg=#008787  cterm=bold gui=bold
+hi tsGeneric ctermfg=30 guifg=#008787  cterm=bold gui=bold
+hi tsParenAnnotation ctermfg=30 guifg=#008787  cterm=bold gui=bold
+hi typescriptCall ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi typescriptCastKeyword ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi typescriptDOMDocMethod ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi typescriptImport ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi typescriptProp ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
 hi zshCommands ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold

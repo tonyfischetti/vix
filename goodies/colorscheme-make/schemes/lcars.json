@@ -77,10 +77,6 @@
             "fg": "fg",
             "bg": "bg_dark" 
         },
-        "TODO": {
-            "fg": "lc_ppink",
-            "bg": "bg"
-        },
 
         "Cursor": {
             "fg": "bg",
@@ -290,8 +286,9 @@
         },
 
         "Search": {
-            "fg": "lite_purple",
-            "bg": "bg"
+            "fg": "lc_hot_red",
+            "bg": "bg",
+            "bold": true
         },
 
         "Folded": {
@@ -394,8 +391,8 @@
         },
 
         "Todo": { 
-            "fg": "black",
-            "bg": "lc_hot_red",
+            "fg": "lc_hot_red",
+            "bg": "black",
             "bold": true
         },
 
@@ -719,8 +716,92 @@
         },
 
 
-        "jsObjectProp": { 
+        "jsImport": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptImport": { 
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptCastKeyword": {
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptCall": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "tsParenAnnotation": {
+            "fg": "lc_deep_sea",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsParen": {
             "fg": "lc_light_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "tsArgumentDef": {
+            "fg": "lc_deep_sea",
+            "bg": null,
+            "bold": true
+        },
+
+        "tsGeneric": {
+            "fg": "lc_deep_sea",
+            "bg": null,
+            "bold": true
+        },
+
+        "tsDefinition": {
+            "fg": "lc_deep_sea",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsFuncArgs": {
+            "fg": "lc_pop_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsStorageClass": {
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsFuncCall": { 
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptDOMDocMethod": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsObjectProp": {
+            "fg": "lc_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptProp": {
+            "fg": "lc_teal",
             "bg": null,
             "bold": true
         },
@@ -733,24 +814,6 @@
 
         "jsGlobalObjects": { 
             "fg": "lc_ppink_dsat",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsFuncCall": { 
-            "fg": "lc_lavender",
-            "bg": null,
-            "bold": true
-        },
-
-        "typescriptReserved": { 
-            "fg": "lc_hot_red",
-            "bg": null,
-            "bold": true
-        },
-
-        "typescriptBranch": { 
-            "fg": "lc_hot_red",
             "bg": null,
             "bold": true
         },
@@ -1020,6 +1083,5 @@
             "bg": "lc_hot_red",
             "bold": true
         }
-
     }
 }
