@@ -18,8 +18,7 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug('wlangstroth/vim-racket',          {['for'] = 'racket'})
 Plug('maverickg/stan.vim',              {['for'] = 'stan'})
 Plug('TovarishFin/vim-solidity',        {['for'] = 'solidity'})
-Plug('pangloss/vim-javascript',         {['for'] = 'javascript'})
-Plug('leafgarland/typescript-vim',      {['for'] = 'typescript'})
+Plug 'vieira/vim-javascript'
 Plug('mattn/emmet-vim',                 {['for'] = 'html'})
 Plug('pprovost/vim-ps1',                {['for'] = 'ps1'})
 Plug('elzr/vim-json',                   {['for'] = 'json'})
@@ -41,7 +40,6 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript' -- MAYBE IT WON'T WORK
 Plug 'evanleck/vim-svelte'
 
 -- don't load fzf native on window$
