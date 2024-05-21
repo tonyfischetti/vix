@@ -10,6 +10,7 @@
       * js
     - Truthies and falsies
     - Conditionals
+      * js
     - Loops and breaking them
     - Try catch blocks
     - Shebang
@@ -266,5 +267,6 @@
   - rsync
   - npm
     * Install a dev dependency.sh
+    * Install a package globally
     * Start electron app.sh ?????
 
