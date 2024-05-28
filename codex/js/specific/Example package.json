@@ -1,0 +1,33 @@
+{
+  "name": "some name",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "lint": "npx eslint . --ignore-pattern dist/ --ignore-pattern node_modules/ --ignore-pattern .git/ --ignore-pattern src/types/types.d.ts --ignore-pattern eslint.config.js",
+    "start:dev": "npx tsc -w --project tsconfig.json",
+    "build": "npx rimraf ./dist  && npx tsc --project tsconfig.json",
+    "run": "node ./dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tony Fischetti <tony.fischetti@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@eslint/js": "^9.3.0",
+    "@stylistic/eslint-plugin": "^2.1.0",
+    "@types/node": "^20.12.12",
+    "@types/papaparse": "^5.3.14",
+    "eslint": "^8.57.0",
+    "globals": "^15.3.0",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "promised-sqlite3": "^2.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}

@@ -224,6 +224,7 @@
     - Threads
 
   - Miscellany
+    - Serialization
     - Modules
       * js
     - Streams
@@ -246,10 +247,17 @@
 
   - Language-Specific
     - Javascript
-        - Event Emitters
+      - Event Emitters
         * js
-        - Nullish coalescing
-      - Optional chaining operator
+        * js
+      - Use typescript
+        * js
+      - Use eslint
+        * js
+      - Example package.json
+        * js
+      - Optional chaining operator ?
+      - Nullish coalescing ?
 
 - Tools
 
@@ -269,4 +277,5 @@
     * Install a dev dependency.sh
     * Install a package globally
     * Start electron app.sh ?????
+
 
