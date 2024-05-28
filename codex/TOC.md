@@ -247,15 +247,15 @@
 
   - Language-Specific
     - Javascript
-      - Event Emitters
-        * js
-        * js
-      - Use typescript
-        * js
-      - Use eslint
-        * js
+      - Event Emitters.js
+      - Use typescript.js
+      - Use eslint.js
       - Example package.json
-        * js
+      - npm
+        - Install a dev dependency.sh
+        - Install a package globally.sh
+        - Start electron app.sh ?????
+      - bun
       - Optional chaining operator ?
       - Nullish coalescing ?
 
@@ -273,9 +273,5 @@
   - ack
   - find
   - rsync
-  - npm
-    * Install a dev dependency.sh
-    * Install a package globally
-    * Start electron app.sh ?????
 
 

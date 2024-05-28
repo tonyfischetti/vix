@@ -6,7 +6,7 @@
 /*
  * IN package.json...
  *
- 333925* "scripts":
+ * "scripts":
  *   "build": "npx rimraf ./dist  && npx tsc --project tsconfig.json",
  *   "start:dev": "npx tsc -w --project tsconfig.json",
  *   ...
