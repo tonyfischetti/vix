@@ -111,6 +111,7 @@
 
   - Hash tables
     - Create a hash table
+    * Paste
     - Iteration
 
   - File IO
@@ -246,14 +247,18 @@
     - Debugging
 
   - Language-Specific
+    - R
+      * Base R pie chart with rcolorbrewer.R
+      * Wrap labels for plots.R
+      * Paste combine strings.R
     - Javascript
-      - Event Emitters.js
-      - Use typescript.js
-      - Use eslint.js
-      - Example package.json
+      * Event Emitters.js
+      * Use typescript.js
+      * Use eslint.js
+      * Example package.json
       - npm
-        - Install a dev dependency.sh
-        - Install a package globally.sh
+        * Install a dev dependency.sh
+        * Install a package globally.sh
         - Start electron app.sh ?????
       - bun
       - Optional chaining operator ?
