@@ -1,0 +1,11 @@
+#example {
+    display: flex;
+
+    flex-flow: column wrap;
+    flex-flow: column-reverse wrap;
+
+    flex-flow: column nowrap;
+
+    flex-flow: column wrap-reverse;
+}
+

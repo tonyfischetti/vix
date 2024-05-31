@@ -1,0 +1,25 @@
+
+/*
+
+Inside `head`...
+
+Font Awesome 5:	<script src="https://kit.fontawesome.com/2c981b3957.js" crossorigin="anonymous"></script>
+Font Awesome 4: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+material UI:    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+Inside `body` (example)
+
+    <i class="material-icons icon">smoking_rooms</i>
+    <i class="fas fa-paper-plane icon"></i>
+    <i class="far fa-paper-plane icon"></i>
+    <i class="fas fa-bicycle icon"></i>
+
+
+Find icons:
+  - https://www.w3schools.com/icons/icons_reference.asp
+  - https://fontawesome.com/icons
+  - https://www.w3schools.com/icons/fontawesome_icons_intro.asp
+
+
+*/

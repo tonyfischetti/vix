@@ -1,0 +1,22 @@
+
+/**
+ * Adds space _INSIDE_ an element
+ * (inside the border)
+ **/
+#example {
+    /* adds to the size of the element */
+    padding: 100px;
+    /* clockwise from top */
+    padding: 100px 100px 100px 100px;
+}
+
+/**
+ * Adds space _OUTSIDE_ an element
+ * (just outside the border)
+ **/
+#example {
+    margin: 100px;
+    /* clockwise from top */
+    margin: 100px 100px 100px 100px;
+}
+

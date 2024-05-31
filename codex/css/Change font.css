@@ -1,0 +1,70 @@
+
+/**
+ * Option 1) Use a hosted font
+ *
+ *   a) https://fonts.google.com/?query=commissioner
+ *   b) Get the line to put in the `head` element (example below)
+ *      <link rel="preconnect" href="https://fonts.googleapis.com">
+ *      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ *      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap">
+ **/
+
+#example {
+    font-family: "Commissioner", "Helvetica", "Arial", "sans-serif";
+    font-style:   normal;   /* normal | italic */
+    font-variant: normal;   /* normal | small-caps */
+    /* weight must go after font-variant! */
+    font-weight:  400;      /* normal | bold | \d{3} */
+    font-size: 5rem;        /* px | em | rem | vw */
+    font-display: swap;
+}
+
+
+/**
+ * Option 2) Include the font files
+ *
+ *   a) https://fonts.google.com/?query=commissioner
+ *   b) download the fonts
+ *   c) put the font in `$INDEX/assetts/fonts`
+ **/
+
+@font-face {
+    font-family: "Main Text";
+    src: url("../assets/fonts/Commissioner.ttf");
+    font-style:   normal;   /* normal | italic */
+    font-variant: normal;   /* normal | small-caps */
+    /* weight must go after font-variant! */
+    font-weight:  400;      /* normal | bold | \d{3} */
+    font-display: swap;
+    /* font-size goes elsewhere */
+}
+
+#example {
+    font-family: "Main Text", "Helvetica", "Courier New";
+    font-size: 3rem;
+}
+
+
+/**
+ * "Web-safe" fonts
+ *
+ *  Arial (sans-serif)
+ *  Verdana (sans-serif)
+ *  Tahoma (sans-serif)
+ *  Trebuchet MS (sans-serif)
+ *  Times New Roman (serif)
+ *  Georgia (serif)
+ *  Garamond (serif)
+ *  Courier New (monospace)
+ *  Brush Script MT (cursive)
+ **/
+
+/**
+ * Common "safe" chains
+ *
+ * Georgia, serif
+ * "Trebuchet MS", Helvetica, sans-serif
+ * "Courier New", Courier, monospace
+ *
+ */
+

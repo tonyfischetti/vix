@@ -251,6 +251,7 @@
       * Base R pie chart with rcolorbrewer.R
       * Wrap labels for plots.R
       * Paste combine strings.R
+      * Center ggplot title.R
     - Javascript
       * Event Emitters.js
       * Use typescript.js

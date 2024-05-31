@@ -1,0 +1,25 @@
+
+#example {
+    border-style: solid;
+    /* clockwise from top */
+    border-style: solid none solid none;
+    border-width: 1px;      /* px | em | cm | pt(?) | thin | medium | thick */
+    border-color: black;
+    border-radius: 5px;
+}
+
+/**
+ * Options for `border-style`
+ *
+ *  dotted - Defines a dotted border
+ *  dashed - Defines a dashed border
+ *  solid - Defines a solid border
+ *  double - Defines a double border
+ *  groove - Defines a 3D grooved border. The effect depends on the border-color value
+ *  ridge - Defines a 3D ridged border. The effect depends on the border-color value
+ *  inset - Defines a 3D inset border. The effect depends on the border-color value
+ *  outset - Defines a 3D outset border. The effect depends on the border-color value
+ *  none - Defines no border
+ *  hidden - Defines a hidden border
+ **/
+

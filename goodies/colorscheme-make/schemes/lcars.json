@@ -54,6 +54,7 @@
         { "name": "lc_pop_blue",      "color": { "rgbhex": "#98dccf", "cterm": 116 } },
         { "name": "lc_salmon",        "color": { "rgbhex": "#ffaf87", "cterm": 216 } },
         { "name": "lc_weird_purp",    "color": { "rgbhex": "#ae81ff", "cterm": 141 } },
+        { "name": "lc_hot_pink",      "color": { "rgbhex": "#f92672", "cterm": 197 } },
         { "name": "lowkey_comment",   "color": { "rgbhex": "#565f89", "cterm": 60 } },
         { "name": "peach",            "color": { "rgbhex": "#fe9d63", "cterm": 216 } },
         { "name": "red",              "color": { "rgbhex": "#f7768e", "cterm": 210 } },
