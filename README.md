@@ -27,8 +27,10 @@ List of vim plugins I use (besides vim-plug)
  - [vim-slime:](https://github.com/jpalardy/vim-slime)
    Send text in Vim buffer to REPL
    (preconfigured to use tmux)
- - [sneak](https://github.com/justinmk/vim-sneak)
-   Jump to any location specified by two characters.
+ - [smalls:](https://github.com/t9md/vim-smalls)
+   Cursor movement with simple search
+ - [hop:](https://github.com/phaazon/hop.nvim)
+   A great and easy way to quickly change cursor position
  - [vim-pandoc-syntax.vim:](https://github.com/vim-pandoc/vim-pandoc-syntax)
    Pandoc syntax odule
  - [vim-mucomplete:](https://github.com/lifepillar/vim-mucomplete)

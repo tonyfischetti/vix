@@ -20,6 +20,12 @@ map("v", "?", ":TComment<CR>")
 --no Ex mode
 map("n", "Q", "<nop>")
 
+-- Small motion plugin
+map("n", "s", "<Plug>(smalls)")
+
+--hop things
+map("n", "S", ":HopWord<CR>")
+
 --Easier Redo (u/U = Undo/Redo)
 map("n","U", "<C-R>")
 
@@ -86,3 +92,4 @@ map("n", "<Leader>e", ":NvimTreeToggle<CR>")
 
 map("n", "<Leader>.", ":BufferLineCycleNext<CR>", { silent = true })
 map("n", "<Leader>,", ":BufferLineCyclePrev<CR>", { silent = true })
+

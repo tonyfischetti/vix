@@ -13,7 +13,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'garbas/vim-snipmate'
 Plug 'jpalardy/vim-slime'
-Plug 'justinmk/vim-sneak'
+Plug 't9md/vim-smalls'
+Plug 'phaazon/hop.nvim'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug('wlangstroth/vim-racket',          {['for'] = 'racket'})
 Plug('maverickg/stan.vim',              {['for'] = 'stan'})
