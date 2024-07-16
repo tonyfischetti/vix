@@ -1,0 +1,6 @@
+
+#parent {
+    gap: 10px;
+    gap: 10px 20px; /* row-gap and column-gap */
+}
+
