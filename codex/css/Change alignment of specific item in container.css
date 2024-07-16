@@ -4,7 +4,9 @@
  * for an individual flex item
  **/
 
-Please see the align-items explanation to understand the available values.
+#example {
+    align-self: flex-end;
+}
 
 /**
  * Possible values:

@@ -195,9 +195,10 @@
 
 
   - Data formats
-    - CSV
+    - CSV (https://www.basedash.com/blog/how-to-use-papaparse-with-typescript)
     - XML
     - JSON
+    - Excel (https://www.npmjs.com/package/read-excel-file#cdn)
 
   - Filesystem
     - Check if path exists

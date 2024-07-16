@@ -22,7 +22,9 @@ body {
 
 .page {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column nowrap; /* OR row */
+    font-family: "Commissioner", "Helvetica", "Arial";
+    font-size: 12px;
     width: 210mm;
     height: 297mm;
     padding: 20mm;
@@ -38,8 +40,10 @@ body {
     html, body {
         width: 210mm;
         height: 297mm;
+        background-color: white;
         display: block;
     }
+
     .page {
         margin: 0;
         border: initial;
