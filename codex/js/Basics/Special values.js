@@ -1,3 +1,5 @@
+// js, basics, undefined, null, check if undefined, check if null, special numbers, special values
+
 
 /*
  * Javascript has two bottom values:

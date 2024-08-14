@@ -1,3 +1,5 @@
+// js, math, random numbers, cryptography, cryptographically secure random numbers, floor, Uint8Array, webcrypto
+
 Math.random();          // random number between 0 and (less than) 1
 
 const getRandomInRange = (min, max) => {

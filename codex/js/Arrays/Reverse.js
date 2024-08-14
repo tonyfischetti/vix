@@ -1,3 +1,6 @@
+// js, arrays, reverse an array, array destructuring
+
+
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 rainbow.reverse();
 rainbow               // it was reversed in place!

@@ -1,3 +1,5 @@
+// js, arrays, concat, combine two arrays, array destructuring
+
 
 let part1 = ["red", "orange", "yellow"];
 let part2 = ["green", "blue", "indigo", "violet"];

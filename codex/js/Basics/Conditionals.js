@@ -1,3 +1,4 @@
+// js, basics, if else, else if, elif, elseif, ternary operator, switch case
 
 if (between1And10 > 5) {
   console.log("> 5");

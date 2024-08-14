@@ -1,3 +1,5 @@
+// js, math, max, min, do.call, apply
+
 const tmp = [1, 2, 3, 4, 5];
 
 Math.max(tmp);          // NaN... BAD!

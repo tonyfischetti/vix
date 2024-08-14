@@ -1,3 +1,5 @@
+// js, file io, fs.appendFile, append to a file, character encoding
+
 const fs = require("node:fs/promises");
 
 const inputFile = process.argv[2];

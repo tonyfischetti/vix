@@ -1,3 +1,5 @@
+// js, arrays, create an array, array length, concat, combine two arrays, array destructuring
+
 let tmp = [0, 1, 2, "three"];
 
 tmp[1]        // 1

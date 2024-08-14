@@ -1,3 +1,4 @@
+// js, math, special numbers, limits, epsilon, max safe integer, min safe integer
 Number.EPSILON;            // Diff between 1 and smalled number above 1
 
 Number.MAX_SAFE_INTEGER;

@@ -1,3 +1,5 @@
+// js, date and time, luxon, UTC, ISO-8601, local time, parse dates
+
 const sgtobject = { year: 1967, month: 5, day: 26 };
 
 new Date(1967, 4, 26)             // local (months are 0-indexed)

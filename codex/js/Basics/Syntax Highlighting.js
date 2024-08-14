@@ -1,3 +1,5 @@
+// js, basics, editor, syntax highlighting, vim
+
 /*
  * // vi: ft=javascript
  *

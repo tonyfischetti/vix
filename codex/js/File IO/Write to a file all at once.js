@@ -1,3 +1,5 @@
+// js, file io, open file, write to a file all at once, fs, cli arguments, fs.open, fs.appendFile, fs.writeFile, character encoding
+
 const fs = require("node:fs/promises");
 
 const inputFile = process.argv[2];

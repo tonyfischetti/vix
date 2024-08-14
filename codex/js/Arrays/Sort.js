@@ -1,3 +1,5 @@
+// js, arrays, sort, destructuring, sort an array, toSorted
+
 rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 // rainbow.sort();      // this sorts it in place!!
 [...rainbow].sort();    // this doesn't

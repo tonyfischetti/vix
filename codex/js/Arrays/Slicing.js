@@ -1,3 +1,5 @@
+// js, arrays, slice, array subsetting
+
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 
 rainbow.slice(1); // [ 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ]

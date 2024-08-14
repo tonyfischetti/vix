@@ -1,3 +1,5 @@
+// js, math, mathematical constants
+
 Math.E
 Math.LN2
 Math.LN10

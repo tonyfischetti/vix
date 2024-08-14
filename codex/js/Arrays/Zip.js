@@ -1,3 +1,5 @@
+// js, arrays, map, mapcar, index and value, zip
+
 let nums = [0, 1, 2, 3, 4, 5, 6];
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 

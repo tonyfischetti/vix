@@ -1,4 +1,6 @@
-// syntatic sugar for prototype-based OO
+// js, classes, constructor, define class, methods, static methods, inheritance, extends, toJSON, method override
+
+// this is syntatic sugar for prototype-based OO
 
 class Animal {
   constructor(name) {

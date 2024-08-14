@@ -1,3 +1,5 @@
+// js, arrays, array predicates, some, every, includes, any, all, match, regex
+
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 
 rainbow.every(i => i.match(/\w/));  // true
@@ -22,4 +24,4 @@ rainbow.includes("RED");            // false
 
 
 
-https://www.w3schools.com/jsref/jsref_findindex.asp
+// https://www.w3schools.com/jsref/jsref_findindex.asp

@@ -1,3 +1,4 @@
+// js, math, representing numbers, binary, octal, thousands separator
 
 /*
  * All numbers in Javascript are double floats

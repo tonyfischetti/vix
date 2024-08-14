@@ -1,3 +1,5 @@
+// js, arrays, map, mapcar, index and value, toUpperCase, upper case
+
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 
 rainbow.map(i => i.toUpperCase());  // [ 'RED', 'ORANGE', etc...]

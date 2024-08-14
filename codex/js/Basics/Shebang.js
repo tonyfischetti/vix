@@ -1,3 +1,5 @@
+// js, basics, shebang, deno, bun
+
 // node
 #!/usr/bin/node
 

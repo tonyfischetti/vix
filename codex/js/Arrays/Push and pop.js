@@ -1,3 +1,5 @@
+// js, arrays, push, pop, unshift, shift, add an element to an array, remove an element from an array
+
 // `push`/`pop` adds/removes from end
 // `unshift`/`shift` add/removes from beginning
 

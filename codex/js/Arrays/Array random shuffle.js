@@ -1,3 +1,5 @@
+// js, array, random shuffle, shuffle an array, fischer-yates, floor, random
+
 // uses array destructuring to not modify supplied array
 const shuffleArray = ([...anarray]) => {
   let thelength = anarray.length;

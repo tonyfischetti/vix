@@ -1,3 +1,5 @@
+// js, math, parse integer, parse float
+
 parseInt("850");        //  850
 parseInt("000850");     //  850
 parseInt("  850");      //  850

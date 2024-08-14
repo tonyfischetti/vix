@@ -1,3 +1,5 @@
+// js, arrays, array destructuring, car, cdr, cadr
+
 let part1 = ["red", "orange", "yellow"];
 let part2 = ["green", "blue", "indigo", "violet"];
 let rainbow = [...part1, ...part2];
