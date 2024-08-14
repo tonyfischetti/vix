@@ -79,3 +79,4 @@ vim.g.smalls_auto_jump = 1
 vim.g.smalls_auto_jump_min_input_length = 3
 vim.g.smalls_auto_jump_timeout = 0.5
 
+vim.g.sql_type_default = 'sqlite'
