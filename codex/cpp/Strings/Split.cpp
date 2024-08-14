@@ -1,5 +1,7 @@
-#include <fmt/core.h>   -lfmt
-#include <re2/re2.h>   -lre2
+// cpp, strings, regex, splitting strings, re2, fmt, format, string interpolation, vector, default arguments, FindAndConsume, push_back, empty
+
+#include <fmt/core.h>  // compile with -lfmt
+#include <re2/re2.h>   // compile with -lre2
 
 // UN-OPTIMIZED
 vector<string> str_split_regex(string astr, string aregex,
@@ -33,5 +35,5 @@ str_split_regex(str, "\\s+");
 
 string str {"pee pee ppoooo poop"};
 // `include_empties` paramater
-holder{str_split_regex(str, "p", true)}
+str_split_regex(str, "p", true);
 // [ '', 'ee ', 'ee ', '', 'oooo ', 'oo', '' ] (7)

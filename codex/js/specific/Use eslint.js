@@ -1,3 +1,4 @@
+// js, ts, eslint, lint, stylistic, eslint.config.js
 
 /*
  * npm i -D eslint @eslint/js typescript-eslint @stylistic/eslint-plugin

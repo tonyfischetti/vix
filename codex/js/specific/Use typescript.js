@@ -1,3 +1,4 @@
+// js, ts, use typescript, tsconfig, package.json, rimraf
 
 /*
  * npm i -D typescript globals [rimraf] @types/node (@types/papaparse, etc...)

@@ -1,3 +1,4 @@
+# r, strings, regex, case-insensitive regex, str_detect, detect, match
 str <- "Hello"
 str_detect(str, "Hel{2}")     # TRUE
 str_detect(str, "hel{2}")     # FALSE

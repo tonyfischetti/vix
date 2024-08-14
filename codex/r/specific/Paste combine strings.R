@@ -1,3 +1,4 @@
+# r, paste, combine strings, collapse, sep, concatentate strings
 
 paste("one", "two")             # [1] "one two"
 paste("pee", "poo", sep=",")    # [1] "one,two"

@@ -1,3 +1,5 @@
+// js, filesystem, check if file exists, home directory, return a promise, fs, stat, reject, resolve
+
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as os from 'node:os';

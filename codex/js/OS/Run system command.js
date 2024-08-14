@@ -1,3 +1,5 @@
+// js, os, process, system, run system command, child_process, spawn, fork, exec, execFile, return a promise, event listening, promSpawn
+
 import * as proc from 'node:child_process';
 
 /*

@@ -1,3 +1,5 @@
+// js, filesystem, manipulate paths, join paths, normalize paths, relative path, parse path, basename, directory separator, dirname, extname, isAbsolute, home directory, destructuring, apply, do.call
+
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as os from 'node:os';
@@ -12,7 +14,7 @@ path.dirname(afile);              // '/home/tony/Desktop/Carlos IV/Pictures/Cool
 path.extname(afile);              // '.gif'
 path.isAbsolute(afile);           // true
 
-path.join(...["/home", "tony", ".zshrc"]);
+path.join(...["/home", "tony", ".zshrc"]);      // ...["",""] is like apply/do.call
 // /home/tony/.zshrc
 
 path.normalize("/home/tony/../tony/.zsh/bin/.././.zshrc");

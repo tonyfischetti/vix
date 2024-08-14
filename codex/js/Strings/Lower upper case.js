@@ -1,3 +1,5 @@
+// js, unicode, upper case, lower case, toUpperCase, toLowerCase
+
 const nfc = "Όλοι οι άνθρωποι";       
 let english = "THIS IS NOT A TEST";
 

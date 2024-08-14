@@ -1,3 +1,5 @@
+// js, logging, pino
+
 import pino from 'pino';
 
 let pinoConf = {

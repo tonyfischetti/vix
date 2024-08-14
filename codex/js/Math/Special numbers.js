@@ -1,3 +1,5 @@
+// js, math, special numbers, Infinity, NaN, limits, parseInt, division by zero
+
 1/0;    // Infinity
 0/1;    // 0
 0/0;    // NaN

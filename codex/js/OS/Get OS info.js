@@ -1,3 +1,5 @@
+// js, os, end of line character, JSON.stringify, home directory, platform, endianness, hostname, uptime, temporary directory, operating system, architecture, pid, get process information
+
 import * as os from 'node:os';
 
 const info = {
@@ -24,6 +26,7 @@ const info = {
 console.log(JSON.stringify(info, null, 2));
 
 /*** PROCESS INFO *********************************/
+
 
 const startUsage = process.cpuUsage();
 const startTime = process.hrtime.bigint();        // high resolution time (nanoseconds) [seconds * 1e9]

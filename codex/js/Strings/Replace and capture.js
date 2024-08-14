@@ -1,4 +1,8 @@
+// js, strings, replace, capture, regex, case-insensitive regex, RegExp
+
+
 const str = "Hello";
+
 str.replace(/^(.{4}).+$/, "$1");    // 'Hell'
 str.replace(new RegExp("^(.{4}).+$"), "$1");
 str.replace(/l/, 'L');  // 'HeLlo'

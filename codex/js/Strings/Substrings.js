@@ -1,4 +1,7 @@
+// js, strings, substring, slice
+
 const str = "Hello";
+
 str.substring(0, 4);  // "Hell"
 str.substring(3);     // "lo"
 // str.substr takes a start and a length

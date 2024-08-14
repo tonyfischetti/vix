@@ -1,3 +1,5 @@
+// js, strings, unicode normalization, NFD, NFC
+
 const nfd = "Όλοι οι άνθρωποι";
 
 nfd;                    // Όλοι οι άνθρωποι

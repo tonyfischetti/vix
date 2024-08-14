@@ -1,3 +1,5 @@
+// js, deno, bun, compiling executables, compile, build
+
 /*
  * Both deno and bun support compiling single-file executables
  */

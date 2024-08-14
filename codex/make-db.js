@@ -57,9 +57,6 @@ const insertTagSQL = `
 
 
 
-
-
-
 const createDB = () => { db.exec(createSQL) };
 
 const getAllFilesRecursively = () => {
@@ -161,6 +158,10 @@ const tee = (listOfFiles) => {
   return listOfFiles;
 };
 
+const tellThemImDone = () => {
+  console.log("done");
+};
+
 rmrf.rimrafSync("codex.db")
 const db = new Database('codex.db');
 
@@ -175,6 +176,6 @@ Promise.resolve().
   then(addFilesIDs).
   then(insertAllFiles).
   then(insertAllTags).
-  then(tee);
+  then(tellThemImDone);
 
 

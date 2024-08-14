@@ -1,3 +1,5 @@
+// js, destructuring
+
 const ar1 = [1, 2];
 let [first, second] = ar1;
 first;          // 1

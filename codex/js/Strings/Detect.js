@@ -1,4 +1,7 @@
+// js, strings, detect, match, regex, case-insensitive regex, RegExp
+
 const str = "Hello";
+
 str.match(/Hel{2}/);  // [ 'Hell', index: 0, input: 'Hello', groups: undefined ]
 str.match(/Hel{2}/) ? "yes" : "no"
 str.match(new RegExp("Hel{2}"));

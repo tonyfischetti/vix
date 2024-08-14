@@ -14,14 +14,20 @@ import Database   from 'better-sqlite3';
 
 const CODEX_ROOT = process.env["CODEX_ROOT"];
 
-if (CODEX_ROOT === undefined || CODEX_ROOT === "") {
+if (typeof(CODEX_ROOT) === 'undefined' || CODEX_ROOT === "") {
   console.log("Environment variable 'CODEX_ROOT` not defined");
   process.exit(1);
 }
 
+const lang = process.argv[2] ?? "";
+
+if (lang === "") {
+  console.log("No language/tool provided as a CLI argument");
+  process.exit(2);
+}
+
 const db = new Database(`${CODEX_ROOT}/codex.db`, {readonly: true, fileMustExist: true});
 
-const lang = process.argv[2] ?? "";
 
 const promSpawn = (command, more) => {
   return new Promise((resolve, reject) => {
@@ -64,8 +70,9 @@ const getRelevantFiles = (atag) => {
     SELECT DISTINCT files.relPath
       FROM files
         INNER JOIN tags USING (fileID)
-        WHERE tag=?`;
-  const r = db.prepare(q).bind(atag);
+        WHERE tag=? AND
+              subDir=?`;
+  const r = db.prepare(q).bind(atag, lang);
   return r.all().map(i => i.relPath);
 };
 
@@ -82,7 +89,7 @@ const cmdResponseIsSaneP = (cmdResponse) => {
 
 const relayErrorAndExit = (error) => {
   console.error(error);
-  process.exit(1);
+  process.exit(3);
 }
 
 const getChosenTag = (listOfTags) => callFzf(listOfTags);

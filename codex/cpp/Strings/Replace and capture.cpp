@@ -1,5 +1,11 @@
-#include <re2/re2.h>   -lre2
-str = "Hello";
+// cpp, strings, raw strings, regex, replace, capture, re2, case-insensitive regex
+
+#include <re2/re2.h>   // compile with -lre2
+
+string str {"Hello"};
+
+// these mutate str
+
 RE2::Replace(&str, "l", "L");                               // HeLlo
 RE2::GlobalReplace(&str, "l", "L");                         // HeLLo
 RE2::GlobalReplace(&str, "(?i)L", "*");                     // He**o

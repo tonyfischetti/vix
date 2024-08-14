@@ -1,5 +1,7 @@
+// js, filesystem, home directory, find, ls, fs, readdir, filter, map, os
+
 import * as fs from 'node:fs/promises';
-import * as os from 'node.os';
+import * as os from 'node:os';
 
 // can handle spaces
 const lookInThisDirectory = `${os.homedir()}/Desktop/Carlos IV/Backups/Pictures`;

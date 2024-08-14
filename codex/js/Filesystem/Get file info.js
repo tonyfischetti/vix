@@ -1,3 +1,5 @@
+// js, filesystem, get file info, home directory, fs, stat
+
 import * as fs from 'node:fs/promises';
 import * as os from 'node:os';
 
