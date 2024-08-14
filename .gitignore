@@ -112,3 +112,6 @@ dist/
 *.rda
 
 .shastore
+
+./codex/package-lock.json
+./codex/node_modules
