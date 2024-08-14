@@ -1,4 +1,4 @@
--- sql, sqlite, subquery
+-- sql, subquery, using subquery in WHERE
 
 -- select all paintings done by Kay Sage
 

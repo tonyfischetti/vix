@@ -1,4 +1,4 @@
--- sql, sqlite, insert, delete, like
+-- sql, insert, delete, like, wildcards
 
 -- fake data for illustration
 INSERT INTO paintings (artist_id, painting_name, year_completed)

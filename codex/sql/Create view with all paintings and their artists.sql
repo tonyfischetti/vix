@@ -1,4 +1,4 @@
--- sql, sqlite, drop view, create view, as, join, merge, 
+-- sql, drop view, create view, as, join, merge, 
 
 DROP VIEW IF EXISTS "v_merged";
 

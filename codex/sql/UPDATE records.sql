@@ -1,4 +1,4 @@
--- sql, sqlite, update, subquery
+-- sql, update, subquery, using subquery in WHERE
 
 -- say we just found out that all kay sage paintings were completed
 -- one year before previously thought

@@ -1,4 +1,4 @@
--- sql, sqlite, like, glob, escape, distinct, insert, wildcards
+-- sql, like, glob, escape, distinct, insert, wildcards
 
 SELECT first_name, last_name FROM artists;
 

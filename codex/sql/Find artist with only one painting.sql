@@ -1,4 +1,4 @@
--- sql, sqlite, count, as, group by, having, filter after group by
+-- sql, count, as, group by, having, filter after group by
 
 -- can't use WHERE. have to use HAVING
 
