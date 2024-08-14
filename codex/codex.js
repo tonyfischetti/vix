@@ -1,12 +1,5 @@
 #!/usr/bin/env node
-// vi: ft=javascript
 
-/* TODO:
- *
- *   - check for fzf
- *   - check for no lang
- *
- */
 
 import * as proc  from 'node:child_process';
 import Database   from 'better-sqlite3';
@@ -19,15 +12,18 @@ if (typeof(CODEX_ROOT) === 'undefined' || CODEX_ROOT === "") {
   process.exit(1);
 }
 
-const lang = process.argv[2] ?? "";
-
-if (lang === "") {
-  console.log("No language/tool provided as a CLI argument");
-  process.exit(2);
-}
+let LANG = "";
 
 const db = new Database(`${CODEX_ROOT}/codex.db`, {readonly: true, fileMustExist: true});
 
+
+const getLanguage = () => {
+  const lang = process.argv[2] ?? "";
+  if (lang === "") throw Error("no language supplied");
+  return lang;
+}
+
+const setLANGGlobalVariable = (lang) => { LANG = lang; };
 
 const promSpawn = (command, more) => {
   return new Promise((resolve, reject) => {
@@ -72,7 +68,7 @@ const getRelevantFiles = (atag) => {
         INNER JOIN tags USING (fileID)
         WHERE tag=? AND
               subDir=?`;
-  const r = db.prepare(q).bind(atag, lang);
+  const r = db.prepare(q).bind(atag, LANG);
   return r.all().map(i => i.relPath);
 };
 
@@ -100,9 +96,35 @@ const openFileAndExit = (file) => {
   return promSpawn(`vi ${file}`, { shell: true });
 };
 
+const tee = (something) => {
+  console.log(something);
+  return something;
+};
+
+const getChosenLang = () => {
+  const allLangs = getAllLangs();
+  return callFzf(allLangs).
+           then(i => i.out);
+};
+
+const findFzf = () => {
+  return promSpawn("which fzf", { shell: true });
+};
+
+const cantFindFzfBailOut = () => {
+  console.error("Couldn't fine FZF fuzzy finder. Bailing out");
+  process.exit(2);
+};
+
 
 Promise.resolve().
-  then(_ => getAllTagsForLang(lang)).
+  then(findFzf).
+  then(cmdResponseIsSaneP).
+  catch(cantFindFzfBailOut).
+  then(getLanguage).
+  catch(getChosenLang).
+  then(setLANGGlobalVariable).
+  then(_ => getAllTagsForLang(LANG)).
   then(getChosenTag).
   then(cmdResponseIsSaneP).
   catch(relayErrorAndExit).
@@ -111,6 +133,4 @@ Promise.resolve().
   then(cmdResponseIsSaneP).
   catch(relayErrorAndExit).
   then(({out}) => console.log(out));
-
-
 
