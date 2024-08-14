@@ -195,6 +195,12 @@ hi rBoolean ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi rConstant ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi racketFunc ctermfg=176 guifg=#d787d7  
 hi racketSyntax ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi sqlAnotherStandout ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
+hi sqlFunction ctermfg=116 guifg=#98dccf  cterm=bold gui=bold
+hi sqlKeyword ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi sqlOperator ctermfg=204 guifg=#ff5f87  
+hi sqlStatement ctermfg=30 guifg=#008787  cterm=bold gui=bold
+hi sqlType ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi tsArgumentDef ctermfg=30 guifg=#008787  cterm=bold gui=bold
 hi tsDefinition ctermfg=30 guifg=#008787  cterm=bold gui=bold
 hi tsGeneric ctermfg=30 guifg=#008787  cterm=bold gui=bold

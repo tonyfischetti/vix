@@ -626,6 +626,42 @@
         },
 
 
+        "sqlType": {
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "sqlOperator": {
+            "fg": "lc_hot_red",
+            "bg": null
+        },
+
+        "sqlFunction": {
+            "fg": "lc_pop_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "sqlKeyword": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "sqlStatement": {
+            "fg": "lc_deep_sea",
+            "bg": null,
+            "bold": true
+        },
+
+        "sqlAnotherStandout": {
+            "fg": "lc_red_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+
         "cTypeDef": {
             "fg": "lc_periwinkle",
             "bg": null
