@@ -1,4 +1,4 @@
-// js, arrays, slice, array subsetting
+// js, arrays, slice, array subsetting, array indexing, multiple indices
 
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 

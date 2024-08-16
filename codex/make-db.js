@@ -9,34 +9,17 @@ import * as rmrf  from 'rimraf';
 import Database   from 'better-sqlite3';
 
 
-const CODEX_ROOT = process.env["CODEX_ROOT"];
+/* GLOBALS */
+let DEBUG             = false;
+let LANG              = "";
+let CODEX_ROOT        = "";
+let DB                = null;
+const commentChars    = [ "#", "//", ";", "--" ];
+let BLACKLISTEDPATHS  = ["node_modules", "make-db.js", "package.json",
+                         "package-lock.json", "codex.db", "cdx.js",
+                         "codex.js", "TOC.md"];
 
-if (CODEX_ROOT === undefined || CODEX_ROOT === "") {
-  console.log("Environment variable 'CODEX_ROOT` not defined");
-  process.exit(1);
-}
-
-
-const blacklistedPaths = [
-  "node_modules",
-  "make-db.js",
-  "package.json",
-  "package-lock.json",
-  "codex.db",
-  "cdx.js",
-  "codex.js",
-  "TOC.md",
-].map(i => `${CODEX_ROOT}/${i}`);
-
-const commentChars = [
-  "#", "//", ";", "--"
-];
-
-
-
-
-
-const createSQL = `
+const createTablesSQL = `
   DROP TABLE IF EXISTS files;
   DROP TABLE IF EXISTS tags;
   CREATE TABLE files (
@@ -55,9 +38,49 @@ const insertTagSQL = `
   INSERT INTO tags (tag, fileID)
     VALUES (?, ?)`;
 
+const createIndexesSQL = `
+
+`;
 
 
-const createDB = () => { db.exec(createSQL) };
+// a function that takes an exit code and returns a closure that takes
+// an Error, prints it, and exits with the exit code
+const printErrorAndBailOut = (exitCode, customMessage) => {
+  return (error) => {
+    customMessage ? console.error(customMessage) : console.error(error);
+    if (DEBUG) console.error(error);
+    process.exit(exitCode);
+  };
+};
+
+const cantFindCodexRootBailOut  = printErrorAndBailOut(1, "Can't find environment variable $CODEX_ROOT");
+const cantOpenDBBailOut         = printErrorAndBailOut(2, "Unable to open database");
+
+
+const setGlobalCODEX_ROOT = () => {
+  CODEX_ROOT = process.env["CODEX_ROOT"] ?? "";
+  if (CODEX_ROOT === "") throw Error("Environment variable 'CODEX_ROOT' not defined");
+};
+
+const removeOldDBIfExists = () => {
+  rmrf.rimrafSync(`${CODEX_ROOT}/codex.db`);
+};
+
+const createDBandSetGlobalDB = () => {
+  try {
+    DB = new Database(`${CODEX_ROOT}/codex.db`);
+  } catch (error) {
+    throw Error("unable to open database");
+  }
+};
+
+const setGlobalBLACKLISTED_PATHS = () => {
+  BLACKLISTEDPATHS = BLACKLISTEDPATHS.map(i => `${CODEX_ROOT}/${i}`);
+};
+
+const createTables = () => { DB.exec(createTablesSQL) };
+
+const createIndexes = () => { DB.exec(createIndexesSQL) };
 
 const getAllFilesRecursively = () => {
   return fs.readdir(CODEX_ROOT, { withFileTypes: true, recursive: true });
@@ -85,7 +108,7 @@ const addAltPathsAsKeys = (listOfFiles) => {
 
 const filterNonBlacklisted = (lst) => {
   const isBlacklistedP = ({fullPath}) => {
-    return !blacklistedPaths.some(bl => fullPath.match(`${bl}`));
+    return !BLACKLISTEDPATHS.some(bl => fullPath.match(`${bl}`));
   }
 
   return lst.filter(isBlacklistedP);
@@ -136,7 +159,7 @@ const addFilesIDs = (listOfFiles) => {
 }
 
 const insertAllFiles = (listOfFiles) => {
-  const insertFileStm = db.prepare(insertFileSQL);
+  const insertFileStm = DB.prepare(insertFileSQL);
   listOfFiles.forEach(({fileID, relPath, subDir}) => {
     insertFileStm.run(fileID, relPath, subDir);
   });
@@ -144,7 +167,7 @@ const insertAllFiles = (listOfFiles) => {
 }
 
 const insertAllTags = (listOfFiles) => {
-  const insertTagStm = db.prepare(insertTagSQL);
+  const insertTagStm = DB.prepare(insertTagSQL);
   listOfFiles.forEach(({fileID, tags}) => {
     tags.forEach(tag => {
       if (tag != "") insertTagStm.run(tag, fileID)
@@ -153,20 +176,21 @@ const insertAllTags = (listOfFiles) => {
   return listOfFiles;
 }
 
-const tee = (listOfFiles) => {
-  console.log(listOfFiles);
-  return listOfFiles;
-};
+const tee = (arg) => { console.log(arg); return arg; }
 
-const tellThemImDone = () => {
-  console.log("done");
-};
+const tellThemImDone = () => { console.log("done"); }
 
-rmrf.rimrafSync("codex.db")
-const db = new Database('codex.db');
+const closeDB = () => { DB.close(); }
+
 
 Promise.resolve().
-  then(createDB).
+  then(setGlobalCODEX_ROOT).
+  catch(cantFindCodexRootBailOut).
+  then(removeOldDBIfExists).
+  then(createDBandSetGlobalDB).
+  catch(cantOpenDBBailOut).
+  then(createTables).
+  then(setGlobalBLACKLISTED_PATHS).
   then(getAllFilesRecursively).
   then(filterOnlyFiles).
   then(addAltPathsAsKeys).
@@ -176,6 +200,10 @@ Promise.resolve().
   then(addFilesIDs).
   then(insertAllFiles).
   then(insertAllTags).
+  then(createIndexes).
+  then(closeDB).
   then(tellThemImDone);
+
+  // then(tee);
 
 

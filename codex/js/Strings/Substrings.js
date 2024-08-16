@@ -1,4 +1,5 @@
-// js, strings, substring, slice
+// js, strings, substring, slice, array indexing, multiple indices
+
 
 const str = "Hello";
 

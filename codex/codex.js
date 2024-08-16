@@ -1,20 +1,45 @@
 #!/usr/bin/env node
 
-
 import * as proc  from 'node:child_process';
 import Database   from 'better-sqlite3';
 
+/* GLOBALS */
+let DEBUG       = false;
+let LANG        = "";
+let CODEX_ROOT  = "";
+let DB          = null;
 
-const CODEX_ROOT = process.env["CODEX_ROOT"];
 
-if (typeof(CODEX_ROOT) === 'undefined' || CODEX_ROOT === "") {
-  console.log("Environment variable 'CODEX_ROOT` not defined");
-  process.exit(1);
-}
 
-let LANG = "";
+// a function that takes an exit code and returns a closure that takes
+// an Error, prints it, and exits with the exit code
+const printErrorAndBailOut = (exitCode, customMessage) => {
+  return (error) => {
+    customMessage ? console.error(customMessage) : console.error(error);
+    if (DEBUG) console.error(error);
+    process.exit(exitCode);
+  };
+};
 
-const db = new Database(`${CODEX_ROOT}/codex.db`, {readonly: true, fileMustExist: true});
+const cantFindCodexRootBailOut  = printErrorAndBailOut(1, "Can't find environment variable $CODEX_ROOT");
+const cantFindFzfBailOut        = printErrorAndBailOut(2, "Can't find FZF. is it installed?");
+const cantOpenDBBailOut         = printErrorAndBailOut(3, "Unable to open database");
+const noFzfSelectionBailOut     = printErrorAndBailOut(4, "Nothing selected");
+
+
+
+const setGlobalCODEX_ROOT = () => {
+  CODEX_ROOT = process.env["CODEX_ROOT"] ?? "";
+  if (CODEX_ROOT === "") throw Error("Environment variable 'CODEX_ROOT' not defined");
+};
+
+const openDatabaseAndSetGlobalDB = () => {
+  try {
+    DB = new Database(`${CODEX_ROOT}/codex.db`, {readonly: true, fileMustExist: true});
+  } catch (error) {
+    throw Error("unable to open database");
+  }
+};
 
 
 const getLanguage = () => {
@@ -23,7 +48,7 @@ const getLanguage = () => {
   return lang;
 }
 
-const setLANGGlobalVariable = (lang) => { LANG = lang; };
+const setGlobalLANG = (lang) => { LANG = lang; };
 
 const promSpawn = (command, more) => {
   return new Promise((resolve, reject) => {
@@ -46,7 +71,7 @@ const getAllLangs = () => {
   const q = `
     SELECT DISTINCT files.subDir
       FROM files`;
-  const stm = db.prepare(q);
+  const stm = DB.prepare(q);
   const r = stm.all();
   return r.map(i => i.subDir);
 };
@@ -57,7 +82,7 @@ const getAllTagsForLang = (subDir) => {
       FROM files
         INNER JOIN tags USING (fileID)
       WHERE subDir=?`;
-  const r = db.prepare(q).bind(subDir);
+  const r = DB.prepare(q).bind(subDir);
   return r.all().map(i => i.tag);
 };
 
@@ -68,7 +93,7 @@ const getRelevantFiles = (atag) => {
         INNER JOIN tags USING (fileID)
         WHERE tag=? AND
               subDir=?`;
-  const r = db.prepare(q).bind(atag, LANG);
+  const r = DB.prepare(q).bind(atag, LANG);
   return r.all().map(i => i.relPath);
 };
 
@@ -79,7 +104,7 @@ const callFzf = (listOfOptions) => {
 
 const cmdResponseIsSaneP = (cmdResponse) => {
   if (cmdResponse.code !== 0)
-    throw Error("no result from fzf");
+    throw Error("received non-zero error code from external command");
   return cmdResponse;
 };
 
@@ -111,26 +136,25 @@ const findFzf = () => {
   return promSpawn("which fzf", { shell: true });
 };
 
-const cantFindFzfBailOut = () => {
-  console.error("Couldn't fine FZF fuzzy finder. Bailing out");
-  process.exit(2);
-};
-
 
 Promise.resolve().
+  then(setGlobalCODEX_ROOT).
+  catch(cantFindCodexRootBailOut).
   then(findFzf).
   then(cmdResponseIsSaneP).
   catch(cantFindFzfBailOut).
+  then(openDatabaseAndSetGlobalDB).
+  catch(cantOpenDBBailOut).
   then(getLanguage).
   catch(getChosenLang).
-  then(setLANGGlobalVariable).
+  then(setGlobalLANG).
   then(_ => getAllTagsForLang(LANG)).
   then(getChosenTag).
   then(cmdResponseIsSaneP).
-  catch(relayErrorAndExit).
+  catch(noFzfSelectionBailOut).
   then(({out}) => getRelevantFiles(out)).
   then(getChosenFile).
   then(cmdResponseIsSaneP).
-  catch(relayErrorAndExit).
+  catch(noFzfSelectionBailOut).
   then(({out}) => console.log(out));
 

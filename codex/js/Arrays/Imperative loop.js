@@ -1,4 +1,4 @@
-// js, array, loop through array, entries, index and value, let of
+// js, array, loop through array, entries, index and value, let of, get elements from an array, anaphors
 
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 
