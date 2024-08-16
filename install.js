@@ -132,10 +132,10 @@ const StateFlow = () => {
  */
 StateFlow().
   metah(info("Installing vix", box)).
-  then(getNvimPrefix).catch(fatalCantFindPrefix).
+  metah(getNvimPrefix).catch(fatalCantFindPrefix).
   then(info("found prefix")).
   then(debug("prefix: ")).
-  metah(formDownloadOutputPath).
+  then(formDownloadOutputPath).
   then(info("found prefix. making directory")).
   then(mkdirDashP).
   then(debug("path: ")).
@@ -183,6 +183,7 @@ we _could_ subclass Promise...
 it returns a object with a method added that is then invoked
   - (a16c31688582) StateFlow().metah()
 
+but that doesn't work
 
 ## Screenshots
 
@@ -199,6 +200,24 @@ it returns a object with a method added that is then invoked
 ⚙ path: undefined                                                            6:31:20 PM
 --
 
+--
+ ╭──────────────────╮
+ │                  │
+ │  Installing vix  │
+ │                  │
+ ╰──────────────────╯
+
+ℹ found prefix                                                               6:47:15 PM
+file:///Users/tony/.config/nvim/install.js:138
+  metah(formDownloadOutputPath).
+  ^
+
+TypeError: StateFlow(...).metah(...).then(...).catch(...).then(...).then(...).metah is not a function
+    at file:///Users/tony/.config/nvim/install.js:138:3
+--
+
+or
+TypeError: StateFlow(...).metah(...).metah is not a function
 
 
 
