@@ -96,18 +96,24 @@ const mkdirDashP = (subdirectory) => {
 /*****************************************************************
  * Experimentation
  */
-const metah = (promise) => {
-  promise.metah
+
+const promisePlus = (promise) => {
+  promise.metah = (flow) => {
+    console.log("peepee");
+    return promise.then(flow);
+  };
+  return promise;
 }
 
+/*** ¿¿¿ can I add methods to the Promise class ??? ***/
 
 
 
 /*****************************************************************
  * Main
  */
-Promise.resolve().
-  then(info("Installing vix", box)).
+promisePlus(Promise.resolve()).
+  metah(info("Installing vix", box)).
   then(getNvimPrefix).catch(fatalCantFindPrefix).
   then(info("found prefix")).
   then(debug("prefix: ")).
@@ -144,7 +150,7 @@ bringing that to what i'm used to
 
 ## install.sh
 
-  Having the period at the end of the line makes ``then``a
+  Having the period at the end of the line makes 'then' a
   then(debug("prefix: ")).
 
 
@@ -155,7 +161,30 @@ bringing that to what i'm used to
   - adding to promises
   - poly-wrapped promises
 
+
+
+## Screenshots
+
+--
+ ╭──────────────────╮
+ │                  │
+ │  Installing vix  │
+ │                  │
+ ╰──────────────────╯
+
+ℹ found prefix                                                               6:31:20 PM
+⚙ prefix: /Users/tony/.local/share/                                          6:31:20 PM
+ℹ found prefix. making directory                                             6:31:20 PM
+⚙ path: undefined                                                            6:31:20 PM
+--
+
+
+
+
+
+
  ***************************************************************************
  ***************************************************************************/
+
 
 `
