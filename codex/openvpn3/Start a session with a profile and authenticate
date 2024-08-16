@@ -1,0 +1,5 @@
+# openvpn3, vpn, session-start, authenticate, session-auth
+
+openvpn3 session-start --config ~/.keys/vpn-profiles/nypl.ovpn
+openvpn3 sessions-auth
+
