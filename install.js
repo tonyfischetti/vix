@@ -105,6 +105,15 @@ const promisePlus = (promise) => {
   return promise;
 }
 
+const StateFlow = () => {
+  const apromise = Promise.resolve();
+  apromise.metah = (flow) => {
+    console.log("peepee");
+    return apromise.then(flow);
+  };
+  return apromise;
+};
+
 /*** ¿¿¿ can I add methods to the Promise class ??? ***/
 
 
@@ -112,7 +121,7 @@ const promisePlus = (promise) => {
 /*****************************************************************
  * Main
  */
-promisePlus(Promise.resolve()).
+StateFlow().
   metah(info("Installing vix", box)).
   then(getNvimPrefix).catch(fatalCantFindPrefix).
   then(info("found prefix")).
