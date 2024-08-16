@@ -105,6 +105,15 @@ const promisePlus = (promise) => {
   return promise;
 }
 
+const StateFlow0 = () => {
+  const apromise = Promise.resolve();
+  apromise.metah = (flow) => {
+    console.log("peepee");
+    return apromise.then(flow);
+  };
+  return apromise;
+};
+
 const StateFlow = () => {
   const apromise = Promise.resolve();
   apromise.metah = (flow) => {
@@ -126,7 +135,7 @@ StateFlow().
   then(getNvimPrefix).catch(fatalCantFindPrefix).
   then(info("found prefix")).
   then(debug("prefix: ")).
-  then(formDownloadOutputPath).
+  metah(formDownloadOutputPath).
   then(info("found prefix. making directory")).
   then(mkdirDashP).
   then(debug("path: ")).
@@ -170,6 +179,9 @@ bringing that to what i'm used to
   - adding to promises
   - poly-wrapped promises
 
+we _could_ subclass Promise...
+it returns a object with a method added that is then invoked
+  - (a16c31688582) StateFlow().metah()
 
 
 ## Screenshots
