@@ -116,11 +116,16 @@ const StateFlow0 = () => {
 
 const StateFlow = () => {
   const apromise = Promise.resolve();
-  apromise.metah = (flow) => {
-    console.log("peepee");
-    return apromise.then(flow);
+
+  const wrapPromise = (promise) => {
+    promise.metah = (flow) => {
+      console.log("peepee");
+      return wrapPromise(promise.then(flow));
+    };
+    return wrapPromise(promise);
   };
-  return apromise;
+
+  return wrapPromise(apromise);
 };
 
 /*** ¿¿¿ can I add methods to the Promise class ??? ***/
@@ -172,7 +177,7 @@ bringing that to what i'm used to
   then(debug("prefix: ")).
 
 
-"but what about relatively stateful application"...
+"but what about a relatively stateful application"...
 
 ## beyond
   - closure that glues state
@@ -183,7 +188,13 @@ we _could_ subclass Promise...
 it returns a object with a method added that is then invoked
   - (a16c31688582) StateFlow().metah()
 
-but that doesn't work
+but that doesn't work after the first 'meta'
+¿want to guess what the error is? (TypeError: StateFlow(...).metah(...).metah is not a function)
+
+::commit after 7824a0cb6a026b23c9da::
+¿want to guess what the error is? (Maximum call stack exceeded)
+
+
 
 ## Screenshots
 
@@ -218,6 +229,26 @@ TypeError: StateFlow(...).metah(...).then(...).catch(...).then(...).then(...).me
 
 or
 TypeError: StateFlow(...).metah(...).metah is not a function
+
+
+--
+file:///Users/tony/.config/nvim/install.js:120
+  const wrapPromise = (promise) => {
+                      ^
+
+RangeError: Maximum call stack size exceeded
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:120:23)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+    at wrapPromise (file:///Users/tony/.config/nvim/install.js:125:12)
+--
+
 
 
 
