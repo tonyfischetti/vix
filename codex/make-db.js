@@ -7,6 +7,7 @@ import * as path  from 'node:path';
 
 import * as rmrf  from 'rimraf';
 import Database   from 'better-sqlite3';
+import {consola}  from "consola";
 
 
 /* GLOBALS */
@@ -47,14 +48,14 @@ const createIndexesSQL = `
 // an Error, prints it, and exits with the exit code
 const printErrorAndBailOut = (exitCode, customMessage) => {
   return (error) => {
-    customMessage ? console.error(customMessage) : console.error(error);
+    customMessage ? consola.error(customMessage) : consola.error(error.message);
     if (DEBUG) console.error(error);
     process.exit(exitCode);
   };
 };
 
-const cantFindCodexRootBailOut  = printErrorAndBailOut(1, "Can't find environment variable $CODEX_ROOT");
-const cantOpenDBBailOut         = printErrorAndBailOut(2, "Unable to open database");
+const fatalCantFindCodexRoot  = printErrorAndBailOut(1);
+const fatalCantOpenDB         = printErrorAndBailOut(2);
 
 
 const setGlobalCODEX_ROOT = () => {
@@ -176,33 +177,42 @@ const insertAllTags = (listOfFiles) => {
   return listOfFiles;
 }
 
-const tee = (arg) => { console.log(arg); return arg; }
-
-const tellThemImDone = () => { console.log("done"); }
 
 const closeDB = () => { DB.close(); }
 
+const tee = (arg) => { console.log(arg); return arg; }
+
+const log = (message, fn=consola.info) => {
+  return (arg) => {
+    fn(message);
+    return arg;
+  }
+};
+
 
 Promise.resolve().
-  then(setGlobalCODEX_ROOT).
-  catch(cantFindCodexRootBailOut).
+  then(log("making codex SQLite DB", consola.box)).
+  then(setGlobalCODEX_ROOT).catch(fatalCantFindCodexRoot).
   then(removeOldDBIfExists).
-  then(createDBandSetGlobalDB).
-  catch(cantOpenDBBailOut).
+  then(log("creating sqlite db")).
+  then(createDBandSetGlobalDB).catch(fatalCantOpenDB).
   then(createTables).
   then(setGlobalBLACKLISTED_PATHS).
+  then(log("gathering files")).
   then(getAllFilesRecursively).
   then(filterOnlyFiles).
   then(addAltPathsAsKeys).
   then(filterNonBlacklisted).
+  then(log("parsing tags")).
   then(addFirstLinesAsKeys).
   then(addTags).
   then(addFilesIDs).
+  then(log("inserting tags and files")).
   then(insertAllFiles).
   then(insertAllTags).
   then(createIndexes).
   then(closeDB).
-  then(tellThemImDone);
+  then(log("done", consola.success));
 
   // then(tee);
 
