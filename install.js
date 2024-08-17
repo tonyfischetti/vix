@@ -49,14 +49,22 @@ const StateFlow = () => {
 /*** ¿¿¿ can I add methods to the Promise class ??? ***/
 
 class PromisePlus extends Promise {
-	tee(logFn = console.log) {
-		return this.then(value => {
-			logFn(value);
-			return value;
-		});
+	tee(fn=console.log) {
+		return this.then(x => { fn(x); return x; });
 	}
+
+  info(message="pp", fn=consola.info, label) {
+		return this.then(x => { fn(message); return x; });
+  }
 }
 
+// const info = (message, fn=consola.info, label) => {
+//   return (arg) => { fn(message ?? `${label ?? "debug"}: ${arg}`); return arg; }
+// };
+
+const debug = (message, fn=consola.debug) => {
+  return (arg) => { fn(`${message ?? "debug: "}${arg}`); return arg; }
+};
 
 
 
@@ -126,15 +134,15 @@ const recoverPlugFileAlreadyExists	= makeRecoverableErrorHandler(fatalPlugFileAl
 /*****************************************************************
  * Info / logging functions
  */
-const tee = (arg) => { console.log(arg); return arg; }
+// const tee = (arg) => { console.log(arg); return arg; }
 
-const info = (message, fn=consola.info, label) => {
-  return (arg) => { fn(message ?? `${label ?? "debug"}: ${arg}`); return arg; }
-};
-
-const debug = (message, fn=consola.debug) => {
-  return (arg) => { fn(`${message ?? "debug: "}${arg}`); return arg; }
-};
+// const info = (message, fn=consola.info, label) => {
+//   return (arg) => { fn(message ?? `${label ?? "debug"}: ${arg}`); return arg; }
+// };
+//
+// const debug = (message, fn=consola.debug) => {
+//   return (arg) => { fn(`${message ?? "debug: "}${arg}`); return arg; }
+// };
 
 
 
@@ -222,17 +230,17 @@ const ensurePlugDotVimInstallation = ensureCondition;
  */
 const downloadPlugBootstrapper = () => {
   return PromisePlus.resolve().
-    then(info("Downloading Plug plugin bootstrapper")).
+    info("Downloading Plug plugin bootstrapper").
     then(getNvimAutoloadPrefix).
       catch(fatalCantFindPrefix).
     then(formDownloadOutputPath).
+    tee().
     then(mkdirDashP).
     then(debug("path: ")).
     then(downloadPlug).
-    tee().
     then(writePlugFile).
       catch(fatalCantWriteFile).
-    then(info("plug.vim written"));
+    info("plug.vim written");
 };
 
 
@@ -242,10 +250,10 @@ const downloadPlugBootstrapper = () => {
  * Main
  */
 PromisePlus.resolve().
-  then(info("Installing vix", box)).
+  // then(info("Installing vix", box)).
   then(ensurePlugDotVimInstallation).
     catch(downloadPlugBootstrapper).
-  then(info("done", success));
+  info("done", success);
   
 
 
