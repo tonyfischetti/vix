@@ -53,7 +53,7 @@ const StateFlow = () => {
 
 
 class PromisePlus extends Promise {
-  
+
   errorIfFalse() {
     return this.then(bool => { if (!bool) { throw Error("False!"); } return bool; });
   }
@@ -89,6 +89,23 @@ class PromisePlus extends Promise {
 
   no() {
     return this.catch(x => { return x; });
+  }
+
+  printState() {
+    console.log("this...");
+    console.log(this);
+    return this.then(x => {
+      // console.log({this.state});
+      return x;
+    });
+  }
+
+  state = {"thatiamin": Date.now()};
+
+  printTime() {
+    return this.then(x => {
+      console.log({currentTime: Date.now()});
+    });
   }
 
 }
@@ -264,7 +281,7 @@ const ensurePlugDotVimInstallation = ensureCondition;
 /*****************************************************************
  * First-order chains
  */
-const downloadPlugBootstrapper = () => {
+const downloadPlugBootstrapper = (idk) => {
   return PromisePlus.resolve().
     info("Downloading Plug plugin bootstrapper").
     then(getNvimAutoloadPrefix).
@@ -286,9 +303,13 @@ const downloadPlugBootstrapper = () => {
  */
 PromisePlus.resolve().
   info("Installing vix", box).
+  // printTime().
+  printState().catch(error => console.error(error)).
   confirm("Download plug.vim?").
     yes().then(downloadPlugBootstrapper).
     no().info("skipping...").
+  printTime().
+  printState().catch(error => console.error(error)).
   info("done", success);
   
 
