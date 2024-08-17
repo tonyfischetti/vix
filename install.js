@@ -127,9 +127,6 @@ const debug = (message, fn=consola.debug) => {
 };
 
 
-/*****************************************************************
- * Helper functions
- */
 
 
 /*****************************************************************
@@ -195,6 +192,18 @@ const writePlugFile = ({downloadTo, text}) => {
 };
 
 
+/*****************************************************************
+ * Helper functions
+ */
+const ensureCondition = (thenable) => {
+  const x = Math.random();
+  console.warn(x);
+  if (x > 0.5)
+    throw Error ("condition not met");
+  return thenable;
+}
+
+const ensurePlugDotVimInstallation = ensureCondition;
 
 
 
@@ -217,12 +226,14 @@ const downloadPlugBootstrapper = () => {
 
 
 
+
 /*****************************************************************
  * Main
  */
 Promise.resolve().
   then(info("Installing vix", box)).
-  then(downloadPlugBootstrapper).
+  then(ensurePlugDotVimInstallation).
+    catch(downloadPlugBootstrapper).
   then(info("done", success));
   
 
