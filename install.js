@@ -53,8 +53,13 @@ class PromisePlus extends Promise {
 		return this.then(x => { fn(x); return x; });
 	}
 
-  info(message="pp", fn=consola.info, label) {
+  info(message, fn=consola.info) {
 		return this.then(x => { fn(message); return x; });
+  }
+
+  debug(message="debug: ", fn=consola.debug) {
+		return this.then
+    ///info(`${message}: ${, fn=fn);
   }
 }
 
@@ -62,9 +67,9 @@ class PromisePlus extends Promise {
 //   return (arg) => { fn(message ?? `${label ?? "debug"}: ${arg}`); return arg; }
 // };
 
-const debug = (message, fn=consola.debug) => {
-  return (arg) => { fn(`${message ?? "debug: "}${arg}`); return arg; }
-};
+// const debug = (message, fn=consola.debug) => {
+//   return (arg) => { fn(`${message ?? "debug: "}${arg}`); return arg; }
+// };
 
 
 
@@ -215,8 +220,7 @@ const writePlugFile = ({downloadTo, text}) => {
  */
 const ensureCondition = (thenable) => {
   const x = Math.random();
-  console.warn(x);
-  if (x > 0.5)
+  if (x > 0.0001)
     throw Error ("condition not met");
   return thenable;
 }
@@ -234,9 +238,9 @@ const downloadPlugBootstrapper = () => {
     then(getNvimAutoloadPrefix).
       catch(fatalCantFindPrefix).
     then(formDownloadOutputPath).
-    tee().
+    debug().
     then(mkdirDashP).
-    then(debug("path: ")).
+    debug("path: ").
     then(downloadPlug).
     then(writePlugFile).
       catch(fatalCantWriteFile).
@@ -250,7 +254,7 @@ const downloadPlugBootstrapper = () => {
  * Main
  */
 PromisePlus.resolve().
-  // then(info("Installing vix", box)).
+  info("Installing vix", box).
   then(ensurePlugDotVimInstallation).
     catch(downloadPlugBootstrapper).
   info("done", success);
@@ -373,5 +377,7 @@ RangeError: Maximum call stack size exceeded
 
  then and catch are branching structures
 
+
+ performance penalty?... idgaf
 
 `
