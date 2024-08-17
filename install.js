@@ -302,6 +302,16 @@ PromisePlus.resolve().
 
 
 
+
+
+
+
+
+
+
+
+
+
 `
 /***************************************************************************
  ********** Point-free Promises ********************************************
@@ -416,6 +426,9 @@ RangeError: Maximum call stack size exceeded
 
  performance penalty?... idgaf
 
+it essentially aliases then and catch to give the semantics
+
+as it turns out, you can create a DSL in Node by subclassing promise
 
  holy shit... can I get the program to be an Instance of a subclass of promise?!
 
