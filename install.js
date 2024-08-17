@@ -92,7 +92,7 @@ class PromisePlus extends Promise {
   }
 
   printState() {
-    console.log("this...");
+    console.log("printing state");
     console.log(this);
     return this.then(x => {
       // console.log({this.state});
