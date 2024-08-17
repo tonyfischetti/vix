@@ -57,9 +57,11 @@ class PromisePlus extends Promise {
 		return this.then(x => { fn(message); return x; });
   }
 
-  debug(message="debug: ", fn=consola.debug) {
-		return this.then
-    ///info(`${message}: ${, fn=fn);
+  debug(prefix="debug: ", fn=consola.debug) {
+		return this.then(x => {
+      fn(`${prefix}: ${x}`);
+      return x;
+    });
   }
 }
 
@@ -209,7 +211,7 @@ const writePlugFile = ({downloadTo, text}) => {
   //   "Plug bootstrapper already exists... continue installing? "
   // );
 
-  return Promise.resolve().
+  return PromisePlus.resolve().
     then(ensurePathDoesntExist).catch(recoverPlugFileAlreadyExists).
     then(writeToFS);
 };
