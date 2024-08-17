@@ -76,12 +76,19 @@ class PromisePlus extends Promise {
   confirm(message) {
 		return this.then(x => {
       return PromisePlus.resolve().
-        then(_ => { consola.prompt(message, { type: 'confirm' }).errorIfFalse(); });
+        then(_ => {
+          return consola.prompt(message, { type: 'confirm' });
+        }).
+        errorIfFalse();
     });
   }
 
-  ok() {
+  yes() {
     return this.then(x => { return x; });
+  }
+
+  no() {
+    return this.catch(x => { return x; });
   }
 
 }
@@ -266,7 +273,6 @@ const downloadPlugBootstrapper = () => {
     then(mkdirDashP).
     debug("path").
     then(downloadPlug).
-    ok().
     then(writePlugFile).
       catch(fatalCantWriteFile).
     info("plug.vim written");
@@ -281,7 +287,8 @@ const downloadPlugBootstrapper = () => {
 PromisePlus.resolve().
   info("Installing vix", box).
   confirm("Download plug.vim?").
-    then(downloadPlugBootstrapper).
+    yes().then(downloadPlugBootstrapper).
+    no().info("skipped").
   info("done", success);
   
 
