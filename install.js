@@ -288,7 +288,7 @@ PromisePlus.resolve().
   info("Installing vix", box).
   confirm("Download plug.vim?").
     yes().then(downloadPlugBootstrapper).
-    no().info("skipped").
+    no().info("skipping...").
   info("done", success);
   
 
@@ -415,5 +415,8 @@ RangeError: Maximum call stack size exceeded
 
 
  performance penalty?... idgaf
+
+
+ holy shit... can I get the program to be an Instance of a subclass of promise?!
 
 `
