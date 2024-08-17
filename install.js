@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-
+/*
+ * TODO: handle Control-C
+ */
 
 import * as os            from 'node:os';
 import * as fs            from 'node:fs/promises';
@@ -76,23 +78,39 @@ const OPTS = PROGRAM.opts();
 if (OPTS.debug) { DEBUG = true; }
 
 consola = createConsola({ level: 3 + DEBUG });
-const { box, done } = consola;
+const { box, success } = consola;
 
 
 /*****************************************************************
  * Error functions
  */
-const printErrorAndBailOut = (exitCode, customMessage) => {
+
+const makeFatalErrorHandler = (exitCode, customMessage) => {
   return (error) => {
     customMessage ? console.error(customMessage) : console.error(error.message);
     if (DEBUG) console.error(error);
     process.exit(exitCode);
   };
+}
+
+const makeRecoverableErrorHandler = (fatalVariety,
+                                     prompt="Continue? ",
+                                     customMessage) => {
+  const errorIfFalse = (bool) => { if (!bool) { throw fatalVariety; } return bool; };
+  return (error) => {
+    return consola.prompt(prompt, { type: 'confirm' }).
+      then(errorIfFalse).
+      catch(fatalVariety);
+  };
 };
 
-const fatalCantFindPrefix     = printErrorAndBailOut(1);
-const fatalCantDownloadPlug   = printErrorAndBailOut(2, "Can't download Plug");
-const fatalCantWriteFile      = printErrorAndBailOut(2, "Can't write file");
+
+const fatalCantFindPrefix           = makeFatalErrorHandler(1);
+const fatalCantDownloadPlug         = makeFatalErrorHandler(2, "Can't download Plug");
+const fatalCantWriteFile            = makeFatalErrorHandler(2, "Can't write file");
+const fatalPlugFileAlreadyExists    = makeFatalErrorHandler(3, "Plug already exists");
+const recoverPlugFileAlreadyExists	= makeRecoverableErrorHandler(fatalPlugFileAlreadyExists,
+  "Plug bootstrapper already exixts... continue installing?");
 
 
 /*****************************************************************
@@ -145,8 +163,36 @@ const downloadPlug = (downloadTo) => {
     then(returnBothPathAndText);
 };
 
-const writePlugFile = ({downloadTo, text}) => fs.writeFile(`${downloadTo}/plug.vim`, text, 'utf-8');
+const writePlugFile = ({downloadTo, text}) => {
+  const finalPath = `${downloadTo}/plug.vim`;
+  const ensurePathDoesntExist = () => {
+    return new Promise((resolve, reject) => {
+      fs.stat(finalPath).
+        then(() => reject(new Error ("file exists"))).
+        catch((err) => {
+          if (err.code === 'ENOENT')
+            resolve(true);
+          reject(err);
+        });
+    });
+  };
+  const writeToFS = () => fs.writeFile(finalPath, text, 'utf-8');
 
+
+  const recover = () => {
+    return consola.prompt("Continue?", { type: 'confirm' }).
+      then(errorIfFalse);
+  };
+
+  // const tmp = makeRecoverableErrorHandler(
+  //   fatalPlugFileAlreadyExists,
+  //   "Plug bootstrapper already exists... continue installing? "
+  // );
+
+  return Promise.resolve().
+    then(ensurePathDoesntExist).catch(recoverPlugFileAlreadyExists).
+    then(writeToFS);
+};
 
 
 
@@ -157,13 +203,16 @@ const writePlugFile = ({downloadTo, text}) => fs.writeFile(`${downloadTo}/plug.v
  */
 const downloadPlugBootstrapper = () => {
   return Promise.resolve().
-    then(getNvimAutoloadPrefix).catch(fatalCantFindPrefix).
-    then(debug("prefix: ")).
+    then(info("Downloading Plug plugin bootstrapper")).
+    then(getNvimAutoloadPrefix).
+      catch(fatalCantFindPrefix).
     then(formDownloadOutputPath).
     then(mkdirDashP).
     then(debug("path: ")).
     then(downloadPlug).
-    then(writePlugFile).catch(fatalCantWriteFile);
+    then(writePlugFile).
+      catch(fatalCantWriteFile).
+    then(info("plug.vim written"));
 };
 
 
@@ -174,7 +223,7 @@ const downloadPlugBootstrapper = () => {
 Promise.resolve().
   then(info("Installing vix", box)).
   then(downloadPlugBootstrapper).
-  then(info("done", done));
+  then(info("done", success));
   
 
 
@@ -288,6 +337,11 @@ RangeError: Maximum call stack size exceeded
  ***************************************************************************/
 
  composing promises
+
+ in "monad"-land.... in "async"-land
+
+
+ then and catch are branching structures
 
 
 `
