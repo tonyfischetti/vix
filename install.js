@@ -48,6 +48,16 @@ const StateFlow = () => {
 
 /*** ¿¿¿ can I add methods to the Promise class ??? ***/
 
+class PromisePlus extends Promise {
+	tee(logFn = console.log) {
+		return this.then(value => {
+			logFn(value);
+			return value;
+		});
+	}
+}
+
+
 
 
 
@@ -211,7 +221,7 @@ const ensurePlugDotVimInstallation = ensureCondition;
  * First-order chains
  */
 const downloadPlugBootstrapper = () => {
-  return Promise.resolve().
+  return PromisePlus.resolve().
     then(info("Downloading Plug plugin bootstrapper")).
     then(getNvimAutoloadPrefix).
       catch(fatalCantFindPrefix).
@@ -219,6 +229,7 @@ const downloadPlugBootstrapper = () => {
     then(mkdirDashP).
     then(debug("path: ")).
     then(downloadPlug).
+    tee().
     then(writePlugFile).
       catch(fatalCantWriteFile).
     then(info("plug.vim written"));
@@ -230,7 +241,7 @@ const downloadPlugBootstrapper = () => {
 /*****************************************************************
  * Main
  */
-Promise.resolve().
+PromisePlus.resolve().
   then(info("Installing vix", box)).
   then(ensurePlugDotVimInstallation).
     catch(downloadPlugBootstrapper).
