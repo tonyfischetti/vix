@@ -48,7 +48,16 @@ const StateFlow = () => {
 
 /*** ¿¿¿ can I add methods to the Promise class ??? ***/
 
+
+
+
+
 class PromisePlus extends Promise {
+  
+  errorIfFalse() {
+    return this.then(bool => { if (!bool) { throw Error("False!"); } return bool; });
+  }
+
 	tee(fn=console.log) {
 		return this.then(x => { fn(x); return x; });
 	}
@@ -57,13 +66,27 @@ class PromisePlus extends Promise {
 		return this.then(x => { fn(message); return x; });
   }
 
-  debug(prefix="debug: ", fn=consola.debug) {
+  debug(prefix="debug", fn=consola.debug) {
 		return this.then(x => {
       fn(`${prefix}: ${x}`);
       return x;
     });
   }
+
+  confirm(message) {
+		return this.then(x => {
+      return PromisePlus.resolve().
+        then(_ => { consola.prompt(message, { type: 'confirm' }).errorIfFalse(); });
+    });
+  }
+
+  ok() {
+    return this.then(x => { return x; });
+  }
+
 }
+
+
 
 // const info = (message, fn=consola.info, label) => {
 //   return (arg) => { fn(message ?? `${label ?? "debug"}: ${arg}`); return arg; }
@@ -240,10 +263,10 @@ const downloadPlugBootstrapper = () => {
     then(getNvimAutoloadPrefix).
       catch(fatalCantFindPrefix).
     then(formDownloadOutputPath).
-    debug().
     then(mkdirDashP).
-    debug("path: ").
+    debug("path").
     then(downloadPlug).
+    ok().
     then(writePlugFile).
       catch(fatalCantWriteFile).
     info("plug.vim written");
@@ -257,11 +280,13 @@ const downloadPlugBootstrapper = () => {
  */
 PromisePlus.resolve().
   info("Installing vix", box).
-  then(ensurePlugDotVimInstallation).
-    catch(downloadPlugBootstrapper).
+  confirm("Download plug.vim?").
+    then(downloadPlugBootstrapper).
   info("done", success);
   
 
+  // then(ensurePlugDotVimInstallation).
+  //   catch(downloadPlugBootstrapper).
 
 
 // curl -Lo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim 
@@ -378,6 +403,8 @@ RangeError: Maximum call stack size exceeded
 
 
  then and catch are branching structures
+
+""you may ask "why"?""... "so I can have a main that looks like <this>"
 
 
  performance penalty?... idgaf
