@@ -87,7 +87,7 @@ const getAllFilesRecursively = () => {
   return fs.readdir(CODEX_ROOT, { withFileTypes: true, recursive: true });
 };
 
-const filterOnlyFiles = (lst) => lst.filter(i => i.isFile());
+const filterOnlyFiles = (lst) => lst.filter(i => i.isFile() && !i.name.match(/^\./));
 
 const addAltPathsAsKeys = (listOfFiles) => {
   const addAltPathsAsKey = (fileObj) => {

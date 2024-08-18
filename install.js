@@ -50,7 +50,7 @@ const StateFlow = () => {
 
 
 
-
+let COUNTER = 0;
 
 class PromisePlus extends Promise {
 
@@ -100,7 +100,10 @@ class PromisePlus extends Promise {
     });
   }
 
-  state = {"thatiamin": Date.now()};
+  state = {
+    thatiamin: Date.now(),
+    name: `${++COUNTER}`
+  };
 
   printTime() {
     return this.then(x => {
@@ -110,6 +113,84 @@ class PromisePlus extends Promise {
 
 }
 
+
+class StatefulPromise extends Promise {
+  state = {
+    thatiamin: Date.now(),
+    name: `#${++COUNTER}`
+  };
+
+	tee(fn=console.log) {
+		return this.then(x => { fn(x); return x; });
+	}
+
+  static start() {
+    return StatefulPromise.resolve();
+    // return ([StatefulPromise.resolve(), this.state]);
+  }
+
+  next2 () {
+    return this.then(x => { console.log(`returning: ${x}`); return x; });
+  }
+
+  then2(something) {
+    console.log("in then2");
+    // return this.then(x => { return x; });
+    return this.then(_ => something(_));
+  }
+
+  // `next` wraps `then` to pass state along, as well
+  next(flow) {
+    const state = this.state;
+    console.log(`received state: ${JSON.stringify(state)}`);
+    return this
+      .then(x => {
+        console.log(`my state is this: ${JSON.stringify(state, null, 2)}`);
+        console.log(`going to return: ${flow(x)}`);
+        return flow(x);
+      });
+  };
+  
+  addToState(symId) {
+    const state = this.state;
+    return this.
+      next(({arg, state}) => {
+        stateToPass[symId] = arg;
+        return ({arg, stateToPass});
+      });
+  };
+
+  printState() {
+    const state = this.state;
+    console.log("printing state");
+    console.log(state);
+    return this.next(x => {
+      console.log("");
+      return x;
+    });
+  }
+
+}
+
+const returnPP = () => {
+  return "pp";
+  // return StatefulPromise.resolve().then(_ => "pp");
+};
+
+const addAnother = x => `${x} + pp`;
+
+StatefulPromise.resolve().
+  next(returnPP).
+  next(addAnother).
+  tee();
+
+  // printState();
+  // next(returnPP).
+  // printState();
+
+  // printState();
+  // next(returnPP).
+  // printState();
 
 
 // const info = (message, fn=consola.info, label) => {
@@ -301,20 +382,26 @@ const downloadPlugBootstrapper = (idk) => {
 /*****************************************************************
  * Main
  */
+const dontInvoke = () => {
+
 PromisePlus.resolve().
+  printState().
   info("Installing vix", box).
   // printTime().
+  printState().catch(error => console.error(error)).
   printState().catch(error => console.error(error)).
   confirm("Download plug.vim?").
     yes().then(downloadPlugBootstrapper).
     no().info("skipping...").
   printTime().
-  printState().catch(error => console.error(error)).
+  // printState().catch(error => console.error(error)).
   info("done", success);
   
+};
 
-  // then(ensurePlugDotVimInstallation).
-  //   catch(downloadPlugBootstrapper).
+// StatefulPromise.resolve().
+//   printState();
+
 
 
 // curl -Lo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim 

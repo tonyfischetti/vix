@@ -129,7 +129,7 @@ const tee = (something) => {
 const getChosenLang = () => {
   const allLangs = getAllLangs();
   return callFzf(allLangs).
-           then(i => i.out);
+    then(i => i.out);
 };
 
 const findFzf = () => {
