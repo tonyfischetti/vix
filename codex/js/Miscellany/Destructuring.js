@@ -29,3 +29,8 @@ const { black="carbon", blue="prussian", magenta="quinacridone" } = obj1;
 black;        // lamp
 blue;         // phthalo
 magenta;      // quinacridone
+
+// re-naming keys
+const { red: kokkino, black: maupo } = obj1;
+kokkino;      // cadmium
+maupo;        // lamp

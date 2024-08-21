@@ -265,6 +265,7 @@
       - bun
       - Optional chaining operator ?
       - Nullish coalescing ?
+      - yield
 
 - Tools
 

@@ -460,6 +460,9 @@ but that doesn't work after the first 'meta'
 ¿want to guess what the error is? (Maximum call stack exceeded)
 
 
+"I promise you, it's not just helpful for point-less.... I mean 'point-free' programming like this
+ it's a helpful exercise"
+
 
 ## Screenshots
 
@@ -539,5 +542,55 @@ it essentially aliases then and catch to give the semantics
 as it turns out, you can create a DSL in Node by subclassing promise
 
  holy shit... can I get the program to be an Instance of a subclass of promise?!
+
+
+
+
+
+-----
+Ideas from other exercises...
+
+Promise.resolve([energyDrinkA, energyDrinkB]).
+  then(getAllPossibleMoves).
+  then(getAllTotalEnergy).
+  then(getWinner).
+  then(console.log);
+
+
+CustomPromise.beginFlow([energyDrinkA, energyDrinkB]).
+  ensure	(bothEqualLength).
+  split	  (returnAllPaths).
+  apply	  (getTotalEnergy).
+  combine (getWinner).
+  check   (testsPass).
+  end();
+
+
+And then try with files in directory and lowest hash
+(parameterize hash function)
+
+...
+  split   (getAllFilesInDirectory).
+  apply   (getHash).
+  combine (getBiggest);
+
+...
+  split     (getAllFilesInDirectory).
+  findFirst (getHash).
+  matching  (isHashWeAreLookingFor);
+
+
+
+
+  .share()
+
+  exposes the parameter as a binding in the closure returned
+  
+
+
+  you don't have to use this style all the way down
+  start by expressing your main like this
+  then start working on the adding it, if you'd like, on the way down,
+    provided it's deemed helpful
 
 `

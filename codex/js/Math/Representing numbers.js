@@ -1,4 +1,4 @@
-// js, math, representing numbers, binary, octal, thousands separator
+// js, math, representing numbers, binary, octal, thousands separator, decimal to binary string
 
 /*
  * All numbers in Javascript are double floats
@@ -11,5 +11,15 @@
 // binary
 0b10001;        // 17
 
+// hex
+0x0e;           // 14
+
 // octal
 0o010;          // 8
+
+
+// as strings
+(17).toString(2);   // '10001'
+(8).toString(8);    // '10'
+(14).toString(16);  // 'e'
+

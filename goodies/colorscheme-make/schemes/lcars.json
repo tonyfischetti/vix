@@ -31,6 +31,8 @@
         { "name": "lite_purple",      "color": { "rgbhex": "#deaded", "cterm": 183 } },
         { "name": "some_grey",        "color": { "rgbhex": "#dadada", "cterm": 188 } },
         { "name": "dark_grey",        "color": { "rgbhex": "#808080", "cterm": 102 } },
+        { "name": "red_grey",         "color": { "rgbhex": "#928287", "cterm": 102 } },
+        { "name": "paynes_grey",      "color": { "rgbhex": "#4F5D75", "cterm": 102 } },
         { "name": "rust",             "color": { "rgbhex": "#cd5907", "cterm": 166 } },
         { "name": "almost_black",     "color": { "rgbhex": "#080808", "cterm": 16 } },
         { "name": "drab_yellow",      "color": { "rgbhex": "#e6db74", "cterm": 186 } },
@@ -55,6 +57,22 @@
         { "name": "lc_salmon",        "color": { "rgbhex": "#ffaf87", "cterm": 216 } },
         { "name": "lc_weird_purp",    "color": { "rgbhex": "#ae81ff", "cterm": 141 } },
         { "name": "lc_hot_pink",      "color": { "rgbhex": "#f92672", "cterm": 197 } },
+        { "name": "cr_bolder_gold",   "color": { "rgbhex": "#f3bb24", "cterm": 197 } },
+        { "name": "cr_bold_gold",     "color": { "rgbhex": "#FFBA52", "cterm": 197 } },
+        { "name": "cr_try_my_skin",   "color": { "rgbhex": "#f3ca9c", "cterm": 197 } },
+        { "name": "cr_try_blush",     "color": { "rgbhex": "#f5bd91", "cterm": 197 } },
+        { "name": "cr_salmon",        "color": { "rgbhex": "#fc936d", "cterm": 197 } },
+        { "name": "cr_birds_egg",     "color": { "rgbhex": "#88d3fa", "cterm": 197 } },
+        { "name": "cr_confident_red", "color": { "rgbhex": "#ff6674", "cterm": 197 } },
+        { "name": "cr_chill_red",     "color": { "rgbhex": "#f87e7c", "cterm": 197 } },
+        { "name": "cr_gold",          "color": { "rgbhex": "#ffca6d", "cterm": 197 } },
+        { "name": "cr_chill_yellow",  "color": { "rgbhex": "#ffe787", "cterm": 197 } },
+        { "name": "cr_mint",          "color": { "rgbhex": "#4ec9b0", "cterm": 197 } },
+        { "name": "cr_pale_yellow",   "color": { "rgbhex": "#dcdcaa", "cterm": 197 } },
+        { "name": "cr_confident_5", "color": { "rgbhex": "#f87c99", "cterm": 197 } },
+        { "name": "cr_confident_4", "color": { "rgbhex": "#f98fa7", "cterm": 197 } },
+        { "name": "cr_confident_6", "color": { "rgbhex": "", "cterm": 197 } },
+        { "name": "cr_confident_7", "color": { "rgbhex": "", "cterm": 197 } },
         { "name": "lowkey_comment",   "color": { "rgbhex": "#565f89", "cterm": 60 } },
         { "name": "peach",            "color": { "rgbhex": "#fe9d63", "cterm": 216 } },
         { "name": "red",              "color": { "rgbhex": "#f7768e", "cterm": 210 } },
@@ -80,7 +98,7 @@
         },
 
         "Cursor": {
-            "fg": "bg",
+            "fg": "black",
             "bg": "fg"
         },
 
@@ -380,11 +398,6 @@
             "bg": null
         },
 
-        "lispComment": {
-            "fg": "lc_teal",
-            "bg": null
-        },
-
         "String": { 
             "fg": "lc_yellow",
             "bg": null,
@@ -625,6 +638,11 @@
             "bold": true
         },
 
+        "lispComment": {
+            "fg": "lc_teal",
+            "bg": null
+        },
+
 
         "sqlType": {
             "fg": "lc_hot_red",
@@ -759,6 +777,127 @@
             "bold": true
         },
 
+        "jsParen": {
+            "fg": "lc_light_blue",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsStorageClass": {
+            "fg": "lc_hot_red",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsFuncArgs": {
+            "fg": "lc_ppink_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsArrowFuncArgs": { 
+            "fg": "lc_ppink_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsFuncCall": { 
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsFuncParens": { 
+            "fg": "some_grey",
+            "bg": null, 
+            "bold": true
+        },
+
+        "jsParens": { 
+            "fg": "dark_grey",
+            "bg": null, 
+            "bold": true
+        },
+
+        "jsObjectProp": {
+            "fg": "lc_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsArrowFunction": { 
+            "fg": "lc_red_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsGlobalObjects": { 
+            "fg": "lc_ppink_dsat",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsVariableDef": { 
+            "fg": "some_grey",
+            "bg": null,
+            "bold": true
+        },
+
+        "jsComment": { 
+            "fg": "dark_grey",
+            "bg": null, 
+            "bold": true
+        },
+
+
+        "typescriptDOMDocMethod": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptProp": {
+            "fg": "lc_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptPredefinedType": {
+            "fg": "lc_dark_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "tsType": {
+            "fg": "lc_dark_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "tsParenAnnotation": {
+            "fg": "lc_dark_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptTypeReference": {
+            "fg": "lc_dark_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptAliasDeclaration": {
+            "fg": "lc_dark_teal",
+            "bg": null,
+            "bold": true
+        },
+
+        "typescriptAliasKeyword": {
+            "fg": "lc_cobalt",
+            "bg": null,
+            "bold": true
+        },
+
         "typescriptImport": { 
             "fg": "lc_hot_red",
             "bg": null,
@@ -777,18 +916,6 @@
             "bold": true
         },
 
-        "tsParenAnnotation": {
-            "fg": "lc_deep_sea",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsParen": {
-            "fg": "lc_light_blue",
-            "bg": null,
-            "bold": true
-        },
-
         "tsArgumentDef": {
             "fg": "lc_deep_sea",
             "bg": null,
@@ -803,54 +930,6 @@
 
         "tsDefinition": {
             "fg": "lc_deep_sea",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsFuncArgs": {
-            "fg": "lc_pop_blue",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsStorageClass": {
-            "fg": "lc_hot_red",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsFuncCall": { 
-            "fg": "lc_cobalt",
-            "bg": null,
-            "bold": true
-        },
-
-        "typescriptDOMDocMethod": {
-            "fg": "lc_cobalt",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsObjectProp": {
-            "fg": "lc_teal",
-            "bg": null,
-            "bold": true
-        },
-
-        "typescriptProp": {
-            "fg": "lc_teal",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsArrowFunction": { 
-            "fg": "lc_red_dsat",
-            "bg": null,
-            "bold": true
-        },
-
-        "jsGlobalObjects": { 
-            "fg": "lc_ppink_dsat",
             "bg": null,
             "bold": true
         },
