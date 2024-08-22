@@ -34,4 +34,3 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 vim.api.nvim_create_autocmd("BufEnter", {
     command = [[set fo-=c fo-=r fo-=o]]
 })
-

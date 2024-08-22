@@ -221,3 +221,21 @@ hi typescriptPredefinedType ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 hi typescriptProp ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
 hi typescriptTypeReference ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 hi zshCommands ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+
+hi typescriptAliasDeclaration ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
+" hi typescriptAliasDeclaration ctermfg=73 guifg=pp  cterm=bold gui=bold
+" hi @lsp.type.type.typescript ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
+" hi jsGlobalObjects ctermfg=73 guifg=#000000  cterm=bold gui=bold
+
+" https://www.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
+" https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
+" https://gist.github.com/swarn/fb37d9eefe1bc616c2a7e476c0bc0316
+" https://github.com/neovim/neovim/pull/21100
+" https://www.reddit.com/r/neovim/comments/17a0azm/why_is_treesitter_recommended_over_lsp_for_syntax/
+" https://github.com/typescript-language-server/typescript-language-server/blob/master/docs/configuration.md
+
+" lua vim.api.nvim_set_hl(0, '@lsp.type.variable.typescript', {})
+
+" https://neovim.io/doc/user/syntax.html
+
+" https://github.com/brenoprata10/nvim-highlight-colors

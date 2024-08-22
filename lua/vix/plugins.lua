@@ -39,9 +39,11 @@ Plug 'nvim-telescope/telescope-symbols.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'voldikss/vim-floaterm'
-Plug 'norcalli/nvim-colorizer.lua'
+Plug 'brenoprata10/nvim-highlight-colors'
 Plug 'othree/html5.vim'
 Plug 'evanleck/vim-svelte'
+Plug 'neovim/nvim-lspconfig'
+
 
 -- don't load fzf native on window$
 if vim.fn.has("win32") == 0 then
