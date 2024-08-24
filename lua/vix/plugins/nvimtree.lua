@@ -1,38 +1,45 @@
 
-require("nvim-tree").setup({
-    sort_by = "case_sensitive",
-    view = {
-        width = 25,
+return {
+  {
+    "nvim-tree/nvim-tree.lua",
+    keys = {
+      { "<Leader>ee", ":NvimTreeToggle<CR>" }
     },
-    renderer = {
+    opts = {
+      sort_by = "case_sensitive",
+      view = {
+        width = 25,
+      },
+      renderer = {
         group_empty = true,
         icons = {
-            web_devicons = {
-                file = {
-                    enable = true,
-                    color = true
-                },
-                folder = {
-                    enable = false,
-                    color = true
-                }
+          web_devicons = {
+            file = {
+              enable = true,
+              color = true
             },
-            glyphs = {
-                folder = {
-                  arrow_closed = '',
-                  arrow_open = '',
-                  default = '',
-                  open = '',
-                  empty = ' ',
-                  empty_open = '',
-                  symlink = '',
-                  symlink_open = ''
-                }
+            folder = {
+              enable = false,
+              color = true
             }
+          },
+          glyphs = {
+            folder = {
+              arrow_closed = '',
+              arrow_open = '',
+              default = '',
+              open = '',
+              empty = ' ',
+              empty_open = '',
+              symlink = '',
+              symlink_open = ''
+            }
+          }
         }
-    },
-    filters = {
+      },
+      filters = {
         dotfiles = true,
-    },
-})
-
+      }
+    }
+  }
+}

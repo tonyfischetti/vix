@@ -4,9 +4,9 @@ vim.cmd("colorscheme lcars")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
--- vim.opt.signcolumn = "yes:1"    -- TODO: MAYBE!
+vim.g.mapleader = '\\'
+vim.g.maplocalleader = '\\'
+vim.opt.signcolumn = "yes:1"    -- TODO: MAYBE!
 vim.opt.undofile = true
 vim.opt.laststatus = 3
 vim.opt.number = true
@@ -44,39 +44,37 @@ vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.g['user_emmet_leader_key'] = ","
-vim.g['niji_matching_filetypes'] = {'lisp', 'scheme', 'clojure', 'racket'}
-vim.g['vim_json_syntax_conceal'] = 0
-
--- non-legacy snipmate parser
-vim.g['snipMate'] = { ['snippet_version'] = 1 }
-
-vim.g['material_style'] = "palenight"
-
-vim.g['goyo_width'] = "80"
-
-vim.g['slime_target'] = "tmux"
-vim.g['slime_default_config'] = [[{"socket_name": "default", "target_pane": "%1"}]]
-vim.g['slime_no_mappings'] = 1
-
 vim.g['perl_host_prog'] = "/usr/bin/perl"
-
-
-vim.cmd("set omnifunc=syntaxcomplete#Complete")
-vim.cmd("set completeopt+=longest,menuone,noselect")
-vim.cmd("set completeopt-=preview")
-vim.cmd("let g:mucomplete#chains = {}")
-vim.cmd("let g:mucomplete#chains.default = ['path', 'keyn', 'omni', 'dict', 'uspl', 'snipmate']")
 
 if vim.fn.executable('par') == 1 then
     vim.cmd('set formatprg=par\\ -w75r "rj')
 end
 
-vim.g.floaterm_width = 0.7
-vim.g.floaterm_title = '  floatterm  '
-
-vim.g.smalls_auto_jump = 1
-vim.g.smalls_auto_jump_min_input_length = 3
-vim.g.smalls_auto_jump_timeout = 0.5
-
 vim.g.sql_type_default = 'sqlite'
+
+-- vim.g['user_emmet_leader_key'] = ","
+-- vim.g['niji_matching_filetypes'] = {'lisp', 'scheme', 'clojure', 'racket'}
+-- vim.g['vim_json_syntax_conceal'] = 0
+--
+-- -- non-legacy snipmate parser
+-- vim.g['snipMate'] = { ['snippet_version'] = 1 }
+--
+-- vim.g['material_style'] = "palenight"
+--
+-- vim.g['goyo_width'] = "80"
+--
+-- vim.g['slime_target'] = "tmux"
+-- vim.g['slime_default_config'] = [[{"socket_name": "default", "target_pane": "%1"}]]
+-- vim.g['slime_no_mappings'] = 1
+--
+-- vim.cmd("set omnifunc=syntaxcomplete#Complete")
+-- vim.cmd("set completeopt+=longest,menuone,noselect")
+-- vim.cmd("set completeopt-=preview")
+-- vim.cmd("let g:mucomplete#chains = {}")
+-- vim.cmd("let g:mucomplete#chains.default = ['path', 'keyn', 'omni', 'dict', 'uspl', 'snipmate']")
+
+-- TODO
+-- vim.g.floaterm_width = 0.7
+-- vim.g.floaterm_title = '  floatterm  '
+
+

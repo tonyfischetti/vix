@@ -1,46 +1,73 @@
-local builtin = require('telescope.builtin')
-local actions = require("telescope.actions")
 
-require("telescope").setup{
-    defaults = {
+return {
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-symbols.nvim'
+    },
+    keys = {
+
+      {
+        "<leader>f", function() require("telescope.builtin").git_files() end,
+        desc = "Fuzzy find files in git repository",
+      },
+      {
+        "<leader>g", function() require("telescope.builtin").find_files() end,
+        desc = "Fuzzy find files (regular)",
+      },
+
+      {
+        "<leader>cc", function() require("telescope.builtin").colorscheme() end,
+        desc = "Fzf colorschemes",
+      },
+
+      {
+        "<leader>sy", function() require("telescope.builtin").symbols() end,
+        desc = "Fzf symbols",
+      },
+
+      {
+        "<leader>/", function() require("telescope.builtin").buffers() end,
+        desc = "Fzf open buffers",
+      },
+      {
+        "<leader>gr", function() require("telescope.builtin").live_grep() end,
+        desc = "Live grep",
+      },
+
+    },
+
+    opts = {
+      defaults = {
         mappings = {
-            i = {
-                ["<ESC>"] = actions.close,
-                ["<C-j>"] = actions.move_selection_next,
-                ["<C-k>"] = actions.move_selection_previous,
-            },
+          i = {
+            ["<ESC>"] = require("telescope.actions").close,
+            ["<C-j>"] = require("telescope.actions").move_selection_next,
+            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+          },
 
         },
         sorting_strategy   = "ascending",
         layout_config = {
-            prompt_position = "top",
+          prompt_position = "top",
         }
-    },
-    pickers = {
+      },
+      pickers = {
         find_files = {
-            find_command = { "ack", "-f" },
+          find_command = { "ack", "-f" },
         },
-    },
-    extensions = {
+      },
+      extensions = {
         fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
+          fuzzy = true,
+          override_generic_sorter = true,
+          override_file_sorter = true,
+          case_mode = "smart_case",
         }
+      }
     }
+  }
 }
-
--- don't load this on window$
-if vim.fn.executable("fzf") == 0 then
-    require('telescope').load_extension('fzf')
-end
-
-vim.keymap.set('n', '<Leader>f', builtin.git_files, {})
-vim.keymap.set('n', '<Leader>F', builtin.find_files, {})
-vim.keymap.set('n', '<Leader>c', builtin.colorscheme, {})
-vim.keymap.set("n", "<Leader>E", builtin.symbols, {})
-vim.keymap.set('n', '<Leader>/', builtin.buffers, {})
-vim.keymap.set('n', '<Leader>g', builtin.live_grep, {})
-vim.keymap.set('n', '<Leader>z', builtin.commands, {})
 
