@@ -1,5 +1,14 @@
 
-require'lspconfig'.tsserver.setup {}
+local lspconfig = require 'lspconfig'
+
+lspconfig.tsserver.setup({
+  disableSuggestions = true
+})
+
+lspconfig.r_language_server.setup({
+  on_attach = on_attach_custom,
+  flags = { debounce_text_changes = 150 },
+})
 
 -- vim.api.nvim_create_autocmd('FileType', {
 --   -- This handler will fire when the buffer's 'filetype' is "python"

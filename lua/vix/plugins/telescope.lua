@@ -42,3 +42,5 @@ vim.keymap.set('n', '<Leader>c', builtin.colorscheme, {})
 vim.keymap.set("n", "<Leader>E", builtin.symbols, {})
 vim.keymap.set('n', '<Leader>/', builtin.buffers, {})
 vim.keymap.set('n', '<Leader>g', builtin.live_grep, {})
+vim.keymap.set('n', '<Leader>z', builtin.commands, {})
+

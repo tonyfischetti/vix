@@ -3,8 +3,6 @@ local fns = require('vix.lib.functions')
 local map = vim.keymap.set
 
 
-map("i", "<CR>", [[pumvisible() ? "<C-y>" : "<CR>"]], { expr = true })
-
 -- shortcuts for pluto special characters
 map("i", "<C-O><C-O>", "•")
 map("i", "<C-O><C-B>", "«")
