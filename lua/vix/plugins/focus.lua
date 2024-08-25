@@ -8,6 +8,11 @@ return {
       -- filter_type = "NOSYNTAX",
       filter_percent = .5
     }
+  },
+
+  {
+    "shortcuts/no-neck-pain.nvim",
+    cmd = "NoNeckPain"
   }
 
 }
