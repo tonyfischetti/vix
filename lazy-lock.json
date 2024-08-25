@@ -31,5 +31,6 @@
   "vim-javascript": { "branch": "master", "commit": "e533d2351f4a879c0bf99a5a5f7ef89d318ba83e" },
   "vim-json": { "branch": "master", "commit": "3727f089410e23ae113be6222e8a08dd2613ecf2" },
   "vim-pandoc-syntax": { "branch": "master", "commit": "16939cda184ff555938cc895cc62477c172997f9" },
-  "vim-ps1": { "branch": "master", "commit": "839cec1550e09fc902c74103053e9e765051083d" }
+  "vim-ps1": { "branch": "master", "commit": "839cec1550e09fc902c74103053e9e765051083d" },
+  "vim-slime": { "branch": "main", "commit": "f6bbbeb8f18393f2177cdcef764f3e0e1d7e9328" }
 }
