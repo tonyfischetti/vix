@@ -57,6 +57,15 @@ return {
         end
       }
     }
-  }
+  },
+
+  {
+    "https://github.com/mhartington/oceanic-next"
+  },
+
+  {
+    "https://github.com/zootedb0t/citruszest.nvim"
+  },
+
 }
 
