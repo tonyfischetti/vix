@@ -144,7 +144,7 @@ hi TelescopePromptTitle ctermfg=204 guifg=#ff5f87
 hi TelescopeResultsTitle ctermfg=204 guifg=#ff5f87  
 hi TelescopeSelection  ctermbg=60 guibg=#666d7a 
 hi TelescopeSelectionCaret ctermfg=210 guifg=#f7768e ctermbg=60 guibg=#666d7a 
-hi TermCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
+hi TermCursor ctermfg=233 guifg=#deaded ctermbg=231 guibg=#f8f8f2 
 hi TermCursorNC ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi Title ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Todo ctermfg=204 guifg=#ff5f87 ctermbg=16 guibg=#000000 cterm=bold gui=bold
