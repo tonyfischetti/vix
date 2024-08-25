@@ -12,7 +12,12 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "tsserver", "r_language_server" }
+      ensure_installed = {
+        "r_language_server",
+        "clangd",
+        "tsserver",
+        "lua_ls"
+      }
     }
   },
 
@@ -33,6 +38,12 @@ return {
       lspconfig.r_language_server.setup({
         -- cmd = {"R", "--slave", "-e", "'languageserver::run()'"}
         -- on_attach = on_attach_custom
+      })
+      ---
+      --------------------------------------
+      --       clangd c++ lsp setup       --
+      --------------------------------------
+      lspconfig.clangd.setup({
       })
 
       -------------------------------

@@ -37,7 +37,7 @@ return {
         -- TODO: how do I prioritize?!
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          -- { name = 'buffer' },
+          { name = 'buffer' },
           -- { name = 'path' },
           -- { name = 'luasnip' },
         }),
