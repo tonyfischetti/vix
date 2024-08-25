@@ -37,6 +37,7 @@ return {
       ---------------------------------------
       lspconfig.r_language_server.setup({
         -- cmd = {"R", "--slave", "-e", "'languageserver::run()'"}
+        -- TODO: can I use `on_attach` for other things
         -- on_attach = on_attach_custom
       })
       ---
@@ -100,7 +101,7 @@ return {
       -- TODO
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-      -- handled by hover.nvim, now
+      -- handled by Fildo7525/pretty_hover now
       -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
       vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
       vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)

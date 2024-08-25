@@ -38,6 +38,8 @@ vim.opt.smartcase = true
 vim.opt.background = "dark"
 vim.opt.guifont = {"Monaco for Powerline", ":h14"}
 vim.opt.mouse = "a"
+-- do I want this?
+-- vim.o.mousemoveevent = true
 vim.opt.modelines = 3
 vim.opt.cursorline = true
 
