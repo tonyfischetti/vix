@@ -53,7 +53,6 @@ end
 vim.g.sql_type_default = 'sqlite'
 
 -- vim.g['user_emmet_leader_key'] = ","
--- vim.g['niji_matching_filetypes'] = {'lisp', 'scheme', 'clojure', 'racket'}
 -- vim.g['vim_json_syntax_conceal'] = 0
 --
 -- -- non-legacy snipmate parser

@@ -64,14 +64,6 @@ map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
 
 
-
--- -- Small motion plugin
--- map("n", "s", "<Plug>(smalls)")
--- 
--- --hop things
--- map("n", "S", ":HopWord<CR>")
--- 
--- 
 -- -- snipmate
 -- map("i", "<C-J>", "<Plug>snipMateNextOrTrigger")
 -- 
@@ -92,5 +84,4 @@ map("n", "<Leader>ht", ":split | terminal  <CR> i")
 -- 
 -- map("n", "<Leader>m", ":FloatermToggle<CR>")
 -- map("n", "<Leader>M", ":FloatermNew --cwd=<root><CR>")
--- map("n", "<Leader>e", ":NvimTreeToggle<CR>")
 -- 
