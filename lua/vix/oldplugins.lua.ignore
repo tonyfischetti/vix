@@ -1,11 +1,4 @@
 
-local Plug = vim.fn['plug#']
-
-local plugloc = vim.fn.stdpath("config") .. '/plugged'
-
-vim.call('plug#begin', plugloc)
-
-
     Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug('wlangstroth/vim-racket',          {['for'] = 'racket'})
 Plug('maverickg/stan.vim',              {['for'] = 'stan'})
@@ -15,13 +8,5 @@ Plug('pprovost/vim-ps1',                {['for'] = 'ps1'})
     Plug('elzr/vim-json',                   {['for'] = 'json'})
 Plug('bfrg/vim-cpp-modern',             {['for'] = 'cpp'})
 Plug('mattn/emmet-vim',                 {['for'] = 'html'})
-
-Plug 'dstein64/vim-startuptime'
-
-Plug 'jpalardy/vim-slime'
-Plug 'junegunn/goyo.vim'
-Plug 'losingkeys/vim-niji'
 Plug 'othree/html5.vim'
 Plug 'evanleck/vim-svelte'
-
-Plug 'brenoprata10/nvim-highlight-colors'

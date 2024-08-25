@@ -49,34 +49,5 @@ nmap <silent> <Leader>hg :echo "hi<" . synIDattr(synID(line("."),col("."),1),"na
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-
 " let g:mucomplete#user_mappings = { 'snipmate' : "\<C-J>" }
 
-" function! NotepadMode()
-"     set wrap
-"     set spell
-"     Goyo
-" endfunction
-"
-" " put into 'notepad mode'
-" nmap <silent> <Leader>nm :call NotepadMode()<CR>
-"
-" autocmd! User GoyoEnter call <SID>goyo_enter()
-" autocmd! User GoyoLeave call <SID>goyo_leave()
-"
-" function! s:goyo_enter()
-"   let b:quitting = 0
-"   let b:quitting_bang = 0
-"   autocmd QuitPre <buffer> let b:quitting = 1
-"   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-" endfunction
-"
-" function! s:goyo_leave()
-"   if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-"     if b:quitting_bang
-"       qa!
-"     else
-"       qa
-"     endif
-"   endif
-" endfunction

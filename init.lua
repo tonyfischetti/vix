@@ -6,5 +6,5 @@ vim.cmd(tmpcmd)
 
 require 'vix.commands'
 require 'vix.keymaps'
--- require 'vix.autocmds'
+require 'vix.autocmds'
 

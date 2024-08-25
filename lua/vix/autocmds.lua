@@ -25,12 +25,13 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     command = "set ft=make"
 })
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = { "*.cpp", "*.hpp", "*.cc" },
-    command = "setlocal omnifunc=syntaxcomplete#Complete"
-})
+-- vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+--     group = vixgroup,
+--     pattern = { "*.cpp", "*.hpp", "*.cc" },
+--     command = "setlocal omnifunc=syntaxcomplete#Complete"
+-- })
+--
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--     command = [[set fo-=c fo-=r fo-=o]]
+-- })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-    command = [[set fo-=c fo-=r fo-=o]]
-})
