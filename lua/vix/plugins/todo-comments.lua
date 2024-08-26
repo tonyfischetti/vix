@@ -3,6 +3,10 @@ return {
 
   {
     "folke/todo-comments.nvim",
+    keys = {
+      { "<Leader>tt", "<cmd>TodoTelescope<CR>" }
+    },
+    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       -- keywords = {

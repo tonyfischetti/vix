@@ -67,5 +67,9 @@ return {
     "https://github.com/zootedb0t/citruszest.nvim"
   },
 
+  {
+    "alexmozaidze/palenight.nvim"
+  }
+
 }
 

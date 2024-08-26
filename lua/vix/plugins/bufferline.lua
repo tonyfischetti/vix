@@ -1,5 +1,6 @@
 
 return {
+
   {
     'akinsho/bufferline.nvim',
     version = "*",
@@ -25,5 +26,6 @@ return {
       }
     }
   }
+
 }
 
