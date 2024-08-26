@@ -239,3 +239,5 @@ hi typescriptAliasDeclaration ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 " https://neovim.io/doc/user/syntax.html
 
 " https://github.com/brenoprata10/nvim-highlight-colors
+
+hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
