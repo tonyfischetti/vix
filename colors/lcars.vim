@@ -241,3 +241,37 @@ hi typescriptAliasDeclaration ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 " https://github.com/brenoprata10/nvim-highlight-colors
 
 hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
+
+
+hi typeScriptInterfaceKeyword ctermfg=147 guifg=#5f87af  cterm=bold gui=bold
+hi @lsp.type.interface.typescript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
+hi @lsp.type.type.typescript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
+hi @lsp.type.property.typescript ctermfg=73 guifg=#ABC5E2 cterm=bold gui=bold
+hi @lsp.type.function.typescript ctermfg=73 guifg=#BAD8D4 cterm=bold gui=bold
+hi @lsp.type.variable.typescript ctermfg=73 guifg=#EFEACA cterm=bold gui=bold
+" hi jsString ctermfg=73 guifg=#FFBA52 cterm=bold gui=bold
+" hi jsTemplateString ctermfg=73 guifg=#FFBA52 cterm=bold gui=bold
+
+" hi DiffChange  ctermbg=60 guibg=#565f89 
+" hi Label ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+" hi MsgArea ctermfg=146 guifg=#afafd7  
+" hi StatusLineNC ctermfg=102 guifg=#808080 ctermbg=16 guibg=#080808 
+" hi TabLine ctermfg=60 guifg=#666d7a ctermbg=16 guibg=#080808 
+" hi jsVariableDef ctermfg=188 guifg=#dadada  cterm=bold gui=bold
+" hi jsArrowFuncArgs ctermfg=139 guifg=#af87af  cterm=bold gui=bold
+
+
+
+" hi jsArrowFuncArgs ctermfg=139 guifg=#af87af  cterm=bold gui=bold
+" hi jsArrowFunction ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
+" hi jsComment ctermfg=102 guifg=#808080  cterm=bold gui=bold
+" hi jsFuncArgs ctermfg=139 guifg=#af87af  cterm=bold gui=bold
+" hi jsFuncCall ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+" hi jsFuncParens ctermfg=188 guifg=#dadada  cterm=bold gui=bold
+" hi jsGlobalObjects ctermfg=139 guifg=#af87af  cterm=bold gui=bold
+" hi jsImport ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+" hi jsObjectProp ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
+" hi jsParen ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
+" hi jsParens ctermfg=102 guifg=#808080  cterm=bold gui=bold
+" hi jsStorageClass ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+" hi jsVariableDef ctermfg=188 guifg=#dadada  cterm=bold gui=bold

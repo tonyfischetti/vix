@@ -21,8 +21,8 @@ return {
         },
         js = {
           icon = "",
-          color = "#428850",
-          cterm_color = "65",
+          color = "#FFBA52",
+          cterm_color = "222",
           name = "javascript"
         },
         dockerfile = {
