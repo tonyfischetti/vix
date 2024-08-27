@@ -1,5 +1,5 @@
 
-local fns = require('vix.lib.functions')
+local fns = require('../vix/lib/functions')
 local map = vim.keymap.set
 
 -- shortcuts for pluto special characters
@@ -41,7 +41,6 @@ map("n","<C-c>", ":noh<CR>", { silent = true })
 --Find and replace (with 'magic')
 map("n", "<Leader>r", ":%s/\\v")
 
--- insert date right into document
 --  old way
 --    map("n", "<Leader>do", ":r! date<CR>", { silent = true })
 --  new way
