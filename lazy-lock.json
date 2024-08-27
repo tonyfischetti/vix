@@ -46,5 +46,6 @@
   "vim-pandoc-syntax": { "branch": "master", "commit": "16939cda184ff555938cc895cc62477c172997f9" },
   "vim-ps1": { "branch": "master", "commit": "839cec1550e09fc902c74103053e9e765051083d" },
   "vim-slime": { "branch": "main", "commit": "f6bbbeb8f18393f2177cdcef764f3e0e1d7e9328" },
+  "vim-startuptime": { "branch": "master", "commit": "ac2cccb5be617672add1f4f3c0a55ce99ba34e01" },
   "vim-svelte": { "branch": "main", "commit": "0e93ec53c3667753237282926fec626785622c1c" }
 }

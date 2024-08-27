@@ -63,6 +63,9 @@ map("n", "<Leader>vt", ":vsplit | terminal <CR> i")
 map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
 
+map("n", "<Space>q", ":bd  <CR> i")
+
+
 
 -- -- snipmate
 -- map("i", "<C-J>", "<Plug>snipMateNextOrTrigger")
