@@ -10,30 +10,38 @@ return {
     keys = {
 
       {
-        "<leader>f", function() require("telescope.builtin").git_files() end,
+        "<Space>a", function() require("telescope.builtin").git_files() end,
         desc = "Fuzzy find files in git repository",
       },
       {
-        "<leader>g", function() require("telescope.builtin").find_files() end,
+        "<Leader>a", function() require("telescope.builtin").git_files() end,
+        desc = "Fuzzy find files in git repository",
+      },
+      {
+        "<Leader>f", function() require("telescope.builtin").find_files() end,
         desc = "Fuzzy find files (regular)",
       },
 
       {
-        "<leader>cc", function() require("telescope.builtin").colorscheme() end,
+        "<Leader>cc", function() require("telescope.builtin").colorscheme() end,
         desc = "Fzf colorschemes",
       },
 
       {
-        "<leader>sy", function() require("telescope.builtin").symbols() end,
+        "<Leader>sy", function() require("telescope.builtin").symbols() end,
         desc = "Fzf symbols",
       },
 
       {
-        "<leader>/", function() require("telescope.builtin").buffers() end,
+        "<Leader>/", function() require("telescope.builtin").buffers() end,
         desc = "Fzf open buffers",
       },
       {
-        "<leader>gr", function() require("telescope.builtin").live_grep() end,
+        "<Space>/", function() require("telescope.builtin").buffers() end,
+        desc = "Fzf open buffers",
+      },
+      {
+        "<Leader>gr", function() require("telescope.builtin").live_grep() end,
         desc = "Live grep",
       },
 

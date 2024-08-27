@@ -40,6 +40,7 @@ map("n","<C-c>", ":noh<CR>", { silent = true })
 
 --Find and replace (with 'magic')
 map("n", "<Leader>r", ":%s/\\v")
+map("n", "<Space>rr", ":%s/\\v")
 
 --  old way
 --    map("n", "<Leader>do", ":r! date<CR>", { silent = true })
@@ -55,8 +56,8 @@ map("n", "<Leader>rw", ":%s/\\v\\s+$//<CR>", { silent = true })
 -- toggle ColorColumn
 map('n', '<Leader>co', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
 
-map("n", "<Leader>.", ":BufferLineCycleNext<CR>", { silent = true })
-map("n", "<Leader>,", ":BufferLineCyclePrev<CR>", { silent = true })
+map("n", "<Space>.", ":BufferLineCycleNext<CR>", { silent = true })
+map("n", "<Space>,", ":BufferLineCyclePrev<CR>", { silent = true })
 
 map("n", "<Leader>vt", ":vsplit | terminal <CR> i")
 map("n", "<Leader>ht", ":split | terminal  <CR> i")
