@@ -10,9 +10,11 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     }
 )
 
-
 --  TODO: what does this do?
 vim.diagnostic.config {
   virtual_text = false,
   update_in_insert = false
 }
+
+require'telescope'.load_extension('project')
+require('telescope').load_extension('fzf')

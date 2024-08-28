@@ -1,4 +1,6 @@
 
+--  TODO: introduces dependency on rg
+
 local fns = require('../vix/lib/functions')
 
 return {
@@ -7,36 +9,37 @@ return {
     tag = '0.1.8',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope-symbols.nvim'
+      'nvim-telescope/telescope-symbols.nvim',
+      'tonyfischetti/telescope-project.nvim',
+      --  TODO: introduces dependency on gcc/clang and make
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     },
     keys = {
 
       {
-        "<Space>/", function() require("telescope.builtin").git_files() end,
-        desc = "Fuzzy find files in git repository",
-      },
-      {
-        "<Leader>/", function() require("telescope.builtin").git_files() end,
-        desc = "Fuzzy find files in git repository",
-      },
-      {
-        "<Leader>f", function() require("telescope.builtin").find_files() end,
+        "<Leader>/", function() require("telescope.builtin").find_files() end,
         desc = "Fuzzy find files (regular)",
       },
       {
-        "<Space>f", function() require("telescope.builtin").find_files() end,
+        "<Space>/", function() require("telescope.builtin").find_files() end,
         desc = "Fuzzy find files (regular)",
+      },
+      {
+        "<Space>f", function() require("telescope.builtin").git_files() end,
+        desc = "Fuzzy find files in git repository",
+      },
+      {
+        "<Leader>f", function() require("telescope.builtin").git_files() end,
+        desc = "Fuzzy find files in git repository",
       },
       {
         "<Leader>cc", function() require("telescope.builtin").colorscheme() end,
         desc = "Fzf colorschemes",
       },
-
       {
         "<Leader>sy", function() require("telescope.builtin").symbols() end,
         desc = "Fzf symbols",
       },
-
       {
         "<Leader>a", function() require("telescope.builtin").buffers() end,
         desc = "Fzf open buffers",
@@ -52,6 +55,10 @@ return {
       {
         "<Space>gr", function() require("telescope.builtin").live_grep() end,
         desc = "Live grep",
+      },
+      {
+        "<Space>o", function() require("telescope").extensions.project.project() end,
+        desc = "TODO",
       },
 
     },
@@ -96,7 +103,23 @@ return {
           override_generic_sorter = true,
           override_file_sorter = true,
           case_mode = "smart_case",
-        }
+        },
+        project = {
+          -- base_dirs = {
+          --   '~/dev/',
+          -- },
+          -- hidden_files = true, -- default: false
+          -- theme = "dropdown",
+          -- order_by = "asc",
+          -- search_by = "title",
+          -- sync_with_nvim_tree = true, -- default false
+          -- default for on_project_selected = find project files
+          on_project_selected = function(prompt_bufnr)
+            local project_actions = require("telescope._extensions.project.actions")
+            project_actions.change_working_directory(prompt_bufnr, false)
+            require("telescope.builtin").find_files()
+          end
+        },
       }
     }
   }
