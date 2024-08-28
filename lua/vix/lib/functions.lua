@@ -1,5 +1,15 @@
 local M = {}
 
+M.proj_proj_root = ""
+
+function M.get_proj_proj_root()
+  return M.proj_proj_root
+end
+
+function M.set_proj_proj_root(aroot)
+  M.proj_proj_root = aroot
+end
+
 function M.array_init(dirs)
   local len = #dirs
   if len == 1 then
@@ -30,9 +40,6 @@ function M.toggle_opt(prop, scope, on, off)
     end
   end
 end
-
-
-
 
 
 return M

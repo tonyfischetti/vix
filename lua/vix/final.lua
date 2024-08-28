@@ -1,3 +1,4 @@
+local fns = require('../vix/lib/functions')
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(
@@ -18,3 +19,4 @@ vim.diagnostic.config {
 
 require'telescope'.load_extension('project')
 require('telescope').load_extension('fzf')
+

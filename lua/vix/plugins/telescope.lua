@@ -1,7 +1,11 @@
 
 --  TODO: introduces dependency on rg
+--  TODO: introduces dependency on git
 
 local fns = require('../vix/lib/functions')
+
+-- caching git rev-parse
+local is_inside_work_tree = {}
 
 return {
   {
@@ -20,9 +24,34 @@ return {
         "<Leader>/", function() require("telescope.builtin").find_files() end,
         desc = "Fuzzy find files (regular)",
       },
+      -- {
+      --   "<Space>/", function() require("telescope.builtin").find_files() end,
+      --   desc = "Fuzzy find files (regular)",
+      -- },
       {
-        "<Space>/", function() require("telescope.builtin").find_files() end,
-        desc = "Fuzzy find files (regular)",
+        "<Space>/",
+        function()
+          local proj_proj_root_p = fns.get_proj_proj_root()
+          -- if a project was selected, use the root of it
+          if proj_proj_root_p ~= "" then
+              require("telescope.builtin").find_files()
+          -- otherwise...
+          else
+            local cwd = vim.fn.getcwd()
+            if is_inside_work_tree[cwd] == nil then
+              vim.fn.system("git rev-parse --is-inside-work-tree")
+              is_inside_work_tree[cwd] = vim.v.shell_error == 0
+            end
+            -- if this is a git repo, use the root
+            if is_inside_work_tree[cwd] then
+              require("telescope.builtin").git_files()
+            -- otherwise, use find files
+            else
+              require("telescope.builtin").find_files()
+            end
+          end
+        end,
+        desc = "TODO"
       },
       {
         "<Space>f", function() require("telescope.builtin").git_files() end,
@@ -116,7 +145,10 @@ return {
           -- default for on_project_selected = find project files
           on_project_selected = function(prompt_bufnr)
             local project_actions = require("telescope._extensions.project.actions")
+            local actions_state = require("telescope.actions.state")
+            local sel_root = actions_state.get_selected_entry(prompt_bufnr).value
             project_actions.change_working_directory(prompt_bufnr, false)
+            fns.set_proj_proj_root(sel_root)
             require("telescope.builtin").find_files()
           end
         },
