@@ -1,4 +1,6 @@
 
+local fns = require('../vix/lib/functions')
+
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -64,13 +66,27 @@ return {
           },
 
         },
-        sorting_strategy   = "ascending",
         layout_config = {
           prompt_position = "top",
-        }
+        },
+        sorting_strategy   = "ascending",
+        path_display = function(opts, path)
+          local basename = require("telescope.utils").path_tail(path)
+          local separator = require("telescope.utils").get_separator()
+          local dirs = vim.split(path, "/")
+          local init = fns.array_init(dirs)
+          local dirname = table.concat(init, separator)
+          local spacing = 50 - string.len(basename)
+          if spacing < 0 then
+            spacing = 0
+          end
+          path = string.format("%s%s%s", basename, string.rep(" ", spacing), dirname)
+          return path
+        end,
       },
       pickers = {
         find_files = {
+          --  HACK: introduces dependency on ack
           find_command = { "ack", "-f" },
         },
       },

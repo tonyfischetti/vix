@@ -1,5 +1,14 @@
 local M = {}
 
+function M.array_init(dirs)
+  local len = #dirs
+  if len == 1 then
+    return { "" }
+  end
+  table.remove(dirs, len)
+  return dirs
+end
+
 function M.toggle_opt(prop, scope, on, off)
   if on == nil then
     on = true
@@ -21,5 +30,9 @@ function M.toggle_opt(prop, scope, on, off)
     end
   end
 end
+
+
+
+
 
 return M

@@ -6,3 +6,5 @@ vim.api.nvim_create_user_command("Q", "q", {})
 
 vim.api.nvim_create_user_command("Sep", ":normal! i<args> --------------------------------------------------------------- <args><ESC>o", { nargs = 1 })
 
+-- vim.api.nvim_create_user_command("Cx", ":normal! i<args> --------------------------------------------------------------- <args><ESC>o", { nargs = 1 })
+

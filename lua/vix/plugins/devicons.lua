@@ -9,14 +9,12 @@ return {
       override = {
         lisp = {
           icon = "λ",
-          color = "#428850",
-          cterm_color = "65",
+          color = "#9f1d20",
           name = "lisp"
         },
         R = {
           icon = "",
-          color = "#428850",
-          cterm_color = "65",
+          color = "#2369bd",
           name = "R"
         },
         js = {
@@ -50,16 +48,22 @@ return {
           color = "#428850",
           name = "csv"
         },
-        excel = {
+        xlsx = {
           icon = "",
           color = "#428850",
           name = "excel"
+        },
+        vim = {
+          icon = "",
+          color = "#428850",
+          cterm_color = "65",
+          name = "text"
         },
         default = {
           icon = "",
           color = "#deaded",
           name = "text"
-        }
+        },
       },
       override_by_filename = {
         ["Gulpfile.js"] = {
