@@ -65,6 +65,7 @@ map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
 map("n", "<Space>q", ":bd  <CR> i")
 
+map("n", "<Leader>pr", function() print(fns.get_proj_proj_root()) end)
 
 
 -- -- snipmate

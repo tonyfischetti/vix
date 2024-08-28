@@ -34,7 +34,9 @@ return {
           local proj_proj_root_p = fns.get_proj_proj_root()
           -- if a project was selected, use the root of it
           if proj_proj_root_p ~= "" then
-              require("telescope.builtin").find_files()
+              require("telescope.builtin").find_files({
+                cwd = proj_proj_root_p
+              })
           -- otherwise...
           else
             local cwd = vim.fn.getcwd()
@@ -82,7 +84,33 @@ return {
         desc = "Live grep",
       },
       {
-        "<Space>gr", function() require("telescope.builtin").live_grep() end,
+        "<Space>g", function()
+          local proj_proj_root_p = fns.get_proj_proj_root()
+          -- if a project was selected, use the root of it
+          if proj_proj_root_p ~= "" then
+            require("telescope.builtin").live_grep({
+              cwd = proj_proj_root_p
+            })
+          -- otherwise...
+          else
+            local cwd = vim.fn.getcwd()
+            if is_inside_work_tree[cwd] == nil then
+              vim.fn.system("git rev-parse --is-inside-work-tree")
+              is_inside_work_tree[cwd] = vim.v.shell_error == 0
+            end
+            -- if this is a git repo, use the root
+            if is_inside_work_tree[cwd] then
+              local dot_git_path = vim.fn.finddir(".git", ".;")
+              local git_root =  vim.fn.fnamemodify(dot_git_path, ":h")
+              require("telescope.builtin").live_grep({
+                cwd = git_root
+              })
+            -- otherwise...
+            else
+              require("telescope.builtin").live_grep()
+            end
+          end
+        end,
         desc = "Live grep",
       },
       {
@@ -107,12 +135,12 @@ return {
         },
         sorting_strategy   = "ascending",
         path_display = function(opts, path)
-          local basename = require("telescope.utils").path_tail(path)
+          local basename  = require("telescope.utils").path_tail(path)
           local separator = require("telescope.utils").get_separator()
-          local dirs = vim.split(path, "/")
-          local init = fns.array_init(dirs)
-          local dirname = table.concat(init, separator)
-          local spacing = 50 - string.len(basename)
+          local dirs      = vim.split(path, "/")
+          local init      = fns.array_init(dirs)
+          local dirname   = table.concat(init, separator)
+          local spacing   = 50 - string.len(basename)
           if spacing < 0 then
             spacing = 0
           end
