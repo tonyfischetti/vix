@@ -1,0 +1,8 @@
+
+return {
+
+  {
+    'stevearc/dressing.nvim'
+  }
+
+}
