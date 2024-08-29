@@ -40,7 +40,7 @@ map("n","<C-c>", ":noh<CR>", { silent = true })
 
 --Find and replace (with 'magic')
 map("n", "<Leader>r", ":%s/\\v")
-map("n", "<Space>rr", ":%s/\\v")
+map("n", "<Space>r", ":%s/\\v")
 
 --  old way
 --    map("n", "<Leader>do", ":r! date<CR>", { silent = true })
@@ -71,6 +71,11 @@ map("n", "<Leader>uf", function() print(fns.get_find_files_root()) end)
 
 map("n", "<C-S>", "<C-W>")
 
+map("n", "<Space>h", "<C-W>h<CR>")
+map("n", "<Space>j", "<C-W>j<CR>")
+map("n", "<Space>k", "<C-W>k<CR>")
+map("n", "<Space>l", "<C-W>l<CR>")
+
 
 -- -- snipmate
 -- map("i", "<C-J>", "<Plug>snipMateNextOrTrigger")
@@ -79,10 +84,4 @@ map("n", "<C-S>", "<C-W>")
 -- map({"t", ""}, "<M-k>", "<C-\\><C-n><C-w>k")
 -- map({"t", ""}, "<M-j>", "<C-\\><C-n><C-w>j")
 -- 
--- -----------------------------------------------------
--- ---- LEADER MAPS ------------------------------------
--- 
--- 
--- map("n", "<Leader>m", ":FloatermToggle<CR>")
--- map("n", "<Leader>M", ":FloatermNew --cwd=<root><CR>")
--- 
+

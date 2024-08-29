@@ -18,21 +18,10 @@ return {
     },
     keys = {
 
+      --  TODO: whittle this down
       {
         "<Leader>/", function() require("telescope.builtin").find_files() end,
         desc = "Fuzzy find files (regular)",
-      },
-      -- {
-      --   "<Space>/", function() require("telescope.builtin").find_files() end,
-      --   desc = "Fuzzy find files (regular)",
-      -- },
-      {
-        "<Space>/", function() require("telescope.builtin").find_files({ cwd = fns.get_find_files_root() }) end,
-        desc = "TODO"
-      },
-      {
-        "<Space>f", function() require("telescope.builtin").git_files() end,
-        desc = "Fuzzy find files in git repository",
       },
       {
         "<Leader>f", function() require("telescope.builtin").git_files() end,
@@ -51,16 +40,25 @@ return {
         desc = "Fzf open buffers",
       },
       {
+        "<Leader>gr", function() require("telescope.builtin").live_grep() end,
+        desc = "Live grep",
+      },
+
+      {
+        "<Space>/", function() require("telescope.builtin").find_files({ cwd = fns.get_find_files_root() }) end,
+        desc = "TODO"
+      },
+      {
+        "<Space>f", function() require("telescope.builtin").git_files() end,
+        desc = "Fuzzy find files in git repository",
+      },
+      {
         "<Space>a", function() require("telescope.builtin").buffers() end,
         desc = "Fzf open buffers",
       },
       {
-        "<Leader>gr", function() require("telescope.builtin").live_grep() end,
-        desc = "Live grep",
-      },
-      {
         "<Space>g", function()
-          require("telescope.builtin").find_files({ cwd = fns.get_find_files_root() }) end,
+          require("telescope.builtin").live_grep({ cwd = fns.get_find_files_root() }) end,
         desc = "Live grep",
       },
       {
@@ -123,8 +121,8 @@ return {
           -- default for on_project_selected = find project files
           on_project_selected = function(prompt_bufnr)
             local project_actions = require("telescope._extensions.project.actions")
-            local actions_state = require("telescope.actions.state")
-            local sel_root = actions_state.get_selected_entry(prompt_bufnr).value
+            local actions_state   = require("telescope.actions.state")
+            local sel_root        = actions_state.get_selected_entry(prompt_bufnr).value
             project_actions.change_working_directory(prompt_bufnr, false)
             fns.set_proj_proj_root(sel_root)
             require("telescope.builtin").find_files()
