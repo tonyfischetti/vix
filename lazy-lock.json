@@ -33,6 +33,7 @@
   "pretty_hover": { "branch": "master", "commit": "f327f170be3ef7c5d8394ed3e0866a20e1a53b62" },
   "sunglasses.nvim": { "branch": "main", "commit": "651a9bdbee2b4ce4c96c42be4b8029b7e3d87d06" },
   "tcomment_vim": { "branch": "master", "commit": "48ab639a461d9b8344f7fee06cb69b4374863b13" },
+  "telescope-cmdline.nvim": { "branch": "main", "commit": "1c6a169d84a5e8f0c796f8275bdbb8019bd3ca14" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
   "telescope-project.nvim": { "branch": "master", "commit": "b66aca3e0992f05164f8907d0bdd316fb67d9bee" },
   "telescope-symbols.nvim": { "branch": "master", "commit": "a6d0127a53d39b9fc2af75bd169d288166118aec" },

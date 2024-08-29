@@ -13,8 +13,9 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-symbols.nvim',
       'tonyfischetti/telescope-project.nvim',
+      'jonarrien/telescope-cmdline.nvim',
       --  TODO: introduces dependency on gcc/clang and make
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     keys = {
 
@@ -61,9 +62,13 @@ return {
           require("telescope.builtin").live_grep({ cwd = fns.get_find_files_root() }) end,
         desc = "Live grep",
       },
+
       {
         "<Space>o", function() require("telescope").extensions.project.project() end,
         desc = "TODO",
+      },
+      {
+        ":", "<CMD>Telescope cmdline<CR>", desc = "Cmdline"
       },
 
     },
