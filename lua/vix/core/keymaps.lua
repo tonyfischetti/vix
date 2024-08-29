@@ -1,5 +1,5 @@
 
-local fns = require('../vix/lib/functions')
+local fns = require('../vix/lib/utils')
 local map = vim.keymap.set
 
 -- shortcuts for pluto special characters

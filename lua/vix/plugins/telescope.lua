@@ -2,10 +2,8 @@
 --  TODO: introduces dependency on rg
 --  TODO: introduces dependency on git
 
-local fns = require('../vix/lib/functions')
+local fns = require('../vix/lib/utils')
 
--- caching git rev-parse
-local is_inside_work_tree = {}
 
 return {
   {

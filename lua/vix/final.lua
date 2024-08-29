@@ -1,4 +1,3 @@
-local fns = require('../vix/lib/functions')
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(
