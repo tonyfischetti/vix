@@ -13,7 +13,8 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-symbols.nvim',
       'tonyfischetti/telescope-project.nvim',
-      'jonarrien/telescope-cmdline.nvim',
+      -- 'jonarrien/telescope-cmdline.nvim',
+      'tonyfischetti/telescope-cmdline.nvim',
       --  TODO: introduces dependency on gcc/clang and make
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
