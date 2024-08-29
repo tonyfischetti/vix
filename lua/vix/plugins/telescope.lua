@@ -29,30 +29,7 @@ return {
       --   desc = "Fuzzy find files (regular)",
       -- },
       {
-        "<Space>/",
-        function()
-          local proj_proj_root_p = fns.get_proj_proj_root()
-          -- if a project was selected, use the root of it
-          if proj_proj_root_p ~= "" then
-              require("telescope.builtin").find_files({
-                cwd = proj_proj_root_p
-              })
-          -- otherwise...
-          else
-            local cwd = vim.fn.getcwd()
-            if is_inside_work_tree[cwd] == nil then
-              vim.fn.system("git rev-parse --is-inside-work-tree")
-              is_inside_work_tree[cwd] = vim.v.shell_error == 0
-            end
-            -- if this is a git repo, use the root
-            if is_inside_work_tree[cwd] then
-              require("telescope.builtin").git_files()
-            -- otherwise, use find files
-            else
-              require("telescope.builtin").find_files()
-            end
-          end
-        end,
+        "<Space>/", function() require("telescope.builtin").find_files({ cwd = fns.get_find_files_root() }) end,
         desc = "TODO"
       },
       {
@@ -85,32 +62,7 @@ return {
       },
       {
         "<Space>g", function()
-          local proj_proj_root_p = fns.get_proj_proj_root()
-          -- if a project was selected, use the root of it
-          if proj_proj_root_p ~= "" then
-            require("telescope.builtin").live_grep({
-              cwd = proj_proj_root_p
-            })
-          -- otherwise...
-          else
-            local cwd = vim.fn.getcwd()
-            if is_inside_work_tree[cwd] == nil then
-              vim.fn.system("git rev-parse --is-inside-work-tree")
-              is_inside_work_tree[cwd] = vim.v.shell_error == 0
-            end
-            -- if this is a git repo, use the root
-            if is_inside_work_tree[cwd] then
-              local dot_git_path = vim.fn.finddir(".git", ".;")
-              local git_root =  vim.fn.fnamemodify(dot_git_path, ":h")
-              require("telescope.builtin").live_grep({
-                cwd = git_root
-              })
-            -- otherwise...
-            else
-              require("telescope.builtin").live_grep()
-            end
-          end
-        end,
+          require("telescope.builtin").find_files({ cwd = fns.get_find_files_root() }) end,
         desc = "Live grep",
       },
       {

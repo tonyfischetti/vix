@@ -65,14 +65,15 @@ map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
 map("n", "<Space>q", ":bd  <CR> i")
 
-map("n", "<Leader>pr", function() print(fns.get_proj_proj_root()) end)
+map("n", "<Leader>up", function() print(fns.get_proj_proj_root()) end)
+map("n", "<Leader>ug", function() print(fns.get_git_root()) end)
+map("n", "<Leader>uf", function() print(fns.get_find_files_root()) end)
+
+map("n", "<C-S>", "<C-W>")
 
 
 -- -- snipmate
 -- map("i", "<C-J>", "<Plug>snipMateNextOrTrigger")
--- 
--- 
--- map("n", "<C-S>", "<C-W>")
 -- 
 -- 
 -- map({"t", ""}, "<M-k>", "<C-\\><C-n><C-w>k")
