@@ -1,3 +1,4 @@
+local sutils = require('../vix/lib/slime-utils')
 
 vim.api.nvim_create_user_command("WQ", "wq", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
@@ -5,6 +6,9 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Q", "q", {})
 
 vim.api.nvim_create_user_command("Sep", ":normal! i<args> --------------------------------------------------------------- <args><ESC>o", { nargs = 1 })
+
+vim.api.nvim_create_user_command('Nbuild', ':SlimeSend1 npm run build', {})
+vim.api.nvim_create_user_command('Nrun', ':SlimeSend1 npm run run', {})
 
 -- vim.api.nvim_create_user_command("Cx", ":normal! i<args> --------------------------------------------------------------- <args><ESC>o", { nargs = 1 })
 

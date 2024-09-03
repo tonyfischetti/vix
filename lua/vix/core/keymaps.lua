@@ -1,6 +1,8 @@
 
-local fns = require('../vix/lib/utils')
-local map = vim.keymap.set
+local utils  = require('../vix/lib/utils')
+local tmuxer = require('../vix/lib/tmuxer')
+local sutils = require('../vix/lib/slime-utils')
+local map    = vim.keymap.set
 
 -- shortcuts for pluto special characters
 map("i", "<C-O><C-O>", "•")
@@ -54,7 +56,7 @@ map("n", "<Leader>rj", ":%!python3 -mjson.tool<CR>")
 map("n", "<Leader>rw", ":%s/\\v\\s+$//<CR>", { silent = true })
 
 -- toggle ColorColumn
-map('n', '<Leader>co', fns.toggle_opt('colorcolumn', 'wo', '79', '0'))
+map('n', '<Leader>co', utils.toggle_opt('colorcolumn', 'wo', '79', '0'))
 
 map("n", "<Space>.", ":BufferLineCycleNext<CR>", { silent = true })
 map("n", "<Space>,", ":BufferLineCyclePrev<CR>", { silent = true })
@@ -65,9 +67,9 @@ map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
 map("n", "<Space>q", ":bd  <CR> i")
 
-map("n", "<Leader>up", function() print(fns.get_proj_proj_root()) end)
-map("n", "<Leader>ug", function() print(fns.get_git_root()) end)
-map("n", "<Leader>uf", function() print(fns.get_find_files_root()) end)
+map("n", "<Leader>up", function() print(utils.get_proj_proj_root()) end)
+map("n", "<Leader>ug", function() print(utils.get_git_root()) end)
+map("n", "<Leader>uf", function() print(utils.get_find_files_root()) end)
 
 map("n", "<C-S>", "<C-W>")
 
@@ -77,6 +79,11 @@ map("n", "<Space>k", "<C-W>k<CR>")
 map("n", "<Space>l", "<C-W>l<CR>")
 
 
+map("n", "<Leader>q", function()
+  sutils.setup_slime("", true)
+end)
+
+
 -- -- snipmate
 -- map("i", "<C-J>", "<Plug>snipMateNextOrTrigger")
 -- 
@@ -84,4 +91,3 @@ map("n", "<Space>l", "<C-W>l<CR>")
 -- map({"t", ""}, "<M-k>", "<C-\\><C-n><C-w>k")
 -- map({"t", ""}, "<M-j>", "<C-\\><C-n><C-w>j")
 -- 
-

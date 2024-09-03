@@ -1,0 +1,112 @@
+// js, ts, typescript, setup project, package.json, tsconfig.json
+
+/*
+ * npm i -D typescript globals rimraf @types/node (@types/papaparse, etc...)
+ */
+
+
+// ── package.json ────────────────────────────────────────────────────
+{
+  "name":        "nobundle",
+  "version":     "0.0.1",
+  "author":      "Tony Fischetti <tony.fischetti@gmail.com>",
+  "license":     "GPL-3.0-or-later",
+  "description": "",
+  "type":        "module",
+
+  "scripts": {
+    "start:dev": "npx tsc -w --project tsconfig.json",
+    "build":     "npx rimraf ./dist  && npx tsc --project tsconfig.json",
+    "run":       "node ./dist/main.js"
+  },
+
+  "devDependencies": {
+    "@types/node": "^22.4.1",
+    "globals": "^15.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
+  }
+}
+
+// ── tsconfig.json ───────────────────────────────────────────────────
+{
+  "extends":    "./config/tsconfig.pedantic",
+  "include":    ["./src/**/*"],
+  "exclude":    ["node_modules"],
+  "compilerOptions": {
+    "typeRoots":        ["./node_modules/@types", "./typescript/types"],
+    "rootDir":          "src",
+    "outDir":           "dist",
+    "declarationDir":   "dist/types",
+    "tsBuildInfoFile":  "dist/tsconfig.tsbuildinfo"
+  }
+}
+
+// ── config/tsconfig.pedantic.json ──────────────────────────────────
+{
+  "compilerOptions": {
+
+    "strict":                             true,
+
+    /* the following are implied by "strict" */
+
+    "alwaysStrict":                       true,
+    "noImplicitAny":                      true,
+    "noImplicitThis":                     true,
+    "strictBindCallApply":                true,
+    "strictFunctionTypes":                true,
+    "strictNullChecks":                   true, // maybe not
+    "strictPropertyInitialization":       true,
+    "useUnknownInCatchVariables":         true,
+
+    /* stricter things */
+
+    "allowUnreachableCode":               false,
+    "allowUnusedLabels":                  false,
+    "exactOptionalPropertyTypes":         true,
+    "noFallthroughCasesInSwitch":         true,
+    "noImplicitOverride":                 true,
+    "noImplicitReturns":                  true,
+    "noPropertyAccessFromIndexSignature": true, // maybe not
+    "noUncheckedIndexedAccess":           true, // maybe not
+    "noUnusedLocals":                     true, // maybe not
+    "noUnusedParameters":                 true, // maybe not
+
+    "resolveJsonModule":                  true,
+    "allowJs":                            true,
+    "checkJs":                            true, // maybe not
+    "forceConsistentCasingInFileNames":   true,
+    "composite":                          true,
+    "listEmittedFiles":                   true,
+
+    // es
+    "module":           "esnext",
+    "moduleResolution": "bundler",
+    "target":           "es2023"
+  }
+}
+
+// ── tsconfig.relaxed.json ───────────────────────────────────────────
+{
+  "compilerOptions": {
+
+    "alwaysStrict":                       true,
+    "noImplicitAny":                      true,
+    "noImplicitThis":                     true,
+    "useUnknownInCatchVariables":         true,
+
+    /* stricter things */
+
+    "skipLibCheck":                       true,
+    "resolveJsonModule":                  true,
+    "allowJs":                            true,
+    "forceConsistentCasingInFileNames":   true,
+    "composite":                          true,
+    "listEmittedFiles":                   true,
+
+    // es
+    "module":           "esnext",
+    "moduleResolution": "bundler",
+    "target":           "es2023"
+  }
+}

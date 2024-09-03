@@ -74,4 +74,38 @@ function M.toggle_opt(prop, scope, on, off)
 end
 
 
+function M.join_array(an_array, sep)
+  local ret = an_array[1]
+  for i=2, #an_array do
+    ret = ret .. sep .. an_array[i]
+  end
+  return ret
+end
+
+function M.map(an_array, fn)
+  local ret = {}
+  for i=1, #an_array do
+    table.insert(ret, fn(an_array[i]))
+  end
+  return ret
+end
+
+function M.cons(an_elem, an_array)
+  local ret = {}
+  table.insert(ret, an_elem)
+  for _,v in ipairs(an_array) do
+    table.insert(ret, v)
+  end
+  return ret
+end
+
+
+
+function M.insert_lines_into_buffer(lines)
+  local line_number    = vim.api.nvim_win_get_cursor(0)[1]
+  local position       = vim.api.nvim_win_get_cursor(0)[2]
+  local current_line   = vim.api.nvim_get_current_line()
+  vim.api.nvim_buf_set_lines(0, line_number-1, line_number-1, true, lines)
+end
+
 return M

@@ -1,0 +1,71 @@
+// js, ts, typescript, setup project, package.json, tsconfig.json, bundle, esbuild
+
+/*
+ * npm i -D typescript globals rimraf @types/node esbuild esbuild-plugin-tsc (@types/papaparse, etc...)
+ */
+
+
+// ── package.json ────────────────────────────────────────────────────
+{
+  "name":        "bundle",
+  "version":     "0.0.1",
+  "author":      "Tony Fischetti <tony.fischetti@gmail.com>",
+  "license":     "GPL-3.0-or-later",
+  "description": "",
+  "type":        "module",
+
+  "scripts": {
+    "start:dev": "npx tsc -w --project tsconfig.json",
+    "build":     "npx rimraf ./dist && node build-bundle.js",
+    "run":       "node ./dist/bundle.js"
+  },
+
+  "devDependencies": {
+    "@types/node": "^22.4.1",
+    "esbuild": "^0.23.1",
+    "esbuild-plugin-tsc": "^0.4.0",
+    "globals": "^15.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
+  }
+}
+
+// ── tsconfig.json ───────────────────────────────────────────────────
+{
+  "extends": "./config/tsconfig.relaxed",
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./typescript/types"],
+    "rootDir":          "src",
+    "outDir":           "dist",
+
+    "noEmit": true,
+    "composite": false
+  }
+}
+
+// ── config/tsconfig.pedantic.json ──────────────────────────────────
+// ── tsconfig.relaxed.json ───────────────────────────────────────────
+/* Same as in `Setup typescript project.jsonc`
+
+
+// ── build-bundle.js ─────────────────────────────────────────────────
+/*
+
+import * as esbuild from 'esbuild';
+import esbuildPluginTsc from 'esbuild-plugin-tsc';
+
+const settings = {
+  entryPoints:  ['src/main.ts'],
+  outfile:      'dist/bundle.js',
+  bundle:       true,
+  platform:     'node',
+  format:       'esm',
+  plugins:      [ esbuildPluginTsc({ force: true }), ],
+  minify:       false // or true
+};
+
+await esbuild.build(settings);
+
+*/

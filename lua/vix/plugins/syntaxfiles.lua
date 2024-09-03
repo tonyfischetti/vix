@@ -12,11 +12,6 @@ return {
   },
 
   {
-    "elzr/vim-json",
-    ft = { "json" }
-  },
-
-  {
     -- TODO
     "vim-pandoc/vim-pandoc-syntax",
     ft = "markdown"

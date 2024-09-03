@@ -2,7 +2,7 @@
 --  TODO: introduces dependency on rg
 --  TODO: introduces dependency on git
 
-local fns = require('../vix/lib/utils')
+local utils = require('../vix/lib/utils')
 
 
 return {
@@ -13,7 +13,6 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-symbols.nvim',
       'tonyfischetti/telescope-project.nvim',
-      -- 'jonarrien/telescope-cmdline.nvim',
       'tonyfischetti/telescope-cmdline.nvim',
       --  TODO: introduces dependency on gcc/clang and make
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -47,7 +46,7 @@ return {
       },
 
       {
-        "<Space>/", function() require("telescope.builtin").find_files({ cwd = fns.get_find_files_root() }) end,
+        "<Space>/", function() require("telescope.builtin").find_files({ cwd = utils.get_find_files_root() }) end,
         desc = "TODO"
       },
       {
@@ -60,7 +59,7 @@ return {
       },
       {
         "<Space>g", function()
-          require("telescope.builtin").live_grep({ cwd = fns.get_find_files_root() }) end,
+          require("telescope.builtin").live_grep({ cwd = utils.get_find_files_root() }) end,
         desc = "Live grep",
       },
 
@@ -81,6 +80,10 @@ return {
             ["<ESC>"] = require("telescope.actions").close,
             ["<C-j>"] = require("telescope.actions").move_selection_next,
             ["<C-k>"] = require("telescope.actions").move_selection_previous,
+            -- (new) defaults from telescope-project
+            -- map('i', '<c-d>', _actions.delete_project)
+            -- map('i', '<c-r>', _actions.rename_project)
+            -- map('i', '<c-p>', _actions.add_project)
           },
 
         },
@@ -92,7 +95,7 @@ return {
           local basename  = require("telescope.utils").path_tail(path)
           local separator = require("telescope.utils").get_separator()
           local dirs      = vim.split(path, "/")
-          local init      = fns.array_init(dirs)
+          local init      = utils.array_init(dirs)
           local dirname   = table.concat(init, separator)
           local spacing   = 50 - string.len(basename)
           if spacing < 0 then
@@ -130,7 +133,7 @@ return {
             local actions_state   = require("telescope.actions.state")
             local sel_root        = actions_state.get_selected_entry(prompt_bufnr).value
             project_actions.change_working_directory(prompt_bufnr, false)
-            fns.set_proj_proj_root(sel_root)
+            utils.set_proj_proj_root(sel_root)
             require("telescope.builtin").find_files()
           end
         },
