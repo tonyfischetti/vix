@@ -1,4 +1,6 @@
 
+--  TODO  (introduces dependency on `ripgrep`)
+
 return {
 
   {
@@ -9,13 +11,14 @@ return {
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
-      -- keywords = {
-      --   CUSTOM = { icon = " ", color = "warning" },
-      -- },
+      search = {
+        pattern = [[\b(KEYWORDS)\b]],
+      },
       highlight = {
-        comments_only = false,
-        after = ""   -- the rest of the comment wont have the custom color
-      }
+        pattern = [[.*<((KEYWORDS))>]],
+        comments_only = true,
+        after = " "
+      },
     }
   }
 
