@@ -53,11 +53,15 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities,
         on_attach = function(client)
-          print("hello tsserver")
           -- client.server_capabilities.semanticTokensProvider = nil
           -- client.server_capabilities.documentFormattingProvider = nil
           -- client.server_capabilities.documentFormattingRangeProvider = nil
-        end
+        end,
+        -- init_options = {
+        --   preferences = {
+        --     disableSuggestions = true
+        --   }
+        -- }
       })
 
       ------------------------------
