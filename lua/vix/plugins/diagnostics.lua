@@ -1,16 +1,34 @@
 
 return {
 
+  -- {
+  --   'RaafatTurki/corn.nvim',
+  --   init = function()
+  --     vim.diagnostic.config({ virtual_text = false })
+  --   end,
+  --   opts = {
+  --     item_preprocess_func = function(item)
+  --       return item
+  --     end
+  --   }
+  -- }
+
   {
-    'RaafatTurki/corn.nvim',
-    init = function()
-      vim.diagnostic.config({ virtual_text = false })
-    end,
+    'dgagn/diagflow.nvim',
+    event = 'LspAttach',
     opts = {
-      item_preprocess_func = function(item)
-        return item
-      end
+      show_borders = true,
+      scope = "line",
+      border_chars = {
+        top_left = "╭",
+        top_right = "╮",
+        bottom_left = "╰",
+        bottom_right = "╯",
+        horizontal = "─",
+        vertical = "│"
+      },
     }
   }
 
 }
+
