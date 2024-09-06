@@ -1,11 +1,12 @@
 
---  TODO: introduces dependency on rg
---  TODO: introduces dependency on git
+--  TODO  introduces dependency on rg
+--  TODO  introduces dependency on git
 
 local utils = require('../vix/lib/utils')
 
 
 return {
+
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
@@ -14,12 +15,12 @@ return {
       'nvim-telescope/telescope-symbols.nvim',
       'tonyfischetti/telescope-project.nvim',
       'tonyfischetti/telescope-cmdline.nvim',
-      --  TODO: introduces dependency on gcc/clang and make
+      --  TODO  introduces dependency on gcc/clang and make
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     keys = {
 
-      --  TODO: whittle this down
+      --  TODO  whittle this down
       {
         "<Leader>/", function() require("telescope.builtin").find_files() end,
         desc = "Fuzzy find files (regular)",
@@ -68,7 +69,7 @@ return {
         desc = "TODO",
       },
       {
-        ":", "<CMD>Telescope cmdline<CR>", desc = "Cmdline"
+        "<Space>:", "<CMD>Telescope cmdline<CR>", desc = "Cmdline"
       },
 
     },
@@ -140,5 +141,6 @@ return {
       }
     }
   }
+
 }
 

@@ -43,7 +43,8 @@ hi DiffDelete  ctermbg=168 guibg=#d75f87
 hi DiffText  ctermbg=73 guibg=#5fafaf cterm=bold,underline gui=bold,underline
 hi Directory ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
 hi EndOfBuffer ctermfg=183 guifg=#deaded ctermbg=233 guibg=#131a24 
-hi Error ctermfg=197 guifg=#f92672 ctermbg=16 guibg=#000000 cterm=bold gui=bold
+hi Error ctermfg=197 guifg=#000000 guibg=#f92672 cterm=bold gui=bold
+hi def link ErrorMsg Error
 hi ErrorMsg ctermfg=197 guifg=#f92672 ctermbg=16 guibg=#000000 cterm=bold gui=bold
 hi Exception ctermfg=176 guifg=#d787d7  cterm=bold gui=bold
 hi Float ctermfg=147 guifg=#afafff  cterm=bold gui=bold
@@ -126,7 +127,7 @@ hi Statement ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
 hi StatusLine ctermfg=166 guifg=#cd5907 ctermbg=188 guibg=#dadada 
 hi StatusLineNC ctermfg=102 guifg=#808080 ctermbg=16 guibg=#080808 
 hi StorageClass ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
-hi String ctermfg=222 guifg=#ffe587  cterm=bold gui=bold
+hi String ctermfg=222 guifg=#ffe587 cterm=bold gui=bold
 hi Structure ctermfg=116 guifg=#98dccf  
 hi Substitute ctermfg=16 guifg=#000000 ctermbg=210 guibg=#f7768e 
 hi TabLine ctermfg=60 guifg=#666d7a ctermbg=16 guibg=#080808 
@@ -148,7 +149,7 @@ hi TermCursor ctermfg=233 guifg=#deaded ctermbg=231 guibg=#f8f8f2
 hi TermCursorNC ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi Title ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi Todo ctermfg=204 guifg=#ff5f87 ctermbg=16 guibg=#000000 cterm=bold gui=bold
-hi Type ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi Type ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
 hi Typedef ctermfg=147 guifg=#afafff  
 hi Underlined   cterm=underline gui=underline
 hi Variable ctermfg=231 guifg=#f8f8f2  
@@ -243,12 +244,12 @@ hi typescriptAliasDeclaration ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
 
 
-hi typeScriptInterfaceKeyword ctermfg=147 guifg=#5f87af  cterm=bold gui=bold
-hi @lsp.type.interface.typescript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
-hi @lsp.type.type.typescript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
-hi @lsp.type.property.typescript ctermfg=73 guifg=#ABC5E2 cterm=bold gui=bold
-hi @lsp.type.function.typescript ctermfg=73 guifg=#BAD8D4 cterm=bold gui=bold
-hi @lsp.type.variable.typescript ctermfg=73 guifg=#EFEACA cterm=bold gui=bold
+" hi typeScriptInterfaceKeyword ctermfg=147 guifg=#5f87af  cterm=bold gui=bold
+" hi @lsp.type.interface.typescript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
+" hi @lsp.type.type.typescript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
+" hi @lsp.type.property.typescript ctermfg=73 guifg=#ABC5E2 cterm=bold gui=bold
+" hi @lsp.type.function.typescript ctermfg=73 guifg=#BAD8D4 cterm=bold gui=bold
+" hi @lsp.type.variable.typescript ctermfg=73 guifg=#EFEACA cterm=bold gui=bold
 " hi jsString ctermfg=73 guifg=#FFBA52 cterm=bold gui=bold
 " hi jsTemplateString ctermfg=73 guifg=#FFBA52 cterm=bold gui=bold
 
@@ -275,3 +276,18 @@ hi @lsp.type.variable.typescript ctermfg=73 guifg=#EFEACA cterm=bold gui=bold
 " hi jsParens ctermfg=102 guifg=#808080  cterm=bold gui=bold
 " hi jsStorageClass ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 " hi jsVariableDef ctermfg=188 guifg=#dadada  cterm=bold gui=bold
+
+
+
+hi @keyword.javascript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi @keyword.typescript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+" hi @comment.javascript ctermfg=204 guifg=#808ea2
+hi Comment ctermfg=152 guifg=#808ea2
+
+
+hi def link @string.escape Comment
+
+hi def link @keyword.exception.javascript Exception
+hi def link @keyword.import.javascript jsImport
+hi def link @keyword.import.typescript jsImport
+hi def link DiagnosticUnnecessary Error
