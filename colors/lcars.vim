@@ -22,10 +22,11 @@ let g:colors_name = "lcars"
 
 hi Bold   cterm=bold gui=bold
 hi Boolean ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi Boolean ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi Builtin ctermfg=147 guifg=#afafff  cterm=bold gui=bold
 hi Character ctermfg=186 guifg=#e6db74  
 hi ColorColumn  ctermbg=16 guibg=#232931 
-hi Comment ctermfg=152 guifg=#afd7d7  
+hi Comment ctermfg=152 guifg=#808ea2
 hi Conceal ctermfg=16 guifg=#080808  
 hi Conditional ctermfg=176 guifg=#d787d7  cterm=bold gui=bold
 hi Constant ctermfg=147 guifg=#afafff  cterm=bold gui=bold
@@ -170,7 +171,7 @@ hi darkDebug ctermfg=238 guifg=#444444
 hi gitcommitSummary ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi jsArrowFuncArgs ctermfg=139 guifg=#af87af  cterm=bold gui=bold
 hi jsArrowFunction ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
-hi jsComment ctermfg=102 guifg=#808080  cterm=bold gui=bold
+hi def link jsComment Comment
 hi jsFuncArgs ctermfg=139 guifg=#af87af  cterm=bold gui=bold
 hi jsFuncCall ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi jsFuncParens ctermfg=188 guifg=#dadada  cterm=bold gui=bold
@@ -182,9 +183,9 @@ hi jsParens ctermfg=102 guifg=#808080  cterm=bold gui=bold
 hi jsStorageClass ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi jsVariableDef ctermfg=188 guifg=#dadada  cterm=bold gui=bold
 hi lCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
-hi lispComment ctermfg=122 guifg=#87ffd7  
+hi def link lispComment Comment
 hi makeCommands ctermfg=222 guifg=#ffe587  
-hi makeComment ctermfg=146 guifg=#afafd7  
+hi def link makeComment Comment
 hi makeIdent ctermfg=116 guifg=#98dccf  
 hi makeInclude ctermfg=210 guifg=#f7768e  cterm=bold gui=bold
 hi makeSpecTarget ctermfg=210 guifg=#f7768e  cterm=bold gui=bold
@@ -197,8 +198,6 @@ hi pythonBuiltin ctermfg=176 guifg=#d787d7
 hi pythonDecorator ctermfg=204 guifg=#ff5f87  
 hi pythonParameters ctermfg=152 guifg=#afd7d7  
 hi rArrow ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-hi rBoolean ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
-hi rConstant ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi racketFunc ctermfg=176 guifg=#d787d7  
 hi racketSyntax ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi sqlAnotherStandout ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
@@ -282,7 +281,6 @@ hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
 hi @keyword.javascript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi @keyword.typescript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 " hi @comment.javascript ctermfg=204 guifg=#808ea2
-hi Comment ctermfg=152 guifg=#808ea2
 
 
 hi def link @string.escape Comment

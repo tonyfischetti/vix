@@ -24,34 +24,42 @@ return {
     opts_extend = { "ensure_installed" },
     opts = {
       highlight = {
-        enable = true,
-        -- additional_vim_regex_highlighting = true,
-        additional_vim_regex_highlighting = false,
+        enable = false,
         -- disable = { "r", "typescript", "cpp" },
       },
-      indent = { enable = true },
+      indent = { enable = false },
       ensure_installed = {
         "bash",
         "c",
+        "cmake",
+        "commonlisp",
         "cpp",
+        "css",
+        "csv",
         "diff",
-        "html",
+        "dockerfile",
+        "erlang",
+        "fennel",
+        "forth",
         "haskell",
+        "html",
         "javascript",
         "r",
-        -- "jsdoc",
         "json",
+        "json5",
         "jsonc",
+        "just",
         "lua",
-        "luadoc",
-        "luap",
+        "make",
         "markdown",
         "markdown_inline",
+        "perl",
         "printf",
         "python",
         "query",
         "regex",
         "toml",
+        "tsv",
         "tsx",
         "typescript",
         "vim",
@@ -62,28 +70,41 @@ return {
       -- incremental_selection = {
       --   enable = true,
       --   keymaps = {
-      --     init_selection = "<C-space>",
-      --     node_incremental = "<C-space>",
+      --     init_selection = "<C-i>",
+      --     node_incremental = "<C-i>",
       --     scope_incremental = false,
       --     node_decremental = "<bs>",
       --   },
       -- },
       -- textobjects = {
-      --   move = {
+      --   select = {
       --     enable = true,
-      --     goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-      --     goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-      --     goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-      --     goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+      --     lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+      --     keymaps = {
+      --       -- You can use the capture groups defined in textobjects.scm
+      --       ['aa'] = '@parameter.outer',
+      --       ['ia'] = '@parameter.inner',
+      --       ['af'] = '@function.outer',
+      --       ['if'] = '@function.inner',
+      --       ['ac'] = '@class.outer',
+      --       ['ic'] = '@class.inner',
+      --     },
       --   },
       -- },
     },
     config = function(_, opts)
-      -- if type(opts.ensure_installed) == "table" then
-      --   opts.ensure_installed = LazyVim.dedup(opts.ensure_installed)
-      -- end
       require("nvim-treesitter.configs").setup(opts)
     end,
-  }
+  },
+
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-textobjects",
+  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
+  --   event = "VeryLazy",
+  --   enabled = true,
+  --   config = function()
+  --     require("nvim-treesitter.configs").setup({ textobjects = {} })
+  --   end,
+  -- }
 
 }

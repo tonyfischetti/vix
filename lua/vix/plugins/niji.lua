@@ -1,6 +1,7 @@
 
 return {
 
+  --  TODO  doesn't start when it's support to
   {
     "losingkeys/vim-niji",
     lazy = false,
