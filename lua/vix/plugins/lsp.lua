@@ -23,6 +23,8 @@ return {
 
   {
     "neovim/nvim-lspconfig",
+    --  TODO  find fix for this
+    commit = "0ef64599b8aa0187ee",
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "williamboman/mason.nvim"
