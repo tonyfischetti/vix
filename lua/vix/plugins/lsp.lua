@@ -1,6 +1,7 @@
--- TODO: READ! https://github.com/neovim/nvim-lspconfig
+--  TODO  READ! https://github.com/neovim/nvim-lspconfig
+--  TODO  http://www.lazyvim.org/plugins/lsp
 
--- TODO: what are "code actions"? should I use telescope with them?
+--  TODO  what are "code actions"? should I use telescope with them?
 
 return {
 
@@ -12,6 +13,8 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     opts = {
+      --  TODO  I'm pretty sure I don't want it to auto install
+      --        the haskell one doesn't work
       ensure_installed = {
         "r_language_server",
         "clangd",
@@ -39,10 +42,10 @@ return {
       ---------------------------------------
       lspconfig.r_language_server.setup({
         -- cmd = {"R", "--slave", "-e", "'languageserver::run()'"}
-        -- TODO: can I use `on_attach` for other things
+        -- TODO  can I use `on_attach` for other things
         -- on_attach = on_attach_custom
       })
-      ---
+
       --------------------------------------
       --       clangd c++ lsp setup       --
       --------------------------------------
@@ -54,11 +57,11 @@ return {
       -------------------------------
       lspconfig.tsserver.setup({
         capabilities = capabilities,
-        on_attach = function(client)
-          -- client.server_capabilities.semanticTokensProvider = nil
-          -- client.server_capabilities.documentFormattingProvider = nil
-          -- client.server_capabilities.documentFormattingRangeProvider = nil
-        end,
+        -- on_attach = function(client)
+        --   -- client.server_capabilities.semanticTokensProvider = nil
+        --   -- client.server_capabilities.documentFormattingProvider = nil
+        --   -- client.server_capabilities.documentFormattingRangeProvider = nil
+        -- end,
         -- init_options = {
         --   preferences = {
         --     disableSuggestions = true
@@ -100,6 +103,11 @@ return {
         }
       })
 
+      -------------------------------------
+      --             haskell             --
+      -------------------------------------
+      lspconfig.hls.setup({
+      })
 
       -----------------------------
       --         keymaps         --

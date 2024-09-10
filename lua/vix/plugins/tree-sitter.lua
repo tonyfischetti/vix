@@ -21,11 +21,21 @@ return {
       { "<c-space>", desc = "Increment Selection" },
       { "<bs>", desc = "Decrement Selection", mode = "x" },
     },
+    --  TODO  I'm pretty sure I don't want it to auto install
     opts_extend = { "ensure_installed" },
     opts = {
       highlight = {
-        enable = false,
-        -- disable = { "r", "typescript", "cpp" },
+        --  TODO  I'm pretty sure I want this off
+        enable = true,
+        disable = {
+          "r",
+          "lisp",
+          "typescript",
+          "javascript",
+          "cpp",
+          "sql",
+          "html",
+        },
       },
       indent = { enable = false },
       ensure_installed = {
@@ -58,6 +68,7 @@ return {
         "python",
         "query",
         "regex",
+        "svelte",
         "toml",
         "tsv",
         "tsx",

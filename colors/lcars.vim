@@ -134,7 +134,7 @@ hi Substitute ctermfg=16 guifg=#000000 ctermbg=210 guibg=#f7768e
 hi TabLine ctermfg=60 guifg=#666d7a ctermbg=16 guibg=#080808 
 hi TabLineFill  ctermbg=16 guibg=#000000 
 hi TabLineSel ctermfg=16 guifg=#000000 ctermbg=30 guibg=#008787 
-hi Tag ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi Tag ctermfg=104 guifg=#8787d7  cterm=bold gui=bold
 hi TelescopeBorder ctermfg=104 guifg=#8787d7 ctermbg=16 guibg=#0b131d 
 hi TelescopeMatching ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
 hi TelescopeNormal ctermfg=231 guifg=#f8f8f2 ctermbg=16 guibg=#0b131d 
@@ -289,3 +289,6 @@ hi def link @keyword.exception.javascript Exception
 hi def link @keyword.import.javascript jsImport
 hi def link @keyword.import.typescript jsImport
 hi def link DiagnosticUnnecessary Error
+
+hi def link @property.css StorageClass
+

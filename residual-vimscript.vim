@@ -38,9 +38,9 @@ function! SlimeMultiLine()
 endfunction
 
 nmap <silent> <C-Space> :call SlimeOneLine()<CR>
-vmap <silent> <C-Space> :call SlimeMultiLine()<CR>
+" vmap <silent> <C-Space> :call SlimeMultiLine()<CR>
+vmap <silent> <C-Space>  <Plug>SlimeRegionSend
 nmap <silent> <C-O> <Plug>SlimeLineSend
-xmap <silent> <C-X><C-X> <Plug>SlimeRegionSend
 nmap <silent> <C-L> :SlimeSend1 <CR>
 imap <silent> <C-Space> <Esc>:call SlimeOneLineSamePlace()<CR>a
 
