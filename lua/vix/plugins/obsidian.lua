@@ -8,6 +8,10 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
+    keys = {
+      { "<Leader>ot", ":ObsidianToday<CR>" }
+    },
+
     opts = {
 
       workspaces = {
@@ -100,6 +104,15 @@ return {
         time_format = "%H:%M",
         -- A map for custom variables, the key should be the variable and the value a function
         substitutions = {},
+      },
+
+      ui = {
+        checkboxes = {
+          [" "] = { char = "▢󰄱", hl_group = "ObsidianTodo" },
+          ["x"] = { char = "", hl_group = "ObsidianDone" },
+          [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+          ["!"] = { char = "", hl_group = "ObsidianImportant" },
+        }
       },
 
     }
