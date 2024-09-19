@@ -280,7 +280,10 @@ hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
 
 hi @keyword.javascript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi @keyword.typescript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
-" hi @comment.javascript ctermfg=204 guifg=#808ea2
+hi @markup.strong ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
+hi @markup.italic ctermfg=73 guifg=#FFBA52 cterm=bold gui=bold
+" hi @comment.javascript 
+" ctermfg=204 guifg=#808ea2
 
 
 hi def link @string.escape Comment
@@ -292,3 +295,8 @@ hi def link DiagnosticUnnecessary Error
 
 hi def link @property.css StorageClass
 
+hi @markup.heading.1.markdown ctermfg=204 guifg=#ff5f87 cterm=bold,underline gui=bold,underline
+hi @markup.heading.2.markdown ctermfg=73 guifg=#FFBA52 cterm=bold,underline gui=bold,underline
+hi @markup.heading.3.markdown ctermfg=68 guifg= #54a8a8 cterm=bold,underline gui=bold,underline
+hi @markup.heading.4.markdown ctermfg=152 guifg=#afd7d7 cterm=bold,underline gui=bold,underline
+hi @markup.heading.5.markdown ctermfg=188 guifg=#dadada cterm=bold,underline gui=bold,underline

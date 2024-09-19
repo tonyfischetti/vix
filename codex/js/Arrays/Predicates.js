@@ -1,4 +1,4 @@
-// js, arrays, array predicates, some, every, includes, any, all, match, regex
+// js, arrays, array predicates, some, every, includes, any, all, match, regex, TODO, INCOMPLETE
 
 let rainbow = [ 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet' ];
 
@@ -21,7 +21,5 @@ rainbow.includes("RED");            // false
 // TODO: FIND INDEX
 // TODO: FIND INDEX
 // TODO: FIND INDEX
-
-
 
 // https://www.w3schools.com/jsref/jsref_findindex.asp
