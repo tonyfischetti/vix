@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.6.1",
+    "dotenv": "^16.4.5",
+    "globals": "^15.9.0",
+    "gulp": "^5.0.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-less": "^5.0.0",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-prettier": "^6.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "nunjucks": "^3.2.4",
+    "nunjucks-command": "^1.1.8",
+    "shelljs": "^0.8.5",
+    "typescript": "^5.6.2"
+  }
+}

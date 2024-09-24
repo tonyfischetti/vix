@@ -1,0 +1,11 @@
+{
+  "extends":    "./config/tsconfig.pedantic",
+  "include":    ["./src/**/*"],
+  "exclude":    ["node_modules"],
+  "compilerOptions": {
+    "typeRoots":        ["./node_modules/@types", "./typescript/types"],
+    "rootDir":          "src",
+    "outDir":           "dist/js",
+  }
+}
+

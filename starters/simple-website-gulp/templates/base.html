@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <!-- Head --------------------------------------------------------------->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+      {% block title %}
+        ZZZTITLE
+      {% endblock %}
+    </title>
+
+    <!-- CSS ------------------------------------------------------>
+    {% block css %}
+      <link rel="stylesheet" href="styles/reset.css"/>
+      <link rel="stylesheet" href="styles/main.css"/>
+    {% endblock %}
+
+    <!-- First javascript imports --------------------------------->
+    {% block js %}
+      <script src="js/main.js" type="module"></script>
+    {% endblock %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+  </head>
+
+
+  <!-- Body --------------------------------------------------------------->
+  <body class="is-preload">
+
+    <!-- Banner ----------------------------------------------------->
+    {% include "partials/banner.html" %}
+
+    <!-- Header ----------------------------------------------------->
+    {% include "partials/header.html" %}
+
+    <!-- Mid section ------------------------------------------------>
+    <div id="midsection">
+
+      <!-- Port ------------------------------------------------>
+      <div id="port">
+        {% block port %}
+        <span>port</span>
+        {% endblock %}
+      </div>
+
+      <!-- Main ------------------------------------------------>
+      <div id="main">
+
+        <!-- Main header ------------------------------------>
+        <div id="main-header">
+          {% block mainheader %}
+          <span>main header</span>
+          {% endblock %}
+        </div>
+
+        <!-- Main center ------------------------------------>
+        <div id="main-center">
+          {% block maincenter %}
+          <span>main center</span>
+          {% endblock %}
+        </div>
+
+        <!-- Main footer ------------------------------------>
+        <div id="main-footer">
+          {% block mainfooter %}
+          <span>main footer</span>
+          {% endblock %}
+        </div>
+
+      </div>
+
+      <!-- Starboard -------------------------------------------->
+      <div id="starboard">
+        {% block starboard %}
+        <span>starboard</span>
+        {% endblock %}
+      </div>
+
+    </div>
+
+    <!-- Footer ----------------------------------------------------->
+    {% include "partials/footer.html" %}
+
+  </body>
+</html>
+

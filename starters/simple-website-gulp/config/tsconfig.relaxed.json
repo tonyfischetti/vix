@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+
+    "alwaysStrict":                       true,
+    "noImplicitAny":                      true,
+    "noImplicitThis":                     true,
+    "useUnknownInCatchVariables":         true,
+
+    /* stricter things */
+
+    "skipLibCheck":                       true,
+    "resolveJsonModule":                  true,
+    "allowJs":                            true,
+    "forceConsistentCasingInFileNames":   true,
+    "composite":                          true,
+    "listEmittedFiles":                   true,
+
+    // es
+    "module":           "esnext",
+    "moduleResolution": "bundler",
+    "target":           "es2023"
+  }
+}
