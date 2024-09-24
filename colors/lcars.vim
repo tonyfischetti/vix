@@ -278,6 +278,15 @@ hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
 
 
 
+" hmm?
+hi @variable.member.javascript ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
+
+hi @function.builtin.javascript ctermfg=147 guifg=#afafff  cterm=bold gui=bold
+hi @variable.builtin.javascript ctermfg=139 guifg=#af87af  cterm=bold gui=bold
+hi @function.call.javascript ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi @function.method.call.javascript ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi jsModuleBraces ctermfg=102 guifg=#808080 cterm=bold gui=bold
+hi @keyword.function.javascript ctermfg=73 guifg=#5fafaf cterm=bold gui=bold
 hi @keyword.javascript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi @keyword.typescript ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi @markup.strong ctermfg=204 guifg=#ff5f87 cterm=bold gui=bold
