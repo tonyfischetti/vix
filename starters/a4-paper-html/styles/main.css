@@ -1,2 +1,16 @@
 
+@font-face {
+    font-family: "Main Text";
+    src: url("../assets/fonts/Commissioner.ttf");
+    font-style:   normal;   /* normal | italic */
+    font-variant: normal;   /* normal | small-caps */
+    /* weight must go after font-variant! */
+    font-weight:  400;      /* normal | bold | \d{3} */
+    font-display: swap;
+    /* font-size goes elsewhere */
+}
 
+body {
+    font-family: "Main Text", "serif";
+    line-height: normal;
+}
