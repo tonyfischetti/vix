@@ -8,12 +8,13 @@ import less           from 'gulp-less';
 import shell          from 'shelljs';
 import ts             from 'gulp-typescript';
 import cache          from 'gulp-cache';
+import browserSync    from 'browser-sync';
 import imagemin,
   { mozjpeg }         from 'gulp-imagemin';
 
 const tsProject = ts.createProject("tsconfig.json");
-
-const { series, parallel, src, dest } = gulp;
+const { series, parallel, src, dest, watch } = gulp;
+const server = browserSync.create();
 
 
 export const clean = (cb) => {
@@ -76,13 +77,41 @@ export const moveImages = () => {
 };
 
 
+const reload = (cb) => {
+  server.reload();
+  return cb();
+}
+
+export const serve = (cb) => {
+  server.init({
+    server: {
+      baseDir: 'dist'
+    }
+  });
+  return cb();
+}
+
+export const monitor = () => {
+  const andReload = (fn) => series(fn, reload);
+  watch('root/**/*',          andReload(moveRootThings));
+  watch('src/**/*',           andReload(moveJS));
+  watch('pages/**.*',         andReload(moveHTML));
+  watch('templates/**.*',     andReload(moveHTML));
+  watch('styles/less/**.*',   andReload(moveCSS));
+  watch('assets/images/**/*', andReload(moveImages));
+};
+
+
 
 export const build = series(clean,
                             parallel(moveRootThings,
                                      moveJS,
                                      moveCSS,
                                      moveHTML,
-                                     moveImages));
+                                     moveImages),
+                            reload,
+                            serve,
+                            monitor);
 
 const defaultTask = build;
 export default defaultTask;

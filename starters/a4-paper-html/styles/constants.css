@@ -1,0 +1,40 @@
+
+:root {
+    --veridian:         #007C7E;
+    --veridian-dark:    #006466;
+    --mars-red:         #A74848;
+    --mars-red-light:   #BA5E5E;
+    --dark-blue:        #011936;
+    --nice-dark:        #25291C;
+    --nice-purple:      #392B58;
+    --deep-champagne:   #F5D491;
+    --queen-pink:       #D6BBC0;
+    --space-cadet:      #183059;
+    --lavender-web:     #DBD8F0;
+
+    --lc-almost-black:  #080808;
+    --lc-teal:          #87ffd7;
+    --lc-yellow-PU:     #ffff87;
+    --lc-yellow-PUD:    #C4BE89;
+    --lc-yellow:        #ffe587;
+    --lc-ppink:         #d787d7;
+    --lc-ppink-dsat:    #af87af;
+    --lc-ppink-pale:    #d7afd7;
+    --lc-lavender:      #8787d7;
+    --lc-periwinkle:    #afafff;
+    --lc-read-grey:     #afafd7;
+    --lc-cobalt:        #5f87af;
+    --lc-dark-teal:     #5fafaf;
+    --lc-sly-purple:    #875f5f;
+    --lc-deep-sea:      #008787;
+    --lc-red-dsat:      #d75f87;
+    --lc-hot-red:       #ff5f87;
+    --lc-light-blue:    #afd7d7;
+    --lc-pop-blue:      #98dccf;
+    --lc-salmon:        #ffaf87;
+    --lc-weird-purp:    #ae81ff;
+    --lc-hot-pink:      #f92672;
+
+    --nypl-red:         #cc0000;
+}
+

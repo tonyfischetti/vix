@@ -1,7 +1,12 @@
 {
   "type": "module",
   "devDependencies": {
+    "@types/gulp": "^4.0.17",
+    "@types/gulp-cache": "^0.4.9",
+    "@types/gulp-imagemin": "^8.0.6",
+    "@types/gulp-less": "^0.0.36",
     "@types/node": "^22.6.1",
+    "browser-sync": "^3.0.3",
     "dotenv": "^16.4.5",
     "globals": "^15.9.0",
     "gulp": "^5.0.0",

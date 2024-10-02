@@ -1,14 +1,3 @@
-// css, reset
-
-/*
-  <link rel="stylesheet" href="styles/reset.css"/>
-*/
-
-/*
-    From: https://piccalil.li/blog/a-more-modern-css-reset/
-      Thank you
- */
-
 /* Box sizing rules */
 *,
 *::before,
@@ -79,4 +68,5 @@ textarea:not([rows]) {
 :target {
     scroll-margin-block: 5ex;
 }
+
 
