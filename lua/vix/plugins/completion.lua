@@ -9,6 +9,11 @@ end
 return {
 
   {
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp"
+  },
+
+  {
     "hrsh7th/nvim-cmp",
     -- TODO: all of these have options... look into them
     --       and nvim-cmp, in general

@@ -7,18 +7,22 @@ return {
 
   {
     "williamboman/mason.nvim",
-    config = true
+    lazy = false,
+    config=true
   },
 
   {
     "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim"
+    },
     opts = {
       --  TODO  I'm pretty sure I don't want it to auto install
       --        the haskell one doesn't work
       ensure_installed = {
         "r_language_server",
         "clangd",
-        "tsserver",
+        "ts_ls",
         "lua_ls"
       }
     }
@@ -26,11 +30,8 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    --  TODO  find fix for this
-    commit = "0ef64599b8aa0187ee",
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
-      "williamboman/mason.nvim"
     },
 
     config = function()
