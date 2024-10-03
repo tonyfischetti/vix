@@ -1,0 +1,42 @@
+{
+  "name": "test-is-palindrome",
+  "author": "Tony Fischetti <tony.fischetti@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "homepage": "https://github.com/tonyfischetti/REPONAMEHERE",
+  "version": "0.0.2",
+  "description": "DESCRIPTION HERE",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "start:dev": "npx tsc -w --project tsconfig.json",
+    "build": "npx shx rm -f index.js index.d.ts && npx shx rm -rf build && npx shx rm -rf dist && npx tsc --project tsconfig.json",
+    "bundle": "rollup -c",
+    "test": "mocha",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonyfischetti/REPONAMEHERE.git"
+  },
+  "keywords": [
+    "CHANGEME"
+  ],
+  "bugs": {
+    "url": "https://github.com/tonyfischetti/REPONAMEHERE/issues"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "^22.7.4",
+    "mocha": "^10.7.3",
+    "rollup": "^4.24.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "shx": "^0.3.4",
+    "typescript": "^5.6.2"
+  }
+}
