@@ -113,6 +113,7 @@
     - Create a hash table
     * Paste
     - Iteration
+  FOR JS.... OBJECTS!
 
   - File IO
     - Read file line by line

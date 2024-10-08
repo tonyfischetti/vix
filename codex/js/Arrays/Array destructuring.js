@@ -10,3 +10,10 @@ car     // red
 cadr    // orange
 caddr   // yellow
 rest    // [ 'green', 'blue', 'indigo', 'violet' ]
+
+// you can skip elements
+const nums = [1, 2, 3, 4, 5];
+const [ one, , three, , five] = nums;
+one     // 1
+three   // 3
+five    // 5

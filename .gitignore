@@ -79,6 +79,8 @@ autom4te.cache
 aclocal.m4
 build-aux/
 
+*.hi
+
 packrat/lib*/
 packrat/src*/
 .Rhistory
@@ -102,6 +104,7 @@ package-lock.json
 node_modules
 .env
 dist/
+dist-newstyle/
 .well-known/
 
 *.xz

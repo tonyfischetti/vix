@@ -1,0 +1,13 @@
+-- tooling, cabal, cabal file, adding dependencies, projects, project setup
+
+-- NAMEOFPROJECT.cabal
+
+cabal-version: 3.0
+name: NAMEOFPROJECT
+version: 0.0.0.0
+executable NAMEOFPROJECT
+  main-is: ENTRYPOINT.hs
+  build-depends:
+    base >= 4.15,
+    haskell-say
+  default-language: Haskell2010

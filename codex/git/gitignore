@@ -4,6 +4,8 @@
 
 build/
 target/
+dist/
+dist-newstyle/
 
 *.bin
 *.eep
@@ -108,6 +110,9 @@ web_modules/
 .eslintcache
 .node_repl_history
 .stylelintcache
+
+# haskell things
+*.hi
 
 # misc / cache
 cache/
