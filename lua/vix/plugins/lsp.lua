@@ -59,19 +59,19 @@ return {
       -------------------------------
       --       denols config       --
       -------------------------------
-      lspconfig.denols.setup {
-        -- single_file_support = true,
-        root_dir = function(fn)
-          if lspconfig.util.root_pattern("package.json")(fn) then
-            return nil;
-          end
-          local has_deno_json = lspconfig.util.root_pattern("deno.json")(fn);
-          if has_deno_json then
-            return has_deno_json
-          end
-          return "."
-        end
-      }
+      -- lspconfig.denols.setup {
+      --   -- single_file_support = true,
+      --   root_dir = function(fn)
+      --     if lspconfig.util.root_pattern("package.json")(fn) then
+      --       return nil;
+      --     end
+      --     local has_deno_json = lspconfig.util.root_pattern("deno.json")(fn);
+      --     if has_deno_json then
+      --       return has_deno_json
+      --     end
+      --     return "."
+      --   end
+      -- }
 
 
       -------------------------------
@@ -79,7 +79,8 @@ return {
       -------------------------------
       lspconfig.tsserver.setup({
         root_dir = require("lspconfig").util.root_pattern("package.json"),
-        single_file_support = false,
+        -- single_file_support = false,
+        single_file_support = true,
         capabilities = capabilities,
         -- on_attach = function(client)
         --   -- client.server_capabilities.semanticTokensProvider = nil
