@@ -1,3 +1,4 @@
+
 local M = {}
 
 --  HACK 
@@ -52,18 +53,9 @@ function M.array_init(dirs)
 end
 
 function M.toggle_opt(prop, scope, on, off)
-  if on == nil then
-    on = true
-  end
-
-  if off == nil then
-    off = false
-  end
-
-  if scope == nil then
-    scope = 'o'
-  end
-
+  if on == nil then on = true end
+  if off == nil then off = false end
+  if scope == nil then scope = 'o' end
   return function()
     if vim[scope][prop] == on then
       vim[scope][prop] = off
@@ -99,12 +91,10 @@ function M.cons(an_elem, an_array)
   return ret
 end
 
-
-
 function M.insert_lines_into_buffer(lines)
   local line_number    = vim.api.nvim_win_get_cursor(0)[1]
-  local position       = vim.api.nvim_win_get_cursor(0)[2]
-  local current_line   = vim.api.nvim_get_current_line()
+  -- local position       = vim.api.nvim_win_get_cursor(0)[2]
+  -- local current_line   = vim.api.nvim_get_current_line()
   vim.api.nvim_buf_set_lines(0, line_number-1, line_number-1, true, lines)
 end
 

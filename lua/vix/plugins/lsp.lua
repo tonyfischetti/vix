@@ -3,6 +3,7 @@
 
 --  TODO  what are "code actions"? should I use telescope with them?
 
+
 return {
 
   {
@@ -23,7 +24,8 @@ return {
         "r_language_server",
         "clangd",
         "ts_ls",
-        "lua_ls"
+        "lua_ls",
+        "denols"
       }
     }
   },
@@ -53,10 +55,31 @@ return {
       lspconfig.clangd.setup({
       })
 
+
+      -------------------------------
+      --       denols config       --
+      -------------------------------
+      lspconfig.denols.setup {
+        -- single_file_support = true,
+        root_dir = function(fn)
+          if lspconfig.util.root_pattern("package.json")(fn) then
+            return nil;
+          end
+          local has_deno_json = lspconfig.util.root_pattern("deno.json")(fn);
+          if has_deno_json then
+            return has_deno_json
+          end
+          return "."
+        end
+      }
+
+
       -------------------------------
       --      tsserver config      --
       -------------------------------
       lspconfig.tsserver.setup({
+        root_dir = require("lspconfig").util.root_pattern("package.json"),
+        single_file_support = false,
         capabilities = capabilities,
         -- on_attach = function(client)
         --   -- client.server_capabilities.semanticTokensProvider = nil
@@ -69,6 +92,7 @@ return {
         --   }
         -- }
       })
+
 
       ------------------------------
       --      lua lsp config      --

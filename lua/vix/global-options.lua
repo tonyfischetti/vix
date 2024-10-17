@@ -49,7 +49,7 @@ vim.opt.splitbelow = true
 vim.g['perl_host_prog'] = "/usr/bin/perl"
 
 if vim.fn.executable('par') == 1 then
-    vim.cmd('set formatprg=par\\ -w75r "rj')
+    vim.cmd('set formatprg=par\\ -w71r "rj')
 end
 
 vim.g.sql_type_default = 'sqlite'
