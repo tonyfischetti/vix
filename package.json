@@ -10,7 +10,7 @@
   "license": "GPL-3.0-or-later",
   "description": "",
   "dependencies": {
-    "better-sqlite3": "^11.1.2",
+    "better-sqlite3": "^11.3.0",
     "commander": "^12.1.0",
     "consola": "^3.2.3",
     "rimraf": "^6.0.1"

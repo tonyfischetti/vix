@@ -1,0 +1,50 @@
+{
+  "include":    ["./src/**/*"],
+  "exclude":    ["node_modules"],
+  "compilerOptions": {
+    "typeRoots":        ["./node_modules/@types", "./typescript/types"],
+    "rootDir":          "src",
+    "outDir":           "build",
+    "declarationDir":   "build/types",
+    "tsBuildInfoFile":  "build/tsconfig.tsbuildinfo",
+
+
+    "strict":                             true,
+
+    /* the following are implied by "strict" */
+
+    "alwaysStrict":                       true,
+    "noImplicitAny":                      true,
+    "noImplicitThis":                     true,
+    "strictBindCallApply":                true,
+    "strictFunctionTypes":                true,
+    "strictNullChecks":                   true, // maybe not
+    "strictPropertyInitialization":       true,
+    "useUnknownInCatchVariables":         true,
+
+    /* stricter things */
+
+    "allowUnreachableCode":               false,
+    "allowUnusedLabels":                  false,
+    "exactOptionalPropertyTypes":         true,
+    "noFallthroughCasesInSwitch":         true,
+    "noImplicitOverride":                 true,
+    "noImplicitReturns":                  true,
+    "noPropertyAccessFromIndexSignature": true, // maybe not
+    "noUncheckedIndexedAccess":           true, // maybe not
+    "noUnusedLocals":                     true, // maybe not
+    "noUnusedParameters":                 true, // maybe not
+
+    "resolveJsonModule":                  true,
+    "allowJs":                            true,
+    "checkJs":                            true, // maybe not
+    "forceConsistentCasingInFileNames":   true,
+    "composite":                          true,
+    "listEmittedFiles":                   true,
+
+    // es
+    "module":           "esnext",
+    "moduleResolution": "bundler",
+    "target":           "es2023"
+  }
+}

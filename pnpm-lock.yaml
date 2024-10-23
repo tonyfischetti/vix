@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       better-sqlite3:
-        specifier: ^11.1.2
+        specifier: ^11.3.0
         version: 11.3.0
       commander:
         specifier: ^12.1.0
