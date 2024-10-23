@@ -25,6 +25,12 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     command = "set ft=make"
 })
 
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    group = vixgroup,
+    pattern = "Makefile",
+    command = "set ft=make"
+})
+
 -- vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 --     group = vixgroup,
 --     pattern = { "*.cpp", "*.hpp", "*.cc" },

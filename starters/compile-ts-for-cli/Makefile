@@ -1,3 +1,4 @@
+# vim: filetype=make
 
 SHEBANG   := \#!/usr/bin/env node
 FT 		    := // vi: ft=javascript
