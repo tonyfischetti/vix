@@ -1,0 +1,32 @@
+---
+title: Async/await considered harmful
+author:
+- name: Tony Fischetti
+  affiliation: New York Public Library
+  email: tony.fischetti@gmail.com
+date: October 2024
+bibliography: references.bib
+link-citations: true
+reference-section-title: References
+citation-style: ./citation-styles/ieee.csl
+abstract: |
+  I did some computer-y stuff to construct a personal Spanish text corpus and
+  create a Spanish verb study guide specifically tailored to the linguistic
+  variety of Spanish I intend to consume and produce. It worked fairly well. It
+  also revealed a (in some small way) generalizable depiction of the relative
+  frequencies of Spanish verb tenses and moods. This technique may prove to be
+  extremely beneficial to Spanish-language pedagogy. If you’re uninterested in my
+  motivations or procedure, you can skip to the section labeled “results”.
+
+  As regular readers of this blog may be aware, one of my favorite activities is
+  marshaling the skills that I use as a computational scientist to study the
+  humanities. For example, in a previous post, we saw how principles from
+  phylogenetic systematics helped textual critics reconstruct the original
+  manuscript for “The Canterbury Tales”; in another, we deployed techniques first
+  used to study physics to the end of fooling vineyards into retweeting fake,
+  computer-generated wine reviews.
+
+  For this post, I used both tools from computational linguistics and some
+  good-old-fashioned data wrangling (web-scraping, parsing texts, etc…) to create
+  a custom-fit Spanish verb study guide.
+---

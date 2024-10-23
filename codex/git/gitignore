@@ -113,6 +113,20 @@ web_modules/
 
 # haskell things
 *.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+.stack-work/
+cabal.project.local
+cabal.project.local~
+.HTF/
+.ghc.environment.*
 
 # misc / cache
 cache/
@@ -134,4 +148,3 @@ _.seed
 # nonsense
 .DS_Store
 Thumbs.db
-

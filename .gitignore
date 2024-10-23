@@ -5,16 +5,15 @@ bundle/
 plugged
 perf.log
 **/to-vim
+./codex/package-lock.json
+./codex/node_modules
 
 *.secret
 
 build/
 target/
-
-*.png
-*.jpg
-
-**/tags
+dist/
+dist-newstyle/
 
 *.bin
 *.eep
@@ -73,18 +72,17 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# autotools stuff
 config.log
 config.status
 autom4te.cache
 aclocal.m4
 build-aux/
 
-*.hi
-
+# R things
 packrat/lib*/
 packrat/src*/
 .Rhistory
-.DS_Store
 .Rproj.user
 .Rproj
 .Rapp.history
@@ -92,21 +90,62 @@ packrat/src*/
 .Ruserdata
 .Rapp.history
 Rplots.pdf
-
 .Rd2pdf*/
-
 inst/doc
 Meta
 
+# lisp things
 *.fasl
 
-package-lock.json
-node_modules
-.env
-dist/
-dist-newstyle/
-.well-known/
+# C++ things
+gmon.out
+callgrind.out.*
 
+# node things
+package-lock.json
+node_modules/
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+dist/
+.well-known/
+build/Release
+web_modules/
+*.tsbuildinfo
+.npm
+.eslintcache
+.node_repl_history
+.stylelintcache
+
+# haskell things
+*.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+.hpc
+.hsenv
+.cabal-sandbox/
+cabal.sandbox.config
+.stack-work/
+cabal.project.local
+cabal.project.local~
+.HTF/
+.ghc.environment.*
+
+# misc / cache
+cache/
+.cache
+pids
+_.pid
+_.seed
+*.pid.lock
+.shastore
+
+# archives
 *.xz
 *.gz
 *.zpaq
@@ -114,7 +153,6 @@ dist-newstyle/
 *.RData
 *.rda
 
-.shastore
-
-./codex/package-lock.json
-./codex/node_modules
+# nonsense
+.DS_Store
+Thumbs.db
