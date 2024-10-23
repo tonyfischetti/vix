@@ -1,0 +1,165 @@
+
+@import "colors";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  // background-color: @pink;
+  background-color: @background-color;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*********************************
+ * tagged elements               *
+ *********************************/
+body {
+    display: flex;
+    flex-flow: column;
+    background-color: @background-color;
+}
+
+li {
+    display: inline;
+}
+
+li.nav-item {
+    padding: 0px 30px;
+}
+
+/*********************************
+ * ID elements                   *
+ *********************************/
+
+#banner {
+    display: flex;
+    justify-content: center;
+    background-color: @lc-yellow;
+    color: black;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    background-color: @dark-blue;
+}
+
+#midsection {
+    display: flex;
+    flex-flow: row;
+    flex-grow: 1;
+    background-color: grey;
+}
+
+#port {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    background-color: @lc-deep-sea;
+}
+
+#main {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 10;
+    background-color: white;
+    max-width: 80%;
+}
+
+#main-header {
+    display: flex;
+    background-color: @lc-cobalt;
+}
+
+#main-center {
+    display: flex;
+    flex-flow: column;
+    background-color: @new-off-white;
+    color: black;
+    flex-grow: 3;
+}
+
+#main-footer {
+    display: flex;
+    background-color: @lc-cobalt;
+}
+
+#starboard {
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    background-color: @lc-deep-sea;
+
+    li a {
+        display: block;
+        width: 60px;
+    }
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    background-color: @dark-blue;
+}
+
+
+/*********************************
+ * Classes                       *
+ *********************************/
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.vanilla:hover {
+    filter: drop-shadow(0 0 2em #3178c6aa);
+}
+
+
+.small-photo {
+    width: 200px;
+    padding: 10px;
+}
+
+a {
+    font-weight: 500;
+    // color: #646cff;
+    color: white;
+    text-decoration: inherit;
+}
+
+a.nav-item {
+    color: white;
+}
+
+a.nav-item.active {
+    color: @lc-yellow;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+ul.navbar {
+    padding: 0px;
+}
+
+
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}

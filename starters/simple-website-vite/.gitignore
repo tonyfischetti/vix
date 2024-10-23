@@ -1,0 +1,137 @@
+# git, gitignore
+
+*.secret
+
+build/
+target/
+dist/
+dist-newstyle/
+
+*.bin
+*.eep
+*.sizeok
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# autotools stuff
+config.log
+config.status
+autom4te.cache
+aclocal.m4
+build-aux/
+
+# R things
+packrat/lib*/
+packrat/src*/
+.Rhistory
+.Rproj.user
+.Rproj
+.Rapp.history
+.RData
+.Ruserdata
+.Rapp.history
+Rplots.pdf
+.Rd2pdf*/
+inst/doc
+Meta
+
+# lisp things
+*.fasl
+
+# C++ things
+gmon.out
+callgrind.out.*
+
+# node things
+package-lock.json
+node_modules/
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+dist/
+.well-known/
+build/Release
+web_modules/
+*.tsbuildinfo
+.npm
+.eslintcache
+.node_repl_history
+.stylelintcache
+
+# haskell things
+*.hi
+
+# misc / cache
+cache/
+.cache
+pids
+_.pid
+_.seed
+*.pid.lock
+.shastore
+
+# archives
+*.xz
+*.gz
+*.zpaq
+*.datatable
+*.RData
+*.rda
+
+# nonsense
+.DS_Store
+Thumbs.db
+
