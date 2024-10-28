@@ -1,4 +1,4 @@
-// js, async, event emitter, setTimeout
+// js, async, event emitter, setTimeout, pulsar
 
 /*
  * "The EventEmitter is a module that facilitates communication
@@ -6,6 +6,9 @@
  * asynchronous event-driven architecture. Many of Node’s
  * built-in modules inherit from EventEmitter"
  */
+
+import EventEmitter from 'node:events';
+
 
 class Pulsar extends EventEmitter {
   rotate() {

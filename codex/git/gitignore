@@ -14,6 +14,10 @@ dist-newstyle/
 # Prerequisites
 *.d
 
+# Logs
+logs
+*.log
+
 # Object files
 *.o
 *.ko
@@ -110,6 +114,15 @@ web_modules/
 .eslintcache
 .node_repl_history
 .stylelintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lib-cov
+coverage
+.grunt
+.node_repl_history
+.next
+.yarn-integrity
 
 # haskell things
 *.hi
@@ -140,10 +153,12 @@ _.seed
 # archives
 *.xz
 *.gz
+*.tgz
 *.zpaq
 *.datatable
 *.RData
 *.rda
+*.db
 
 # nonsense
 .DS_Store
