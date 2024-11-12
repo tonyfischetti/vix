@@ -61,6 +61,7 @@ const fatalCantOpenDB         = printErrorAndBailOut(2);
 const setGlobalCODEX_ROOT = () => {
   CODEX_ROOT = process.env["CODEX_ROOT"] ?? "";
   if (CODEX_ROOT === "") throw Error("Environment variable 'CODEX_ROOT' not defined");
+  console.log(`codex root: ${CODEX_ROOT}`);
 };
 
 const removeOldDBIfExists = () => {
@@ -71,7 +72,7 @@ const createDBandSetGlobalDB = () => {
   try {
     DB = new Database(`${CODEX_ROOT}/codex.db`);
   } catch (error) {
-    throw Error("unable to open database");
+    throw Error(`unable to open database: ${error}`);
   }
 };
 

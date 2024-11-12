@@ -77,13 +77,13 @@ return {
       -------------------------------
       --      tsserver config      --
       -------------------------------
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         root_dir = require("lspconfig").util.root_pattern("package.json"),
         -- single_file_support = false,
         single_file_support = true,
         capabilities = capabilities,
         -- on_attach = function(client)
-        --   -- client.server_capabilities.semanticTokensProvider = nil
+        --   client.server_capabilities.semanticTokensProvider = nil
         --   -- client.server_capabilities.documentFormattingProvider = nil
         --   -- client.server_capabilities.documentFormattingRangeProvider = nil
         -- end,

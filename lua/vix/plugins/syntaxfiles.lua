@@ -2,9 +2,16 @@
 return {
 
   {
-    "vieira/vim-javascript",
-    ft = { "javascript", "typescript" }
+    "peitalin/vim-jsx-typescript",
+    ft = { "typescriptreact" },
+    dependencies = {
+      { "leafgarland/typescript-vim" }
+    }
   },
+  -- {
+  --   "vieira/vim-javascript",
+  --   ft = { "javascript", "typescript" }
+  -- },
 
   {
     "bfrg/vim-cpp-modern",

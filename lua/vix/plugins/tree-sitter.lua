@@ -30,8 +30,10 @@ return {
         disable = {
           "r",
           "lisp",
-          "typescript",
-          "javascript",
+          -- "typescript",
+          -- "javascript",
+          "tsx",
+          "jsx",
           "cpp",
           "sql",
           "html",

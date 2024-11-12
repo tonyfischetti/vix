@@ -26,7 +26,7 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.number = true
-vim.opt.foldmethod = "indent"
+vim.opt.foldmethod = "syntax"
 vim.opt.foldnestmax = 10
 vim.opt.foldenable = false
 vim.opt.foldlevel = 1
@@ -53,6 +53,8 @@ if vim.fn.executable('par') == 1 then
 end
 
 vim.g.sql_type_default = 'sqlite'
+
+vim.highlight.priorities.semantic_tokens = 5
 
 -- vim.g['user_emmet_leader_key'] = ","
 -- vim.g['vim_json_syntax_conceal'] = 0

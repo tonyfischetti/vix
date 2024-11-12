@@ -178,10 +178,11 @@ hi jsFuncParens ctermfg=188 guifg=#dadada  cterm=bold gui=bold
 hi jsGlobalObjects ctermfg=139 guifg=#af87af  cterm=bold gui=bold
 hi jsImport ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi jsObjectProp ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
-hi jsParen ctermfg=152 guifg=#afd7d7  cterm=bold gui=bold
-hi jsParens ctermfg=102 guifg=#808080  cterm=bold gui=bold
-hi jsStorageClass ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+" hi jsParens ctermfg=102 guifg=#808080  cterm=bold gui=bold
+hi def link jsParens Operator
+hi def link jsStorageClass StorageClass
 hi jsVariableDef ctermfg=188 guifg=#dadada  cterm=bold gui=bold
+hi def link jsDestructuringBraces Delimiter
 hi lCursor ctermfg=233 guifg=#131a24 ctermbg=231 guibg=#f8f8f2 
 hi def link lispComment Comment
 hi makeCommands ctermfg=222 guifg=#ffe587  
@@ -206,6 +207,7 @@ hi sqlKeyword ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 hi sqlOperator ctermfg=204 guifg=#ff5f87  
 hi sqlStatement ctermfg=30 guifg=#008787  cterm=bold gui=bold
 hi sqlType ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi zshCommands ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi tsArgumentDef ctermfg=30 guifg=#008787  cterm=bold gui=bold
 hi tsDefinition ctermfg=30 guifg=#008787  cterm=bold gui=bold
 hi tsGeneric ctermfg=30 guifg=#008787  cterm=bold gui=bold
@@ -220,7 +222,30 @@ hi typescriptImport ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
 hi typescriptPredefinedType ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 hi typescriptProp ctermfg=122 guifg=#87ffd7  cterm=bold gui=bold
 hi typescriptTypeReference ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
-hi zshCommands ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+hi typescriptReserved ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
+" hi def link tsxComponentName tsDefinition
+hi def link tsxComponentName typescriptDOMDocMethod
+hi def link tsxCloseComponentName typescriptDOMDocMethod
+" hi tsxComponentName ctermfg=60 guifg=#565f89 cterm=bold gui=bold
+hi def link typescriptBraces Delimiter
+hi def link typescriptEndColons Delimiter
+hi def link typescriptParens Delimiter
+hi def link reduxHooksKeywords typescriptReserved
+
+hi def link tsxCloseTag Function
+hi def link tsxTag Function
+hi def link tsxAttributeBraces Delimiter
+hi def link tsxEqual Operator
+hi def link typescriptBinaryOp Operator
+hi def link tsxIfOperator Operator
+hi def link tsxElseOperator Operator
+hi def link typescriptAssign Operator
+" hi def link @lsp.type.variable.typescriptreact Type
+hi def link @lsp.mod.defaultLibrary.typescriptreact Type
+" @lsp.typemod.variable.defaultLibrary.typescriptreact links to @lsp priority: 7
+
+
+hi @variable.member.typescript ctermfg=152 guifg=#afd7d7 cterm=bold gui=bold
 
 hi typescriptAliasDeclaration ctermfg=73 guifg=#5fafaf  cterm=bold gui=bold
 " hi typescriptAliasDeclaration ctermfg=73 guifg=pp  cterm=bold gui=bold
@@ -266,7 +291,7 @@ hi DiagnosticError ctermfg=204 guifg=#deaded cterm=bold gui=bold
 " hi jsArrowFunction ctermfg=168 guifg=#d75f87  cterm=bold gui=bold
 " hi jsComment ctermfg=102 guifg=#808080  cterm=bold gui=bold
 " hi jsFuncArgs ctermfg=139 guifg=#af87af  cterm=bold gui=bold
-" hi jsFuncCall ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
+hi jsFuncCall ctermfg=67 guifg=#5f87af  cterm=bold gui=bold
 " hi jsFuncParens ctermfg=188 guifg=#dadada  cterm=bold gui=bold
 " hi jsGlobalObjects ctermfg=139 guifg=#af87af  cterm=bold gui=bold
 " hi jsImport ctermfg=204 guifg=#ff5f87  cterm=bold gui=bold
@@ -309,3 +334,4 @@ hi @markup.heading.2.markdown ctermfg=73 guifg=#FFBA52 cterm=bold,underline gui=
 hi @markup.heading.3.markdown ctermfg=68 guifg= #54a8a8 cterm=bold,underline gui=bold,underline
 hi @markup.heading.4.markdown ctermfg=152 guifg=#afd7d7 cterm=bold,underline gui=bold,underline
 hi @markup.heading.5.markdown ctermfg=188 guifg=#dadada cterm=bold,underline gui=bold,underline
+

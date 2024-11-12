@@ -124,7 +124,7 @@ return {
           name = "gpg"
         },
         ["dat"] = {
-          icon = "",
+          icon = "",
           color = "#428850",
           name = "Data"
         },
@@ -135,7 +135,7 @@ return {
           name = "lisp"
         },
         ["tsv"] = {
-          icon = "",
+          icon = "",
           color = "#428850",
           name = "tsv"
         },
@@ -198,6 +198,11 @@ return {
           icon = "",
           color = "#f1502f",
           name = "AppImage"
+        },
+        ["svg"] = {
+          icon = "",
+          color = "#dddddd",
+          name = "svg"
         },
       }
     }
