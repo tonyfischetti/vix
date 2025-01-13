@@ -1,3 +1,3 @@
 # docker, Dockerfile, build
 
-docker build -t NAME DIRECTORY_CONTAINING_DOCKERFILE
+docker build -t NAME:latest DIRECTORY_CONTAINING_DOCKERFILE

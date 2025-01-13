@@ -231,6 +231,9 @@ hi def link typescriptBraces Delimiter
 hi def link typescriptEndColons Delimiter
 hi def link typescriptParens Delimiter
 hi def link reduxHooksKeywords typescriptReserved
+hi def link typescriptNull Builtin
+hi def link typescriptTernaryOp Operator
+hi def link typescriptTernary Operator
 
 hi def link tsxCloseTag Function
 hi def link tsxTag Function
@@ -241,7 +244,10 @@ hi def link tsxIfOperator Operator
 hi def link tsxElseOperator Operator
 hi def link typescriptAssign Operator
 " hi def link @lsp.type.variable.typescriptreact Type
+hi def link @type.builtin.typescript Type
 hi def link @lsp.mod.defaultLibrary.typescriptreact Type
+hi def link @lsp.typemod.class.defaultLibrary.typescript Type
+hi def link @lsp.mod.defaultLibrary.typescript Type
 " @lsp.typemod.variable.defaultLibrary.typescriptreact links to @lsp priority: 7
 
 

@@ -54,6 +54,36 @@ export const colors = {
   spaceCadet:             "#183059",
   lavenderWeb:            "#DBD8F0",
 
+  /* other good palettes */
+  p1LightBlue:            "#5089b2",
+  p1PinkPeach:            "#f3beb4",
+  p1PinkPeachDark:        "#de7e87",
+
+  p2Yellow:               "#f0bc42",
+  p2LightBlue:            "#8bc0ca",
+  p2PinkPeach:            "#e6a4b7",
+  p2PinkPeachDark:        "#f78f82",
+  p2Blue:                 "#5fa6c2",
+  p2Purple:               "#3d4a67",
+  p2OffWhite:             "#dcd8d7",
+
+  p3DarkGreen:            "#344b46",
+  p3OffWhite:             "#d7d1ca",
+  p3Green:                "#436346",
+  p3LightGreen:           "#afbe9a",
+  p3PaleGreenBlue:        "#cfdac4",
+  p3PaleBlueGreen:        "#bcccc4",
+  p3PalePink:             "#f0d1cd",
+
+  p4PinkPeach:            "#f3bfac",
+  p4PinkPeachDark:        "#f78f84",
+  p4DarkBlue:             "#356a92",
+  p4LightBlue:            "#93cada",
+
+
+
+
+
   transparent:            "#00000000",
 
 };

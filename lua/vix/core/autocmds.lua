@@ -43,6 +43,13 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
     command = "set ft=typescriptreact"
 })
 
+-- I think it works even better that the regular ones
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    group = vixgroup,
+    pattern = { "*.ts" },
+    command = "set ft=typescriptreact"
+})
+
 -- vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 --     group = vixgroup,
 --     pattern = { "*.cpp", "*.hpp", "*.cc" },

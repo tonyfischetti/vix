@@ -1,4 +1,4 @@
-// js, file io, open file, write to a file all at once, fs, cli arguments, fs.open, fs.appendFile, fs.writeFile, character encoding
+// js, file io, open file, write to a file all at once, fs, cli arguments, fs.open, fs.appendFile, fs.writeFile, character encoding, barf
 
 const fs = require("node:fs/promises");
 

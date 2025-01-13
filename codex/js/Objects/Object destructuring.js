@@ -34,3 +34,13 @@ magenta;      // quinacridone
 const { red: kokkino, black: maupo } = obj1;
 kokkino;      // cadmium
 maupo;        // lamp
+
+
+const obj3 = { ...obj1, ...{ green: [...obj1.green, "sap"] }};
+obj3;
+// {
+//   red: 'cadmium',
+//   green: [ 'viridian', 'hookers', 'sap' ],
+//   blue: 'phthalo',
+//   black: 'lamp'
+// }

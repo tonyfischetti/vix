@@ -1,7 +1,5 @@
 # git, gitignore
 
-*.secret
-
 build/
 target/
 dist/
@@ -61,7 +59,7 @@ logs
 *.pdb
 
 # Kernel Module Compile Results
-*.mod*
+*.mod
 *.cmd
 .tmp_versions/
 modules.order
@@ -126,6 +124,10 @@ coverage
 .node_repl_history
 .next
 .yarn-integrity
+.next
+next-env.d.ts
+.pnp
+.pnp.js
 
 # haskell things
 *.hi
@@ -162,7 +164,7 @@ _.seed
 *.RData
 *.rda
 *.db
-#
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -176,3 +178,7 @@ _.seed
 # nonsense
 .DS_Store
 Thumbs.db
+
+# secrets
+*.secret
+*.pem

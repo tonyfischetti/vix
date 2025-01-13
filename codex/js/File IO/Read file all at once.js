@@ -1,4 +1,4 @@
-// js, file io, open file, read a file all at once, fs, cli arguments, fs.open, fs.readFile, character encoding, bytes read, end of line character
+// js, file io, open file, read a file all at once, fs, cli arguments, fs.open, fs.readFile, character encoding, bytes read, end of line character, slurp
 
 const fs = require("node:fs/promises");
 const os = require("node:os");

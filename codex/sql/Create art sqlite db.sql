@@ -1,4 +1,4 @@
--- sql, sqlite, create table, drop table, exists, strict, check, primary key, foreign key, length, insert, commit, begin, transaction, pragma
+-- sql, sqlite, create table, drop table, exists, strict, check, primary key, foreign key, length, insert, commit, begin, transaction, pragma, references
 
 PRAGMA foreign_keys=ON;
 BEGIN TRANSACTION;

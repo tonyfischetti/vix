@@ -18,7 +18,8 @@ return {
     event = 'LspAttach',
     opts = {
       show_borders = true,
-      scope = "line",
+      -- scope = "line",
+      toggle_event = { 'InsertEnter' },
       border_chars = {
         top_left = "╭",
         top_right = "╮",
