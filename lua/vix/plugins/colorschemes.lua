@@ -40,22 +40,20 @@ return {
   {
     "scottmckendry/cyberdream.nvim",
     opts = {
-      theme = {
-        --   variant = "light",
-        -- override color entirely
-        colors = {
-          -- bg = "#deaded",
-          -- green = "#00ff00"
-          -- orange = "#ffff87",
-        },
-        -- easy to override highlight groups
-        overrides = function(colors)
-          return {
-            -- Comment = { fg = colors.green, bg = "NONE", italic = true },
-            ["@property"] = { fg = colors.magenta, bold = true },
-          }
-        end
-      }
+      --   variant = "light",
+      -- override color entirely
+      colors = {
+        -- bg = "#deaded",
+        -- green = "#00ff00"
+        -- orange = "#ffff87",
+      },
+      -- easy to override highlight groups
+      overrides = function(colors)
+        return {
+          -- Comment = { fg = colors.green, bg = "NONE", italic = true },
+          ["@property"] = { fg = colors.magenta, bold = true },
+        }
+      end
     }
   },
 

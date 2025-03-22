@@ -1,4 +1,4 @@
-// js, strings, unicode awareness, utf-16, splitting strings, NFC, NFD
+// js, strings, unicode awareness, utf-16, splitting strings, NFC, NFD, unicode
 
 /*
  * Strings in Javascript are internally stored in UTF-16 encoding...

@@ -1,5 +1,6 @@
 
 local utils  = require('../vix/lib/utils')
+local shell  = require('../vix/lib/shell')
 local tmuxer = require('../vix/lib/tmuxer')
 local sutils = require('../vix/lib/slime-utils')
 local map    = vim.keymap.set
@@ -43,6 +44,10 @@ map("n","<C-c>", ":noh<CR>", { silent = true })
 --Find and replace (with 'magic')
 map("n", "<Leader>r", ":%s/\\v")
 map("n", "<Space>r", ":%s/\\v")
+map("n", "<Space>p", function() shell.search_and_replace(true) end)
+map("v", "<Space>p", function() shell.search_and_replace(false) end)
+map("n", "<Space>P", function() shell.run_command(true) end)
+map("v", "<Space>P", function() shell.run_command(false) end)
 
 --  old way
 --    map("n", "<Leader>do", ":r! date<CR>", { silent = true })

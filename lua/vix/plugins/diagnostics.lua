@@ -19,7 +19,7 @@ return {
     opts = {
       show_borders = true,
       -- scope = "line",
-      toggle_event = { 'InsertEnter' },
+      toggle_event = { 'InsertEnter', 'InsertLeave' },
       border_chars = {
         top_left = "╭",
         top_right = "╮",

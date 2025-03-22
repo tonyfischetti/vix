@@ -3,7 +3,7 @@
 
 /**************************************************
  * `for of` iterates over the elements of an _iterable object_
- * (most commonly, an array or string
+ * (most commonly, an array or string)
  *
  */
 

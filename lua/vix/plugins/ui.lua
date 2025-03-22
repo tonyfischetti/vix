@@ -1,6 +1,23 @@
 
 return {
 
+  {
+    "folke/snacks.nvim",
+    opts = {
+      input = {
+      },
+      bigfile = {
+      },
+      styles = {
+        input = {
+          height = 1,
+          row=5
+        }
+      }
+    }
+  },
+
+
   --  TODO: find a use for this
   {
     'rcarriga/nvim-notify',

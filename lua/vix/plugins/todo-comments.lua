@@ -6,11 +6,14 @@ return {
   {
     "folke/todo-comments.nvim",
     keys = {
-      { "<Leader>tt", "<cmd>TodoTelescope<CR>" }
+      { "<Space>t", "<cmd>TodoTelescope<CR>" }
     },
     lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
+      keywords = {
+        CODEX = { icon = "✎", color = "warning", alt = { "CDX", "DOCUMENT" } },
+      },
       search = {
         pattern = [[\b(KEYWORDS)\b]],
       },
