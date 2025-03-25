@@ -1,8 +1,0 @@
-
-Plug('maverickg/stan.vim',              {['for'] = 'stan'})
-Plug('TovarishFin/vim-solidity',        {['for'] = 'solidity'})
-Plug 'evanleck/vim-svelte'
-    Plug 'othree/html5.vim'
-
-
-Plug('mattn/emmet-vim',                 {['for'] = 'html'})

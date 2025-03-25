@@ -89,35 +89,35 @@ return {
       --     node_decremental = "<bs>",
       --   },
       -- },
-      -- textobjects = {
-      --   select = {
-      --     enable = true,
-      --     lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-      --     keymaps = {
-      --       -- You can use the capture groups defined in textobjects.scm
-      --       ['aa'] = '@parameter.outer',
-      --       ['ia'] = '@parameter.inner',
-      --       ['af'] = '@function.outer',
-      --       ['if'] = '@function.inner',
-      --       ['ac'] = '@class.outer',
-      --       ['ic'] = '@class.inner',
-      --     },
-      --   },
-      -- },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+          keymaps = {
+            -- You can use the capture groups defined in textobjects.scm
+            ['aa'] = '@parameter.outer',
+            ['ia'] = '@parameter.inner',
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+            ['ac'] = '@class.outer',
+            ['ic'] = '@class.inner',
+          },
+        },
+      },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
 
-  -- {
-  --   "nvim-treesitter/nvim-treesitter-textobjects",
-  --   dependencies = { "nvim-treesitter/nvim-treesitter" },
-  --   event = "VeryLazy",
-  --   enabled = true,
-  --   config = function()
-  --     require("nvim-treesitter.configs").setup({ textobjects = {} })
-  --   end,
-  -- }
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    event = "VeryLazy",
+    enabled = true,
+    config = function()
+      require("nvim-treesitter.configs").setup({ textobjects = {} })
+    end,
+  }
 
 }

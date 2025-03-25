@@ -20,15 +20,6 @@ return {
     },
     keys = {
 
-      --  TODO  whittle this down
-      {
-        "<Leader>/", function() require("telescope.builtin").find_files() end,
-        desc = "Fuzzy find files (regular)",
-      },
-      {
-        "<Leader>f", function() require("telescope.builtin").git_files() end,
-        desc = "Fuzzy find files in git repository",
-      },
       {
         "<Leader>cc", function() require("telescope.builtin").colorscheme() end,
         desc = "Fzf colorschemes",
@@ -36,14 +27,6 @@ return {
       {
         "<Leader>sy", function() require("telescope.builtin").symbols() end,
         desc = "Fzf symbols",
-      },
-      {
-        "<Leader>a", function() require("telescope.builtin").buffers() end,
-        desc = "Fzf open buffers",
-      },
-      {
-        "<Leader>gr", function() require("telescope.builtin").live_grep() end,
-        desc = "Live grep",
       },
 
       {

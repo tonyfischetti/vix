@@ -8,7 +8,7 @@ return {
     config = function()
       local global_note = require("global-note")
       global_note.setup()
-      vim.keymap.set("n", "<leader>n", global_note.toggle_note)
+      vim.keymap.set("n", "<Space>n", global_note.toggle_note)
     end
   }
 
