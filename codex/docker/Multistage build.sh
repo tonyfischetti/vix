@@ -2,7 +2,7 @@
 
 # This is an example for a nextjs app
 
-FROM node:23-bookwork-slim AS base
+FROM node:23-bookworm-slim AS base
 
 RUN <<EOF
     apt-get update -qq

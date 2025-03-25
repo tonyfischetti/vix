@@ -78,9 +78,9 @@ return {
       defaults = {
         mappings = {
           i = {
-            ["<ESC>"] = require("telescope.actions").close,
-            ["<C-j>"] = require("telescope.actions").move_selection_next,
-            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+            -- ["<ESC>"] = require("telescope.actions").close,
+            -- ["<C-j>"] = require("telescope.actions").move_selection_next,
+            -- ["<C-k>"] = require("telescope.actions").move_selection_previous,
             -- (new) defaults from telescope-project
             -- map('i', '<c-d>', _actions.delete_project)
             -- map('i', '<c-r>', _actions.rename_project)
