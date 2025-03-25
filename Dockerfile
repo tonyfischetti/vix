@@ -39,7 +39,17 @@ WORKDIR /home/$USERNAME
 RUN <<EOF
     curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh &&
     sudo -E bash nodesource_setup.sh &&
-    sudo apt -qq y install nodejs
+    sudo apt -qq -y install nodejs
+EOF
+
+# install r
+RUN <<EOF
+    sudo apt -qq -y r-base
+EOF
+
+# install clang
+RUN <<EOF
+    sudo apt -qq -y clang
 EOF
 
 RUN <<EOF
