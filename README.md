@@ -8,87 +8,57 @@ also, of course freely available for other use and measures will be taken
 to make its installation easy for other people to use and do whatever they
 want with.
 
-I use [vim-plug](https://github.com/junegunn/vim-plug) as my plugin
-manager and I like it a lot.
+## Keymaps of note
 
-List of vim plugins I use (besides vim-plug)
- - [tlib:](https://github.com/tomtom/tlib_vim.git)
-   Required for SnipMate
- - [mw-utils:](https://github.com/MarcWeber/vim-addon-mw-utils.git)
-   Required for SnipMate
- - [lualine:](https://github.com/nvim-lualine/lualine.nvim)
-   A great status line! Fast! Lua!
- - [nvim-web-devicons:](https://github.com/kyazdani42/nvim-web-devicons)
-   Icons
- - [tcomment](https://github.com/tomtom/tcomment_vim)
-   Great commenting plugin
- - [snipmate:](https://github.com/garbas/vim-snipmate)
-   Support for customizable code snippets
- - [vim-slime:](https://github.com/jpalardy/vim-slime)
-   Send text in Vim buffer to REPL
-   (preconfigured to use tmux)
- - [smalls:](https://github.com/t9md/vim-smalls)
-   Cursor movement with simple search
- - [hop:](https://github.com/phaazon/hop.nvim)
-   A great and easy way to quickly change cursor position
- - [vim-pandoc-syntax.vim:](https://github.com/vim-pandoc/vim-pandoc-syntax)
-   Pandoc syntax odule
- - [vim-mucomplete:](https://github.com/lifepillar/vim-mucomplete)
-   Autocomplete framework
- - [vim-racket:](https://github.com/wlangstroth/vim-racket)
-   Vim support for [Racket](http://racket-lang.org)
- - [stan.vim:](https://github.com/maverickg/stan.vim)
-   Syntax highlighing for the Stan modeling language
- - [vim-solidity:](https://github.com/TovarishFin/vim-solidity)
-   Syntax for solidity smart contracts
- - [vim-javascript:](https://github.com/pangloss/vim-javascript)
-   Better syntax file for Javascript
- - [typescript-vim:](https://github.com/leafgarland/typescript-vim)
-   Better syntax file for Typescript
- - [emmit](https://github.com/mattn/emmet-vim)
-   Emmet! For HTML!
- - [vim-ps1](https://github.com/PProvost/vim-ps1)
-   Plugin for powershell support
- - [json:](https://github.com/vim-scripts/vim-json-bundle)
-   Great JSON syntax highlighting support
- - [vim-cpp-modern:](https://github.com/bfrg/vim-cpp-modern)
-   Extended C++ syntax
- - [goyo](https://github.com/junegunn/goyo.vim)
-   Awesome distraction free writing
- - [vim-niji:](https://github.com/luochen1990/rainbow)
-   Easy to-tell LISP parethesis matching for great good
- - [neoscroll](https://github.com/karb94/neoscroll.nvim)
-   Smooth scrolling
- - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
-   Scroll bar!
- - [dracula](https://github.com/dracula/vim)
-   Venerable dracula theme
- - [nightfox](https://github.com/EdenEast/nightfox.nvim)
-   A nice theme
- - [material](https://github.com/marko-cerovac/material.nvim)
-   Another nice theme
- - [tokyonight](https://github.com/folke/tokyonight.nvim)
-   Pretty theme
- - [vim-gotham:](https://github.com/whatyouhide/vim-gotham)
-   A pretty fly color scheme
- - [vim-startuptime](https://github.com/dstein64/vim-startuptime)
-   Something to monitor vim's start up time
- - [plenary](https://github.com/nvim-lua/plenary.nvim)
-   Dependency of telescope
- - [telescope](https://github.com/nvim-telescope/telescope.nvim)
-   Dope fuzzy finder
- - [telescrope-symbols](https://github.com/nvim-telescope/telescope-symbols.nvim)
-   Fuzzy find of symbols, emojis, etc...
- - [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
-   Faster fuzzy search
- - [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
-   Cool bufferline
- - [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
-   File explorer tree
- - [vim-floaterm](https://github.com/voldikss/vim-floaterm)
-   Floating terminal (for `make`, etc...)
- - [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
-   Shows the color of HTML codes
+| keymap | description |
+| ------ | ----------- |
+| `<Space>p` | run buffer (or selection) through perl -ple |
+| `<Space>P` | run buffer (or selection) through command |
+| `<Leader>ee` | toggle nvim-tree |
+| `<Leader>ot` | obsidian today |
+| `<Leader>dd` | insert date |
+| `<Leader>rj` | reformat json |
+| `<Leader>vt` | vertical terminal split |
+| `<Leader>ht` | horizontal terminal split |
+| `<Space>,` | buffer left |
+| `<Space>.` | buffer right |
+| `<Leader>up` | print project root |
+| `<Leader>ug` | print git root |
+| `<Leader>uf` | print find file root |
+| `ga` | alignment plugin |
+| `<Space>/` | telescope: find files |
+| `<Space>f` | telescope: find files (git repo) |
+| `<Space>a` | telescope: open buffer |
+| `<Space>g` | telescope: live grep |
+| `<Space>o` | telescope: projects |
+| `<Space>:` | telescope: cmdline |
+| `<Space>t` | telescope: TODO comments |
+| `<Leader>cc` | telescope: color schemes |
+| `<Leader>sy` | telescope: symbols |
+| `<Space>mm` | floating terminal |
+| `<Space>n` | global note |
+| ------ | ----------- |
+| `<Leader>ss` | open slime pane |
+| `<Leader>sr` | open slime pane (with R) |
+| `<Leader>sR` | open slime pane (with RR) |
+| `<Leader>sc` | open slime pane (with custom command) |
+| ------ | ----------- |
+| `gd` | go to definition |
+| `gD` | go to declaration |
+| `gi` | go to implementation |
+| `<C-k>` | signature help |
+| `gi` | go to references |
+| ------ | ----------- |
+| `<Space>2d` | go to definition |
+| `<Space>2D` | go to declaration |
+| `<Space>2i` | go to implementation |
+| `<Space>2s` | signature help |
+| `<Space>2t` | type definition |
+| `<Space>mv` | rename symbol |
+| `<Space>2p` | format |
+| `<Space>2r` | go to references |
+| `<Space>ca` | code actions |
+
 
 Donate to Vim by sponsoring or registering to vote on features and, more
 importantly, help needy children in Uganda, please!
@@ -99,14 +69,10 @@ www.vim.org
 
 On GNU/Linux, Unix, etc... installation is simply
 
+TODO  dependencies
+
 ```
 mkdir -p ~/.config
 git clone https://github.com/tonyfischetti/vix.git ~/.config/nvim
-cd ~/.config/nvim
-./install.sh
 ```
-
-
-Windows instructions coming soon
-
 
