@@ -67,9 +67,8 @@ www.vim.org
 
 ## Installation
 
-On GNU/Linux, Unix, etc... installation is simply
-
-TODO  dependencies
+Assuming you have the necessary dependencies (git, curl, wget, par, fzf,
+ripgrep, node, lua, etc...) installation is simply
 
 ```
 mkdir -p ~/.config
