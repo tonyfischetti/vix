@@ -127,7 +127,7 @@ EOF
 RUN <<EOF
     git clone https://github.com/tonyfischetti/vix.git ~/.config/nvim &&
     cd ~/.config/nvim &&
-    git checkout radical-changes
+    nvim --headless +qall
 EOF
 
 # set timezone
