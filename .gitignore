@@ -101,7 +101,7 @@ gmon.out
 callgrind.out.*
 
 # node things
-package-lock.json
+# package-lock.json
 node_modules/
 .env
 .env.development.local

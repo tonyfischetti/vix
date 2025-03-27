@@ -73,5 +73,7 @@ ripgrep, node, lua, etc...) installation is simply
 ```
 mkdir -p ~/.config
 git clone https://github.com/tonyfischetti/vix.git ~/.config/nvim
+cd ~/.config/nvim
+make install
 ```
 
