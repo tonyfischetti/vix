@@ -5,8 +5,7 @@ bundle/
 plugged
 perf.log
 **/to-vim
-./codex/package-lock.json
-./codex/node_modules
+./codex/codex.db
 
 *.secret
 

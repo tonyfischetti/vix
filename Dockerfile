@@ -15,6 +15,7 @@ ARG USERNAME=tony
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
+COPY etc.motd /etc/motd
 COPY etc.apt.sources.list /etc/apt/sources.list
 RUN <<EOF
     rm /etc/apt/sources.list.d/debian.sources
@@ -22,11 +23,11 @@ EOF
 
 # essential packages
 RUN <<EOF
-    apt-get update -qq &&
-    apt-get upgrade -qq &&
-    apt-get install -qq -y --no-install-recommends apt-utils &&
+    apt-get update -qq                                                  &&
+    apt-get upgrade -qq                                                 &&
+    apt-get install -qq -y --no-install-recommends apt-utils            &&
     apt-get install -qq -y --no-install-recommends git neovim ack       \
-              wget curl build-essential sqlite3 fzf ripgrep &&
+              wget curl build-essential sqlite3 fzf ripgrep             &&
     apt-get install -qq -y --no-install-recommends                      \
        zsh gnupg autotools-dev sbcl libsystemd-dev ssh                  \
       build-essential tmux sudo htop cpanminus                          \
@@ -42,9 +43,9 @@ RUN <<EOF
       libfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev              \
       libudunits2-dev libgdal-dev libsqlite3-dev gfortran less          \
       ecl postgresql-client libfmt-dev libssl-dev libre2-dev zoxide     \
-      libboost-dev libspdlog-dev maven debconf-utils r-base nala &&
-    apt build-dep -y --no-install-recommends tmux &&
-    apt-get clean &&
+      libboost-dev libspdlog-dev maven debconf-utils r-base nala        &&
+    apt build-dep -y --no-install-recommends tmux                       &&
+    apt-get clean                                                       &&
     cpanm install Term::Animation
 EOF
 
@@ -122,12 +123,53 @@ RUN <<EOF
     R_LIBS=~/local/R_libs/ ./install.sh
 EOF
 
+# setup lisp
+RUN <<EOF
+    git clone https://github.com/tonyfischetti/clix.git ~/.lisp &&
+    cd ~/.lisp &&
+    ./install.sh &&
+    sudo ln -s /usr/bin/sbcl /usr/local/bin/sbcl &&
+    sbcl --eval '(quit)'
+EOF
 
 # setup neovim
 RUN <<EOF
+    # if the latest is needed
+    # wget "https://github.com/neovim/neovim/releases/download/v0.11.0/nvim-linux-x86_64.tar.gz" -O $HOME/neovim.tar.gz &&
+    # sudo tar xvfz neovim.tar.gz --strip-components=1 -C /usr/local &&
+    # rm -rf $HOME/neovim.tar.gz &&
     git clone https://github.com/tonyfischetti/vix.git ~/.config/nvim &&
     cd ~/.config/nvim &&
     nvim --headless +qall
+EOF
+
+# setup zpaq
+RUN <<EOF
+    git clone https://github.com/tonyfischetti/zpaq &&
+    cd zpaq &&
+    make &&
+    sudo make install &&
+    cd .. &&
+    rm -rf zpaq
+EOF
+
+# update apt xapian index
+RUN <<EOF
+    sudo update-apt-xapian-index
+EOF
+
+# setup cmus
+RUN <<EOF
+    sudo apt build-dep cmus -y --no-install-recommends &&
+    git clone https://github.com/tonyfischetti/cmus &&
+    cd cmus &&
+    ./configure &&
+    make &&
+    sudo make install &&
+    cd ../ &&
+    rm -rf cmus &&
+    git clone https://github.com/tonyfischetti/cmix.git ~/cmus &&
+    mkdir $HOME/music
 EOF
 
 # set timezone
@@ -135,7 +177,16 @@ RUN <<EOF
     echo "America/New_York" | sudo tee -a /etc/timezone
 EOF
 
-
-COPY etc.tar.xz /home/$USERNAME
+# configuration changes
+RUN <<EOF
+    # SSHD config
+    sudo perl -pi -e 's/^#? ?(LogLevel).+$/$1 VERBOSE/' /etc/ssh/sshd_config &&
+    sudo perl -pi -e 's/^(# ?Authentication).+$/$1\nAllowUsers tony/' /etc/ssh/sshd_config &&
+    sudo perl -pi -e 's/^#? ?(PermitRootLogin).+$/$1 no/' /etc/ssh/sshd_config &&
+    sudo perl -pi -e 's/^#? ?(PasswordAuthentication).+$/$1 no/' /etc/ssh/sshd_config &&
+    sudo perl -pi -e 's/^#? ?(PermitEmptyPasswords).+$/$1 no/' /etc/ssh/sshd_config &&
+    sudo perl -pi -e 's/^#? ?(ClientAliveInterval).+$/$1 90/' /etc/ssh/sshd_config &&
+    sudo perl -pi -e 's/^#? ?(ClientAliveCountMax).+$/$1 60/' /etc/ssh/sshd_config
+EOF
 
 CMD ["/usr/bin/zsh"]
