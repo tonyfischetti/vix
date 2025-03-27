@@ -13,6 +13,7 @@ build/
 target/
 dist/
 dist-newstyle/
+bin/
 
 *.bin
 *.eep
