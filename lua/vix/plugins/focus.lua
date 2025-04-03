@@ -13,6 +13,13 @@ return {
   {
     "shortcuts/no-neck-pain.nvim",
     cmd = "NoNeckPain"
+  },
+
+  {
+    "szw/vim-maximizer",
+    keys = {
+      { "<Space>z", "<cmd>MaximizerToggle<CR>", desc = "Maximize/minimize a split" },
+    },
   }
 
 }

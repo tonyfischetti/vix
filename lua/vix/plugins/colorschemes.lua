@@ -17,11 +17,6 @@ return {
     "EdenEast/nightfox.nvim",
   },
 
-  -- embark
-  {
-    "embark-theme/vim",
-  },
-
   -- fluoromachine
   -- TODO: good start. customize some colors
   {
@@ -34,39 +29,20 @@ return {
     }
   },
 
-  -- cyberdream
-  -- TODO: you can change colors
-  --       the light variant is cool
-  {
-    "scottmckendry/cyberdream.nvim",
-    opts = {
-      --   variant = "light",
-      -- override color entirely
-      colors = {
-        -- bg = "#deaded",
-        -- green = "#00ff00"
-        -- orange = "#ffff87",
-      },
-      -- easy to override highlight groups
-      overrides = function(colors)
-        return {
-          -- Comment = { fg = colors.green, bg = "NONE", italic = true },
-          ["@property"] = { fg = colors.magenta, bold = true },
-        }
-      end
-    }
-  },
-
   {
     "https://github.com/mhartington/oceanic-next"
   },
 
   {
-    "https://github.com/zootedb0t/citruszest.nvim"
+    "alexmozaidze/palenight.nvim"
   },
 
   {
-    "alexmozaidze/palenight.nvim"
+    "rebelot/kanagawa.nvim",
+  },
+
+  {
+    "oxfist/night-owl.nvim",
   }
 
 }
