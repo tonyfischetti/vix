@@ -38,7 +38,7 @@ return {
         desc = "Fuzzy find files in git repository",
       },
       {
-        "<Space>a", function() require("telescope.builtin").buffers() end,
+        "<Space>?", function() require("telescope.builtin").buffers() end,
         desc = "Fzf open buffers",
       },
       {

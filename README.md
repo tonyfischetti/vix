@@ -28,13 +28,15 @@ want with.
 | `ga` | alignment plugin |
 | `<Space>/` | telescope: find files |
 | `<Space>f` | telescope: find files (git repo) |
-| `<Space>a` | telescope: open buffer |
+| `<Space>?` | telescope: open buffers |
 | `<Space>g` | telescope: live grep |
 | `<Space>o` | telescope: projects |
 | `<Space>:` | telescope: cmdline |
 | `<Space>t` | telescope: TODO comments |
 | `<Leader>cc` | telescope: color schemes |
 | `<Leader>sy` | telescope: symbols |
+| <Space>z | Pane maximizer toggle |
+| <Space>e | Enter "resize" mode |
 | `<Space>mm` | floating terminal |
 | `<Space>n` | global note |
 | ------ | ----------- |

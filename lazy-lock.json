@@ -58,5 +58,6 @@
   "vim-ps1": { "branch": "master", "commit": "839cec1550e09fc902c74103053e9e765051083d" },
   "vim-slime": { "branch": "main", "commit": "9bc2e13f8441b09fd7352a11629a4da0ea4cb058" },
   "vim-startuptime": { "branch": "master", "commit": "b6f0d93f6b8cf6eee0b4c94450198ba2d6a05ff6" },
-  "vim-svelte": { "branch": "main", "commit": "0e93ec53c3667753237282926fec626785622c1c" }
+  "vim-svelte": { "branch": "main", "commit": "0e93ec53c3667753237282926fec626785622c1c" },
+  "winresizer": { "branch": "master", "commit": "9bd559a03ccec98a458e60c705547119eb5350f3" }
 }
