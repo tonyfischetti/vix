@@ -28,6 +28,7 @@ return {
     config = function()
       -- Set up nvim-cmp.
       local cmp = require('cmp')
+      require("luasnip.loaders.from_snipmate").lazy_load()
 
       -----------------------------------
       --       cmp configuration       --
@@ -44,7 +45,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'buffer' },
           { name = 'path' },
-          -- { name = 'luasnip' },
+          { name = 'luasnip' },
         }),
 
         snippet = {
@@ -78,9 +79,6 @@ return {
               else
                 cmp.select_next_item()
               end
-              --[[ Replace with your snippet engine (see above sections on this page)
-              elseif snippy.can_expand_or_advance() then
-              snippy.expand_or_advance() ]]
             elseif has_words_before() then
               cmp.complete()
               if #cmp.get_entries() == 1 then
