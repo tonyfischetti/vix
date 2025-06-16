@@ -1,0 +1,32 @@
+# avr, pinout, atmega328p pinout, atmega328p
+
+
+01 RESET    PC6    PCINT5
+02 RX       PD0    PCINT16
+03 TX       PD1    PCINT17
+04          PD2    PCINT18  INT0
+05          PD3    PCINT19  INT1        PWM            OC2B
+06          PD4    PCINT20
+07 VCC
+08 GND
+09 XTAL1    PB6    PCINT16
+10 XTAL2    PB7    PCINT17
+11          PD5    PCINT21              PWM            OC0B
+12          PD6    PCINT22              PWM    AIN0    OC0A
+13          PD7    PCINT23
+14          PB0    PCINT0
+
+28 SCL      PC5    PCINT13       ADC5
+27 SDA      PC4    PCINT12       ADC4
+26          PC3    PCINT11       ADC3
+25          PC2    PCINT10       ADC2
+24          PC1    PCINT9        ADC1
+23          PC0    PCINT8        ADC0
+22 GND
+21 AREF
+20 AVCC
+19 SCK      PB5    PCINT5
+18 MISO     PB4    PCINT4
+17 MOSI     PB3    PCINT3               PWM
+16 SS       PB2    PCINT2               PWM
+15          PB1    PCINT1               PWM

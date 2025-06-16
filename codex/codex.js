@@ -37,6 +37,7 @@ const openDatabaseAndSetGlobalDB = () => {
   try {
     DB = new Database(`${CODEX_ROOT}/codex.db`, {readonly: true, fileMustExist: true});
   } catch (error) {
+    console.error(error);
     throw Error("unable to open database");
   }
 };

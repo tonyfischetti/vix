@@ -25,7 +25,6 @@ return {
         "clangd",
         "ts_ls",
         "lua_ls",
-        "denols"
       }
     }
   },
