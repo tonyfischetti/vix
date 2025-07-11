@@ -29,7 +29,7 @@ return {
         enable = true,
         disable = {
           "r",
-          "lisp",
+          "commonlisp",
           -- "typescript",
           -- "javascript",
           "tsx",
