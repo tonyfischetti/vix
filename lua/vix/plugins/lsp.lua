@@ -21,7 +21,7 @@ return {
       --  TODO  I'm pretty sure I don't want it to auto install
       --        the haskell one doesn't work
       ensure_installed = {
-        "r_language_server",
+        -- "r_language_server",
         "clangd",
         "ts_ls",
         "lua_ls",

@@ -8,3 +8,8 @@ rainbow.toSorted();     // neither does this
 
 [...rainbow].sort((i, j) => i.length - j.length);
 // [ 'red',    'blue', 'green',  'orange', 'yellow', 'indigo', 'violet' ]
+
+// to sort an array of objects on a string field...
+[{ color: 'red', N: 1 }, { color: 'blue', N: 10 }].sort((i, j) => {
+  return (i.color > j.color) - (i.color < j.color);
+});
