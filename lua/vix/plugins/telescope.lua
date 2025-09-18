@@ -52,6 +52,18 @@ return {
         desc = "TODO",
       },
       {
+        "<Space>pa", function () require("telescope._extensions.project.actions").add_project() end,
+        desc = "TODO"
+      },
+      {
+        "<Space>pr", function () require("telescope._extensions.project.actions").rename_project() end,
+        desc = "TODO"
+      },
+      {
+        "<Space>pd", function () require("telescope._extensions.project.actions").delete_project() end,
+        desc = "TODO"
+      },
+      {
         "<Space>:", "<CMD>Telescope cmdline<CR>", desc = "Cmdline"
       },
 
@@ -64,10 +76,6 @@ return {
             -- ["<ESC>"] = require("telescope.actions").close,
             -- ["<C-j>"] = require("telescope.actions").move_selection_next,
             -- ["<C-k>"] = require("telescope.actions").move_selection_previous,
-            -- (new) defaults from telescope-project
-            -- map('i', '<c-d>', _actions.delete_project)
-            -- map('i', '<c-r>', _actions.rename_project)
-            -- map('i', '<c-p>', _actions.add_project)
           },
 
         },
@@ -110,8 +118,7 @@ return {
           -- theme = "dropdown",
           -- order_by = "asc",
           -- search_by = "title",
-          -- sync_with_nvim_tree = true, -- default false
-          -- default for on_project_selected = find project files
+          sync_with_nvim_tree = true, -- default false
           on_project_selected = function(prompt_bufnr)
             local project_actions = require("telescope._extensions.project.actions")
             local actions_state   = require("telescope.actions.state")
