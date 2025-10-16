@@ -36,86 +36,72 @@ return {
     },
 
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      local function root_dir_from(patterns, fallback)
+        return function(fname)
+          local path = fname and vim.fs.dirname(fname) or vim.uv.cwd()
+          local match = vim.fs.find(patterns, { path = path, upward = true })[1]
+          return match and vim.fs.dirname(match) or (fallback or vim.uv.cwd())
+        end
+      end
 
       ---------------------------------------
       --      r_language_server setup      --
       ---------------------------------------
-      lspconfig.r_language_server.setup({
-        -- cmd = {"R", "--slave", "-e", "'languageserver::run()'"}
-        -- TODO  can I use `on_attach` for other things
-        -- on_attach = on_attach_custom
+      vim.lsp.config("r_language_server", {
+        -- cmd = {"R", "--slave", "-e", "languageserver::run()"},
+        capabilities = capabilities,
       })
 
       --------------------------------------
       --       clangd c++ lsp setup       --
       --------------------------------------
-      lspconfig.clangd.setup({
+      vim.lsp.config("clangd", {
+        capabilities = capabilities,
       })
 
 
       -------------------------------
       --       denols config       --
       -------------------------------
-      -- lspconfig.denols.setup {
-      --   -- single_file_support = true,
-      --   root_dir = function(fn)
-      --     if lspconfig.util.root_pattern("package.json")(fn) then
-      --       return nil;
-      --     end
-      --     local has_deno_json = lspconfig.util.root_pattern("deno.json")(fn);
-      --     if has_deno_json then
-      --       return has_deno_json
-      --     end
-      --     return "."
-      --   end
-      -- }
+      -- vim.lsp.config("denols", {
+      --   root_dir = function(fname)
+      --     -- prefer deno projects without package.json
+      --     local has_pkg = vim.fs.find({ "package.json" }, { path = vim.fs.dirname(fname), upward = true })[1]
+      --     if has_pkg then return nil end
+      --     local deno_json = vim.fs.find({ "deno.json", "deno.jsonc" }, { path = vim.fs.dirname(fname), upward = true })[1]
+      --     return deno_json and vim.fs.dirname(deno_json) or vim.uv.cwd()
+      --   end,
+      --   capabilities = capabilities,
+      -- })
 
 
       -------------------------------
       --      tsserver config      --
       -------------------------------
-      lspconfig.ts_ls.setup({
-        root_dir = require("lspconfig").util.root_pattern("package.json"),
-        -- single_file_support = false,
+      vim.lsp.config("ts_ls", {
+        root_dir = root_dir_from({ "package.json" }),
         single_file_support = true,
         capabilities = capabilities,
-        -- on_attach = function(client)
+        -- on_init = function(client)
         --   client.server_capabilities.semanticTokensProvider = nil
-        --   -- client.server_capabilities.documentFormattingProvider = nil
-        --   -- client.server_capabilities.documentFormattingRangeProvider = nil
         -- end,
-        -- init_options = {
-        --   preferences = {
-        --     disableSuggestions = true
-        --   }
-        -- }
       })
 
 
       ------------------------------
       --      lua lsp config      --
       ------------------------------
-      -- TODO
-      -- lspconfig.lua_ls.setup(lua_ls_setup)
-      lspconfig.lua_ls.setup({
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
         settings = {
           Lua = {
-            diagnostics = { globals = { 'vim', 'opts' } },
-            workSpace = {
-              checkThirdParty = false,
-            },
-            codeLens = {
-              enable = true,
-            },
-            completion = {
-              callSnippet = "Replace",
-            },
-            doc = {
-              privateName = { "^_" },
-            },
+            diagnostics = { globals = { "vim", "opts" } },
+            workspace = { checkThirdParty = false },
+            codeLens = { enable = true },
+            completion = { callSnippet = "Replace" },
+            doc = { privateName = { "^_" } },
             hint = {
               enable = true,
               setType = false,
@@ -123,35 +109,55 @@ return {
               paramName = "Disable",
               semicolon = "Disable",
               arrayIndex = "Disable",
-            }
-          }
-        }
+            },
+          },
+        },
       })
+
 
       -------------------------------------
       --             haskell             --
       -------------------------------------
-      lspconfig.hls.setup({
+      vim.lsp.config("hls", {
+        capabilities = capabilities,
       })
+
 
       -----------------------------
       --         keymaps         --
       -----------------------------
-      -- TODO
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-      vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-      vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-      vim.keymap.set('n', '<Space>2d', vim.lsp.buf.definition, opts)
-      vim.keymap.set('n', '<Space>2D', vim.lsp.buf.declaration, opts)
-      vim.keymap.set('n', '<Space>2i', vim.lsp.buf.implementation, opts)
-      vim.keymap.set('n', '<Space>2s', vim.lsp.buf.signature_help, opts)
-      vim.keymap.set('n', '<Space>2t', vim.lsp.buf.type_definition, opts)
-      vim.keymap.set('n', '<Space>mv', vim.lsp.buf.rename, opts)
-      vim.keymap.set('n', '<Space>2p', function() vim.lsp.buf.format { async = true } end)
-      vim.keymap.set('n', '<Space>2r', vim.lsp.buf.references, opts)
-      vim.keymap.set({ 'n', 'v' }, '<Space>ca', vim.lsp.buf.code_action, opts)
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local buf = args.buf
+          local map = function(mode, lhs, rhs)
+            vim.keymap.set(mode, lhs, rhs, { buffer = buf })
+          end
+          map("n", "gd", vim.lsp.buf.definition)
+          map("n", "gD", vim.lsp.buf.declaration)
+          map("n", "gi", vim.lsp.buf.implementation)
+          map("n", "gr", vim.lsp.buf.references)
+          map("n", "<C-k>", vim.lsp.buf.signature_help)
+          map("n", "<Space>2d", vim.lsp.buf.definition)
+          map("n", "<Space>2D", vim.lsp.buf.declaration)
+          map("n", "<Space>2i", vim.lsp.buf.implementation)
+          map("n", "<Space>2s", vim.lsp.buf.signature_help)
+          map("n", "<Space>2t", vim.lsp.buf.type_definition)
+          map("n", "<Space>mv", vim.lsp.buf.rename)
+          map("n", "<Space>2p", function() vim.lsp.buf.format({ async = true }) end)
+          map("n", "<Space>2r", vim.lsp.buf.references)
+          map({ "n", "v" }, "<Space>ca", vim.lsp.buf.code_action)
+        end,
+      })
+
+      vim.lsp.enable({
+        "r_language_server",
+        "clangd",
+        -- "denols", -- if you enable it above
+        "ts_ls",
+        "lua_ls",
+        "hls",
+      })
 
     end
   },
