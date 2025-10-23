@@ -38,14 +38,6 @@ return {
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      local function root_dir_from(patterns, fallback)
-        return function(fname)
-          local path = fname and vim.fs.dirname(fname) or vim.uv.cwd()
-          local match = vim.fs.find(patterns, { path = path, upward = true })[1]
-          return match and vim.fs.dirname(match) or (fallback or vim.uv.cwd())
-        end
-      end
-
       ---------------------------------------
       --      r_language_server setup      --
       ---------------------------------------
@@ -81,7 +73,6 @@ return {
       --      tsserver config      --
       -------------------------------
       vim.lsp.config("ts_ls", {
-        root_dir = root_dir_from({ "package.json" }),
         single_file_support = true,
         capabilities = capabilities,
         -- on_init = function(client)
@@ -148,15 +139,6 @@ return {
           map("n", "<Space>2r", vim.lsp.buf.references)
           map({ "n", "v" }, "<Space>ca", vim.lsp.buf.code_action)
         end,
-      })
-
-      vim.lsp.enable({
-        "r_language_server",
-        "clangd",
-        -- "denols", -- if you enable it above
-        "ts_ls",
-        "lua_ls",
-        "hls",
       })
 
     end
