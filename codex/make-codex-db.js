@@ -161,7 +161,7 @@ const insertTags = (fileObj, _, { db }) => {
   return fileObj
 };
 
-const closeDB = (db) => { db.close(); }
+const closeDB = ({ db }) => { db.close(); }
 
 /***************************************************************/
 
@@ -187,7 +187,7 @@ TacitPromise.create(context).
     tap("blacklistedPaths").
 
   focus('codexRoot').
-    map(root => `${root}/codex.db`).
+    then(root => `${root}/codex.db`).
     tap("codexDBPath").
   
   when(pathExistsP, removeOldDB).
@@ -201,20 +201,19 @@ TacitPromise.create(context).
   focus('codexRoot').
     then(getAllFilesRecursively).
     filter(filesOnly).
-    mapcar(addAltPathsAsKey).
+    map(addAltPathsAsKey).
     filter(notBlacklistedP).
 
   then(log("parsing tags")).
-    mapcar(addFirstLineAsKey).
-    mapcar(addTags).
-    mapcar(addAFileID).
+    map(addFirstLineAsKey, { concurrency: 10 }).
+    map(addTags).
+    map(addAFileID).
 
   then(log("inserting tags and files")).
-    mapcar(insertFile).
-    mapcar(insertTags).
+    map(insertFile).
+    map(insertTags).
 
-  focus('db').
-  then(closeDB).
+  finally(closeDB).
   
   catch(consola.error).
   then(log("done", consola.success));

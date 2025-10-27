@@ -14,6 +14,6 @@
     "commander": "^12.1.0",
     "consola": "^3.2.3",
     "rimraf": "^6.0.1",
-    "taciturn": "^0.0.5"
+    "taciturn": "^0.0.7"
   }
 }
