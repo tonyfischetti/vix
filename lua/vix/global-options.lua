@@ -37,6 +37,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.background = "dark"
 vim.opt.guifont = {"Monaco for Powerline", ":h14"}
+vim.opt.winborder = "rounded"
 vim.opt.mouse = "a"
 -- do I want this?
 -- vim.o.mousemoveevent = true
@@ -72,7 +73,7 @@ vim.highlight.priorities.semantic_tokens = 5
 -- vim.cmd("let g:mucomplete#chains = {}")
 -- vim.cmd("let g:mucomplete#chains.default = ['path', 'keyn', 'omni', 'dict', 'uspl', 'snipmate']")
 
--- TODO
+--  TODO 
 -- vim.g.floaterm_width = 0.7
 -- vim.g.floaterm_title = '  floatterm  '
 
