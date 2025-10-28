@@ -6,16 +6,13 @@ import * as os from 'node:os';
 const doesExist   = `${os.homedir()}/Desktop/Carlos IV/Backups/Pictures/Cool Pictures/Breakfast Club.gif`;
 const doesntExist = `${os.homedir()}/Desktop/Carlos IV/Backups/Pictures/Cool Pictures/Breakfast Club2.gif`;
 
-const pathExistsP = (apath) => {
-  return new Promise((resolve, reject) => {
-    fs.stat(apath).
-      then(() => resolve(true)).
-      catch((err) => {
-        if (err.code === 'ENOENT')
-          resolve(false);
-        reject(err);
-      });
-  });
+const pathExistsP = apath => {
+  return fs.stat(apath)
+    .then(() => true)
+    .catch((err) => {
+      if (err.code === 'ENOENT') return false;
+      throw err;
+    });
 };
 
 pathExistsP(doesExist).then(console.log);

@@ -9,7 +9,8 @@ let lineCount = 0;
 
 fs.readFile(inputFile, 'utf-8').
   then((contents) => {
-    console.log(`line count: ${contents.split(os.EOL).length-1}`);
+    // console.log(`line count: ${contents.split(os.EOL).length-1}`);
+    console.log(`line count: ${contents.split(/\r?\n/).length-1}`); // better
 });
 
 /* OR ******************************************************** */
