@@ -128,7 +128,7 @@ return {
             local label = mark_label(mark)
 
             -- hide numeric & common special/system marks
-            -- keep only your named a–z/A–Z marks
+            -- keep only named a–z/A–Z marks
             if label:match("^%d$") or label:match('[\"\'`%^%[%]<>%.]') then
               return nil
             end
