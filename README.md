@@ -33,11 +33,12 @@ want with.
 | `<Space>o` | telescope: projects |
 | `<Space>:` | telescope: cmdline |
 | `<Space>t` | telescope: TODO comments |
+| `<Space>mm` | telescope: marks |
 | `<Leader>cc` | telescope: color schemes |
 | `<Leader>sy` | telescope: symbols |
 | <Space>z | Pane maximizer toggle |
 | <Space>e | Enter "resize" mode |
-| `<Space>mm` | floating terminal |
+| `<Space>M` | floating terminal |
 | `<Space>n` | global note |
 | ------ | ----------- |
 | `<Leader>ss` | open slime pane |

@@ -5,7 +5,7 @@ return {
   {
     'numToStr/FTerm.nvim',
     init = function()
-      vim.keymap.set('n', '<Space>mm', '<CMD>lua require("FTerm").toggle()<CR>')
+      vim.keymap.set('n', '<Space>M', '<CMD>lua require("FTerm").toggle()<CR>')
     end
   }
 
