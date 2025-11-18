@@ -55,21 +55,6 @@ return {
 
 
       -------------------------------
-      --       denols config       --
-      -------------------------------
-      -- vim.lsp.config("denols", {
-      --   root_dir = function(fname)
-      --     -- prefer deno projects without package.json
-      --     local has_pkg = vim.fs.find({ "package.json" }, { path = vim.fs.dirname(fname), upward = true })[1]
-      --     if has_pkg then return nil end
-      --     local deno_json = vim.fs.find({ "deno.json", "deno.jsonc" }, { path = vim.fs.dirname(fname), upward = true })[1]
-      --     return deno_json and vim.fs.dirname(deno_json) or vim.uv.cwd()
-      --   end,
-      --   capabilities = capabilities,
-      -- })
-
-
-      -------------------------------
       --      tsserver config      --
       -------------------------------
       vim.lsp.config("ts_ls", {

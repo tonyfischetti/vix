@@ -2,7 +2,7 @@
 return {
 
   {
-    'tonyfischetti/tiny-inline-diagnostic.nvim',
+    'rachartier/tiny-inline-diagnostic.nvim',
     event = 'LspAttach',
     -- opts = {
     --   show_all_diags_on_cursorline = false,
@@ -16,6 +16,7 @@ return {
 
         options = {
           show_all_diags_on_cursorline = false,
+          show_diags_only_under_cursor = true,
         },
 
       })
