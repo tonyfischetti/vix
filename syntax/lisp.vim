@@ -784,6 +784,7 @@ syn keyword lispFunc ~s
 syn keyword lispFunc ~f
 syn keyword lispFunc ~c
 syn keyword lispFunc ~e
+syn keyword lispFunc str-normalize
 syn keyword lispFunc with-loading
 syn keyword lispFunc request/get
 syn keyword lispFunc request/post
