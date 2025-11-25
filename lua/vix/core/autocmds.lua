@@ -73,5 +73,6 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "r",
     callback = function()
         vim.opt_local.iskeyword:append(".")
+        vim.bo.omnifunc = "syntaxcomplete#Complete"
     end
 })
