@@ -60,3 +60,11 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
 --     command = [[set fo-=c fo-=r fo-=o]]
 -- })
 
+vim.api.nvim_create_autocmd("FileType", {
+    group = vixgroup,
+    pattern = "lisp",
+    callback = function()
+        vim.bo.omnifunc = "syntaxcomplete#Complete"
+    end
+})
+

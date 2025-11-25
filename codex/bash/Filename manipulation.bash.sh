@@ -1,5 +1,4 @@
-# bash, filename manipulation, remove extension, change extension,
-# basename
+# bash, filename manipulation, remove extension, change extension, basename
 
 TF="$0"
 FTF="$(realpath "${TF}")"    #  WARNING  THIS MUST BE QUOTED, AGAIN!

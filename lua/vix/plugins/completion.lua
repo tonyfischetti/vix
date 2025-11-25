@@ -24,6 +24,7 @@ return {
       { "L3MON4D3/LuaSnip" },
       { "saadparwaiz1/cmp_luasnip" },
       { "neovim/nvim-lspconfig" },
+      { "hrsh7th/cmp-omni" },
     },
     config = function()
       -- Set up nvim-cmp.
@@ -43,6 +44,7 @@ return {
         -- TODO: how do I prioritize?!
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          { name = 'omni' },
           { name = 'buffer' },
           { name = 'path' },
           { name = 'luasnip' },
