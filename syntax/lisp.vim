@@ -677,7 +677,7 @@ syn keyword lispFunc with-a-file
 syn keyword lispFunc stream!
 syn keyword lispFunc str+
 syn keyword lispFunc str-join
-syn keyword lispFunc substr
+syn keyword lispFunc str-sub
 syn keyword lispFunc string->char-list
 syn keyword lispFunc split-string->lines
 syn keyword lispFunc repeat-string
