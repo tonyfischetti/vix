@@ -8,6 +8,8 @@ also, of course freely available for other use and measures will be taken
 to make its installation easy for other people to use and do whatever they
 want with.
 
+- [ ] TODO FINISH THE BELOW
+
 ## Keymaps of note
 
 | keymap | description |
