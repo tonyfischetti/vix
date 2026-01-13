@@ -61,7 +61,7 @@ map("n", "<Leader>rj", ":%!python3 -mjson.tool<CR>")
 map("n", "<Leader>rw", ":%s/\\v\\s+$//<CR>", { silent = true })
 
 -- toggle ColorColumn
-map('n', '<Leader>co', utils.toggle_opt('colorcolumn', 'wo', '79', '0'))
+map('n', '<Leader>C', utils.toggle_opt('colorcolumn', 'wo', '79', '0'))
 
 map("n", "<Space>.", ":BufferLineCycleNext<CR>", { silent = true })
 map("n", "<Space>,", ":BufferLineCyclePrev<CR>", { silent = true })
