@@ -5,6 +5,6 @@ ssh -R 9999:localhost:8888 betaoutside
 
 # "client"
 ssh betaoutside
-ssh localhost -p 9898
+ssh localhost -p 9999
 
 
