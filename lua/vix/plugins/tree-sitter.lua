@@ -1,123 +1,26 @@
+-- nvim-treesitter: REMOVED 2026-07-18 (deliberately -- don't re-add casually)
+--
+-- Why: the plugin's `master` branch froze in March 2026 (final commit
+-- cf12346) and is incompatible with Neovim 0.12: core now passes query
+-- directives a *list* of nodes per capture, the frozen handler still
+-- expects a single node, so every markdown file with a code fence threw
+--   "attempt to call method 'range' (a nil value)"
+-- from the decoration provider. The plugin's stale queries shadowed
+-- Neovim's bundled ones via the runtimepath, so no config knob could
+-- fix it -- core auto-starts markdown highlighting itself now
+-- ($VIMRUNTIME/ftplugin/markdown.lua is literally `vim.treesitter.start()`).
+--
+-- What we rely on instead: Neovim 0.12's *bundled* parsers + queries
+-- (markdown, markdown_inline, lua, c, vimdoc, query) -- mutually
+-- consistent, auto-started by core, code fences included. Everything
+-- else falls back to regex syntax highlighting, which we had already
+-- disabled treesitter for in the languages that matter here (cpp, r,
+-- sql, html...).
+--
+-- What was lost (knowingly): treesitter textobject keymaps
+-- (aa/ia/af/if/ac/ic) and ts-highlighting for python/haskell/js/etc.
+-- If wanted back someday: the maintained rewrite is the `main` branch
+-- (new setup API, needs `brew install tree-sitter`), plus
+-- nvim-treesitter-textobjects' own `main` rewrite for the keymaps.
 
-return {
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    version = false, -- last release is way too old and doesn't work on Windows
-    build = ":TSUpdate",
-    event = { "VeryLazy" },
-    lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
-    -- init = function(plugin)
-    --   -- PERF: add nvim-treesitter queries to the rtp and it's custom query predicates early
-    --   -- This is needed because a bunch of plugins no longer `require("nvim-treesitter")`, which
-    --   -- no longer trigger the **nvim-treesitter** module to be loaded in time.
-    --   -- Luckily, the only things that those plugins need are the custom queries, which we make available
-    --   -- during startup.
-    --   require("lazy.core.loader").add_to_rtp(plugin)
-    --   require("nvim-treesitter.query_predicates")
-    -- end,
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-    keys = {
-      { "<c-space>", desc = "Increment Selection" },
-      { "<bs>", desc = "Decrement Selection", mode = "x" },
-    },
-    --  TODO  I'm pretty sure I don't want it to auto install
-    opts_extend = { "ensure_installed" },
-    opts = {
-      highlight = {
-        --  TODO  I'm pretty sure I want this off
-        enable = true,
-        disable = {
-          "r",
-          "commonlisp",
-          -- "typescript",
-          -- "javascript",
-          "tsx",
-          "jsx",
-          "cpp",
-          "sql",
-          "html",
-        },
-      },
-      indent = { enable = false },
-      ensure_installed = {
-        "bash",
-        "c",
-        "cmake",
-        "commonlisp",
-        "cpp",
-        "css",
-        "csv",
-        "diff",
-        "dockerfile",
-        "erlang",
-        "fennel",
-        "forth",
-        "haskell",
-        "html",
-        "javascript",
-        "r",
-        "json",
-        "json5",
-        "jsonc",
-        "just",
-        "lua",
-        "make",
-        "markdown",
-        "markdown_inline",
-        "perl",
-        "printf",
-        "python",
-        "query",
-        "regex",
-        "svelte",
-        "toml",
-        "tsv",
-        "tsx",
-        "typescript",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-      },
-      -- incremental_selection = {
-      --   enable = true,
-      --   keymaps = {
-      --     init_selection = "<C-i>",
-      --     node_incremental = "<C-i>",
-      --     scope_incremental = false,
-      --     node_decremental = "<bs>",
-      --   },
-      -- },
-      textobjects = {
-        select = {
-          enable = true,
-          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-          keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
-          },
-        },
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    event = "VeryLazy",
-    enabled = true,
-    config = function()
-      require("nvim-treesitter.configs").setup({ textobjects = {} })
-    end,
-  }
-
-}
+return {}
