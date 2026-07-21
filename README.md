@@ -72,13 +72,18 @@ www.vim.org
 
 ## Installation
 
-Assuming you have the necessary dependencies (git, curl, wget, par, fzf,
-ripgrep, node, lua, etc...) installation is simply
-
 ```
 mkdir -p ~/.config
 git clone https://github.com/tonyfischetti/vix.git ~/.config/nvim
-cd ~/.config/nvim
-make install
+make -C ~/.config/nvim deps      # nvim binary (pinned) + tools + providers
+make -C ~/.config/nvim setup     # plugins, pinned to lazy-lock.json
+make -C ~/.config/nvim doctor    # verify everything
 ```
+
+The Makefile is the single source of truth.  Everything is re-runnable:
+`deps` skips the nvim download when the pinned version is already
+installed (and auto-detects arm64 vs x86_64 on linux), `setup`
+converges the plugin set on exactly what `lazy-lock.json` pins, and
+`doctor` checks the whole install — including a clean headless startup
+of the full config — exiting nonzero if anything is broken.
 
