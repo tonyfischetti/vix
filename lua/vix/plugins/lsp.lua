@@ -4,6 +4,20 @@
 --  TODO  what are "code actions"? should I use telescope with them?
 
 
+-- the clangd project publishes no linux-arm64 binaries, so mason can't
+-- install it there (e.g. the debian docker image on apple silicon) —
+-- those machines use the system clangd (apt) instead, enabled by hand
+-- in the lspconfig block below
+local ensure_installed = {
+  -- "r_language_server",
+  "ts_ls",
+  "lua_ls",
+}
+local uname = vim.uv.os_uname()
+if not (uname.sysname == "Linux" and uname.machine == "aarch64") then
+  table.insert(ensure_installed, "clangd")
+end
+
 return {
 
   {
@@ -20,12 +34,7 @@ return {
     opts = {
       --  TODO  I'm pretty sure I don't want it to auto install
       --        the haskell one doesn't work
-      ensure_installed = {
-        -- "r_language_server",
-        "clangd",
-        "ts_ls",
-        "lua_ls",
-      }
+      ensure_installed = ensure_installed
     }
   },
 
@@ -52,6 +61,12 @@ return {
       vim.lsp.config("clangd", {
         capabilities = capabilities,
       })
+
+      -- mason-lspconfig auto-enables only the servers mason itself
+      -- installed; a system clangd (apt, on linux-arm64) needs this
+      if vim.fn.executable("clangd") == 1 then
+        vim.lsp.enable("clangd")
+      end
 
 
       -------------------------------

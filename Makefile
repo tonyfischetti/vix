@@ -40,7 +40,7 @@ else
 	sudo apt-get update -qq -o Acquire::Retries=3
 	sudo apt-get install -qq -y -o Acquire::Retries=3 \
 	  ripgrep fzf par pandoc curl wget ca-certificates \
-	  python3-neovim ruby-neovim
+	  python3-neovim ruby-neovim clangd
 	@if command -v nvim >/dev/null && nvim --version | head -1 | grep -q "$(NVIM_VERSION)"; then \
 	  echo "nvim $(NVIM_VERSION) already installed"; \
 	else \
