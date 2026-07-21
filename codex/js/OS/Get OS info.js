@@ -1,4 +1,4 @@
-// js, os, end of line character, JSON.stringify, home directory, platform, endianness, hostname, uptime, temporary directory, operating system, architecture, pid, get process information
+// js, os, end of line character, JSON.stringify, home directory, platform, endianness, hostname, uptime, temporary directory, operating system, architecture, pid, get process information, serialize
 
 import * as os from 'node:os';
 

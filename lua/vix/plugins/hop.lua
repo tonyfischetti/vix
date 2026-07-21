@@ -4,8 +4,8 @@ return {
     "smoka7/hop.nvim",
     -- TODO
     keys = {
-      { "s", "<cmd>HopWord<CR>" },
-      { "S", "<cmd>HopPattern<CR>" }
+      { "s", "<cmd>HopPattern<CR>" },
+      { "S", "<cmd>HopWord<CR>" },
     },
     config = true
   }
