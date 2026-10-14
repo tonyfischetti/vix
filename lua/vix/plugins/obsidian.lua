@@ -1,18 +1,32 @@
 
+-- obsidian-nvim/obsidian.nvim is the maintained community fork of
+-- epwalsh/obsidian.nvim (which stopped at v3.9.0, july 2024).
+-- differences from the old config that matter here:
+--   - one `:Obsidian <sub>` command (legacy ObsidianFoo commands off)
+--   - completion is an in-process LSP ("obsidian-ls"), picked up by
+--     nvim-cmp through cmp-nvim-lsp; no `completion.nvim_cmp` any more
+--   - `<CR>` is bound by the plugin itself ("smart action": follow link,
+--     toggle checkbox, cycle heading fold), so no custom `mappings`
+--   - `follow_url_func` gone; URLs open with vim.ui.open by default
+--   - `note_frontmatter_func` is now `frontmatter.func`
+--   - checkbox glyphs are the plugin defaults (they match what was
+--     configured before); the toggle *order* is `checkbox.order`. setting
+--     `ui.checkboxes` at all makes the plugin warn on every start
+--   - plenary is no longer a dependency
+
 return {
 
   {
-    'epwalsh/obsidian.nvim',
+    'obsidian-nvim/obsidian.nvim',
     version = "*",
     ft = "markdown",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
     keys = {
-      { "<Leader>ot", ":ObsidianToday<CR>" }
+      { "<Leader>ot", "<cmd>Obsidian today<CR>", desc = "obsidian: today's note" }
     },
 
     opts = {
+
+      legacy_commands = false,
 
       workspaces = {
         {
@@ -22,8 +36,11 @@ return {
       },
 
       completion = {
-        nvim_cmp = true,
         min_chars = 2,
+      },
+
+      picker = {
+        name = "telescope.nvim",
       },
 
       new_notes_location = "notes_subdir",
@@ -32,21 +49,6 @@ return {
         folder = "Daily Notes",
         template = "daily"
       },
-
-      mappings = {
-        ["<cr>"] = {
-          action = function()
-            if require("obsidian").util.cursor_on_markdown_link(nil, nil, true) then
-              return "<cmd>ObsidianFollowLink<CR>"
-            end
-          end,
-          opts = { buffer = true, expr = true },
-        }
-      },
-
-      follow_url_func = function(url)
-        vim.ui.open(url)
-      end,
 
       note_id_func = function(title)
         local suffix = ""
@@ -62,50 +64,29 @@ return {
         return tostring(os.time()) .. "-" .. suffix
       end,
 
-      -- stem is messed
-      note_path_func = function(spec)
-        local path = spec.dir / tostring(spec.id)
-        local firstpart = path.stem
-        if path.suffix then
-          firstpart = firstpart .. path.suffix
-        end
-        return firstpart .. ".md"
-      end,
-
-
-      note_frontmatter_func = function(note)
-        -- Add the title of the note as an alias.
-        -- NO!
-        -- if note.title then
-        --   note:add_alias(note.title)
-        -- end
-        -- local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-        local out = { id = note.id, tags = note.tags }
-        -- `note.metadata` contains any manually added fields in the frontmatter.
-        -- So here we just make sure those fields are kept in the frontmatter.
-        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-          for k, v in pairs(note.metadata) do
-            out[k] = v
+      frontmatter = {
+        func = function(note)
+          -- id + tags only (deliberately no aliases), keeping any fields
+          -- that were added to the frontmatter by hand
+          local out = { id = note.id, tags = note.tags }
+          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+            for k, v in pairs(note.metadata) do
+              out[k] = v
+            end
           end
-        end
-        return out
-      end,
+          return out
+        end,
+      },
 
       templates = {
         folder = "_templates",
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
-        -- A map for custom variables, the key should be the variable and the value a function
         substitutions = {},
       },
 
-      ui = {
-        checkboxes = {
-          [" "] = { char = "▢󰄱", hl_group = "ObsidianTodo" },
-          ["x"] = { char = "", hl_group = "ObsidianDone" },
-          [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-          ["!"] = { char = "", hl_group = "ObsidianImportant" },
-        }
+      checkbox = {
+        order = { " ", ">", "!", "x" },
       },
 
     }

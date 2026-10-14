@@ -54,7 +54,7 @@ Managed by lazy.nvim, pinned in `lazy-lock.json`. Specs live in
 | plugin | what it does |
 | ------ | ------------ |
 | vim-slime | send text to a tmux pane (helpers in `lua/vix/lib/`) |
-| obsidian.nvim | obsidian vault integration for markdown files |
+| obsidian.nvim | obsidian vault integration for markdown files (the maintained `obsidian-nvim` fork); link/tag completion comes from its built-in LSP |
 
 ### Appearance
 
@@ -184,14 +184,19 @@ implementation, `grt` type definition.
 | lisp | `:Out`, `:Restart`, `:Load` | leave the debugger, restart sbcl, load a file |
 | r | `<Leader>rr` | send the enclosing `{ ... }` block |
 | r | `:RCopyLastValue` | send `copy_last_value()` |
-| markdown | `<Leader>ot` | obsidian: today's note |
-| markdown | `<CR>` | obsidian: follow the link under the cursor |
+| markdown (vault) | `<Leader>ot` | obsidian: today's note |
+| markdown (vault) | `<CR>` | obsidian "smart action": follow link, toggle checkbox, or cycle heading fold |
+| markdown (vault) | `]o` / `[o` | obsidian: next / previous link |
 
 ### Commands worth knowing
 
 - `:CB<x><y><z> <n>` — comment-box, where `x` is the box alignment (`l`,
   `c`, `r`), `y` is the text alignment (`l`, `c`, `r`, `a`), `z` is `box` or
   `line`, and `n` is a style from `:CBcatalog`.
+- `:Obsidian <subcommand>` — everything obsidian (tab-complete it): `new`,
+  `quick_switch`, `search`, `backlinks`, `links`, `template`, `rename`,
+  `tags`, `toc`, `extract_note`, `toggle_checkbox`, `today`, `yesterday`,
+  `tomorrow`, `dailies`, `open` (in the Obsidian app), ...
 - `:NoNeckPain` — centre the buffer.
 - `:StartupTime` — profile startup.
 
