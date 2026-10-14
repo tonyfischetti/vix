@@ -1,64 +1,38 @@
 
 local vixgroup = vim.api.nvim_create_augroup("vix_cmds", { clear = true })
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = { "*.lisp", "*.lsp", "*.asd"},
-    command = "set ft=lisp"
+-- filetype overrides. everything neovim already detects the same way
+-- (.lisp/.lsp/.asd, .hy, .ino, Makefile, .tsx) is left to it; these are
+-- the ones where we want something different
+vim.filetype.add({
+  extension = {
+    ejs = "html",             -- neovim has no ejs detection
+    jsx = "typescriptreact",  -- neovim: javascriptreact
+    -- deliberate: plain .ts files get the tsx syntax stack as well; the
+    -- lcars colorscheme is tuned to its highlight groups (see the
+    -- TypeScript notes in README before changing)
+    ts  = "typescriptreact",  -- neovim: typescript
+  },
+  filename = {
+    ["Makefile.am"] = "make", -- neovim: automake
+  },
 })
 
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+-- typescript-vim ships an ftdetect autocmd that forces ft=typescript on
+-- *.ts. it is only registered once that plugin has loaded (first
+-- typescriptreact buffer), after which it would undo the override above
+-- for every later .ts file. so instead of racing it, react to it: any
+-- .ts buffer that ends up as `typescript` is flipped back
+vim.api.nvim_create_autocmd("FileType", {
     group = vixgroup,
-    pattern = "*.hy",
-    command = "set ft=hy"
+    pattern = "typescript",
+    nested = true,  -- so the FileType typescriptreact event fires too
+    callback = function(a)
+        if a.file:match("%.ts$") then
+            vim.bo[a.buf].filetype = "typescriptreact"
+        end
+    end,
 })
-
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = "*.ino",
-    command = "set ft=arduino"
-})
-
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = "Makefile.am",
-    command = "set ft=make"
-})
-
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = "Makefile",
-    command = "set ft=make"
-})
-
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = "*.ejs",
-    command = "set ft=html"
-})
-
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = { "*.tsx", "*.jsx" },
-    command = "set ft=typescriptreact"
-})
-
--- I think it works even better that the regular ones
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
-    group = vixgroup,
-    pattern = { "*.ts" },
-    command = "set ft=typescriptreact"
-})
-
--- vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
---     group = vixgroup,
---     pattern = { "*.cpp", "*.hpp", "*.cc" },
---     command = "setlocal omnifunc=syntaxcomplete#Complete"
--- })
---
--- vim.api.nvim_create_autocmd("BufEnter", {
---     command = [[set fo-=c fo-=r fo-=o]]
--- })
 
 vim.api.nvim_create_autocmd("FileType", {
     group = vixgroup,
