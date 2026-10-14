@@ -36,8 +36,9 @@ help:
 # version-namespaced, so stale files would otherwise survive upgrades.
 # apt's /usr/bin/nvim, if any, is left alone (shadowed by /usr/local).
 # macOS: brew.
-# python3-neovim / ruby-neovim are the apt provider packages; the node
-# provider is best-effort (needs npm, which nodejs owns).
+# providers: python and ruby are disabled in global-options.lua (nothing
+# uses them), so no pynvim / neovim-ruby here; the node provider is kept
+# and is best-effort (needs npm, which nodejs owns).
 deps:
 ifeq ($(UNAME_S),Darwin)
 	brew install neovim ripgrep ack fzf par pandoc
@@ -49,8 +50,7 @@ else
 	sudo apt-get update -qq -o Acquire::Retries=3 \
 	  || echo "apt-get update had errors (see above) -- continuing with cached indexes"
 	sudo apt-get install -qq -y -o Acquire::Retries=3 \
-	  ripgrep ack fzf par pandoc curl wget ca-certificates \
-	  python3-neovim ruby-neovim clangd
+	  ripgrep ack fzf par pandoc curl wget ca-certificates clangd
 	@if command -v nvim >/dev/null && nvim --version | head -1 | grep -q "$(NVIM_VERSION)"; then \
 	  echo "nvim $(NVIM_VERSION) already installed"; \
 	else \

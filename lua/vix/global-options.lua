@@ -48,6 +48,12 @@ vim.opt.splitbelow = true
 
 vim.g['perl_host_prog'] = "/usr/bin/perl"
 
+-- no plugin uses the python or ruby providers; turning them off stops
+-- nvim probing for pynvim / neovim-ruby (and :checkhealth nagging).
+-- node is left on. re-enable if a remote plugin ever needs one
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 if vim.fn.executable('par') == 1 then
     vim.opt.formatprg = 'par -w71r'
 end

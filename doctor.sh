@@ -70,8 +70,8 @@ for t in rg ack fzf par pandoc; do
 done
 
 # --- providers (optional niceties — warn, never fail) ---
+# python and ruby providers are disabled in global-options.lua; only node is kept
 command -v node >/dev/null || warn "node not on PATH (node provider absent)"
-python3 -c 'import pynvim' 2>/dev/null || warn "pynvim not importable (python provider absent)"
 
 echo
 if [ "$fail" -eq 0 ]; then
