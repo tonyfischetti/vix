@@ -18,7 +18,7 @@ SHELL := /bin/bash
 
 VIX          := $(CURDIR)
 UNAME_S      := $(shell uname -s)
-NVIM_VERSION := v0.12.4
+NVIM_VERSION := v0.12.6
 
 .PHONY: help deps setup doctor
 
@@ -30,7 +30,12 @@ help:
 
 # ---- nvim + tools ---------------------------------------------------- #
 # Debian: pinned release tarball, arch auto-detected (the Dockerfile
-# used to toggle arm64/x86_64 by commenting lines).  macOS: brew.
+# used to toggle arm64/x86_64 by commenting lines).  A prior tarball
+# install (bin/nvim, lib/nvim, share/nvim under /usr/local) is wiped
+# first -- tar overwrites but never deletes, and the runtime dir isn't
+# version-namespaced, so stale files would otherwise survive upgrades.
+# apt's /usr/bin/nvim, if any, is left alone (shadowed by /usr/local).
+# macOS: brew.
 # python3-neovim / ruby-neovim are the apt provider packages; the node
 # provider is best-effort (needs npm, which nodejs owns).
 deps:
@@ -48,6 +53,7 @@ else
 	  echo "installing nvim $(NVIM_VERSION) ($$arch)"; \
 	  wget -q "https://github.com/neovim/neovim/releases/download/$(NVIM_VERSION)/nvim-linux-$$arch.tar.gz" \
 	    -O /tmp/nvim.tar.gz && \
+	  sudo rm -rf /usr/local/bin/nvim /usr/local/lib/nvim /usr/local/share/nvim && \
 	  sudo tar xzf /tmp/nvim.tar.gz --strip-components=1 -C /usr/local && \
 	  rm -f /tmp/nvim.tar.gz; \
 	fi

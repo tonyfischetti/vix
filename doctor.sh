@@ -15,8 +15,25 @@ warn() { printf "  ${yellow}! %s${off}\n" "$1"; }
 printf "${bold}vix doctor${off} (%s)\n" "$UNAME_S"
 
 # --- nvim itself ---
+pin="$(sed -n 's/^NVIM_VERSION *:= *//p' "$VIX/Makefile")"
 if command -v nvim >/dev/null; then
-  ok "nvim on PATH ($(nvim --version | head -1))"
+  actual="$(nvim --version | head -1)"
+  where="$(command -v nvim)"
+  if printf '%s' "$actual" | grep -q "$pin"; then
+    ok "nvim is the pinned $pin ($where)"
+  elif [ "$UNAME_S" = "Linux" ]; then
+    # linux installs the pinned tarball to /usr/local; a different
+    # version means a missed upgrade, or something earlier on PATH
+    # shadowing it
+    if [ "$where" != "/usr/local/bin/nvim" ]; then
+      bad "nvim is $actual at $where, not the pinned $pin in /usr/local/bin (shadowed? make deps)"
+    else
+      bad "nvim is $actual, pin is $pin (make deps)"
+    fi
+  else
+    # macOS gets nvim from brew, which isn't pinned
+    warn "nvim is $actual, pin is $pin (brew isn't pinned; fine)"
+  fi
 else
   bad "nvim not found (make deps)"
 fi
