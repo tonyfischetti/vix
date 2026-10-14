@@ -25,7 +25,7 @@ Managed by lazy.nvim, pinned in `lazy-lock.json`. Specs live in
 | comment-box.nvim | boxed / lined comment headers via `:CB` commands (see below) |
 | todo-comments.nvim | highlights TODO, FIXME, HACK, etc. plus a custom CODEX keyword |
 | nvim-highlight-colors | inline swatches for hex codes and colour names |
-| nvim-cmp + LuaSnip | completion (manual trigger) from LSP, omnifunc, buffer, path and snippets; snippets are the snipmate files in `snippets/` |
+| (native) + LuaSnip | completion is neovim's own (`lua/vix/lib/completion.lua`): one `<Tab>`-triggered menu fed by LSP, omnifunc, buffer words, paths and snippets; LuaSnip only loads and expands the snipmate files in `snippets/` |
 
 ### LSP and diagnostics
 
@@ -107,10 +107,14 @@ Arrow keys are disabled in normal and insert mode, and `Q` does nothing.
 
 | keymap | description |
 | ------ | ----------- |
-| `<Tab>` | open the menu / next item; a single match is accepted directly |
-| `<CR>` | confirm |
+| `<Tab>` | after a word: open the menu; menu open: next item (a lone item is accepted outright); in a snippet: next placeholder; otherwise a tab |
+| `<S-Tab>` | previous item / previous placeholder |
+| `<CR>` | accept the selected item; newline if nothing is selected |
 | `<C-e>` | abort |
-| `<C-u>` / `<C-d>` | scroll the docs |
+| `<C-u>` / `<C-d>` | scroll the documentation popup |
+
+Path items appear once the text before the cursor contains a `/`; snippet
+items are tagged `[snip]` and expand when accepted.
 
 ### Windows, buffers, terminals
 

@@ -45,7 +45,9 @@ return {
     },
 
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      -- native completion (lib/completion.lua): neovim's own defaults
+      -- already advertise snippet support and item resolution
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
 
       ---------------------------------------
       --      r_language_server setup      --
