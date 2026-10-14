@@ -48,7 +48,7 @@ if command -v nvim >/dev/null; then
 fi
 
 # --- tools the config leans on ---
-for t in rg fzf par pandoc; do
+for t in rg ack fzf par pandoc; do
   command -v "$t" >/dev/null && ok "$t on PATH" || bad "$t not found (make deps)"
 done
 

@@ -108,7 +108,7 @@ return {
       },
       pickers = {
         find_files = {
-          --  HACK: introduces dependency on ack
+          -- depends on ack (installed by `make deps`, checked by `make doctor`)
           find_command = { "ack", "-f" },
         },
         marks = {
