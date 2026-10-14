@@ -1,7 +1,18 @@
 
 local M = {}
 
---  HACK 
+-- highlight the search match under the cursor (used by the n/N
+-- mappings). one match per window, so repeated calls don't pile up
+function M.hl_next()
+  vim.api.nvim_set_hl(0, 'BlackOnWhite', { ctermfg = 'black', ctermbg = 'white' })
+  if vim.w.hlnext_id then
+    pcall(vim.fn.matchdelete, vim.w.hlnext_id)
+  end
+  vim.w.hlnext_id = vim.fn.matchadd('BlackOnWhite', [[\c\%#]] .. vim.fn.getreg('/'), 101)
+  vim.cmd.redraw()
+end
+
+--  HACK
 M.proj_proj_root = nil
 
 function M.get_proj_proj_root()

@@ -29,8 +29,11 @@ map("n", "x", [["_x]])
 
 -- This makes the current match more visible
 -- and also centers the match vertically in the buffer
-map("n", "n", "n:call HLNext()<CR>zz", { silent = true })
-map("n", "N", "N:call HLNext()<CR>zz", { silent = true })
+map("n", "n", "n<Cmd>lua require('vix.lib.utils').hl_next()<CR>zz", { silent = true })
+map("n", "N", "N<Cmd>lua require('vix.lib.utils').hl_next()<CR>zz", { silent = true })
+
+-- what highlights the thing under the cursor? (syntax, treesitter, extmarks)
+map("n", "<Leader>hg", function() vim.show_pos() end)
 
 map("t", "<Esc>", "<C-\\><C-n>")
 map("t", "<C-v><Esc>", "<Esc>")

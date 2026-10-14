@@ -19,7 +19,16 @@ return {
             sutils.new_slime(input, true)
           end)
         end
-      }
+      },
+
+      -- sending
+      { "<C-Space>", sutils.send_line,       mode = "n", silent = true },
+      { "<C-Space>", "<Plug>SlimeRegionSend", mode = "v", silent = true },
+      { "<C-Space>",
+        "<Esc><Cmd>lua require('vix.lib.slime-utils').send_line_same_place()<CR>a",
+        mode = "i", silent = true },
+      { "<C-O>", "<Plug>SlimeLineSend", mode = "n", silent = true },
+      { "<C-L>", "<Cmd>SlimeSend1 <CR>", mode = "n", silent = true },
     },
     init = function()
       vim.g.slime_target = "tmux"
