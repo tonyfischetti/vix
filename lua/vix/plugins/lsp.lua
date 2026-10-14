@@ -127,7 +127,8 @@ return {
           map("n", "gd", vim.lsp.buf.definition)
           map("n", "gD", vim.lsp.buf.declaration)
           map("n", "gi", vim.lsp.buf.implementation)
-          map("n", "gr", vim.lsp.buf.references)
+          -- references: native `grr` (no plain `gr` -- it would shadow the
+          -- native grn/grr/gra/gri/grt prefix and add a timeoutlen delay)
           map("n", "<C-k>", vim.lsp.buf.signature_help)
           map("n", "<Space>2d", vim.lsp.buf.definition)
           map("n", "<Space>2D", vim.lsp.buf.declaration)

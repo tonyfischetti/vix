@@ -19,4 +19,5 @@ command! -nargs=0 Out :SlimeSend1 0
 command! -nargs=0 Restart :call RestartLisp()
 command! -nargs=1 Load :SlimeSend1 (LOAD ">")
 
-nmap <C-C> va(<C-X><C-X>%j0
+" send the enclosing s-expression to slime, then move past it
+nmap <buffer> <C-C> va(<C-Space>%j0
