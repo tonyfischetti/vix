@@ -21,7 +21,18 @@ return {
     keys = {
 
       {
-        "<Leader>cc", function() require("telescope.builtin").colorscheme() end,
+        "<Leader>cc", function()
+          -- the colorscheme plugins are lazy (colorschemes.lua); load
+          -- everything that ships a colors/ dir so the picker lists them
+          local with_colors = {}
+          for name, p in pairs(require("lazy.core.config").plugins) do
+            if vim.fn.isdirectory(p.dir .. "/colors") == 1 then
+              table.insert(with_colors, name)
+            end
+          end
+          require("lazy").load({ plugins = with_colors })
+          require("telescope.builtin").colorscheme()
+        end,
         desc = "Fzf colorschemes",
       },
       {
