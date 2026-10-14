@@ -52,7 +52,7 @@ want with.
 | `gD` | go to declaration |
 | `gi` | go to implementation |
 | `<C-k>` | signature help |
-| `gi` | go to references |
+| `gr` | go to references |
 | ------ | ----------- |
 | `<Space>2d` | go to definition |
 | `<Space>2D` | go to declaration |

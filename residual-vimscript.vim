@@ -1,10 +1,12 @@
 
 function! HLNext()
     highlight BlackOnWhite ctermfg=black ctermbg=white
-    let [bufnum, lnum, col, off] = getpos('.')
-    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    " one match per window: clear the previous one so they don't pile up
+    if exists('w:hlnext_id')
+        silent! call matchdelete(w:hlnext_id)
+    endif
     let target_pat = '\c\%#'.@/
-    let ring = matchadd('BlackOnWhite', target_pat, 101)
+    let w:hlnext_id = matchadd('BlackOnWhite', target_pat, 101)
     redraw
 endfunction
 
