@@ -16,6 +16,10 @@ return {
         width  = { min = 40, max = 0.75 },
         height = { min = 1,  max = 0.75 },
       },
+      -- only for vim.ui.select (code actions etc.); telescope stays the finder
+      picker = {
+        ui_select = true,
+      },
       styles = {
         input = {
           height = 1,

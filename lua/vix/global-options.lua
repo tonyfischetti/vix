@@ -46,13 +46,13 @@ vim.opt.cursorline = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.g['perl_host_prog'] = "/usr/bin/perl"
-
--- no plugin uses the python or ruby providers; turning them off stops
--- nvim probing for pynvim / neovim-ruby (and :checkhealth nagging).
--- node is left on. re-enable if a remote plugin ever needs one
+-- nothing uses the python, ruby or perl providers; turning them off stops
+-- nvim probing for pynvim / neovim-ruby / Neovim::Ext (and :checkhealth
+-- nagging). node is left on. re-enable if a remote plugin ever needs one.
+-- (<Space>p pipes through perl in the shell, which doesn't need the provider)
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
 
 if vim.fn.executable('par') == 1 then
     vim.opt.formatprg = 'par -w71r'
@@ -60,7 +60,7 @@ end
 
 vim.g.sql_type_default = 'sqlite'
 
-vim.highlight.priorities.semantic_tokens = 5
+vim.hl.priorities.semantic_tokens = 5
 
 -- vim.g['user_emmet_leader_key'] = ","
 -- vim.g['vim_json_syntax_conceal'] = 0
