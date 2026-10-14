@@ -147,7 +147,7 @@ end
 -- they stay recallable from the console history
 M.source_threshold = 800  -- bytes
 
-local function r_send(text)
+function M.r_send(text)
   if #text > M.source_threshold then
     local path = vim.fn.tempname() .. ".R"   -- under nvim's per-session tmp dir, removed on exit
     vim.fn.writefile(vim.split(text, "\n"), path)
@@ -162,9 +162,26 @@ function M.send_statement()
   local s, e = M.r_statement_range()
   local text = table.concat(vim.api.nvim_buf_get_lines(0, s - 1, e, false), "\n")
   if text:match("%S") then
-    r_send(text)
+    M.r_send(text)
   end
   vim.fn.cursor(e + 1, 0)
+end
+
+-- send the last visual selection (call after leaving visual mode, so
+-- the '< and '> marks are set), through the same size-safe path
+function M.send_selection()
+  local s, e = vim.fn.line("'<"), vim.fn.line("'>")
+  local lines
+  if vim.fn.visualmode() == "v" then
+    local sc, ec = vim.fn.col("'<"), vim.fn.col("'>")
+    lines = vim.api.nvim_buf_get_text(0, s - 1, sc - 1, e - 1, ec, {})
+  else
+    lines = vim.api.nvim_buf_get_lines(0, s - 1, e, false)
+  end
+  local text = table.concat(lines, "\n")
+  if text:match("%S") then
+    M.r_send(text)
+  end
 end
 
 

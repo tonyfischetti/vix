@@ -182,7 +182,7 @@ implementation, `grt` type definition.
 | lisp | `:Apropos`, `:Describe`, `:Documentation` | send the matching lisp form |
 | lisp | `:Hyper` | look up a symbol on l1sp.org |
 | lisp | `:Out`, `:Restart`, `:Load` | leave the debugger, restart sbcl, load a file |
-| r | `<C-Space>` | RStudio-style: send the whole statement around the cursor (function / if / for block, multi-line call, pipeline) and step past it |
+| r | `<C-Space>` | RStudio-style: send the whole statement around the cursor (function / if / for block, multi-line call, pipeline) and step past it; in visual mode, the selection. anything over ~800 bytes is `source()`d from a temp file instead of pasted, so the console can't drop input |
 | r | `:RCopyLastValue` | send `copy_last_value()` |
 | markdown (vault) | `<Leader>ot` | obsidian: today's note |
 | markdown (vault) | `<CR>` | obsidian "smart action": follow link, toggle checkbox, or cycle heading fold |
