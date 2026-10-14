@@ -8,6 +8,7 @@ return {
     cmd = { "SlimeConfig" },
     ft = {
       "haskell",
+      "r",      -- ftplugin/r.vim maps <C-Space> to the statement sender
     },
     keys = {
       { "<Leader>ss", function() sutils.new_slime(nil, true) end, },
