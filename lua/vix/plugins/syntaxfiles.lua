@@ -19,12 +19,6 @@ return {
   },
 
   {
-    -- TODO
-    "vim-pandoc/vim-pandoc-syntax",
-    ft = "markdown"
-  },
-
-  {
     "pprovost/vim-ps1",
     ft = { "ps1" }
   },

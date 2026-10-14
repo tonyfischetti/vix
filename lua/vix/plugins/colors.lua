@@ -9,8 +9,4 @@ return {
     end
   },
 
-  {
-    "https://github.com/rktjmp/lush.nvim"
-  }
-
 }

@@ -65,13 +65,6 @@ return {
       -- stem is messed
       note_path_func = function(spec)
         local path = spec.dir / tostring(spec.id)
-        -- require('notify').notify(spec.dir)
-        -- require('notify').notify(path.name)
-        -- require('notify').notify(path.name)
-        -- require('notify').notify(path.suffix
-        -- require('notify').notify(path.filename)
-        -- return path:with_suffix(".md")
-        -- return path.filename .. ".md"
         local firstpart = path.stem
         if path.suffix then
           firstpart = firstpart .. path.suffix
