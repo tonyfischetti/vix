@@ -1,8 +1,6 @@
 
 local utils  = require('../vix/lib/utils')
 local shell  = require('../vix/lib/shell')
-local tmuxer = require('../vix/lib/tmuxer')
-local sutils = require('../vix/lib/slime-utils')
 local map    = vim.keymap.set
 
 -- shortcuts for pluto special characters
@@ -70,8 +68,6 @@ map("n", "<Leader>vt", ":vsplit | terminal <CR> i")
 map("n", "<Leader>ht", ":split | terminal  <CR> i")
 
 
-map("n", "<Space>q", ":bd  <CR> i")
-
 map("n", "<Leader>up", function() print(utils.get_proj_proj_root()) end)
 map("n", "<Leader>ug", function() print(utils.get_git_root()) end)
 map("n", "<Leader>uf", function() print(utils.get_find_files_root()) end)
@@ -82,11 +78,6 @@ map("n", "<Space>h", "<C-W>h<CR>")
 map("n", "<Space>j", "<C-W>j<CR>")
 map("n", "<Space>k", "<C-W>k<CR>")
 map("n", "<Space>l", "<C-W>l<CR>")
-
-
-map("n", "<Leader>q", function()
-  sutils.setup_slime("", true)
-end)
 
 
 -- -- snipmate

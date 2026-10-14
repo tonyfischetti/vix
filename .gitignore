@@ -5,7 +5,7 @@ bundle/
 plugged
 perf.log
 **/to-vim
-./codex/codex.db
+codex/codex.db
 
 *.secret
 
