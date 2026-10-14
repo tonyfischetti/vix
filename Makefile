@@ -42,7 +42,12 @@ deps:
 ifeq ($(UNAME_S),Darwin)
 	brew install neovim ripgrep ack fzf par pandoc
 else
-	sudo apt-get update -qq -o Acquire::Retries=3
+# update may fail on an unrelated third-party repo (e.g. a stale
+# SHA1-signed key that trixie's sqv rejects); apt keeps the old index
+# for that repo and the install below still works from the refreshed
+# debian indexes -- so warn and carry on rather than abort
+	sudo apt-get update -qq -o Acquire::Retries=3 \
+	  || echo "apt-get update had errors (see above) -- continuing with cached indexes"
 	sudo apt-get install -qq -y -o Acquire::Retries=3 \
 	  ripgrep ack fzf par pandoc curl wget ca-certificates \
 	  python3-neovim ruby-neovim clangd
