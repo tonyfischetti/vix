@@ -104,6 +104,47 @@ vim-startuptime (`:StartupTime`).
 
 Arrow keys are disabled in normal and insert mode, and `Q` does nothing.
 
+#### The two filters: `<Space>p` and `<Space>P`
+
+Both (`lua/vix/lib/shell.lua`) take the whole buffer in normal mode or the
+selection in visual mode, pipe it through something, and replace the text
+with the output. `u` undoes. Escape or an empty prompt leaves the buffer
+alone.
+
+`<Space>p` asks for a perl expression and runs `perl -ple '<expression>'`:
+your code runs once per line with the line in `$_` (newline stripped and
+re-added), and every line is printed afterwards. Things to type at the
+prompt:
+
+```
+s/foo/bar/g                  substitute on every line
+s/^\s+//                     strip leading whitespace
+$_ = uc                      uppercase everything
+tr/a-z/A-Z/                  same, with tr
+$_ = sprintf("%03d", $_)     zero-pad a column of numbers
+$_ .= ";"                    append to every line
+$_ = reverse                 reverse each line
+s/(\w+)\s+(\w+)/$2 $1/       swap the first two words
+```
+
+The expression is single-quoted for the shell, so it can't contain a
+single quote. And since `-p` prints every line, lines can be blanked but
+not removed -- to filter lines out, use `<Space>P` with
+`perl -nle 'print if /pattern/'` or `grep`.
+
+`<Space>P` asks for any shell command and pipes the text through it:
+
+```
+sort -u                      dedupe and sort
+sort -t, -k2 -n              sort by the second CSV field, numerically
+column -t                    align into columns
+jq .                         pretty-print JSON
+grep -v '^#'                 drop comment lines
+awk '{print $2}'             keep one field
+tr -s ' '                    squeeze spaces
+fmt -w 79  /  par 79         reflow prose
+```
+
 ### Completion (insert mode)
 
 | keymap | description |
