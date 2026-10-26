@@ -67,20 +67,10 @@ return {
       },
 
       {
+        -- inside the picker: <C-p> add, <C-r> rename, <C-d> delete
+        -- (no <Space>p* keys for those: they made <Space>p wait on timeoutlen)
         "<Space>o", function() require("telescope").extensions.project.project() end,
-        desc = "TODO",
-      },
-      {
-        "<Space>pa", function () require("telescope._extensions.project.actions").add_project() end,
-        desc = "TODO"
-      },
-      {
-        "<Space>pr", function () require("telescope._extensions.project.actions").rename_project() end,
-        desc = "TODO"
-      },
-      {
-        "<Space>pd", function () require("telescope._extensions.project.actions").delete_project() end,
-        desc = "TODO"
+        desc = "Projects",
       },
       {
         "<Space>:", "<CMD>Telescope cmdline<CR>", desc = "Cmdline"

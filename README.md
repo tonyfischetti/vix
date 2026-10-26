@@ -96,6 +96,7 @@ vim-startuptime (`:StartupTime`).
 | `<Leader>rw` | remove trailing whitespace |
 | `<Leader>C` | toggle the colour column |
 | `<Leader>hg` | inspect what highlights the thing under the cursor |
+| `<Space>M` | toggle prose mode (hard wrap at 79; same as `:ProseMode`) |
 | `ga` | align (visual) |
 | `?` (visual) | toggle comment |
 | `s` / `S` | hop to pattern / word |
@@ -138,8 +139,7 @@ Arrow keys are disabled in normal and insert mode, and `Q` does nothing.
 | `<Space>mm` | marks |
 | `<Space>t` | TODO comments |
 | `<Space>:` | cmdline |
-| `<Space>o` | projects |
-| `<Space>pa` / `<Space>pr` / `<Space>pd` | add / rename / delete a project |
+| `<Space>o` | projects (inside the picker: `<C-p>` add, `<C-r>` rename, `<C-d>` delete) |
 | `<Leader>cc` | colour schemes |
 | `<Leader>sy` | symbols |
 | `<Leader>up` / `<Leader>ug` / `<Leader>uf` | print the project / git / find-files root |
@@ -197,6 +197,8 @@ implementation, `grt` type definition.
   `quick_switch`, `search`, `backlinks`, `links`, `template`, `rename`,
   `tags`, `toc`, `extract_note`, `toggle_checkbox`, `today`, `yesterday`,
   `tomorrow`, `dailies`, `open` (in the Obsidian app), ...
+- `:ProseMode` — toggle hard wrapping at 79 columns in the current buffer
+  (real line breaks as you type, so `j`/`k` work; `gwip` reflows a paragraph).
 - `:NoNeckPain` — centre the buffer.
 - `:StartupTime` — profile startup.
 
