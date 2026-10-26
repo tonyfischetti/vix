@@ -60,6 +60,11 @@ end
 
 vim.g.sql_type_default = 'sqlite'
 
+-- `zg` adds words to the tracked list in this repo (spell/en.utf-8.add),
+-- not neovim's default ~/.local/share/nvim/site/spell/, so they travel
+-- with the config. (:ProseMode turns 'spell' on)
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
 vim.hl.priorities.semantic_tokens = 5
 
 -- vim.g['user_emmet_leader_key'] = ","

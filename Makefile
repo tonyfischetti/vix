@@ -41,7 +41,7 @@ help:
 # and is best-effort (needs npm, which nodejs owns).
 deps:
 ifeq ($(UNAME_S),Darwin)
-	brew install neovim ripgrep ack fzf par pandoc
+	brew install neovim ripgrep ack fzf par pandoc pngpaste
 else
 # update may fail on an unrelated third-party repo (e.g. a stale
 # SHA1-signed key that trixie's sqv rejects); apt keeps the old index

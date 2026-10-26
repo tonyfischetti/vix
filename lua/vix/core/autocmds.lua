@@ -50,3 +50,18 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.omnifunc = "syntaxcomplete#Complete"
     end
 })
+
+-- pick up files changed outside neovim (dropbox, the obsidian app, the
+-- phone) as soon as the terminal regains focus or a buffer is entered,
+-- instead of whenever neovim next happens to check. 'autoread' (on by
+-- default) does the reload when the buffer has no changes of its own;
+-- otherwise you get the usual prompt. inside tmux, FocusGained needs
+-- `set -g focus-events on` in tmux.conf; BufEnter works regardless
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+    group = vixgroup,
+    callback = function()
+        if vim.fn.getcmdwintype() == "" and vim.fn.mode() ~= "c" then
+            vim.cmd("checktime")
+        end
+    end
+})

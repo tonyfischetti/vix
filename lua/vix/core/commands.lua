@@ -5,22 +5,30 @@ vim.api.nvim_create_user_command("Q", "q", {})
 
 vim.api.nvim_create_user_command("Sep", ":normal! i<args> --------------------------------------------------------------- <args><ESC>o", { nargs = 1 })
 
--- :ProseMode -- toggle hard wrapping at 79 columns in this buffer.
--- lines are broken for real as you type past the margin, so j/k/dd work
--- on them like any other line. `gw` (not `gq`, which goes through par at
--- its own width) reflows existing text to the same margin: gwip for a
--- paragraph, gww for a line. the previous settings are restored on toggle
+-- :ProseMode -- toggle hard wrapping at 79 columns + spell checking in
+-- this buffer. lines are broken for real as you type past the margin, so
+-- j/k/dd work on them like any other line. `gw` (not `gq`, which goes
+-- through par at its own width) reflows existing text to the same margin:
+-- gwip for a paragraph, gww for a line. spelling uses 'spelllang' as is
+-- (en); `zg` adds a word to spell/en.utf-8.add in this repo, `z=` suggests.
+-- the previous settings are restored on toggle
 local function prose_mode()
   if vim.b.vix_prose then
     vim.opt_local.textwidth = vim.b.vix_prose.textwidth
     vim.opt_local.formatoptions = vim.b.vix_prose.formatoptions
+    vim.opt_local.spell = vim.b.vix_prose.spell
     vim.b.vix_prose = nil
     vim.notify("prose mode off")
   else
-    vim.b.vix_prose = { textwidth = vim.bo.textwidth, formatoptions = vim.bo.formatoptions }
+    vim.b.vix_prose = {
+      textwidth = vim.bo.textwidth,
+      formatoptions = vim.bo.formatoptions,
+      spell = vim.wo.spell,
+    }
     vim.opt_local.textwidth = 79
     vim.opt_local.formatoptions:append("t")  -- auto-wrap at textwidth while typing
-    vim.notify("prose mode on: wrapping at 79, gw to reflow")
+    vim.opt_local.spell = true
+    vim.notify("prose mode on: wrapping at 79, spell on, gw to reflow")
   end
 end
 vim.api.nvim_create_user_command("ProseMode", prose_mode,

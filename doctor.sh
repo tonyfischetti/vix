@@ -70,8 +70,10 @@ for t in rg ack fzf par pandoc; do
 done
 
 # --- providers (optional niceties — warn, never fail) ---
-# python and ruby providers are disabled in global-options.lua; only node is kept
+# python, ruby and perl providers are disabled in global-options.lua; only node is kept
 command -v node >/dev/null || warn "node not on PATH (node provider absent)"
+# obsidian's image paste (macOS only; linux would use xclip / wl-paste)
+[ "$UNAME_S" = "Darwin" ] && { command -v pngpaste >/dev/null || warn "pngpaste not on PATH (:Obsidian paste_img won't work)"; }
 
 echo
 if [ "$fail" -eq 0 ]; then

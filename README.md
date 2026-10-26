@@ -96,7 +96,7 @@ vim-startuptime (`:StartupTime`).
 | `<Leader>rw` | remove trailing whitespace |
 | `<Leader>C` | toggle the colour column |
 | `<Leader>hg` | inspect what highlights the thing under the cursor |
-| `<Space>M` | toggle prose mode (hard wrap at 79; same as `:ProseMode`) |
+| `<Space>M` | toggle prose mode (hard wrap at 79 + spell checking; same as `:ProseMode`) |
 | `ga` | align (visual) |
 | `?` (visual) | toggle comment |
 | `s` / `S` | hop to pattern / word |
@@ -225,7 +225,13 @@ implementation, `grt` type definition.
 | lisp | `:Out`, `:Restart`, `:Load` | leave the debugger, restart sbcl, load a file |
 | r | `<C-Space>` | RStudio-style: send the whole statement around the cursor (function / if / for block, multi-line call, pipeline) and step past it; in visual mode, the selection. anything over ~800 bytes is `source()`d from a temp file instead of pasted, so the console can't drop input |
 | r | `:RCopyLastValue` | send `copy_last_value()` |
-| markdown (vault) | `<Leader>ot` | obsidian: today's note |
+| any | `<Leader>ot` | obsidian: today's note |
+| any | `<Leader>oo` | obsidian: switch to a note (quick switch) |
+| any | `<Leader>os` | obsidian: grep the vault |
+| any | `<Leader>on` | obsidian: new note |
+| any | `<Leader>og` | obsidian: tags |
+| any | `<Leader>oa` | obsidian: open the current note in the Obsidian app |
+| markdown (vault) | `[[xx` (insert) | the note list opens by itself two characters into a link, like the app |
 | markdown (vault) | `<CR>` | obsidian "smart action": follow link, toggle checkbox, or cycle heading fold |
 | markdown (vault) | `]o` / `[o` | obsidian: next / previous link |
 
@@ -238,8 +244,9 @@ implementation, `grt` type definition.
   `quick_switch`, `search`, `backlinks`, `links`, `template`, `rename`,
   `tags`, `toc`, `extract_note`, `toggle_checkbox`, `today`, `yesterday`,
   `tomorrow`, `dailies`, `open` (in the Obsidian app), ...
-- `:ProseMode` — toggle hard wrapping at 79 columns in the current buffer
-  (real line breaks as you type, so `j`/`k` work; `gwip` reflows a paragraph).
+- `:ProseMode` — toggle hard wrapping at 79 columns and spell checking in
+  the current buffer (real line breaks as you type, so `j`/`k` work; `gwip`
+  reflows a paragraph; `zg` adds a word to `spell/en.utf-8.add`, `z=` suggests).
 - `:NoNeckPain` — centre the buffer.
 - `:StartupTime` — profile startup.
 
