@@ -43,7 +43,7 @@ map("n","<Leader>nh", ":noh<CR>", { silent = true })
 map("n","<C-c>", ":noh<CR>", { silent = true })
 
 --Find and replace (with 'magic')
-map("n", "<Leader>r", ":%s/\\v")
+-- (no <Leader>r: it would be a prefix of <Leader>rj / <Leader>rw and pause)
 map("n", "<Space>r", ":%s/\\v")
 map("n", "<Space>p", function() shell.search_and_replace(true) end)
 map("v", "<Space>p", function() shell.search_and_replace(false) end)

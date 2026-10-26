@@ -88,7 +88,7 @@ vim-startuptime (`:StartupTime`).
 | `<` / `>` (visual) | indent and keep the selection |
 | `n` / `N` | next / previous match, highlighted and centred |
 | `<Leader>nh`, `<C-c>` | clear search highlight |
-| `<Leader>r`, `<Space>r` | start a `:%s/\v` substitution |
+| `<Space>r` | start a `:%s/\v` substitution |
 | `<Space>p` | run buffer (or selection) through `perl -ple` |
 | `<Space>P` | run buffer (or selection) through a command |
 | `<Leader>dd` | insert a date header |
