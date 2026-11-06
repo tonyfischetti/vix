@@ -2,6 +2,16 @@ setlocal tabstop=2
 setlocal softtabstop=2
 setlocal shiftwidth=2
 
+" K on a symbol shows its signature and docstring in a floating window
+" (lua/vix/lib/pluto-doc.lua), asked of the saved core by
+" ~/.zsh/bin/pluto-doc -- no REPL needed. ':' is a keyword character
+" in lisp buffers, so styx:md5/file works, too. K again focuses the
+" window; moving the cursor closes it.
+" (a buffer-local mapping rather than 'keywordprg': K is mapped
+" globally to pretty_hover in plugins/hover.lua, which would win)
+command! -buffer -nargs=1 PlutoDoc lua require('vix.lib.pluto-doc').show(<q-args>)
+nnoremap <buffer> K <Cmd>lua require('vix.lib.pluto-doc').show(vim.fn.expand('<cword>'))<CR>
+
 function! RestartLisp()
     :SlimeSend1 (quit)
     :SlimeSend1 sbcl

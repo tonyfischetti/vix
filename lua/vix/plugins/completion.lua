@@ -124,6 +124,29 @@ return {
 
       })
 
+      -----------------------------------
+      --   lisp: pluto/charon/styx     --
+      -----------------------------------
+      -- every exported symbol with its signature, asked of the saved
+      -- core (lib/cmp-pluto.lua + ~/.zsh/bin/pluto-doc). it goes
+      -- ahead of omni, which knows the CL standard symbols from the
+      -- syntax file
+      cmp.register_source('pluto', require('vix.lib.cmp-pluto').new())
+      cmp.setup.filetype('lisp', {
+        sources = cmp.config.sources({
+          { name = 'pluto' },
+          { name = 'omni' },
+          {
+            name = 'buffer',
+            option = {
+              keyword_pattern = [[\k\+]],
+            }
+          },
+          { name = 'path' },
+          { name = 'luasnip' },
+        }),
+      })
+
       --   -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
       --   -- Set configuration for specific filetype.
       --   --[[ cmp.setup.filetype('gitcommit', {
