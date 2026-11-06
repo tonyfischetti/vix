@@ -1,0 +1,59 @@
+# gleam, setup project, new project, gleam.toml, manifest.toml, dependencies, gleam add, gleam new, hex, package manager, project layout
+
+# gleam new my_project            (makes everything below, and a git repo)
+# cd my_project
+# gleam run
+#
+# ── what's in it ────────────────────────────────────────────────────
+#
+#   gleam.toml                   this file
+#   manifest.toml                the lock file (exact versions). it's
+#                                generated. commit it, don't edit it
+#   src/my_project.gleam         `gleam run` runs the `main` in here
+#   src/my_project/cows.gleam    another module: `import my_project/cows`
+#   test/my_project_test.gleam   `gleam test` runs the `main` in here
+#   build/                       compiled code and downloaded packages.
+#                                don't commit it
+#
+# ── dependencies ────────────────────────────────────────────────────
+#
+#   gleam add simplifile argv    newest versions, into [dependencies]
+#   gleam add simplifile@2       at least 2.0.0, less than 3.0.0
+#   gleam add --dev gleeunit     into [dev_dependencies] (tests only)
+#   gleam remove argv
+#   gleam update                 newest versions that the ranges allow
+#   gleam deps list              what got resolved
+#   gleam clean                  throw away build/
+#
+# Packages come from hex.pm. To look for one: https://packages.gleam.run
+
+# ── gleam.toml ──────────────────────────────────────────────────────
+
+name = "my_project"
+version = "0.0.1"
+
+# these three only matter for publishing to hex (`gleam publish`)
+description = ""
+licences = ["GPL-3.0-or-later"]
+repository = { type = "github", user = "tonyfischetti", repo = "my_project" }
+
+# the compiler version the project needs
+gleam = ">= 1.19.0"
+
+# erlang is the default. with this, every command means javascript
+# target = "javascript"
+
+[dependencies]
+gleam_stdlib = ">= 1.0.5 and < 2.0.0"
+simplifile = ">= 2.7.0 and < 3.0.0"
+argv = ">= 1.1.0 and < 2.0.0"
+# a package in a directory on this machine
+# my_other_project = { path = "../my_other_project" }
+# or straight from git
+# thing = { git = "https://github.com/someone/thing.git", ref = "main" }
+
+[dev_dependencies]
+gleeunit = ">= 1.11.0 and < 2.0.0"
+
+# [javascript]
+# runtime = "deno"                # node (the default), deno or bun

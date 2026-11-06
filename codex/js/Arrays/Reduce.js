@@ -17,10 +17,10 @@ rainbow.reduceRight((acc, i) => `${acc}, ${i}`);
 const findMinMax = (lst) => {
   const minMaxReducer = (acc, i) => {
     return { min: i < acc.min ? i : acc.min,
-             max: i > acc.max ? i : acc.min };
+             max: i > acc.max ? i : acc.max };
   };
   // you can supply an initialValue for the accumulator
   return lst.reduce(minMaxReducer, { min: Infinity, max: -Infinity });
 };
 
-findMinMax([10, 8, 20, 3, 17, 19]);       // { min: 3, max: 19, }
+findMinMax([10, 8, 20, 3, 17, 19]);       // { min: 3, max: 20, }
