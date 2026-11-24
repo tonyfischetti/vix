@@ -150,6 +150,7 @@ _.pid
 _.seed
 *.pid.lock
 .shastore
+__pycache__
 
 # archives
 *.xz
